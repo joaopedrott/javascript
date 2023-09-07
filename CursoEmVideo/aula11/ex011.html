@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio</title>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+
+    
+        
+            <label for="itxt">Pais</label>
+            <input type="text" name="itxt" id="itxt" autocomplete="country" placeholder="Digite o nome do pais">
+            <input type="submit" value="Verificar" onclick="clicar()">
+        
+        
+        <!-- <p>
+            <label for="ires">Nacionalidade: </label>
+            <output name="ires" id="irest"></output>
+        </p> -->
+
+
+    <div id="res">
+        Nacionalidade: 
+    </div>
+    <script>
+            var pais = window.document.getElementById('itxt')
+            var estrangeiro = window.document.getElementById('res')//ligacao
+        function clicar(){
+            if(pais.value=='Brasil' || pais.value=='brasil' ){
+                estrangeiro.innerText = 'Nacionalidade: brasileiro'
+            } else {
+                estrangeiro.innerText = 'Nacionalidade: Estrangeiro'
+            }
+            
+            
+
+        }
+    </script>
+</body>
+</html>

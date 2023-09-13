@@ -17,8 +17,8 @@ function verificar(){
         img.setAttribute('id','foto') //cria um id com nome foto para a imagem 
 
         img.style.height='250px' //formatacao da imagem
-        img.style.width='250px'
-        img.style.borderRadius='250px'
+        img.style.width='250px' //formatacao da imagem
+        img.style.borderRadius='250px' //formatacao da imagem
         //res.innerHTML = `Idade calculada: ${idade}`
 
         if(fsex[0].checked){//se genero selecionado for homem

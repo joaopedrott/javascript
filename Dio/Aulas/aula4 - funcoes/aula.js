@@ -28,7 +28,7 @@ main();
         console.log(1);
     })();
 
-3 - funcao imediatamente invocada nao nomeada //neste caso nao podemos atualizar pois nao temos o nome pq esta nao nomeada
+3 - funcao imediatamente invocada nao nomeada //neste caso nao podemos atualizar pois nao temos o nome da funcao pq esta funcao nao foi nomeada ou seja ela eh uma funcao anonima 
     (function () {
         console.log(1);
     })();   */

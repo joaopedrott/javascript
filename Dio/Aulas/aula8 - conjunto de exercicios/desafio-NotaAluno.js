@@ -2,7 +2,7 @@
 
 (function () {
 
-    const { gets, print } = require('./funcoes-auxiliares')
+    const { gets, print } = require('./funcoes-auxiliaresNotaAluno')
     const nota = gets();
 
     print(nota);

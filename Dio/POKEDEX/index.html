@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
-    <style>
-        h1 {
-            color: red;
+    <!-- normalize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        }
-        h1 {
-            color: blue;
-            text-align: center;
-
-        }
-    </style>
+    <!--     font roboto      -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Roboto:wght@100;300;500;700&display=swap"
+        rel="stylesheet">
+    <!--     css      -->
+    <link rel="stylesheet" href="assets/css/global.css">
 </head>
 
 <body>
-        <h1>Meu primeiro site</h1>
-        <p>Meu pirmeiro site esta sendo jeito junto de um curso da DIO</p>
-        <button type="button" id="btnTeste">
-            Teste
-        </button>
+    <section class="content">
+        <h1>Pokedex</h1>
+        <ol>
+            <li>Bulbasaur</li>
+            <li>Ivysaur</li>
+            <li>Venusaur</li>
+        </ol>
+    </section>
 
-        <script>
-
-            const btnTeste = window.document.getElementById('btnTeste')
-            btnTeste.addEventListener("click", function(){
-                console.log("clicou no botao")
-            })
-
-
-        </script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

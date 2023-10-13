@@ -1,9 +1,5 @@
 
-const offset = 0
-const limit = 10
-const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
-
-function convertPokemonToLi(pokemon) {
+function convertPokemonToLi(pokemon) {//inseri o pokemon nessa html
     return `
     <li class="pokemon">
             <span class="number">#001</span>
@@ -20,34 +16,43 @@ function convertPokemonToLi(pokemon) {
         </li>`
 }
 
+//1-faz ligacao do html no javascript
 const pokemonList = window.document.getElementById('pokemonList')
-//pokemonList.innerHTML +=`<li>Teste</li>`
 
-// processamento assincrono
-// fetch eh uma requisitcao HTTP usando url
-// O padrao do fetch eh usar o GET para fazer requisicao
-fetch(url)
-    //metodo then eh oq ele vai fazer no sucesso de uma promise(promessa da resposta/resposta da requisicao) ou seja, na obtencao da resposta
 
-    // converte a resposta em json para manipular os dados 
-    .then((response) => response.json()) //BODY convertido em jason
+//2-chama a funcao getPokemons do objeto pokeApi do arquivo poke-api.js para fazer a requisicao 
+    pokeApi.getPokemons()
 
-    //dentro do json, pega o results que eh a array de pokemon
-    .then((jsonbody) => jsonbody.results)
+//3-o retorno foi uma array de 10 pokemons e eh colocado em pokemons
+    .then((pokemons=[]) => {
 
-    //imprimi a array de pokemons
-    .then((pokemons) => {
-        
-        for (let i = 0; i < pokemons.length; i++) {
-            const pokemon = pokemons[i];
-            pokemonList.innerHTML += convertPokemonToLi(pokemon)
+//4-a funcao map transforma cada item de uma lista em outro tipo de item ou seja, converte os itens em outros itens
+//nesse caso transformo cada pokemon em um html com pokemon inserido nesse html com convertPokemonToLi, ou seja, transforma pokemon em html
+// No fim, o newList eh uma lista de html com pokemons inseridos
+        const newList = pokemons.map(function (pokemon){
+            return convertPokemonToLi(pokemon)
+        })
 
-            
-        }
+//5-o join vai juntar todos os elementos da lista e converte a lista em uma string
+        const newHtml = newList.join('')
+
+//6-e assim, a string de html de pokemons eh inserida no html
+        pokemonList.innerHTML += newHtml
 
     })
 
-    .catch((error) => console.log(error)) // para manipular o fracasso da requisicao
+// simplificando
+//simplificando o passo 4 com errow function em uma linha
+//const newList = pokemons.map((pokemon)=>convertPokemonToLi(pokemon))
+
+//simplificando o passo 4 com errow function em uma linha usando o convertPokemonToLi dentro do pareteses
+//const newList = pokemons.map(convertPokemonToLi)
+
+//simplificando o passo 4 com o 5
+//const newList = pokemons.map(convertPokemonToLi).join('')
+
+//simplificando o passo 4 com o 5 com o 6
+//pokemonList.innerHTML += pokemons.map(convertPokemonToLi).join('')
 
 // CADA THEN USA O RETORNO DO THEN ANTERIOR
 
@@ -60,7 +65,7 @@ fetch(url)
 
 //obs: parecido com TRY CATCH
 
-/* ANOTACOES
+/* ANOTACOES simplificando o .then
 primeiro then normal
 1-
 .then(function (response) {

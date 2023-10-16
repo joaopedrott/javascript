@@ -1,20 +1,23 @@
 
+function convertPokemonTypesToLi(pokemonTypes) {//dentro da array pokemonTypes...
+    return pokemonTypes.map((typeSlot)=>`<li class="type">${typeSlot.type.name}</li>`)
+}//com o MAP eu pego cada elemento (typeSlot) da array e aplico a funcao `<li class="type">${typeSlot.type.name}</li>` na pratica fica 0.type.name
+
 function convertPokemonToLi(pokemon) {//inseri o pokemon nessa html
     return `
     <li class="pokemon">
-            <span class="number">#001</span>
+            <span class="number">#${pokemon.order}</span>
             <span class="name">${pokemon.name}</span>
 
             <div class="detail">  
 
                 <ol class="types">
-                    <li class="type">Grass</li>
-                    <li class="type">Poison</li>
+                    ${convertPokemonTypesToLi(pokemon.types).join('')}
                 </ol>
                 
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="${pokemon.name}"></div>
+                <img src="${pokemon.sprites.other.dream_world.front_default}" alt="${pokemon.name}"></div>
         </li>`
-}
+}//https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg
 
 //1-faz ligacao do html no javascript
 const pokemonList = window.document.getElementById('pokemonList')
@@ -27,6 +30,7 @@ const pokemonList = window.document.getElementById('pokemonList')
     .then((pokemons=[]) => {
 
 //4-a funcao map transforma cada item de uma lista em outro tipo de item ou seja, converte os itens em outros itens
+// o map, mapea ou percorre toda a lista pokemons
 //nesse caso transformo cada pokemon em um html com pokemon inserido nesse html com convertPokemonToLi, ou seja, transforma pokemon em html
 // No fim, o newList eh uma lista de html com pokemons inseridos
         const newList = pokemons.map(function (pokemon){

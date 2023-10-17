@@ -1,13 +1,29 @@
 
+const pokeApi = {} //OBEJTO  CRIADO
 
-const pokeApi = {} //objeto criado
+    function convertPokeApiDetailToPokemon(pokeDetail){ //FUNCAO convertendo modelo da api de pokemons no nosso modelo
+        const pokemon = new Pokemon();// chamo a classe Pokemon criado no arquivo pokemon-model.js, para usar como modelo
+        pokemon.number = pokeDetail.order//linkado numero do pokemon. a partir de agora comeco a linkar o nosso pokemon modelo a api para facilitar inserir o pokemon no html
+        pokemon.name=pokeDetail.name // linkado nome do pokemon
 
-    pokeApi.getPokemonDetail = (pokemon) => {//adicionando metodo/funcao no objeto
-        return fetch(pokemon.url)
-            .then((response)=>response.json())
+        const types = pokeDetail.types.map((typeSlot)=>typeSlot.type.name)//converto a array/matris do pokeApi em uma array mais simples, types
+        const [type] = types // pega o primeiro valor da array types, que nesse caso eh o primeiro tipo do pokemon, que vai ser o tipo principal
+        
+        pokemon.types = types // linkado array dos tipos
+        pokemon.type = type // linkado  tipo principal do pokemon
+
+        pokemon.photo = pokeDetail.sprites.other.dream_world.front_default // linkado foto do pokemon
+
+        return pokemon;//retorna o pokemon com, nome,numero,tipos, tipo principal e foto do pokemon
     }
 
-    pokeApi.getPokemons = (offset=0, limit=10)=> { //adicionando metodo/funcao no objeto
+    pokeApi.getPokemonDetail = (pokemon) => {//ADICIONANDO METODO/funcao no objeto
+        return fetch(pokemon.url)// requisicao de todo pokemon da array
+            .then((response)=>response.json())// em seguida transforma em json
+            .then(convertPokeApiDetailToPokemon)//convertendo modelo api em nosso modelo para tornar mais facil de colocar o pokemon no html no arquivo main.js
+    }
+
+    pokeApi.getPokemons = (offset=0, limit=10)=> { //ADICIONANDO METODO/funcao no objeto
 
         const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
         // processamento assincrono
@@ -27,7 +43,7 @@ const pokeApi = {} //objeto criado
         // para manipular o fracasso da requisicao
         //.catch((error) => console.log(error)) 
 
-        //com os pokemons, eu pego cada um e percorro essa array de pokemons usando map, e a cada pokemon nessa array eu uso um FETCH/requisicao com a URL de cada pokemon, o retorno eh uma array de resultados das requisicoes do FETCH de cada pokemon e em seguida converto em json, fazendo uma array de detalhes de todos os pokemons listados no jsonbody.results em json
+        //com os pokemons, eu pego cada um e percorro essa array de pokemons usando map, e a cada pokemon nessa array eu uso um FETCH/requisicao com a URL de cada pokemon, o retorno eh uma array de resultados das requisicoes do FETCH de cada pokemon e em seguida converto em json, fazendo uma array de detalhes de todos os pokemons listados em json
         .then((pokemons)=>pokemons.map(pokeApi.getPokemonDetail))
 
         //espera todas as requisicoes de todos os pokemons terminarem
@@ -36,8 +52,6 @@ const pokeApi = {} //objeto criado
 
         .then((pokemonsDetails)=> {
             return pokemonsDetails})
-
-
     }
 
     

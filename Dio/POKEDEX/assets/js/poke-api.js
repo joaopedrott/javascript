@@ -2,7 +2,7 @@
 
 const pokeApi = {} //objeto criado
 
-    pokeApi.getPokemonDetail = (pokemon) => {
+    pokeApi.getPokemonDetail = (pokemon) => {//adicionando metodo/funcao no objeto
         return fetch(pokemon.url)
             .then((response)=>response.json())
     }

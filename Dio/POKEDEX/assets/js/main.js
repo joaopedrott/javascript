@@ -1,44 +1,60 @@
-
-function convertPokemonToLi(pokemon) {//inseri o pokemon nessa html
-    return `
-    <li class="pokemon">
-            <span class="number">#${pokemon.number}</span>
-            <span class="name">${pokemon.name}</span>
-
-            <div class="detail">  
-                <ol class="types">
-                    ${pokemon.types.map((type)=> `<li class="type">${type}</li>`).join('')}
-                </ol>
-                
-                <img src="${pokemon.photo}" alt="${pokemon.name}"></div>
-        </li>`
-}//https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg
-
 //1-faz ligacao do html no javascript
 const pokemonList = window.document.getElementById('pokemonList')
+const loadMoreButton = window.document.getElementById('loadMoreButton')
+const limit = 5;
+let offset = 0;
 
 
-//2-chama a funcao getPokemons do objeto pokeApi do arquivo poke-api.js para fazer a requisicao 
-    pokeApi.getPokemons()
+function loadPokemonItens(offset, limit) {//faz requisicao e inseri pokemons no html na tela
 
-//3-o retorno foi uma array de detalhes de 10 pokemons e eh colocado em pokemons / array de 10 obejtos da classe pokemon
-    .then((pokemons=[]) => {
+    function convertPokemonToLi(pokemon) {//inseri o pokemon nessa html
+        return `
+        <li class="pokemon ${pokemon.type}">
+                <span class="number">#${pokemon.number}</span>
+                <span class="name">${pokemon.name}</span>
+    
+                <div class="detail">  
+                    <ol class="types">
+                        ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
+                    </ol>
+                    
+                    <img src="${pokemon.photo}" 
+                        alt="${pokemon.name}">
+    
+                </div>
+            </li>`
+    }
 
-//4-a funcao map transforma cada item de uma lista em outro tipo de item ou seja, converte os itens em outros itens
-// o map, mapea ou percorre toda a lista pokemons
-//nesse caso transformo cada pokemon em um html com pokemon inserido nesse html com convertPokemonToLi, ou seja, transforma pokemon em html
-// No fim, o newList eh uma lista de html com pokemons inseridos
-        const newList = pokemons.map(function (pokemon){
-            return convertPokemonToLi(pokemon)
+
+    //2-chama a funcao getPokemons do objeto pokeApi do arquivo poke-api.js para fazer a requisicao.
+    //o retorno foi uma array de detalhes de 10 pokemons e eh colocado em pokemons / array de 10 obejtos da classe pokemon
+    pokeApi.getPokemons(offset, limit)
+
+        //3-no then, pego a array de pokemon e comeco a inserir ele no html da lista Li
+        .then((pokemons = []) => {
+
+            //4-a funcao map transforma cada item de uma lista em outro tipo de item ou seja, converte os itens em outros itens
+            // o map, mapea ou percorre toda a lista pokemons
+            //nesse caso transformo cada pokemon em um html com pokemon inserido nesse html com convertPokemonToLi, ou seja, transforma pokemon em html
+            // No fim, o newList eh uma lista de html com pokemons inseridos
+            const newList = pokemons.map(function (pokemon) {
+                return convertPokemonToLi(pokemon)
+            })
+
+            //5-o join vai juntar todos os elementos da lista e converte a lista em uma string
+            const newHtml = newList.join('')
+
+            //6-e assim, a string de html de pokemons eh inserida no html
+            pokemonList.innerHTML += newHtml
+
         })
+}
+loadPokemonItens(offset,limit)
 
-//5-o join vai juntar todos os elementos da lista e converte a lista em uma string
-        const newHtml = newList.join('')
-
-//6-e assim, a string de html de pokemons eh inserida no html
-        pokemonList.innerHTML += newHtml
-
-    })
+loadMoreButton.addEventListener('click', ()=>{
+    offset += limit
+    loadPokemonItens(offset,limit)
+})
 
 // simplificando
 //simplificando o passo 4 com errow function em uma linha

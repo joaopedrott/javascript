@@ -23,7 +23,7 @@ const pokeApi = {} //OBEJTO  CRIADO
             .then(convertPokeApiDetailToPokemon)//convertendo modelo api em nosso modelo para tornar mais facil de colocar o pokemon no html no arquivo main.js
     }
 
-    pokeApi.getPokemons = (offset=0, limit=10)=> { //ADICIONANDO METODO/funcao no objeto
+    pokeApi.getPokemons = (offset=0, limit=5)=> { //ADICIONANDO METODO/funcao no objeto
 
         const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
         // processamento assincrono

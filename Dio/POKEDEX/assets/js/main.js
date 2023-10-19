@@ -1,11 +1,12 @@
 //1-faz ligacao do html no javascript
 const pokemonList = window.document.getElementById('pokemonList')
 const loadMoreButton = window.document.getElementById('loadMoreButton')
-const limit = 5;
+const maxRecords= 151;
+const limit = 10;
 let offset = 0;
 
 
-function loadPokemonItens(offset, limit) {//faz requisicao e inseri pokemons no html na tela
+function loadPokemonItens(offset, limit) {//faz requisicao de pokemons e inseri pokemons no html
 
     function convertPokemonToLi(pokemon) {//inseri o pokemon nessa html
         return `
@@ -49,11 +50,23 @@ function loadPokemonItens(offset, limit) {//faz requisicao e inseri pokemons no 
 
         })
 }
-loadPokemonItens(offset,limit)
+loadPokemonItens(offset,limit)// aqui faz a primeira chamada da requisicao
 
-loadMoreButton.addEventListener('click', ()=>{
+loadMoreButton.addEventListener('click', ()=>{//aqui faz a chamada pelo botao load more no html para ler mais 5 pokemons
     offset += limit
-    loadPokemonItens(offset,limit)
+    //  10       5 
+    const qtdRecordsWithNexPage = offset + limit
+             //15              10        5
+    if(qtdRecordsWithNexPage >= maxRecords){
+        // 15                     11
+        const newLimit = maxRecords - offset
+        loadPokemonItens(offset,newLimit)
+                       //   10   1
+        loadMoreButton.parentElement.removeChild(loadMoreButton)
+    } else {
+        loadPokemonItens(offset,limit)
+    }
+    
 })
 
 // simplificando

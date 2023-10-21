@@ -1,4 +1,4 @@
-const htmlpokemon = window.document.getElementById('detailpokemon')
+var htmlpokemon = window.document.getElementById('detailpokemon') 
 const pokeApi2 = {}
 
 function convertPokeApiDetailToPokemon(pokeDetail){ //FUNCAO convertendo modelo da api de pokemons no nosso modelo
@@ -17,7 +17,7 @@ function convertPokeApiDetailToPokemon(pokeDetail){ //FUNCAO convertendo modelo 
     return pokemon;//retorna o pokemon com, nome,numero,tipos, tipo principal e foto do pokemon
 }
 
- function convertPokemonToLi2(pokemon) {//inseri o pokemon nessa html
+  function convertPokemonToLi2(pokemon) {//inseri o pokemon nessa html
 
     return `
         <div class="pokemonDetail ${pokemon.type}">
@@ -75,37 +75,34 @@ function convertPokeApiDetailToPokemon(pokeDetail){ //FUNCAO convertendo modelo 
             
         </div>
         `
-} 
+}  
 
-pokeApi2.GetDetail = (idPokemon=140) => {
+pokeApi2.GetDetail = (idPokemon=132) => {
      //console.log(idPokemon)
 
-     fetch(`https://pokeapi.co/api/v2/pokemon/${idPokemon}/`)
-    .then((response) => response.json())
-    .then((detalhe)=>convertPokeApiDetailToPokemon(detalhe))
+    return fetch(`https://pokeapi.co/api/v2/pokemon/${idPokemon}/`)
+            .then((response) => response.json())
+            .then((detalhe)=>convertPokeApiDetailToPokemon(detalhe))
     /* .then((detalhe)=>{
         console.log(detalhe.types)
     })  */ 
-    .then((detalhe)=>{
+
+
+      .then((detalhe)=>{
+        //abrindo outra janela
+        /* const modal = window.open('detail.html', 'modal', 'width=400,height=400');
+        modal.focus();  */
+
         //const pokemon00 = convertPokeApiDetailToPokemon(detalhe)
         const pokemon1 = convertPokemonToLi2(detalhe)
         //const newHtml = pokemon1.join('')
         htmlpokemon.innerHTML = pokemon1
-    })
+        //console.log(pokemon1)
+        
+    })  
 
-    /*  .then((response)=>{
-        console.log(pokemon.name)
-    })  */
-    //.then((pokemon) =>pokeApi2.convertPokeApiDetailToPokemon)
-     /* .then((pokemon)=>{
-        const pokemon00 = pokeApi2.convertPokeApiDetailToPokemon
-        const pokemon1 = convertPokemonToLi2(pokemon00)
-        //const newHtml = pokemon1.join('')
-        htmlpokemon.innerHTML += pokemon1
-    })  */  
 
     console.log('sucesso!'+idPokemon)
     
 }
-
-pokeApi2.GetDetail();
+pokeApi2.GetDetail()

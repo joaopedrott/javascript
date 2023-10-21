@@ -51,7 +51,8 @@ const pokeApi = {} //OBEJTO  CRIADO
 
 
         .then((pokemonsDetails)=> {
-            return pokemonsDetails})
+            return pokemonsDetails
+        })
     }
 
     

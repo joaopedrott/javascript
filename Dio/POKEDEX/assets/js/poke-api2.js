@@ -17,12 +17,12 @@ function convertPokeApiDetailToPokemon(pokeDetail){ //FUNCAO convertendo modelo 
     return pokemon;//retorna o pokemon com, nome,numero,tipos, tipo principal e foto do pokemon
 }
 
- function convertPokemonToLi(pokemon) {//inseri o pokemon nessa html
+ function convertPokemonToLi2(pokemon) {//inseri o pokemon nessa html
 
     return `
         <div class="pokemonDetail">
-            <span class="name">${pokemon.name}</span>
-            <span class="number">${pokemon.number}</span>
+        <span class="name">${pokemon.name}</span>
+        <span class="number">${pokemon.number}</span>
             <ol class="types">
                 <li class="type">Grass</li>
                 <li class="type">Poison</li>
@@ -78,20 +78,16 @@ function convertPokeApiDetailToPokemon(pokeDetail){ //FUNCAO convertendo modelo 
 } 
 
 pokeApi2.GetDetail = (idPokemon) => {
-    console.log(idPokemon)
+    //console.log(idPokemon)
 
-    /* fetch(`https://pokeapi.co/api/v2/pokemon/${idPokemon}/`)
+     fetch(`https://pokeapi.co/api/v2/pokemon/${idPokemon}/`)
     .then((response) => response.json())
-    .then((response) => console.log('sucesso!')) */
-
-
-
-
-    /* .then((pokemon) =>pokeApi2.convertPokeApiDetailToPokemon(pokemon))
+    //.then((response) => console.log('sucesso!')) 
+    .then((pokemon) =>pokeApi2.convertPokeApiDetailToPokemon)
     .then((pokemon)=>{
-        const pokemon1 = convertPokemonToLi(pokemon)
+        const pokemon1 = convertPokemonToLi2(pokemon)
         //const newHtml = pokemon1.join('')
         htmlpokemon.innerHTML += pokemon1
-    }) */
+    }) 
     
 }

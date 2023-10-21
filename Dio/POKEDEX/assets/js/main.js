@@ -76,8 +76,9 @@ loadMoreButton.addEventListener('click', ()=>{//aqui faz a chamada pelo botao lo
 })
 
 function sucesso(idPokemon){
-    window.open("detail.html", "_blank");
     pokeApi2.GetDetail(idPokemon);
+    window.open("detail.html", "_blank");
+    
     
     
     //console.log(idPokemon)

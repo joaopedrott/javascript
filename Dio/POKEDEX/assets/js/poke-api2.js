@@ -1,14 +1,14 @@
-var htmlpokemon = window.document.getElementById('detailpokemon') 
+var htmlpokemon = window.document.getElementById('detailpokemon')
 const pokeApi2 = {}
 
-function convertPokeApiDetailToPokemon(pokeDetail){ //FUNCAO convertendo modelo da api de pokemons no nosso modelo
+function convertPokeApiDetailToPokemon(pokeDetail) { //FUNCAO convertendo modelo da api de pokemons no nosso modelo
     const pokemon = new Pokemon();// chamo a classe Pokemon criado no arquivo pokemon-model.js, para usar como modelo
     pokemon.number = pokeDetail.id//linkado numero do pokemon. a partir de agora comeco a linkar o nosso pokemon modelo a api para facilitar inserir o pokemon no html
-    pokemon.name=pokeDetail.name // linkado nome do pokemon
+    pokemon.name = pokeDetail.name // linkado nome do pokemon
 
-    const types = pokeDetail.types.map((typeSlot)=>typeSlot.type.name)//converto a array/matris do pokeApi em uma array mais simples, types
+    const types = pokeDetail.types.map((typeSlot) => typeSlot.type.name)//converto a array/matris do pokeApi em uma array mais simples, types
     const [type] = types // pega o primeiro valor da array types, que nesse caso eh o primeiro tipo do pokemon, que vai ser o tipo principal
-    
+
     pokemon.types = types // linkado array dos tipos
     pokemon.type = type // linkado  tipo principal do pokemon
 
@@ -17,7 +17,7 @@ function convertPokeApiDetailToPokemon(pokeDetail){ //FUNCAO convertendo modelo 
     return pokemon;//retorna o pokemon com, nome,numero,tipos, tipo principal e foto do pokemon
 }
 
-  function convertPokemonToLi2(pokemon) {//inseri o pokemon nessa html
+function convertPokemonToLi2(pokemon) {//inseri os detalhes do pokemon nessa html
 
     return `
         <div class="pokemonDetail ${pokemon.type}">
@@ -75,8 +75,8 @@ function convertPokeApiDetailToPokemon(pokeDetail){ //FUNCAO convertendo modelo 
             
         </div>
         `
-}  
-function obterParametro(){
+}
+function obterParametro() {//pega o id do pokemon dentro da url e guarda na variavel parametro e retorna
     var urlParams = new URLSearchParams(window.location.search);
     var parametro = urlParams.get('parametro');
     return parametro
@@ -84,38 +84,15 @@ function obterParametro(){
 
 
 pokeApi2.GetDetail = () => {
-     //console.log(idPokemon)
+    //console.log(idPokemon)
     const para = obterParametro()
-    return fetch(`https://pokeapi.co/api/v2/pokemon/${para}/`)
-            .then((response) => response.json())
-            .then((detalhe)=>convertPokeApiDetailToPokemon(detalhe))
-    /* .then((detalhe)=>{
-        console.log(detalhe.types)
-    })  */ 
+    fetch(`https://pokeapi.co/api/v2/pokemon/${para}/`)
+        .then((response) => response.json())
+        .then((detalhe) => convertPokeApiDetailToPokemon(detalhe))
+        .then((detalhe) => {
+            const pokemon1 = convertPokemonToLi2(detalhe)
+            htmlpokemon.innerHTML = pokemon1
+        })
 
-
-      .then((detalhe)=>{
-        //abrindo outra janela
-        /* const modal = window.open('detail.html', 'modal', 'width=400,height=400');
-        modal.focus();  */
-        
-        //const pokemon00 = convertPokeApiDetailToPokemon(detalhe)
-        const pokemon1 = convertPokemonToLi2(detalhe)
-        htmlpokemon.innerHTML=pokemon1
-        
-
-
-        //const newHtml = pokemon1.join('') //nao compativel
-
-
-
-        //htmlpokemon.innerHTML += pokemon1 //correto
-        //console.log(pokemon1)
-        
-    })  
-
-
-    console.log('sucesso!'+idPokemon)
-    
 }
 pokeApi2.GetDetail()

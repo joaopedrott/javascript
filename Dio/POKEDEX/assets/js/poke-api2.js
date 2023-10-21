@@ -1,28 +1,28 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Pokemon</title>
-    <!-- normalize -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+const htmlpokemon = window.document.getElementById('content')
+const pokeApi2 = {}
 
-    <!--     font roboto      -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Roboto:wght@100;300;500;700&display=swap"
-        rel="stylesheet">
-    <!--     css      -->
-    <link rel="stylesheet" href="assets/css/global.css">
-    <link rel="stylesheet" href="assets/css/detail.css">
-</head>
-<body>
-    <section class="content">
-        <!-- <div class="pokemonDetail">
-            <span class="name">Bulbasaur</span>
-            <span class="number">#001</span>
+function convertPokeApiDetailToPokemon(pokeDetail){ //FUNCAO convertendo modelo da api de pokemons no nosso modelo
+    const pokemon = new Pokemon();// chamo a classe Pokemon criado no arquivo pokemon-model.js, para usar como modelo
+    pokemon.number = pokeDetail.id//linkado numero do pokemon. a partir de agora comeco a linkar o nosso pokemon modelo a api para facilitar inserir o pokemon no html
+    pokemon.name=pokeDetail.name // linkado nome do pokemon
+
+    const types = pokeDetail.types.map((typeSlot)=>typeSlot.type.name)//converto a array/matris do pokeApi em uma array mais simples, types
+    const [type] = types // pega o primeiro valor da array types, que nesse caso eh o primeiro tipo do pokemon, que vai ser o tipo principal
+    
+    pokemon.types = types // linkado array dos tipos
+    pokemon.type = type // linkado  tipo principal do pokemon
+
+    pokemon.photo = pokeDetail.sprites.other.dream_world.front_default // linkado foto do pokemon
+
+    return pokemon;//retorna o pokemon com, nome,numero,tipos, tipo principal e foto do pokemon
+}
+
+ function convertPokemonToLi(pokemon) {//inseri o pokemon nessa html
+
+    return `
+        <div class="pokemonDetail">
+            <span class="name">${pokemon.name}</span>
+            <span class="number">${pokemon.number}</span>
             <ol class="types">
                 <li class="type">Grass</li>
                 <li class="type">Poison</li>
@@ -73,8 +73,25 @@
                     </div>
                 
             
-        </div> -->
-    </section>
-    <script src="assets/js/poke-api2.js"></script>
-</body>
-</html>
+        </div>
+        `
+} 
+
+pokeApi2.GetDetail = (idPokemon) => {
+    console.log(idPokemon)
+
+    /* fetch(`https://pokeapi.co/api/v2/pokemon/${idPokemon}/`)
+    .then((response) => response.json())
+    .then((response) => console.log('sucesso!')) */
+
+
+
+
+    /* .then((pokemon) =>pokeApi2.convertPokeApiDetailToPokemon(pokemon))
+    .then((pokemon)=>{
+        const pokemon1 = convertPokemonToLi(pokemon)
+        //const newHtml = pokemon1.join('')
+        htmlpokemon.innerHTML += pokemon1
+    }) */
+    
+}

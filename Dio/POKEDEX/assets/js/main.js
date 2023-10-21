@@ -5,26 +5,32 @@ const maxRecords= 151;
 const limit = 10;
 let offset = 0;
 
+//const pokemonButton = window.document.getElementById('pokemon.number')
+
+function convertPokemonToLi(pokemon) {//inseri o pokemon nessa html
+
+    return `
+    <button id="${pokemon.number}" onclick="sucesso(${pokemon.number})">
+    <li class="pokemon ${pokemon.type}">
+            <span class="number">#${pokemon.number}</span>
+            <span class="name">${pokemon.name}</span>
+
+            <div class="detail">  
+                <ol class="types">
+                    ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
+                </ol>
+                
+                <img src="${pokemon.photo}" 
+                    alt="${pokemon.name}">
+
+            </div>
+        </li></button>`
+}
 
 function loadPokemonItens(offset, limit) {//faz requisicao de pokemons e inseri pokemons no html
+    
 
-    function convertPokemonToLi(pokemon) {//inseri o pokemon nessa html
-        return `
-        <li class="pokemon ${pokemon.type}">
-                <span class="number">#${pokemon.number}</span>
-                <span class="name">${pokemon.name}</span>
     
-                <div class="detail">  
-                    <ol class="types">
-                        ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
-                    </ol>
-                    
-                    <img src="${pokemon.photo}" 
-                        alt="${pokemon.name}">
-    
-                </div>
-            </li>`
-    }
 
 
     //2-chama a funcao getPokemons do objeto pokeApi do arquivo poke-api.js para fazer a requisicao.
@@ -68,6 +74,21 @@ loadMoreButton.addEventListener('click', ()=>{//aqui faz a chamada pelo botao lo
     }
     
 })
+
+function sucesso(idPokemon){
+    window.open("detail.html", "_blank");
+    pokeApi2.GetDetail(idPokemon);
+    
+    
+    //console.log(idPokemon)
+    //pokeApi.abrirPokemon
+    /* fetch(`https://pokeapi.co/api/v2/pokemon/${idPokemon}/`)
+    .then((response) => response.json()) */
+}
+
+/* pokemonButton.addEventListener('click', ()=>{
+    console.log('sucesso!')
+}) */
 
 // simplificando
 //simplificando o passo 4 com errow function em uma linha

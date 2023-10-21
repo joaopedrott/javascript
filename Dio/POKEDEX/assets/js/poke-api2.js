@@ -76,11 +76,17 @@ function convertPokeApiDetailToPokemon(pokeDetail){ //FUNCAO convertendo modelo 
         </div>
         `
 }  
+function obterParametro(){
+    var urlParams = new URLSearchParams(window.location.search);
+    var parametro = urlParams.get('parametro');
+    return parametro
+}
 
-pokeApi2.GetDetail = (idPokemon=132) => {
+
+pokeApi2.GetDetail = () => {
      //console.log(idPokemon)
-
-    return fetch(`https://pokeapi.co/api/v2/pokemon/${idPokemon}/`)
+    const para = obterParametro()
+    return fetch(`https://pokeapi.co/api/v2/pokemon/${para}/`)
             .then((response) => response.json())
             .then((detalhe)=>convertPokeApiDetailToPokemon(detalhe))
     /* .then((detalhe)=>{
@@ -92,11 +98,18 @@ pokeApi2.GetDetail = (idPokemon=132) => {
         //abrindo outra janela
         /* const modal = window.open('detail.html', 'modal', 'width=400,height=400');
         modal.focus();  */
-
+        
         //const pokemon00 = convertPokeApiDetailToPokemon(detalhe)
         const pokemon1 = convertPokemonToLi2(detalhe)
-        //const newHtml = pokemon1.join('')
-        htmlpokemon.innerHTML = pokemon1
+        htmlpokemon.innerHTML=pokemon1
+        
+
+
+        //const newHtml = pokemon1.join('') //nao compativel
+
+
+
+        //htmlpokemon.innerHTML += pokemon1 //correto
         //console.log(pokemon1)
         
     })  

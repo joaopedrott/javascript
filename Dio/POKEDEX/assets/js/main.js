@@ -139,8 +139,8 @@ function convertPokemonToLi2(pokemon) {//inseri o pokemon nessa html
 function sucesso(idPokemon){
     
 
-     pokeApi2.GetDetail(idPokemon)
-    
+     //pokeApi2.GetDetail(idPokemon)
+     window.location.href = "detail.html?parametro=" + idPokemon;
 
 
     /* .then((detalhe)=>{

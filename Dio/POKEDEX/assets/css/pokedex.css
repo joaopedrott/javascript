@@ -6,6 +6,11 @@
     margin: 0;
 
 }
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
 
 .normal {
     background-color: #a6a877;

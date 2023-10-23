@@ -10,6 +10,7 @@
  }
  .pokemonDetail .name {
     color: white;
+    text-transform: capitalize;
  }
 .pokemonDetail img {
     display: flex;

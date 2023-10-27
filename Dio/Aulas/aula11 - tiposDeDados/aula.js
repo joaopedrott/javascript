@@ -18,6 +18,14 @@
 // existem classes ou wrappers que representam os tipos primitivos para mudar valor da variavel 
 // true, false
 //new Boolean(true)
+//----------Exemplo-----------
+//console.log(!!'')// verificar se algo foi escrito, se tiver fazio ficara false se algo for inserido vira true
+//console.log(!!0)// para 0 retorna false, se for qualquer outro numero retorna true
+//----------Exemplo-----------
+const nome =' ';
+if(nome){ // verificar se algo foi escrito
+    console.log('preenchido')
+}
 //-----------------------------------
 //coercao de tipos
 //eh a convercao de tipos como:
@@ -85,3 +93,39 @@ console.log(x===y)// false */
 /* const x = Symbol('10')
 const y =x
 console.log(x===y)// true pois eh a mesma instancia dentro da outra */
+//------------------------------------------
+//Obejeto
+//Sao uma colecao dinamica de chave e valor
+//----------Exemplo-----------
+/* const pessoa ={
+    nome: "Renan",//atribuicao literal
+    idade: 30,//atribuicao literal
+    falar: function(){//atribuicao literal
+        console.log(`Meu nome e ${this.nome}`)
+    }
+} */
+//----------Exemplo-----------
+//atribuindo dinamicamente chave e valor ao objeto pessoa
+//pessoa['nome'] = 'Jose'//usando chave
+//console.log(pessoa.nome) // diretamente
+//console.log(pessoa['nome'])//ou usando chave
+//----------Exemplo-----------
+//atribuindo uma funcao dinamicamente ao objeto pessoa
+/* pessoa.falar = function(){ //atribuicao dinamica
+    console.log('teste')
+} */
+//----------Exemplo-----------
+//pessoa.falar()
+//----------Exemplo-----------
+//passando funcao como parametro
+//const y = pessoa.falar
+/* console.log(y) */
+//y()// Meu nome e undefined //ao passar a funcao como parametro a funcao no y, perde o contexto do this.nome nesse caso.
+//se for arrow function, nao teria contexto mesmo sem passar funcao como parametro
+
+//testes------------------------------------
+/* if(true){
+    var passouporaqui ='sim'
+}
+console.log(passouporaqui) */
+//console.log('10' + 20 -10)

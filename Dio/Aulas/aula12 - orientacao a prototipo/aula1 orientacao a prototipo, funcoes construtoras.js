@@ -51,4 +51,3 @@ const renan = new Pessoa('renan', 30)
 console.log(renan)
 renan.falar() 
 */
-//---------------------------------------------------

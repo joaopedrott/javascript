@@ -2,24 +2,23 @@
 //ex1 
 //1- criamos funcao construtora
 
-/* function Pessoa(nome, idade){
+ function Pessoa(nome, idade){
     this.nome= nome,
     this.idade = idade
-} */
+} 
 
-//2-incrementamos a funcao construtora/ ou classe Pessoa com o 
-//prototype com funcao falar
+//2-incrementamos a funcao construtora/ ou classe Pessoa com o prototype com funcao falar
 
-/* Pessoa.prototype.falar= function(){
+ Pessoa.prototype.falar= function(){
     console.log(`Meu nome eh: ${this.nome}`)
-} */
+} 
 
-/*
+
 // 3- criamos o objeto renan baseado na classe/funcao construtora Pessoa 
 
 const renan = new Pessoa('renan', 30) 
 renan.falar() // obs: o prototype que foi usado para incrementar a classe pessoa so serve para objeto
-console.log(renan)  */
+console.log(renan)  
 
 
  //2.2-criei um objeto
@@ -65,3 +64,65 @@ prototipos sao mecanismos pelo qual objetos javascript herdam recursos uns dos o
 
 /* console.log(renan.idade) */
 //---------------------------------------------------
+
+//resumindo**
+//---------------------------------------------------
+//resumindo
+//objeto e heranca e sobrescricao aula 1 e aula 2
+/*  const pessoa = {
+    genero: 'masculino',
+    idade:20
+}
+
+const renan = {//objeto renan herda de pessoa o genero
+    nome: 'renan',
+    idade:30,
+    __proto__: pessoa,//ligacao de heranca
+}
+
+console.log(renan.idade) */
+//---------------------------------------------------
+//outras formas de criar um objeto usando object.create e adicionando chave e valor ao objeto usando proto similar ao prototype da funcao construtora 
+//aula 3
+/* const pessoa = {
+    genero: 'masculino'
+}
+
+const renan= Object.create(pessoa)
+renan.nome= 'Renan'
+
+ renan.__proto__ = {
+    idade: 30
+} 
+console.log(renan.idade) */
+
+//---------------------------------------------------
+//classes ou funcoes construtoras aula 4
+/* function Pessoa(nome,idade){
+    this.nome= nome,
+    this.idade= idade
+}
+
+ //adicionar funcao ou metodo usamos prototype
+ Pessoa.prototype.falar = function(){
+    console.log('falando1') 
+}
+
+const joao = new Pessoa('joao',28)
+console.log(joao)
+joao.falar() 
+  */
+
+//------------------------------------------------------------------------------------
+//ou usando o call no lugar do new e um objeto no lugar do prototype
+
+/*  const joao= {
+    genero: 'masculino',
+    falar(){
+        console.log('teste 2')
+    }
+}
+Pessoa.call(joao,'joao',28)
+console.log(joao)
+joao.falar()  */
+//----------------------------------------------------------------------------------

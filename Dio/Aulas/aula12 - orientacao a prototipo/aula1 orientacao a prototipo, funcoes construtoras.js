@@ -20,17 +20,17 @@ console.log(renan.genero)
 //exemplo de funcao construtora
 //EX1
  // isso eh uma classe ou funcao construtora em javascript
-/* function Pessoa(nome,idade){
+ function Pessoa(nome,idade){
     this.nome = nome
     this.idade = idade
 
-} */
+} 
 
 //adicionando metodo a "classe" Pessoa
 //para adicionar vamos mudar o prototipo da Pessoa!
-/*  Pessoa.prototype.falar= function(){//funcao anonima ou sem nome
+  Pessoa.prototype.falar= function(){//funcao anonima ou sem nome
     console.log(`Meu nome e: ${this.nome}`)
-}   */
+}   
 
 //---------------------------------------------------
 //EX2
@@ -46,8 +46,8 @@ console.log(renan.genero)
     }
 } */
 
-/* 
+ 
 const renan = new Pessoa('renan', 30)
 console.log(renan)
 renan.falar() 
-*/
+

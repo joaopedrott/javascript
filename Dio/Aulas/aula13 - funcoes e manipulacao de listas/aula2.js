@@ -1,8 +1,9 @@
 //Aula 2 Declaracao explicita e arrow functions
+//A diferenca entre elas eh que na arrow function nao tem this ou contexto fora a sintaxe reduzida da arrow function
 
-//1 forma literal
+
 //ex
-function funcao1(){//funcao normal
+function funcao1(){//1 forma literal
     console.log(this)
 }
 
@@ -23,3 +24,4 @@ renan.funcao2()//vazio pq a arrow function nao tem o this ou contexto
 //Objeto e funcao
 
 //Quando uma funcao esta dentro de um objeto, a funcao assume o contexto do objeto e o this passa a ser o objeto
+

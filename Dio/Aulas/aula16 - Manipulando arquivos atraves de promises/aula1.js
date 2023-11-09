@@ -10,8 +10,8 @@ const filePath = path.resolve(__dirname, 'tarefas.csv')
 
 //1 cria fs
 const fs = require('fs')
-//
-// antigo desafado fs.readFile()
+//modulo para fazer a leitura eh esse fs ou file system
+// antigo defasado fs.readFile()
 
 //2 pede para ler o arquivo usando promise
 //jeito mais atual de pedir para ler o arquivo tarefas.csv com promises

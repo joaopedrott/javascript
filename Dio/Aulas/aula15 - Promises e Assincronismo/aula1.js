@@ -29,7 +29,7 @@ const promessaDeUmNumeroQualquer = new Promise((resolve, reject) => {
         resolve(numero)
     }, 1000)//mil milisegundos ou 1 segundo
 })
-
+console.log('Vai filhao!')
 //tratando a resposta da promessa
  promessaDeUmNumeroQualquer
     .then((value) => {
@@ -45,4 +45,7 @@ const promessaDeUmNumeroQualquer = new Promise((resolve, reject) => {
     .finally(()=>{
         console.log('Finalizou')
     })
- 
+ //obs
+ /*
+ na promise, se der certo ela executa o resolve e se der errado ela exacuta o reject
+ */

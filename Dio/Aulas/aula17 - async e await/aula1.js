@@ -32,3 +32,8 @@ buscarArquivo()
 /*
 Lembrar de usar o async antes do nome function e usar o await quando for pedir para ler o arquivo
 */
+
+/*
+Mais detalhes
+https://www.youtube.com/watch?v=q28lfkBd9F4
+*/

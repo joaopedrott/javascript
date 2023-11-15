@@ -1,8 +1,4 @@
- @font-face {
-    font-family: Neue;
-    src: url('/Dio/Portfolio/NeueMachina-Regular.otf');
 
-} 
 .header{
     display: flex;
     flex-direction: column;
@@ -17,7 +13,7 @@
 }
 
 .header .title{
-     font-family: Neue;
+    font-family: neue;
     text-align: center;
 
 }

@@ -1,8 +1,8 @@
-@font-face {
-    font-family:neue;
-    src: url('/Dio/Portfolio/assets/fonts/teste.ttf');
-} 
+ @font-face {
+    font-family: Neue;
+    src: url('/Dio/Portfolio/NeueMachina-Regular.otf');
 
+} 
 .header{
     display: flex;
     flex-direction: column;
@@ -17,7 +17,7 @@
 }
 
 .header .title{
-    font-family:neue;
+     font-family: Neue;
     text-align: center;
 
 }

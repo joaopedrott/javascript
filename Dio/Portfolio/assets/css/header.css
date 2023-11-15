@@ -1,0 +1,24 @@
+@font-face {
+    font-family:neue;
+    src: url('/Dio/Portfolio/assets/fonts/teste.ttf');
+} 
+
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header .photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    
+}
+
+.header .title{
+    font-family:neue;
+    text-align: center;
+
+}
+

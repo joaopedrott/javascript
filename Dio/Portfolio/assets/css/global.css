@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+body {
+    background-color: black;
+    color: white;
+}
+
+.main {
+    padding: 1rem;
+}

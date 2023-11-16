@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/*
+    em HTML eh id = em CSS eh # (So pode um elemento)
+    em HTML eh class= em CSS eh . (pode varios elementos)
+*/
+@font-face {
+    font-family: 'Neue';
+    src: url('assets/fonts/NeueMachina-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    /*
+    Tipos de format()
+    -opentype (otf)
+    -truetype (ttf)
+    -embedded-opentype
+    -truetype-aat (Apple Advanced Typography)
+    -svg
+    */
+}
+body {
+    background-color: #d6fde9;
+}
+
+h1 {
+    font-family:Neue ;
+    color: #1e402f;
+}
+h1#principal {
+    text-align: center;
+    background-color: #3c805e;
+    color: white;
+}
+
+
+h2 {
+    color: #3c805e;
+}
+
+.basico {
+   color:  #3c805e;
+}
+.intermediario {
+    color: #80763c;
+}
+.avancado {
+    color: #803c3c;
+}
+
+.destaque {
+    background-color: #c5c56070;
+}

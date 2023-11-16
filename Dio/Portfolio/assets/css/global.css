@@ -1,8 +1,5 @@
-@font-face {
-    font-family: neue;
-    src: url('/Dio/Portfolio/assets/fonts/NeueMachina-Regular.otf');
 
-} 
+
 * {
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;

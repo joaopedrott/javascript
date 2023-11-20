@@ -18,8 +18,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
+.header::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../img/icons/header.svg');
+}
+/* o .header::after com position absolute, fica fixo ao elemento pai mais proximo que esta com  position: relative, nesse caso o header*/
 .header .photo {
     width: 200px;
     height: 200px;
@@ -72,4 +86,30 @@
 }
 .information .phone::before{
     background-image: url('../img/icons/phone.svg');
+}
+/* adicionando media query para responsividade */
+
+@media only screen and (min-width: 768px) {
+    .header {
+        display: grid;
+        grid-template-areas: 
+        "photo title"
+        "photo information"
+        ;
+    }
+
+    .header .photo {
+        grid-area: photo;
+        margin: 0 auto;
+    }
+
+    .header .title {
+        grid-area: title;
+        text-align: start;
+        max-width: 210px;
+    }
+
+    .header .information {
+        grid-area: information;
+    }
 }

@@ -34,6 +34,8 @@
     background-image: url('../img/icons/header.svg');
 }
 /* o .header::after com position absolute, fica fixo ao elemento pai mais proximo que esta com  position: relative, nesse caso o header*/
+
+
 .header .photo {
     width: 200px;
     height: 200px;

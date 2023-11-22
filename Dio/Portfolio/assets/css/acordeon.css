@@ -41,18 +41,23 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-image: url('../img/icons/arrow.svg');
-    
+    transition: .25s; /* adicionando animacao */
 }
 .acordeon.open .trigger::after {
     transform: rotate(180deg);
 }
-.acordeon.open .content {
 
-    display: inline-block;
-}
 .acordeon .content {
-    display: none; 
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+}
+
+.acordeon.open .content {
+    display: inline-block;
+    padding: 0  1rem 1rem 2rem;
+    height: auto;
+    opacity: 1;
     
 }
-
-

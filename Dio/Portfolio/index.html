@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="assets/css/acordeon.css">
     <link rel="stylesheet" href="assets/css/languages.css">
     <link rel="stylesheet" href="assets/css/portfolio.css">
+    <link rel="stylesheet" href="assets/css/experience.css">
+    <link rel="stylesheet" href="assets/css/educacao.css">
 
 </head>
 
@@ -37,8 +39,12 @@
 
             <div class="information">
                 <p class="location">Penedo - AL</p>
-                <p class="phone">(82) 9 8104-3360</p>
-                <p class="email">joaoepedroguedestorres@gmail.com</p>
+                <p class="phone">
+                    <a href="tel:(82) 9 8104-3360">(82) 9 8104-3360</a>
+                </p>
+                <p class="email">
+                    <a href="mailto:joaopedroguedestorres@gmail.com">joaopedroguedestorres@gmail.com</a>
+                </p>
             </div>
         </header>
 
@@ -46,37 +52,84 @@
 <!-- aqui ficam as especializacoes -->
         <section class="acordeon">
             <button class="trigger" type="button">
-                    Idiomas
+                    <h2>Idiomas</h2>
             </button>
 
             <div class="content">
                 <ul class="languages">
                     <li>Portugues</li>
-                    <li>Ingles</li>
-                    <li>Italiano</li>
-                    <li>Espanhol</li>
+                    
                 </ul>
             </div>
         </section>
 <!-- aqui ficam o portfolio ou projetos -->
         <section class="acordeon">
             <button class="trigger" type="button">
-                Portfolio
+                <h2>Portfolio</h2>
             </button>
 
             <div class="content">
                 <ul class="portfolio">
                     <li>
-                        <span class="title github">Projeto Pokedex</span>
+                        <h3 class="title github">Projeto Pokedex</h3>
                         <a href="https://joaopedrott.github.io/Projeto-Pokedex/" target="_blank">https://joaopedrott.github.io/Projeto-Pokedex/</a>
                     </li>
                     <li>
-                        <span class="title github">Projeto Cordel</span>
+                        <h3 class="title github">Projeto Cordel</h3>
                         <a href="https://joaopedrott.github.io/projeto-cordel/" target="_blank">https://joaopedrott.github.io/projeto-cordel/</a>
                     </li>
                 </ul>
             </div>
         </section>
+<!-- experiancia profissional -->
+ <section class="acordeon">
+    <button class="trigger" type="button">
+            <h2>Experiencia Profissional</h2>
+    </button>
+
+    <div class="content">
+        <ul class="experience">
+            <li>
+                <h3 class="title">Front-end Developer  / dio.me</h3>
+                <p class="period">Jan 2020 - Current</p>
+                <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+            </li>
+
+            <li>
+                <h3 class="title">Front-end Developer  / Philips</h3>
+                <p class="period">Jan 2017 - 2020</p>
+                <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+            </li>
+            
+        </ul>
+    </div>
+</section>
+<!-- -------------------------------------------------------------------------------- -->
+<!-- Educacao -->
+<section class="acordeon">
+    <button class="trigger" type="button">
+        <h2>Educação</h2>
+    </button>
+
+    <div class="content">
+        <ul class="educacao">
+            <li>
+                <h3 class="title">Dio.me - Formação JavaScript Developer</h3>
+                <p>2023</p>
+            </li>
+            <li>
+                <h3 class="title">Curso em Video - HTML5 e CSS3</h3>
+                <p>2023</p>
+            </li>
+            <li>
+                <h3 class="title">Curso em Video - JavaScript</h3>
+                <p>2023</p>
+            </li>
+
+        </ul>
+    </div>
+</section>
+
     </div>
     <script src="assets/js/acordeon.js"></script>
 </body>

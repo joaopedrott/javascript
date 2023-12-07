@@ -1,1 +1,38 @@
 //Depois de terminar o meu portfolio, aqui vai aulas complementares de JavaScript
+//tire as suas duvidas sobre JavaScript - conceitos avancados
+
+
+//link da aula
+//https://www.youtube.com/watch?v=nvnV4nVlhP4&t=923s
+
+/* Existem alguns tipos  de comunicacao HTTP, sendo as mais conhecidas:
+
+* GET recupera informacoes;
+* POST envia informacoes;
+* PUT modifica informacoes;
+* DELETE apaga informacoes.
+ */
+
+/* Api Rest
+
+Eh um conjunto de restricoes de arquitetura atendidas pelas aplicacoes APIs sendo elas:
+*Sem estado - a aplicacao nao pode armazenar estados (stateless)
+*Ter um conjunto de operacoes definidas - verbos http;
+*Sintaxe universal atraves de URL - identificador uniforme de recurso
+*Uso de hipermidia - JSON, html, xml...
+ */
+
+/* 
+Funcoes assincronas
+
+As funcoes assincronas em javascript retornam uma Promise, ou promessa de algo, nesse nosso caso a promessa das informacoes de alguma pessoa usuaria do github.
+Porem as informacoes que buscamos podem nao estar prostas no momento da requisicao, entao teremos um impasse. Resolvemos usando a funcao assincrona.
+
+para resolver isso teremos que usar a funcao assincrona e pedir que ela esperae o consumo correto das informacoes.
+Em javascript usamos a funcao assincrona da seguinte forma:
+EX:
+async funciton nomeDaFuncao {
+
+}
+ */
+

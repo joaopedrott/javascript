@@ -1,0 +1,17 @@
+Fazendo orkut
+pt1 https://www.youtube.com/watch?v=12FuUrSQaMY&t=222s
+pt2 https://www.youtube.com/watch?v=0ajxYsE3nPg
+
+
+antes de aprender a fazer o orkut deve ter os seguintes requisitos
+1- saber oq eh flex box 
+https://www.youtube.com/watch?v=_VrqfG1ezP0&list=PLPFhNx6dMDJpokM--TiI3xDUR7mbRbrre&index=11
+
+2- seletores e propriedades
+https://www.youtube.com/watch?v=HuEADvyhork&list=PLPFhNx6dMDJpokM--TiI3xDUR7mbRbrre&index=16
+
+3- css grid
+https://www.youtube.com/watch?v=B6tkqmMw6lA&list=PLPFhNx6dMDJpokM--TiI3xDUR7mbRbrre&index=18
+---------------------------------------------------------
+obs: playlist DIO
+https://www.youtube.com/watch?v=D9Zk2YKBOl8&list=PLPFhNx6dMDJpokM--TiI3xDUR7mbRbrre

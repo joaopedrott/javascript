@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Orkut</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/login-responsive.css">
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 </head>
 <body>
-    
+    <div class="logo"><img src="imgs/orkut.svg" alt=""></div>
+    <div class="container">
+        <div class="fields">
+
+            <div class="fields__title">
+                <p id="field__title">Acesse o <span class="pink-font">orkut</span> com sua conta 
+                    <span style="color: rgba(18, 18, 242, 0.589);">G</span><span style="color: rgb(247, 0, 255);">o</span><span style="color: rgb(255, 170, 0);">o</span><span style="color: rgb(4, 4, 126);">g</span><span style="color: rgb(89, 89, 96);">l</span><span style="color: rgb(255, 0, 30);">e</span><span>!</span></p>
+            </div>
+
+            <div class="fields__textboxs">
+                <input type="email" name="" id="email" placeholder="E-mail ou numero de celular">
+                <input type="password" name="" id="field__pass" placeholder="Senha">
+            </div>
+
+            <div class="fields__remember">
+                <input type="checkbox" name="" id="field__remember">
+                <label for="field__remember">Lembrar sempre do meu acesso</label>
+            </div>
+
+            <div class="fields__buttons">
+                <button id="btnlogin">ENTRAR</button>
+            </div>
+            <div class="fields__recovery">
+                <a href="#">Esqueci senha ou e-mail</a>
+            </div>
+            <div class="fields__create">
+                <a href="#">Nao tem conta? <span class="pink-font">Criar agora</span></a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

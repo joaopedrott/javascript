@@ -1,0 +1,99 @@
+header.menu {
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: auto !important;
+}
+
+.container {
+    margin-top: 100px;
+
+    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+
+}
+
+.container :not(:first-child) {
+    margin-top: 10px;
+
+}
+
+
+.photo,
+.description,
+.counter__friend,
+.counter__communicty {
+    border: 1px solid green;
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    border-radius: 10px;
+    
+}
+
+.photo {
+    height: 500px;
+    border-top-right-radius: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    
+}
+.photo__avatar > img {
+    border-radius: 15px;
+}
+/* .photo > * {
+    border: 1px solid red;
+} */
+
+.photo__tools > div > i {
+    margin-right: 10px;
+}
+
+.photo__name >h1 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+
+.description {
+    height: 800px;
+    max-width: 520px;
+}
+
+.counter__friend,
+.counter__communicty {
+    height: 350px;
+    width: 340px;
+
+}
+
+/* .photo__tools__messages a,
+.photo__tools__editar a{
+    text-decoration: none;
+} */
+
+header > nav {
+    color: white;
+    display: flex;
+    border: 1px solid blue;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+header > nav > #title > h1 {
+    font-size: 50px;
+
+}
+
+header > nav > #hamburguer > label {
+    font-size: 30px;
+}

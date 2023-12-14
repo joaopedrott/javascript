@@ -1,0 +1,16 @@
+* meta tags
+
+
+ex
+
+<meta  name = "keywords" content="sites, web, desenvolvimento,html, design"> // palavras chave que definem seu site
+
+<meta name="description" content="Meta Tags - o que sao e como utiliza-las"> //texto para descricao do nosso site
+
+<meta http-equiv="content-language" content="pt-br"> // essa tag fala para os buscadores que tipo de linguagem esta o meu site
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"> //acemtuacao da pagina usando o charset
+
+<meta name ="author" content="Pablo Henrique"> // para dizer quem e o autor da pagina
+
+<meta http-equiv="refresh" content="5; url=http://novosite.com/"> // essa meta serve para redirecionar para outro link caso o site nao abra em 5 segundos

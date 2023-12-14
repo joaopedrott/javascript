@@ -1,0 +1,7 @@
+*Aula 2 o que e HTML
+
+HTML ou hipertext markup language (linguagem de marcacao de texto)
+
+E a estrutura basica do website, ele da significado e organiza as informacoes de uma pagina web
+
+a extensao do arquivo pode ser HTML ou HTM

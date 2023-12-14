@@ -1,0 +1,18 @@
+*Tags basicas
+
+h1,h2,h3,h4,h5,h6
+p - tags para definir um paragrafo
+a - tag de link, junto ao atributo href
+header - define um cabecalho
+section - define uma secao
+article - define um artigo
+
+ol - define uma lista ordenada
+ul - define uma lista nao ordenada
+li - define o item de uma lista
+form - define um formulario
+input - define os campos de um formulario
+textarea - define uma area para o usuario digitar
+button - define um botao
+img - permite inserir uma imagem ao seu documento 
+//obs: w3c html - documentacao para ajudar a pesquisar sobre as tags html

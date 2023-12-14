@@ -1,0 +1,5 @@
+aula 1 como funciona a web
+
+html eh o basico
+css modela e estiliza
+javascript cria os mecanismos ou interacoes

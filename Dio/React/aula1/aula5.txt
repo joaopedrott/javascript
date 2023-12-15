@@ -1,1 +1,19 @@
 listas
+
+1-listas ordenadas
+2-listas desordenadas / nao ordenada
+3-listas por definicao
+
+1-ex: <ol>
+
+2-ex: <ul>
+
+3-ex: dl,dt,dd
+<div>
+    <dl>
+        <dt>Sapo</dt>
+            <dd>Criatura verde e pegajosa</dd>
+        <dt>Coelho</dt>
+            <dd>Criatura quente e fofa</dd>
+    </dl>
+</div>

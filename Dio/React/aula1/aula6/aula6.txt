@@ -1,0 +1,4 @@
+tabelas
+Forma de melhor mostrar dados de forma organizada
+
+<table border ="1">

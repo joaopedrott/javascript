@@ -1,0 +1,22 @@
+HTML semantico
+
+o que e?
+Ea forma de deixar o site bem compreensivel e legivel para o computador, ajudante ate mesmo em busca no google e facilitando o entendimento de leitores de acessibilidade.
+
+por que utilizar?
+Para o site ser recomendado pelo motor de busca
+
+padrao do HTML
+<header>
+    <nav></nav>
+</header>
+
+<section>
+    <main>
+    </<main>
+    <figure>
+    </figure>
+</section>
+
+<footer>
+</footer>

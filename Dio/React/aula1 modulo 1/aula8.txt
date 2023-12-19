@@ -20,3 +20,6 @@ padrao do HTML
 
 <footer>
 </footer>
+
+obs: slides do modulo 2
+https://academiapme-my.sharepoint.com/:p:/g/personal/kawan_dio_me/EV0s8axKfstJg3i5fMHYzV0Bpwh2BnHPXJ5QsYyuB-0Pcg?e=vACWol

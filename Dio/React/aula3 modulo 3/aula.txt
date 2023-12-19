@@ -1,0 +1,44 @@
+aula 1 Css, o que e?
+
+chamado de Cascading Style Sheet.
+-------------------------------------------------------------------------
+aula2 o que e seletores
+
+tipo: h1
+classe: .
+id: #
+Seletores de atributos( com condicoes)
+a[title]{} toda tag a que tiver title vai ser estilizada
+a[href="google.ecom"] {} toda tag a que tiver esse href vai ser estilizada
+
+
+-------------------------------------------------------------------------
+aula 3 box models
+
+padding,border,margin
+-------------------------------------------------------------------------
+aula 4 flexbox
+
+E um modelo de layout unidimensional. Por ser unidimensional quer dizer que ele lida com o layout em uma dimensao de cada vez - seja uma linha ou coluna
+
+Para se utilizar o flexbox, e preciso ter em mente que todas as operacoes realizadas relacionam-se a dois eixos: o eixo principal e o eixo transversal. o Eixo principal e definido atraves da propriedade FLEX-DIRECTION e o eixo transversal encontra-se na direcao perpendicular a ele.
+flex-direction: row //vai ser em linha
+flex-direction: column //vai ser em coluna
+
+--------------------------------
+aula 5 pseudo-classes e elementos
+
+:hover
+:focus
+--------------------------------
+
+aula 6 media queries
+
+define para cada tipo de midia um tipo de Css
+
+--------------------------------
+obs: slides do modulo 3
+https://academiapme-my.sharepoint.com/:p:/g/personal/kawan_dio_me/EbRJmV0vDxJEhah1XbtFDxUBD2nJbNBx-xHJrH0PxcNogw?e=PrF30P
+
+
+

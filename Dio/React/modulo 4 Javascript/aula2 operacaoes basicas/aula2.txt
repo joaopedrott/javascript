@@ -1,0 +1,8 @@
+operacoes basicas
++ soma
+- subtracao
+* multiplicacao
+/ divisao
+% modulo(resto da divisao)
+++ incremento
+-- decremento

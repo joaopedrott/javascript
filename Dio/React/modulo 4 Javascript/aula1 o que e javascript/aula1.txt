@@ -1,0 +1,7 @@
+o que e javascript?
+linguagem de programacao criada por brendan eich
+
+*ES6 (ECMA) eh uma padrodinazao da linguagem.
+
+*ECMAScript eh o nome oficial do javascript
+

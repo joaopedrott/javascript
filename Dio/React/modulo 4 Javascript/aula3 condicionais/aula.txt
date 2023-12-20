@@ -1,0 +1,13 @@
+Estruturas condicionais basicas
+*if
+*else
+*switch
+*ternario
+
+Operadores logicos
+* &&  and (e)
+*|| or (ou)
+*== === igual
+*!= ou !== diferente
+* > Maior que
+* < Menor que

@@ -1,0 +1,3 @@
+Array
+
+Sao geralmente descritas como "lista de objetos"

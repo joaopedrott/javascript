@@ -1,0 +1,12 @@
+Funcionalidades do ES6+
+
+-Filter
+-Find
+-FindIndex
+-Reduce
+-Some
+-every
+
+
+slide
+https://docs.google.com/presentation/d/1rtEGg66BzrHDlIOaeSoOtvRCJUnvGPjk/edit?pli=1#slide=id.p2

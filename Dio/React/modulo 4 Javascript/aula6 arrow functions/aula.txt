@@ -1,0 +1,2 @@
+functions 
+eh um subprograma que pode ser chamado por um codigo externo (ou interno no caso de recursao)

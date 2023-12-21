@@ -1,0 +1,7 @@
+Aula 5 Lacos de repeticoes
+for
+while
+foreach
+map
+
+do while

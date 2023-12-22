@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexBox</title>
+    <style>
+        body {
+            background-color: blue;
+        }
+
+        
+        .flex {
+            display: flex;
+        }
+        .item {
+            width: 80px;
+            height: 80px;
+            background-color: blueviolet;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin: 10px;
+            padding: 10px;
+            
+        }
+        
+        .item:hover {
+            background-color: red;
+            cursor: pointer;
+        }
+
+        .item:first-child:hover, .item:last-child:hover {
+            background-color: green;
+        }
+        input:focus {
+            color: red;
+            background-color: gainsboro;
+        }
+        @media (max-width: 450px) {
+            body {
+            background-color: green;
+        }
+        .flex {
+            flex-direction: column;
+        }
+        }
+    </style>
+</head>
+<body>
+    <hr />
+    <h2 id="title">FlexBox</h2>
+    <div class="flex" id="lista">
+        <div class="item">a</div>
+        <div class="item">b</div>
+        <div class="item">b</div>
+        <div class="item">b</div>
+        <div class="item">b</div>
+        <div class="item">c</div>
+    </div>
+    <div>
+        <input name="email">
+        <button onclick="window.document.getElementById('title').remove()">Remover</button>
+    </div>
+</body>
+</html>

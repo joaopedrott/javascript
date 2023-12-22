@@ -1,0 +1,10 @@
+DOM nao eh uma linguagem de programacao, mas sem ele, a linguagem javascript nao teria nenhum modelo ou nocao de paginas web, paginas XML, e elementos com os quais ela geralmente lida. Cada elemento de um documento faz parte do Document Object Model, para que possam ser acessados e manipulados usando o DOM e uma linguagem de script, como javascript.
+
+-operacoes basicas
+-getElementByTagName
+-getElementByClassName
+-GetelementById
+-querySelector
+
+slide
+https://academiapme-my.sharepoint.com/:p:/g/personal/kawan_dio_me/EduxRKtpSk1AntdcjH-LTmUBiyvpXZKrTqWqdBIkgIZPng?rtime=HZzi6_4C3Eg

@@ -1,0 +1,4 @@
+Entendendo DOM
+DOCUMENTO OJBECT MODEL
+interface de programacao. E a representacao de dados dos objetos que compoe a estrutura e o conteudo de um documento na web. O Document Object Model (DOM) e uma interface de programacao para os documentos HTML e XML.
+Representa a pagina de forma que os programas possam alterar a estrutura do documento, alterar o estilo e conteudo.O DOM representa o documento com nos e objetos. (arvore DOM)

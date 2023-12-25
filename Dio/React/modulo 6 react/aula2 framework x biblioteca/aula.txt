@@ -1,0 +1,18 @@
+biblioteca
+eh um recurso mais utilizado no mundo da programacao.
+EX:
+- Moment.js
+- Chart.js
+- Voca
+- mo.js
+- React
+
+Framework 
+Nada mais e do que uma ferramenta que vai te ajudar a ter como unico objetivo focar em desenvolver o projeto, nao em detalhes de configuracoes. (algo mais elaborado, padrao, documentacao)
+Ex:
+- Angular
+- Vuex
+- Ionic
+- Next
+- Express
+- LoopBack

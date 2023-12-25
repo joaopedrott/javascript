@@ -1,0 +1,4 @@
+o que e o react?
+Ele e uma Biblioteca javascript para criacao de interface do usuario.
+(facilitar a criacao de interface e interacao do usuario e ganhar tempo no desenvolvimento)
+

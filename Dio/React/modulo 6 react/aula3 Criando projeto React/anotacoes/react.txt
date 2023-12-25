@@ -1,0 +1,8 @@
+Para criar um projeto React
+1-no terminal digitar:
+create-react-app dio(nome do projeto)
+2- y (para aceitar o processeguir)
+
+3-no terminal do projeto React, para abrir ele em um servidor:
+abrir o terminal
+digitar: npm run start

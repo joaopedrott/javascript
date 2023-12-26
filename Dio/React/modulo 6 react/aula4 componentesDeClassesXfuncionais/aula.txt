@@ -1,0 +1,5 @@
+Componentes sao tudo que tem no site inclusive o site eh um componente, a ideia eh criar componentes e reutilizar codigo
+
+Existem duas formas de criar componentes: componentes de classes e componentes funcionais
+
+Componentes funcionais sao melhores que componentes de classes

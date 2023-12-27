@@ -1,1 +1,27 @@
 Ciclo de vida de um componente
+
+0-construtor (iniciar a construcao dele)
+
+1- getDerivedStateFromPros
+
+
+2-ComponentDidMount
+
+
+3-shouldComponentUpdate
+
+
+4-render
+
+
+5-getSnapshotBeforeUpdate
+
+
+6-componentDidUpdate
+
+
+7-componentWillUnmount
+
+
+slide
+https://academiapme-my.sharepoint.com/:p:/g/personal/kawan_dio_me/ETZ-IV2ASBdPogTOomrQynABvzw8B0X6jbYyz7RZgN-tUA?rtime=2G3ZYOsG3Eg

@@ -1,10 +1,10 @@
 
-import {Container} from './styles'
+import {Container,Content} from './styles'
 
 const App =()=> {
   return (
     <Container>
-      Ola
+      <Content>Olaee</Content>
     </Container>
   );
 }

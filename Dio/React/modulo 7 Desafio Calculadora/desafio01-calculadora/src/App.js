@@ -4,7 +4,7 @@ import {Container} from './styles'
 const App =()=> {
   return (
     <Container>
-      Ola
+      Olas
     </Container>
   );
 }

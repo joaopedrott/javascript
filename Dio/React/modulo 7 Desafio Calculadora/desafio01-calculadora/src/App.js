@@ -9,8 +9,8 @@ import { useState } from 'react'
 
 const App = () => {
   const [currentNumber, setCurrentNumber] = useState('0');
-  const [firstNumber,setFirstNumber] = useState('0');
-  const [operation,setOperation] = useState('');
+  const [firstNumber, setFirstNumber] = useState('0');
+  const [operation, setOperation] = useState('');
 
   const handleOnClear = () => {
     setCurrentNumber('0');
@@ -26,16 +26,28 @@ const App = () => {
     if(firstNumber==='0'){
       setFirstNumber(String(currentNumber));
       setCurrentNumber('0');
+      setOperation('+');
     } else {
       /* console.log(firstNumber, Number(currentNumber)); */
       const sum = Number(firstNumber) + Number(currentNumber);
       setCurrentNumber(String(sum));
       setFirstNumber('0');
-      setOperation('');
+      
       /* console.log(sum) */
     }
   }
 
+  const handleEquals = () => {
+    if(firstNumber !== '0' && operation !== '' && currentNumber !== '0'){
+      switch(operation){
+        case '+':
+          handleSumNumbers();
+          break;
+        default:
+          break;
+      }
+    }
+  }
   
  
   return (

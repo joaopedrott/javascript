@@ -15,8 +15,16 @@ export const Content = styled.div`
     background-color: #FFFFFF;
     width: 50%;
 
-
 `
+export const Title = styled.h1`
+    display: flex;
+    color: white;
+    font-family: 'Roboto';
+ 
+    justify-content: center;
+    background-color: black;
+`
+
 
 export const Row = styled.div`
     display: flex;

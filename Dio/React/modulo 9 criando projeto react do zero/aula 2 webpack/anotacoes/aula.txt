@@ -1,0 +1,3 @@
+webpack 
+Module bundler ou empacotador de modulos para javascript
+Ele junta todos os arquivos criados em um arquivo so de forma organizada

@@ -20,16 +20,16 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif)$/i,
-                use: ["file-loader" ]
+                use: ["file-loader"]
             },
         ]
     },
     resolve: {
         extensions: [".js", ".jsx"],
     },
-    plugin : [
-        new HtmlWebPackPlugin ({
-            template: ".public/index.html",
+    plugins : [
+        new HtmlWebPackPlugin({
+            template: "./public/index.html",
         }),
     ],
 };

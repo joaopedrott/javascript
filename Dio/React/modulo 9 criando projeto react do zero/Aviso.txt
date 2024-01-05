@@ -1,0 +1,3 @@
+Este modulo eh somente para mostrar e explicar oque acontece por baixo dos panos quando usamos comando no terminal:
+yarn creacte react-app nomeDoProjeto
+ Neste modulo aprendemos oq acontece com esse create react-app instalando dependencias passo a passo e inserindo manualmente arquivos .js .html e criando pastas como src e public

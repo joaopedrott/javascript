@@ -1,0 +1,4 @@
+Babel
+Configurar o Babel
+E um transpilador javascript de codigo aberto e gratuito.
+A principal caracteristica dele eh converter o codigo javascript para uma versao que todos os navegadores entendam

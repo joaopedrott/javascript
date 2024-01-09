@@ -1,0 +1,4 @@
+Componentes de classes e funcionais
+
+obs: hoje em dia componente de classe nao e mais utilizado
+componente funcional usa o useState

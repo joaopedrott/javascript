@@ -1,0 +1,7 @@
+ciclo de vida
+
+utilizando o useState para a mudanca de estado de um componente logo apos eu posso user o useEffect para um efeito colateral ou seja se caso useState for atualizado o useEffect vai fazer algo
+* outra coisa sobre o cilco de vida eh que todo o componente vai ser atualizado a nao ser que separemos o componente para somente atualizar quando for necessario e somente atualizar componentes que precisam ser atualizados.
+
+slade:
+https://academiapme-my.sharepoint.com/:p:/g/personal/kawan_dio_me/EdgT2prq695Fp05BdBDLsGkBShmWAq3FOcCYf0JOUM0ILA?rtime=ccGQr-4R3Eg

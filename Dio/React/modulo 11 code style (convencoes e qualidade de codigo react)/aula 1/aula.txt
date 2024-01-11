@@ -5,3 +5,22 @@ No modulo 11
 
 E uma ferramenta para analise de codigo, uma extensao dentro do VScode que identifica erros quanto ao padrao de escrita que definimos.
 
+    Instalando...
+    no terminal da pasta do projeto react:
+1- digitar no terminal npx eslint --init
+responder as perguntas com as seguintes respostas:
+1- To check syntax, find problems, and enforce code style
+2- JavaScript modules (import/export)
+3- React
+4- Does yor project use TypeScript? No
+5- Browser
+6- Use a popular style guide > Airbnb
+7- Json
+8- Yes > Yarn
+    logo apos isso, so ir no arquivo chamado: .eslintrc.json e adicionar uma linha de codigo:
+
+    "rules": {
+            "react/react-in-jsx-scope": "off"
+        }
+
+Pronto, eslint instalado no projeto react!

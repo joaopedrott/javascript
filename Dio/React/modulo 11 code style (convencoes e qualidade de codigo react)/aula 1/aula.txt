@@ -1,0 +1,7 @@
+No modulo 11
+(conhecer boas praticas em organizacao e qualidade de codigo)
+
+* eslint
+
+E uma ferramenta para analise de codigo, uma extensao dentro do VScode que identifica erros quanto ao padrao de escrita que definimos.
+

@@ -2,3 +2,5 @@ Componentes de classes e funcionais
 
 obs: hoje em dia componente de classe nao e mais utilizado
 componente funcional usa o useState
+
+obs: fiz o codigo no caminho: modulo 9 criando projeto react do zero\aula 1 babel\projeto

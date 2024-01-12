@@ -1,0 +1,28 @@
+Prettier
+
+E um formatador de codigo, ajuda que o nosso codigo seja padronizado e facil de entender.
+1-fazendo a instalacao no terminal, digitar:
+* yarn add eslint-config-prettier eslint-plugin-prettier prettier -D
+
+2-Depois de instalar o Prettier, vamos no arquivo .eslintrc.json e modiricar o extends
+assim:
+"extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:prettier/recommended",
+        "airbnb"
+    ],
+
+3- Depois criamos um arquivo de nome .prettierrc na pasta do projeto fora de todas as pastas junto com package.json, yarn.lock e .eslintrc.json
+
+4- dentro deste arquivo .prettierrc vamos adicionar essa configuracao:
+
+{
+    "semi": true,
+    "tabWidth": 4,
+    "printWidth" : 100,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "jsxBracketSameLine": true
+
+}

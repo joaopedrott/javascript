@@ -3,7 +3,7 @@ No modulo 11
 
 * eslint
 
-E uma ferramenta para analise de codigo, uma extensao dentro do VScode que identifica erros quanto ao padrao de escrita que definimos.
+E uma ferramenta para analise de codigo, uma extensao dentro do VScode que identifica erros tanto de escrita, sintaxe e formatacao dentro do codigo.
 
     Instalando...
     no terminal da pasta do projeto react:

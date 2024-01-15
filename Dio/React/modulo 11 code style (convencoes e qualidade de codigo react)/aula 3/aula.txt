@@ -1,0 +1,14 @@
+Editor config
+
+E um plugin que obriga o editor de codigo a seguir a mesma forma de escrita.
+
+Para inserir o editor config no projeto precisamos primeiro adicionar um arquivo na pasta principal do projeto (assim como o arquivo .eslintrc e .prettier) com o nome .editorconfig com as seguintes configuracoes(por exemplo):
+
+root=true
+end_of_line = lf
+insert_final_newline = true
+indent_size = 4
+
+obs: Lembrando que nao precisa instalar nada pelo terminal, somente criar o arquivo e escrever as configuracoes nele.
+
+

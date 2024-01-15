@@ -1,6 +1,6 @@
 Prettier
 
-E um formatador de codigo, ajuda que o nosso codigo seja padronizado e facil de entender pelos desenvolvedores.
+E um formatador de codigo, ajuda que o nosso codigo seja padronizado e facil de entender pelos desenvolvedores padronizando o codigo entre editores.
 
 1-fazendo a instalacao no terminal, digitar:
 * yarn add eslint-config-prettier eslint-plugin-prettier prettier -D

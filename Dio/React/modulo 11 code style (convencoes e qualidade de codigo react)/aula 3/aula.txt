@@ -11,4 +11,5 @@ indent_size = 4
 
 obs: Lembrando que nao precisa instalar nada pelo terminal, somente criar o arquivo e escrever as configuracoes nele.
 
-
+slide:
+https://academiapme-my.sharepoint.com/:p:/g/personal/kawan_dio_me/EZksoicyOBRCsefoOIyaE-EBdcmo1P5XoUSAzLPX8VyMoQ?rtime=B5ZiUdwV3Eg

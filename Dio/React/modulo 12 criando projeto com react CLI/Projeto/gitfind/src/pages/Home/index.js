@@ -1,5 +1,6 @@
 import { Header } from '../../components/Header';
 import background from '../../assets/background.png'
+import ItemList from '../../components/ItemList'
 import './styles.css'
 function App() {
   return (
@@ -21,6 +22,12 @@ function App() {
             </div>
           </div>
           <hr/>
+          <div>
+            <h4 className='repositorio'>Repositorios</h4>
+            <ItemList title="fisiotheapp-challenge" description="Full Stack Developer web and mobile, passionate to javascript and all your ecosystem."/>
+            <ItemList title="fisiotheapp-challenge" description="Full Stack Developer web and mobile, passionate to javascript and all your ecosystem."/>
+            <ItemList title="fisiotheapp-challenge" description="Full Stack Developer web and mobile, passionate to javascript and all your ecosystem."/>
+          </div>
         </div>
       </div>
     </div>

@@ -71,3 +71,11 @@ button {
     font-size: 12px;
     margin: 20px 0 0 0;
 }
+
+.repositorio {
+    font-size: 38px;
+    color: white;
+    margin: 12px 0;
+    text-align: center;
+    font-family: 'Inter', 'Roboto', 'Arial';
+}

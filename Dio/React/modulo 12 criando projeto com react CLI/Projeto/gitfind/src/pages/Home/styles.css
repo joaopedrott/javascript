@@ -20,6 +20,7 @@
 }
 
 input {
+    color: white;
     border: 1px solid #999999;
     border-radius: 22px;
     min-width: 250px;
@@ -40,10 +41,14 @@ button {
     font-size: 18px;
     padding: 10px;
 }
+button:hover {
+    background: #999999;
+}
 
 .perfil {
     display: flex;
     margin: 40px 0;
+    font-family: 'Inter', 'Roboto', 'Arial';
 }
 
 .profile {
@@ -70,6 +75,7 @@ button {
     color: #999999;
     font-size: 12px;
     margin: 20px 0 0 0;
+    
 }
 
 .repositorio {

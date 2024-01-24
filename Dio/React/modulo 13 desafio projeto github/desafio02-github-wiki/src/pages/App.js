@@ -31,6 +31,13 @@ function App() {
       
   }
   
+  const hangleRemoveRepo=(id)=>{
+    
+    const result = repos.filter(repo=> repo.id!==id);
+    setRepos(result)
+
+    //console.log('Removendo registro', id)
+  }
 
   
   return (
@@ -38,7 +45,7 @@ function App() {
       <img src={gitlogo} width ={72} height={72} alt="github logo"/>
       <Input value={currentRepo} onChange={(e)=>setCurrentRepo(e.target.value)}/>
       <Button onClick={handleSearchRepo}/>
-      {repos.map(repo => <ItemRepo repo={repo}/>)}
+      {repos.map(repo => <ItemRepo repo={repo} hangleRemoveRepo={hangleRemoveRepo}/>)}
       
     </Container>
   );

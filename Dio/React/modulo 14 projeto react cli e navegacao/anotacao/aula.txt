@@ -1,10 +1,14 @@
 aula 1
 React CLI (CRA)eh um ambiente ou ferramenta para projetos react nao precisarem fazer configuracoes do projeto do ZERO para ganhar tempo.
 
+
+
 aula 2 criando projeto e excluindo arquivos desnecessarios
 https://create-react-app.dev/
 
 https://create-react-app.dev/docs/getting-started
+
+
 
 
 aula 3 adicionando navegacao
@@ -12,3 +16,5 @@ https://v5.reactrouter.com/web/guides/quick-start
 
  dentro do projeto, no terminal:
  yarn add react-router-dom
+ obs: olhar o slide, principalmente Links Uteis
+

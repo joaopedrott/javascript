@@ -1,0 +1,14 @@
+aula 1 
+O que e styled components?
+eh uma biblioteca que permite escrever codigo css dentro do javascript. Com ele, voce pode criar websites bonitos e funcionais, alem disso, ganhar mais agilidade e precisao no desenvolvimento web.
+
+aula 2
+instalacao dentro do projeto, no terminal:
+yarn add styled-components
+
+obs: site da documentacao do styled component
+https://styled-components.com/docs/basics#installation
+
+OSB: o styled component desse modulo 15 foi instalado no projeto do modulo 14 para reaproveitar codigo.
+
+aula 3: conhecendo a aplicacao e construindo components

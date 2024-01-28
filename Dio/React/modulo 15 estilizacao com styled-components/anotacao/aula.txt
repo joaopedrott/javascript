@@ -12,3 +12,7 @@ https://styled-components.com/docs/basics#installation
 OSB: o styled component desse modulo 15 foi instalado no projeto do modulo 14 para reaproveitar codigo.
 
 aula 3: conhecendo a aplicacao e construindo components
+o projeto feito na aula, foi feito na pasta projeto do modulo 14 para reaproveitar codigo e foi usado o figma como exemplo de interface
+
+figma:
+https://www.figma.com/file/fvjQQNtqaUdpuNixvCZVav/DIO-CLONE?node-id=1%3A20&mode=dev

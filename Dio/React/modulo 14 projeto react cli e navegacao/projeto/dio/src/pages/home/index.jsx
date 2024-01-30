@@ -19,7 +19,7 @@ const Home = () => {
             <TextContent>
                 Domine as tecnologias utilizadas pelas empresas mais inovadoras do mundo e encare o seu novo desafio profissional, evoluindo em comunidade com os melhores experts.
             </TextContent>
-            <Button title="Comecar agora" variant="secpmdary" onClick={()=>null}/>
+            <Button title="Comecar agora" variant="secondary" onClick={()=>null}/>
         </div>
         <div>
           <img src={bannerImage} alt="Imagem principal" />  

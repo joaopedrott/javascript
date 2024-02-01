@@ -1,0 +1,72 @@
+Hooks
+aula1 o que sao hooks?
+
+na versao 16.8 do react, foram lancado os HOOKS, que permitem o uso de varios recursos de forma simples atraves de funcoes. Eles tambem ajudam a organizar a logica utiliozada dentro dos componentes.
+
+Os Hooks sao:
+-useState
+-useEffect
+-useMemo
+-useCallback
+
+aula 2 useState
+
+import { useState } from 'react'
+import { Button } from '../components/Button';
+
+
+const Teste=()=> {
+
+ /*
+ modulo 16 useState kooks ex: 1
+
+ //Exemplo de uso de useState para guardar o nome digitado e em seguida o nome eh imprimido no console
+    const [nomes, setNomes] = useState([]);
+    const [nome, setNome] = useState('');
+  
+    function handleInputChange(event) {
+      setNome(event.target.value);
+    }
+  
+    function handleAddButtonClick() {
+      const newNomes = [...nomes];
+      newNomes.push(nome);
+      setNomes(newNomes);
+      setNome('');
+    }
+  
+    function handlePrintButtonClick() {
+      console.log(nomes);
+    }
+  
+    return (
+      <div>
+        <input value={nome} onChange={handleInputChange}/>
+        <button onClick={handleAddButtonClick}>Adicionar</button>
+        <button onClick={handlePrintButtonClick}>Imprimir</button>
+      </div>
+    ); */
+//-------------------------------------------------------------------
+    /* //modulo 16 useState kooks ex: 2
+     const [name, setName] = useState('Pablo');
+
+
+    const handleChangeName =()=>{
+        setName('Jose')
+    }
+    return (
+    <div>
+        <p>
+            {name}
+        </p>
+        <button onClick={handleChangeName}>Alterar</button>
+    </div>
+  ) */
+  
+} 
+
+export { Teste }
+-------------------------------------------------------------------------------------------------------
+
+
+aula 3 useEffect

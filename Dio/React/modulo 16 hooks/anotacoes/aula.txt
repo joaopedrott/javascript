@@ -70,3 +70,12 @@ export { Teste }
 
 
 aula 3 useEffect
+trabalha com o ciclo de vida de um componente.
+Vamos supor que vamos pegar o useState name e colocar ele no useEffect [name], assim que o name for alterado, o useEffect ira executar o comando alert dentro dele.
+
+Exemplo:
+useEffect(()=>{
+  alert('renderizei')
+},[name]);
+
+e se colocar um return dentro do useEffect, podemos executar algo quando um componente for encerrado, neste caso o name.

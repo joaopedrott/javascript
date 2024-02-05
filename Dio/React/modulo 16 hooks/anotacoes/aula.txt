@@ -79,3 +79,78 @@ useEffect(()=>{
 },[name]);
 
 e se colocar um return dentro do useEffect, podemos executar algo quando um componente for encerrado, neste caso o name.
+-------------------------------------------------------------------------------------------------------
+aula 4 useMemo
+obs: quando temos aplicacoes grandes temos que nos preocupar com desempenho/perfomace ai precisamos usar o useMemo
+obs1: referencia a variaveis (const,var, let)
+obs2: Gerencia renderizacoes de variaveis no componente
+
+import { useState, useEffect, useMemo } from 'react'
+import { Button } from '../components/Button';
+
+
+const Teste=()=> {
+  const [age, setAge] = useState(26);
+
+
+  const handleChangeName =()=>{
+    setAge(prev => prev === 26? 32:26)
+  }
+
+  const calculo =useMemo(()=>{
+    console.log('calculou',age)
+    return 10 * age;
+  },[age]);
+
+  console.log('renderizou', calculo);
+  return (
+  <div>
+      <p>
+          {age}
+      </p>
+      <button onClick={handleChangeName}>Alterar</button>
+  </div>
+)
+} 
+
+export { Teste }
+----------------------------------------------------------------------------------------
+aula 5 useCallback
+obs: referencia de funcao
+obs: useCallback e semelhante a useMemo mas no useCallback devemos usar quando a funcao tiver mais mais de uma funcao alem de calcular e no useMemo eh usado em uma funcao de somente calcular uma variavel seja Const, Var ou Let.
+obs2: Gerencia renderizacoes de funcoes no componente
+
+const [age, setAge] = useState(26);
+  const [name, setName] = useState('Pablo');
+
+  const handleChangeName =useCallback(()=>{
+    console.log('Alterou nome')
+    setName(prev => prev === 'Pablo'? 'Jose':'Pablo')
+  },[])
+  
+  const handleChangeAge = useCallback(()=>{
+    const newAge = 10* age;
+    console.log('age atual ',age,'age final ', newAge)
+    setAge(prev => prev === 26? 32:26)
+  },[age])
+
+ 
+
+  return (
+  <div>
+      <p>
+          Idade: {age}
+      </p>
+      <br />
+      <p>
+        Nome: {name}
+      </p>
+      <br />
+      <button onClick={handleChangeName}>Alterar Nome</button>
+      <br />
+      <button onClick={handleChangeAge}>Alterar Idade</button>
+  </div>
+)
+
+//slide
+//https://academiapme-my.sharepoint.com/:p:/g/personal/kawan_dio_me/EWb58n577MZAnbUE5r_agUwBYcfjau7ZshNOHxEM1kMYeA?rtime=XvZVCGEm3Eg

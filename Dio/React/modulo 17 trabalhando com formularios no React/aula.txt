@@ -1,0 +1,7 @@
+Aula 1 React hook forms
+Vamos fazer pagina e furmularios de cadastro no projeto do modulo 14, para isso vamos utilizar o react hook forms.
+Dentro do projeto, no terminal digitar: 
+npm install react-hook-form ou yarn add react-hook-form para instalar o react hook form no projeto para assim utilziar ele na criacao de formularios no react.
+
+e para validacao dos formularios, usamos o yup
+npm install @hookform/resolvers yup ou yarn add @hookform/resolvers yup

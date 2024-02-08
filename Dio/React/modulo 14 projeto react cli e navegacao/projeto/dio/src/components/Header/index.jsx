@@ -15,9 +15,16 @@ import {
     UserPicture
 
 } from './styles'
-
+import { useNavigate } from 'react-router-dom';
 
 const Header=({autenticado})=> {
+    const navigate = useNavigate();
+    const handleClickLogin=()=>{
+        navigate('/login')
+    }
+    const handleClickRegister=()=>{
+        navigate('/register')
+    }
   return (
     <Wrapper>
         <Container>
@@ -40,8 +47,8 @@ const Header=({autenticado})=> {
                     <UserPicture src="https://avatars.githubusercontent.com/u/13596247?v=4"/>
                 </>): (<>
                     <MenuRight href='$'> </MenuRight>
-                <Button title="Entrar"/>
-                <Button title="Cadastrar"/>
+                <Button onClick={handleClickLogin} title="Entrar"/>
+                <Button onClick={handleClickRegister} title="Cadastrar"/>
                 </>)}
 
             </Row>

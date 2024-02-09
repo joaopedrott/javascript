@@ -1,1 +1,7 @@
 https://www.youtube.com/watch?v=baElf-x3iH4&t
+
+
+useMemo: guarda somente um valor de uma variavel para que o valor nao seja gerado novamente depois de uma re execucao do codigo sem necessidade e ja forneca o valor de forma mais rapida
+useCallback: guarda uma funcao para que ela nao execute quando nao for chamada
+useRef: preciso estudar
+useContext: preciso estudar

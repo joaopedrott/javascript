@@ -1,0 +1,4 @@
+o porque usar o typescript?
+O typescript nos traz diversos beneficios, mas podemos destacar o potencial de deteccao de erros durante o desenvolvimento de projetos e a possibilidade de incluir a inteligencia de IDE que esta sendo usada. Isso reflete num ambiente muito mais agil e seguro enquanto o codigo esta sendo digitado pelo usuario.
+
+E alem de ser uma linguagem fortemente tipada, trazendo varios conceitos de orientacao a objetos como: classes, herancas, emcapsulamento interfaces ...

@@ -1,0 +1,54 @@
+Conceitos basicos do typescript
+
+EX:
+---------------------
+Tipagem estatica:
+const nome: string= 'Pablo'
+const idade: number = 26;
+const ativo: boolean=false;
+---------------------
+inferencia de tipos:
+const nome= 'Pablo'
+const idade = 26;
+const ativo=false;
+------------------------------------------
+interfaces:
+
+interface IUsuario {
+    nome: string;
+    idade: number;
+    ativo: boolean;
+}
+const usuario: IUsuario ={
+    nome: 'Pablo',
+    idade: 22,
+    ativo: true
+}
+------------------------------------------
+types:
+type IUsuario {
+    nome: string;
+    idade: number;
+    ativo: boolean;
+}
+const usuario: IUsuario ={
+    nome: 'Pablo',
+    idade: 22,
+    ativo: true
+}
+------------------------------------------
+enum:
+enum CARGO {
+    DESENVOLVEDOR = 'desenvolvedor'
+}
+
+const usuario = {
+    nome: 'pablo',
+    cargo: CARGO.DESENVOLVEDOR
+}
+
+link:
+https://www.typescriptlang.org
+
+slide:
+https://academiapme-my.sharepoint.com/:p:/g/personal/kawan_dio_me/EXa_MbHUlqpPtDKcIQNx-UQBa8z8wvutbB4pYfJ-ryPZgQ?rtime=vlfczpcs3Eg

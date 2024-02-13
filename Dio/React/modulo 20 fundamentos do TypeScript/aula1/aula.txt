@@ -1,0 +1,4 @@
+o que e o typescript?
+
+E um superset de javascript, ou seja, um conjunto de ferramentas e formas mais eficientes de escrever codigo javascript, adicionando recursos que nao estao presentes de maneira nativa na linguagem.
+

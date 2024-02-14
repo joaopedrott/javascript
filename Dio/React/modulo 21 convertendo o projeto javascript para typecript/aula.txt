@@ -13,3 +13,7 @@
  yarn add @types/styled-components - D
 
  5- criar os arquivos types.ts de cada componente e dentro deles criar a interface com os tipos das variaveis
+
+
+ slide:
+ https://academiapme-my.sharepoint.com/:p:/g/personal/kawan_dio_me/EUAS4SQYUPBCv7TgFiqeqnQBhjycaG0HtTDvkyYl4pSV-g?rtime=fMmfVHMt3Eg

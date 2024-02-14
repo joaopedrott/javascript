@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../../assets/logo-dio.png'
-import banner from '../../assets/banner.png'
+
 import { Button } from '../Button'
 import {
     BuscarInputContainer,
@@ -16,8 +16,9 @@ import {
 
 } from './styles'
 import { useNavigate } from 'react-router-dom';
+import { IHeader } from './types'
 
-const Header=({autenticado})=> {
+const Header=({autenticado}: IHeader)=> {
     const navigate = useNavigate();
     const handleClickLogin=()=>{
         navigate('/login')

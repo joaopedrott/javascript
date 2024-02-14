@@ -1,0 +1,15 @@
+ Converter projeto javascript em typescript
+ 1- instalando dependencias
+ yarn add typescript @types/node @types/react @types/react-dom @types/jest -D
+
+ 2- iniciando o typescript(configurando typescript)
+ npx tsc --init
+
+ 3- mudando extensao dos arquivos
+ jsx para tsx
+ js para ts
+
+ 4-resolver problema com os tipos de arquivos
+ yarn add @types/styled-components - D
+
+ 5- criar os arquivos types.ts de cada componente e dentro deles criar a interface com os tipos das variaveis

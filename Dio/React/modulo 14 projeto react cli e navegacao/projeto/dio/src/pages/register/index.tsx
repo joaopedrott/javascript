@@ -8,6 +8,7 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { Button } from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
+import { IFormData } from './types';
 
 const schema = yup.object({
     email: yup.string().email('email nao e valido').required('Campo obrigatorio'),
@@ -17,7 +18,7 @@ const schema = yup.object({
 const Register =()=>{
     const navigate = useNavigate();
       const { control,handleSubmit,formState: { errors },
-    } = useForm({
+    } = useForm<IFormData>({
       resolver:yupResolver(schema),
       mode: 'onChange',
     });

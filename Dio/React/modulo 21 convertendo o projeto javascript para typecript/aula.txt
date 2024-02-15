@@ -31,7 +31,7 @@ OBS: foi usado o projeto no modulo 14 para converter javascript para typescript
 
  2-no modulo 15 inserimos o styled component (se caso necessario no projeto em questao)
 
- 3- no modulo 14 falamos de navegacao entre as paginas
+ 3- no modulo 14 falamos de navegacao entre as paginas (usando rote, rotes)
 
  4- modulo 16 falamos de hooks
  

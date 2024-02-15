@@ -23,6 +23,11 @@ OBS: foi usado o projeto no modulo 14 para converter javascript para typescript
  RESUMO:
  1-O ideal eh comecar do modulo 12 criando um projeto react.
  Nesse modulo criamos um projeto react e excluimos arquivos desnecessarios
+    1.1 alem disso organizamos o projeto criando pastas: 
+    assets: para imagens, 
+    components: para componentes, 
+    pages: para paginas, 
+    styles: para o css/styled component global
 
  2-no modulo 15 inserimos o styled component (se caso necessario no projeto em questao)
 

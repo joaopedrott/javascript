@@ -1,0 +1,6 @@
+Foi feito fork do projeto:
+https://github.com/digitalinnovationone/trilha-react-desafio-4
+ para:
+https://github.com/joaopedrott/trilha-react-desafio-4/tree/master
+
+ e em seguida resolvi o desafio adicionando disabled ao botao do login

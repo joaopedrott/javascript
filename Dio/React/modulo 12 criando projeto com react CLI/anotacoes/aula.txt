@@ -1,0 +1,32 @@
+-----------------------------------------------------------------------------------------------------
+Para criar um projeto React
+1-no terminal digitar:
+    npx create-react-app nomeDoProjeto
+2- y (para aceitar o processeguir)
+
+obs: excluir arquivos que nao irei utilizar dentro desse projeto react
+-----------------------------------------------------------------------------------------------------
+Para abrir um servidor local para abrir o site
+Dentro da pasta do arquivo site ou pasta do react do site, executar o comando:
+-npm run start
+
+------------------------------------------------------------------------------------------
+USANDO YARN
+
+1- No terminal do projeto/pasta, digitar:
+yarn creacte react-app nomeDoProjeto
+
+2- Abrir servidor com YARN, digitar:
+yarn start
+
+obs:link da aula complementar do modulo 8(nos meus arquivos no github do curso dio) 
+https://www.youtube.com/watch?v=kXq5IV0Ji14&t=9s
+
+--------------------------------------------------------------------------------------------
+NOTA:
+usar o npx create-react-app nomeDoProjeto, pois pega a versao mais atualizada.
+https://create-react-app.dev/
+https://create-react-app.dev/docs/getting-started
+
+depois instalar navegacao com
+https://v5.reactrouter.com/web/guides/quick-start

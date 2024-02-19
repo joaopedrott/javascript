@@ -1,0 +1,7 @@
+Aula complementar sobre a criacao de um projeto em typescript 
+executamos no terminal o comando
+
+npx create-react-app react dio-ts --template typescript
+
+mas como nao pode palavra react por ser reservada eu usei o : 
+npx create-react-app reactprojeto dio-ts --template typescript

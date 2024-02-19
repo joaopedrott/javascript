@@ -5,3 +5,9 @@ npx create-react-app react dio-ts --template typescript
 
 mas como nao pode palavra react por ser reservada eu usei o : 
 npx create-react-app reactprojeto dio-ts --template typescript
+
+
+excluimos arquivos que nao precisamos
+
+adicionamos o CDN do bootstrap
+https://getbootstrap.com/docs/5.3/getting-started/introduction/

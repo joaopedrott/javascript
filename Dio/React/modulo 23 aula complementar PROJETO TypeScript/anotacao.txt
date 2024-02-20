@@ -1,13 +1,30 @@
 Aula complementar sobre a criacao de um projeto em typescript 
-executamos no terminal o comando
 
-npx create-react-app react dio-ts --template typescript
+Aula 1-Conceitos geraus di react e entendendo seu papel.
 
-mas como nao pode palavra react por ser reservada eu usei o : 
-npx create-react-app reactprojeto dio-ts --template typescript
+Aula 2- Criando aplicacao
+    *Executamos no terminal o comando:
+    npx create-react-app react dio-ts --template typescript
+
+    *mas como nao pode palavra react por ser reservada eu usei o comando : 
+    npx create-react-app reactprojeto dio-ts --template typescript
 
 
-excluimos arquivos que nao precisamos
+    *excluimos arquivos que nao precisamos
 
-adicionamos o CDN do bootstrap
-https://getbootstrap.com/docs/5.3/getting-started/introduction/
+Aula 3- componentes e bootstrap
+    *adicionamos o CDN do bootstrap on index da pasta public, o CDN de css e javascript usando o link:
+    https://getbootstrap.com/docs/5.3/getting-started/introduction/
+
+Aula 4- configurando o react-router
+    *Para adicionar a rota entre as paginas, usamos o comando no terminal dentro da projeto:
+    yarn add react-router-dom
+
+    *Em seguida para adicionar a tipagem da router, usamos o comando:
+    yarn add -D @types/react-router-dom
+
+    *Adicionamos pasta chamada Pages e em seguida o arquivo Home.tsx e Perfil.tsx.
+
+    *Adicionamos o arquivos routes.tsx para fazer a rota e em seguida adicionamos esse arquivo importando ele no App.tsx
+
+    Aula 5- 

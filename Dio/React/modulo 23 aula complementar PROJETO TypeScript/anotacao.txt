@@ -27,4 +27,7 @@ Aula 4- configurando o react-router
 
     *Adicionamos o arquivos routes.tsx para fazer a rota e em seguida adicionamos esse arquivo importando ele no App.tsx
 
-    Aula 5- 
+    Aula 5- Construindo Layout
+    fizemos o layout como componente usando a tipagem
+
+    aula 6-

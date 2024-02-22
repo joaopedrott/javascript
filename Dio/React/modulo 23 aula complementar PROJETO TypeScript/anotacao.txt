@@ -1,6 +1,6 @@
 Aula complementar sobre a criacao de um projeto em typescript 
 
-Aula 1-Conceitos geraus di react e entendendo seu papel.
+Aula 1-Conceitos gerais de react e entendendo seu papel.
 
 Aula 2- Criando aplicacao
     *Executamos no terminal o comando:
@@ -28,6 +28,10 @@ Aula 4- configurando o react-router
     *Adicionamos o arquivos routes.tsx para fazer a rota e em seguida adicionamos esse arquivo importando ele no App.tsx
 
     Aula 5- Construindo Layout
-    fizemos o layout como componente usando a tipagem
+    *fizemos o layout como componente usando a tipagem
 
-    aula 6-
+    aula 6-Estilizando a pagina inicial
+    *adicionamos o navbar do bootstrap
+    https://getbootstrap.com/docs/5.3/components/navbar/
+
+    *

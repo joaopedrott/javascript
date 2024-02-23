@@ -3,9 +3,10 @@ import MainRoutes from "./routes";
 
 
 function App() {
-  return (<>
+  return (
       
-      <MainRoutes/></>
+      <MainRoutes/>
+      
   );
 }
 

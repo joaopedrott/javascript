@@ -27,11 +27,24 @@ Aula 4- configurando o react-router
 
     *Adicionamos o arquivos routes.tsx para fazer a rota e em seguida adicionamos esse arquivo importando ele no App.tsx
 
-    Aula 5- Construindo Layout
+Aula 5- Construindo Layout
     *fizemos o layout como componente usando a tipagem
 
-    aula 6-Estilizando a pagina inicial
+aula 6- Estilizando a pagina inicial
     *adicionamos o navbar do bootstrap
     https://getbootstrap.com/docs/5.3/components/navbar/
 
     *
+aula 7- Estilizando a pagina Perfil
+    *fizemos  uma lista na pargina do Perfil
+aula 8- Escrevendo o primeiro teste unitario (modulo de teste)
+    *Teste unitario (teste mais barato)
+    Sao queles teste que vao testar a unidade ou o menor componente possivel da aplicacao.
+
+    *Teste de integracao (teste um pouco mais caro)
+    Teste de como os componentes trabalham entre si.
+
+    *Teste e2e (end to end) (teste mais caro)
+    Testar desde o frontend, backend e banco de dados.
+
+    *escrevemos o nosso primeiro teste unitario, no Layout e depois no Table

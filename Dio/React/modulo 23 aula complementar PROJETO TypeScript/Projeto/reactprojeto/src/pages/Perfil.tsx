@@ -1,9 +1,10 @@
 import Layout from "../components/Layout/Layout";
+import Table from "../components/Table/Table";
 
 const Perfil =()=>{
     return (
         <Layout>
-          <h1>Perfil</h1>
+          <Table/>
         </Layout>
         
       );

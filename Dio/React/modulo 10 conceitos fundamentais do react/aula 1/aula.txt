@@ -1,4 +1,4 @@
 JSX
 E uma forma de criar elementos para serem utilziadas como templetes de aplicacoes React. Basicamente, os elementos criados com o JSX sao bem similares  com o codigo HTML e fornecem aos desenvolvedores uma forma mais simples e intuitiva de criar os componentes de uma aplicacao.
 
-na pratica, e um retorno de um html em uma funcao (ou seja, um componente).
+na pratica, eh um retorno de um html em uma funcao (ou seja, um componente).

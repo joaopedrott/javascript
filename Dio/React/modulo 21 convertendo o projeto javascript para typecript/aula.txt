@@ -38,3 +38,5 @@ OBS: foi usado o projeto no modulo 14 para converter javascript para typescript
  5-modulo 17 trabalhamos com formularios no react
 
  6- modulo 20 e 21 aprendemos sobre typescript e convertemos o javascript para typescript
+
+ obs: "o basico de react eh jsx, components, state, props, effects..."

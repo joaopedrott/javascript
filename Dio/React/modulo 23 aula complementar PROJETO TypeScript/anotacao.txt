@@ -37,14 +37,21 @@ aula 6- Estilizando a pagina inicial
     *
 aula 7- Estilizando a pagina Perfil
     *fizemos  uma lista na pargina do Perfil
+    
 aula 8- Escrevendo o primeiro teste unitario (modulo de teste)
-    *Teste unitario (teste mais barato)
+    *1-Teste unitario (teste mais barato)
     Sao queles teste que vao testar a unidade ou o menor componente possivel da aplicacao.
 
-    *Teste de integracao (teste um pouco mais caro)
+    *2-Teste de integracao (teste um pouco mais caro)
     Teste de como os componentes trabalham entre si.
 
-    *Teste e2e (end to end) (teste mais caro)
+    *3-Teste e2e (end to end) (teste mais caro)
     Testar desde o frontend, backend e banco de dados.
 
-    *escrevemos o nosso primeiro teste unitario, no Layout e depois no Table
+
+*Escrevemos o nosso primeiro teste unitario, no Layout criando o arquivo Layout.test.tsx e depois no Table criando arquivo Table.test.tsx. 
+Logo depois foi utilizado o codigo no terminal: yarn test
+
+aula 9- *Aplicamos o TDD e refatoracao da aplicacao
+    Adicionamos mockData e modificamos o arquivo table.test.tsx e table.tsx
+    *TDD e: escrever o codigo, fazer o teste e modificar o codigo ou Escreve o codigo, ve ele falhar, escreve de novo e ve ele passar no teste.

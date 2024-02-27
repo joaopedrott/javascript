@@ -55,3 +55,6 @@ Logo depois foi utilizado o codigo no terminal: yarn test
 aula 9- *Aplicamos o TDD e refatoracao da aplicacao
     Adicionamos mockData e modificamos o arquivo table.test.tsx e table.tsx
     *TDD e: escrever o codigo, fazer o teste e modificar o codigo ou Escreve o codigo, ve ele falhar, escreve de novo e ve ele passar no teste.
+
+aula 10- Refatorando pagina de perfil teste de integracao
+    *Criamos o arquivo Perfil.test.tsx para fazer o teste da pagina perfil.

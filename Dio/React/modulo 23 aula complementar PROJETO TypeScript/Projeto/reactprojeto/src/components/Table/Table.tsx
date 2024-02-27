@@ -4,11 +4,10 @@ interface ITech {
 }
 
 interface ITable {
-  data: ITech[]
+  data?: ITech[]
 }
 const Table = ({ data }: ITable) => {
   return (
-
     <table className="table  table-striped">
       <thead>
         <tr>
@@ -18,9 +17,9 @@ const Table = ({ data }: ITable) => {
       </thead>
       <tbody>
         {
-          data.map((tech, index) => {
+          data!==undefined && data.map((tech, index) => {
             return (
-              <tr>
+              <tr key={index}>
                 <td>{tech.tech}</td>
                 <td>{tech.tipo}</td>
               </tr>

@@ -8,10 +8,10 @@ describe('Layout',()=> {
             <Layout>
                 Meu app
             </Layout>
-    </BrowserRouter>)
+        </BrowserRouter>)
 
     it('Deve renderizar a mensagem Meu app', ()=>{
-        const app=screen.getByText('Meu app')
+        const app = screen.getByText('Meu app')
 
         expect(app).toBeInTheDocument()
     })

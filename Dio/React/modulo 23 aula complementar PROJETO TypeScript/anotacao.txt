@@ -58,3 +58,6 @@ aula 9- *Aplicamos o TDD e refatoracao da aplicacao
 
 aula 10- Refatorando pagina de perfil teste de integracao
     *Criamos o arquivo Perfil.test.tsx para fazer o teste da pagina perfil.
+
+aula 11- Criando os testes da pagina inicial
+    *

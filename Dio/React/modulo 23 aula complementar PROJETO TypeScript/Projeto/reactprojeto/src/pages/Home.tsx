@@ -1,6 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
 
+import { MouseEvent } from 'react';
+
 const Home =()=>{
+    const history = useNavigate();
+
+    const handleClick = async (event: MouseEvent)=> {
+      event.preventDefault();
+      history('/perfil')
+    }
+    
     return (
         <Layout>
           <div className="col-4 m-auto">
@@ -13,7 +23,7 @@ const Home =()=>{
                 </div>
             </div>
             
-            <button type="button" className="btn btn-primary">Entrar</button>
+            <button onClick={handleClick} type="button" className="btn btn-primary">Entrar</button>
             
           </div>
         </Layout>

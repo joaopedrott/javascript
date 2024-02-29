@@ -1,13 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
 
-import { MouseEvent } from 'react';
+import { MouseEvent, useState } from 'react';
 
 const Home =()=>{
+    const [user, setUser] = useState('');
     const history = useNavigate();
 
     const handleClick = async (event: MouseEvent)=> {
       event.preventDefault();
+      if(user.length === 0){
+        return alert('Por favor informe um usuario')
+      }
       history('/perfil')
     }
     
@@ -17,7 +21,13 @@ const Home =()=>{
             <h1>Login</h1>
             <div className="mb-3">
                 <label htmlFor="gitUser" className="form-label">Usuario do github</label>
-                <input className="form-control" id="gitUser" aria-describedby="userHelp"/>
+                <input 
+                  type="text" 
+                  aria-label="User" className="form-control" 
+                  id="gitUser" aria-describedby="userHelp"
+                  value={user}
+                  onChange={event => setUser(event.target.value)}
+                  />
                 <div id="userHelp" className="form-text">
                   Informe seu usuario do GitHub.
                 </div>

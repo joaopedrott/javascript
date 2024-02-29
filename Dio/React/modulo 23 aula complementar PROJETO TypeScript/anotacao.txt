@@ -60,4 +60,9 @@ aula 10- Refatorando pagina de perfil teste de integracao
     *Criamos o arquivo Perfil.test.tsx para fazer o teste da pagina perfil.
 
 aula 11- Criando os testes da pagina inicial
-    *
+    *fizemos o botao funcionar, indo para a pagina perfil e fizemos o teste da pagina home 
+
+aula 12- implementando a validacao para acesso
+    *fizemos o site somente entrar na tela de perfil colocando nome de usuario
+
+aula 13- Melhorando a validacao para acesso.

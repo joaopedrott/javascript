@@ -13,7 +13,7 @@ const MainRoutes =()=> {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/perfil" element={<Perfil />} />
+            <Route path="/:user" element={<Perfil />} />
           </Routes>
         </Router>
       );

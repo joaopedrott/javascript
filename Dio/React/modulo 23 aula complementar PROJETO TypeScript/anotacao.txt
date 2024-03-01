@@ -66,3 +66,4 @@ aula 12- implementando a validacao para acesso
     *fizemos o site somente entrar na tela de perfil colocando nome de usuario
 
 aula 13- Melhorando a validacao para acesso.
+    *fizemos com que so entre na pagina perfil se e somente se, o usuario for validado

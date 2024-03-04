@@ -1,7 +1,7 @@
-import axios from "axios";
+import axios from 'axios';
 
 const gitApi = {
-    getUser: async (user: string)=>{
+    getUser: async (user: string) => {
         const response = await axios.get(`https://api.github.com/users/${user}`)
         return response.data
     }

@@ -67,3 +67,9 @@ aula 12- implementando a validacao para acesso
 
 aula 13- Melhorando a validacao para acesso.
     *fizemos com que so entre na pagina perfil se e somente se, o usuario for validado
+
+aula 14- Integrando com a API do Github
+    * Para fazer essa integracao da api do Github, adicionamos ao projeto usando o terminal: 
+        yarn add axios 
+    E logo depois a tipagem do axios: 
+        yarn add -D @types/axios

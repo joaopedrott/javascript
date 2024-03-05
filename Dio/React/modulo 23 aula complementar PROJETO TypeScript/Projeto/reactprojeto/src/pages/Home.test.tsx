@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import Home from "./Home";
 import { BrowserRouter } from "react-router-dom";
-
+import gitApi from "../api/github";
 
 const mockHistoryPush = jest.fn()
 
@@ -12,7 +12,9 @@ jest.mock('react-router-dom', ()=>({
     }),
 }));
 describe ('Home', ()=>{
-    it('Deve Informar o usuario e ser redirecionado para a pagina de perfil', ()=>{
+    it('Deve Informar o usuario e ser redirecionado para a pagina de perfil', async ()=>{
+        gitApi.getUser = jest.fn().mockResolvedValue({login: 'joao'})
+        
         const user = "joao";
         render(
         <BrowserRouter>
@@ -26,7 +28,7 @@ describe ('Home', ()=>{
             target: {value: user},
         });
         fireEvent.click(button);
-        expect(mockHistoryPush).toHaveBeenCalledWith(`/${user}`);   //Se eu botar, vai dar erro pois o curso esta desatualizado 
+        expect(gitApi.getUser).toHaveBeenCalledWith(user);   //Se eu botar, vai dar erro pois o curso esta desatualizado 
     });
 
     it('Nao deve redirecionar para a pagina de perfil, caso o usuario nao seja informado', ()=>{

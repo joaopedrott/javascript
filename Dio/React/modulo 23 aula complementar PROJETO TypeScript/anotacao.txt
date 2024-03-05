@@ -73,3 +73,6 @@ aula 14- Integrando com a API do Github
         yarn add axios 
     E logo depois a tipagem do axios: 
         yarn add -D @types/axios
+
+aula 15- validando usuario com a API
+    *fiz como o professor ensinou fazendo a validacao na page home e perfil e modificando os testes desses arquivos mas os testes deram erro pois o curso eh desatualizado.

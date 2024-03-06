@@ -76,3 +76,6 @@ aula 14- Integrando com a API do Github
 
 aula 15- validando usuario com a API
     *fiz como o professor ensinou fazendo a validacao na page home e perfil e modificando os testes desses arquivos mas os testes deram erro pois o curso eh desatualizado.
+
+aula 16- Teste e2e (end to end)
+    *

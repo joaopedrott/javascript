@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import Layout from "../components/Layout/Layout";
 import Table from "../components/Table/Table";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
 import gitApi from "../api/github";
+import { useNavigate } from "react-router-dom";
 
 
 const Perfil = () => {

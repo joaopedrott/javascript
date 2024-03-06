@@ -17,7 +17,6 @@ const Home =()=>{
       
       gitApi.getUser(user).then(response=> history(`/${response.login}`))
       .catch(error=>{
-        console.log(error)
         setInvalid(true)
       })
       

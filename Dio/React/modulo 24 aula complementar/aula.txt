@@ -1,0 +1,7 @@
+aula complementar
+Desenvolvendo microfrontends utilizando react
+ Da para botar um projeto dentro de outro como se fossem um so
+
+ 
+link
+https://www.youtube.com/watch?v=SIU3y0vM6UQ&t=1292s

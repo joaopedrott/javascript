@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import logo from '../../assets/logo-dio.png'
 
 import { Button } from '../Button'
@@ -15,10 +15,14 @@ import {
     UserPicture
 
 } from './styles'
-import { useNavigate } from 'react-router-dom';
-import { IHeader } from './types'
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/auth';
 
-const Header=({autenticado}: IHeader)=> {
+
+const Header=()=> {
+
+    const { user, handleSignOut } = useContext(AuthContext);
+    
     const navigate = useNavigate();
     const handleClickLogin=()=>{
         navigate('/login')
@@ -30,8 +34,10 @@ const Header=({autenticado}: IHeader)=> {
     <Wrapper>
         <Container>
             <Row>
-                <img src={logo} alt="Logo da DIO"/>
-                {autenticado?(
+                <Link to="/">
+                    <img src={logo} alt="Logo da DIO"/>
+                </Link>
+                {user.id?(
                     <>
                     <BuscarInputContainer>
                     <Input placeholder='Buscar...'/>
@@ -39,18 +45,21 @@ const Header=({autenticado}: IHeader)=> {
                     <Menu>Live Code</Menu>
                     <Menu>Global</Menu></>
                 ):null}
-
-
             </Row>
 
             <Row>
-                {autenticado ? (<>
+                {user.id ? (
+                <>
                     <UserPicture src="https://avatars.githubusercontent.com/u/13596247?v=4"/>
-                </>): (<>
+                    <a href='#' onClick={handleSignOut}>Sair</a>
+                </>
+                ) : (
+                <>
                     <MenuRight href='$'> </MenuRight>
-                <Button onClick={handleClickLogin} title="Entrar"/>
-                <Button onClick={handleClickRegister} title="Cadastrar"/>
-                </>)}
+                    <Button onClick={handleClickLogin} title="Entrar"/>
+                    <Button onClick={handleClickRegister} title="Cadastrar"/>
+                </>
+                )}
 
             </Row>
         </Container>

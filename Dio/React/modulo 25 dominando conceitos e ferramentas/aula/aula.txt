@@ -1,0 +1,12 @@
+dominando conceitos e ferramentas avancadas do react
+    Context API:
+        criamos a pasta context e os arquivos, auth.tsx e types.ts
+        criamos a pasta types e o arquivo user.ts
+        modificamos o index.tsx e styles.ts da pasta header(components)
+        modificamos o app.tsx
+
+        modificamos o index.tsx da pasta login (pages)
+        modificamos o index.tsx da pasta feed (pages)
+
+        e modifiquei o nome senha para password no arquivo db.json
+    Custom Hooks:

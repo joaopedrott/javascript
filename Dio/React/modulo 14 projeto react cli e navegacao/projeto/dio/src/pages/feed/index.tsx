@@ -4,16 +4,18 @@ import { UserInfo } from '../../components/UserInfo';
 import { Header } from '../../components/Header';
 
 import { Container, Column, Title, TitleHighlight } from './styles'
+import { useCalc } from '../../hooks/useCalc';
 
 
 const Feed = () => {
 
-    
+    /* const { handleSum } = useCalc() */
     return (<>
     <Header/>
     <Container>
         <Column flex={3}>
         <Title>Feed</Title>
+        {/* {handleSum(2,9)} */}
         <Card/>
         <Card/>
         <Card/>

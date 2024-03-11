@@ -1,5 +1,6 @@
 dominando conceitos e ferramentas avancadas do react
-    Context API:
+Aula 1- Context API:
+    Serve para fazer com que exista propriedades globais no projeto. Facilita o compartilhamento de dados entre componentes.
         criamos a pasta context e os arquivos, auth.tsx e types.ts
         criamos a pasta types e o arquivo user.ts
         modificamos o index.tsx e styles.ts da pasta header(components)
@@ -10,3 +11,8 @@ dominando conceitos e ferramentas avancadas do react
 
         e modifiquei o nome senha para password no arquivo db.json
     Custom Hooks:
+
+    Aula 2- Custom Hooks
+    
+    slide: 
+    https://academiapme-my.sharepoint.com/:p:/g/personal/renato_dio_me/ETUcDM2COnVOgZ5ek03e8PgB_K2xgivO8RnR5frW1cBwiw?rtime=4_sJjOBB3Eg

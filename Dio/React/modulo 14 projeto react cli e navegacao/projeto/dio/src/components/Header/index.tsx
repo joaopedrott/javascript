@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+
 import logo from '../../assets/logo-dio.png'
 
 import { Button } from '../Button'
@@ -16,12 +16,13 @@ import {
 
 } from './styles'
 import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../context/auth';
+
+import { useAuth } from '../../hooks/useAyth';
 
 
 const Header=()=> {
 
-    const { user, handleSignOut } = useContext(AuthContext);
+    const { user, handleSignOut } = useAuth();
     
     const navigate = useNavigate();
     const handleClickLogin=()=>{

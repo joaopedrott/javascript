@@ -1,0 +1,15 @@
+o que e next js 
+
+    Next.js e uma framework react com foco em producao e eficiencia, criado e mantido pela equipe da Vercel, o NextJs busca reunir diversas funcionalidades como renderizacao hibrida e estatica de conteudo, suporte a typeScript, pre-fetching, sistema de rotas, pacotes de funcionalidades e diversos plugins e exemplos para acelerar seu desenvolvimento fornecendo uma estrututra completa para voce iniciar seu projeto.
+
+diferencial do NextJs
+    Seu grande diferencial eh a opcao de conseguimos controlar o metodo de renderizacao que queremos em nossa aplicacao, que sao:
+
+    -SSR: Server-side Rendering
+        Rendenrizacao do lado do servidor
+
+    -SPA: Single Page Application
+        Uma pagina so, todo javascript e regra de negocios fica no lado do cliente(a partir dai ele diz qual componente vai ser mostrado ou nao)
+
+    -SSG: Static Site Generation
+        Compila todos os dados que a gente precisa e forma o html, css e javascript puro salvo de forma estatica (geralmente utilizados em sites que nao mudam como blogs)

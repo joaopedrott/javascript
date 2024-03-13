@@ -17,7 +17,7 @@ diferencial do NextJs
 
 aula 2- criamos projeto com NextJs
 no terminal:
- npx create-next-app@latest
+ npx create-next-app@latest (usei esse no curso do DIO)
 ou
  yarn create next-app
 ou

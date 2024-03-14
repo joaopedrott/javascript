@@ -34,11 +34,35 @@ ou
  aula 3- fazendo autenticacao Com NextJs
  Vamos usar o NextAuth
 
-    *criamos um app dentro do github:
+    1*criamos um app dentro do github:
     link:
     https://next-auth.js.org/providers/github
-
+    link:
     github.com/settings/apps/new
 
+    2*pegamos a chave do app que acabamos de criar
     cliente secret:
     ea08b548d7643a943591225366d0a4329270a637
+
+    3*Logo depois de criar o app, vamos no vscode e vamos adicionar uma pasta dentro do projeto next-app deste modulo 26, criamos a pasta auth dentro da pasta api, dentro da pasta auth, criamos o arquivo com nome [...nextauth].js com os codigos dentro dele como manda o exemplo no site do link abaixo
+    link:
+    https://next-auth.js.org/getting-started/example
+
+    4*Proximo passo eh a criacao do arquivo .env.local fora de todas as pastas, na raiz do projeto, esse arquivo deve conter, o client id do app que criamos no github, juntamente com a cliente secret que pegamos do app e o endereco localhost: http://localhost:3000/
+
+        link do app criado:
+        https://github.com/settings/apps/dio2-teste2-next2
+
+    5*Copiamos e colamos todo o codigo do _app.jsx do site no _app.js do projeto 
+        site: https://next-auth.js.org/getting-started/example
+
+        obs: nesse codigo do _app vai registrar se o usuario esta logado ou nao
+
+    6*Dentro do index.js colamos o codigo do login-btn.jsx do site: https://next-auth.js.org/getting-started/example
+
+    7*Adicionamos 'github' no sign in e sign out dentro do index.js
+
+    8*dentro de id na pasta produto adicionamos um IF mas sem sucesso, deu erro!
+
+    slide:
+    https://academiapme-my.sharepoint.com/:p:/g/personal/renato_dio_me/EZU1FDeOxKJPpmRy8OWJM9EBtNqNYMjof0M4G6rP02QKUw?rtime=Aa2LrjFE3Eg

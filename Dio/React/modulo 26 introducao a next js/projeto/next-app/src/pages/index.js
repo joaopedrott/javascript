@@ -1,8 +1,23 @@
+import { useSession, signIn, signOut } from "next-auth/react"
 
 export default function Home() {
+  const { data: session } = useSession();
+
+
+
+  if (session) {
+    return (
+      <>
+      <img src={session.user.image}/>
+        Signed in as {session.user.email} <br />
+        <button onClick={() => signOut('github')}>Sign out</button>
+      </>
+    )
+  }
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
-  );
+    <>
+      Not signed in <br />
+      <button onClick={() => signIn('github')}>Sign in</button>
+    </>
+  )
 }

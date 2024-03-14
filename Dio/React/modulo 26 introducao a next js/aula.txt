@@ -26,3 +26,15 @@ ou
  para rodar o servidor
  no terminal:
  yarn dev
+
+ link: 
+ https://nextjs.org/docs/getting-started/installation
+
+
+ aula 3- fazendo autenticacao Com NextJs
+ Vamos usar o NextAuth
+
+ link:
+ https://next-auth.js.org/providers/github
+
+ github.com/settings/apps/new

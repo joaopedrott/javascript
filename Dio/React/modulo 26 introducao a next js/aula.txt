@@ -60,7 +60,7 @@ ou
 
     6*Dentro do index.js colamos o codigo do login-btn.jsx do site: https://next-auth.js.org/getting-started/example
 
-    7*Adicionamos 'github' no sign in e sign out dentro do index.js
+    7*Adicionamos 'github' no sign in e sign out dentro do index.js e adicionamos a imagem do perfil do github
 
     8*dentro de id na pasta produto adicionamos um IF mas sem sucesso, deu erro!
 

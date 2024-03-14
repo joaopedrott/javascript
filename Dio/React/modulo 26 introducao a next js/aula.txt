@@ -34,7 +34,11 @@ ou
  aula 3- fazendo autenticacao Com NextJs
  Vamos usar o NextAuth
 
- link:
- https://next-auth.js.org/providers/github
+    *criamos um app dentro do github:
+    link:
+    https://next-auth.js.org/providers/github
 
- github.com/settings/apps/new
+    github.com/settings/apps/new
+
+    cliente secret:
+    ea08b548d7643a943591225366d0a4329270a637

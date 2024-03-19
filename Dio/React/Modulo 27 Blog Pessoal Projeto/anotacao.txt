@@ -1,1 +1,3 @@
 Blog pessoal
+Resolvi este desafio criando um fork do projeto e fiz a ligacao da pagina da postagem ID com o banco de dados do https://supabase.com/
+obs: conta logada no supabase foi a do github

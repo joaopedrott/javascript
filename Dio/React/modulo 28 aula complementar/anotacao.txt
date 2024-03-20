@@ -1,0 +1,13 @@
+aula 1 Trabalhando com context API no react
+
+link:
+https://www.youtube.com/watch?v=hppK-xN1qt0&t=455s
+
+
+
+
+
+aula 2 Rotas e navigation no React na prática
+
+
+link: https://www.youtube.com/watch?v=BzDzXk1Iqvo

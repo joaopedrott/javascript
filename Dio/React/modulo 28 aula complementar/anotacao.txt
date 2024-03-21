@@ -17,3 +17,5 @@ link: https://www.youtube.com/watch?v=BzDzXk1Iqvo
 aula 3 Trabalhando com gerenciamento de estados com React e Redux
 
 link: https://www.youtube.com/watch?v=TjH3mZhQotE
+
+ao final do curso, depois de avaliar o curso, indicaram fazer a formacao angular.

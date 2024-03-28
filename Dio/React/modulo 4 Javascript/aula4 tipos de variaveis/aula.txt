@@ -3,7 +3,7 @@ tipos de variaveis
 declaracoes
 var nome = 'Pablo'
 let idade = 25 //pode ser alterada a qualquer momento
-cont aprovado = true //nao se pode alterar o valor diretamente
+const aprovado = true //nao se pode alterar o valor diretamente
 
 tipos 
 boolean = true e false

@@ -5,4 +5,4 @@ Para criar um projeto React
 
 3-no terminal do projeto React, para abrir ele em um servidor:
 abrir o terminal
-digitar: npm run start
+digitar: npm run start ou yarn start

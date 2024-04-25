@@ -15,7 +15,7 @@ export function CartItem({
   removeProduct,
   updateProduct,
 }: CartItemProps) {
-  const price = formatPrice(product.price / 100);
+  const price = formatPrice((product.price / 100) * product.quantity);
   /* const price = (product.price / 100) * product.quantity; */
 
   return (

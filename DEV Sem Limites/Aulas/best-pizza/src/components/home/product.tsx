@@ -24,9 +24,9 @@ export function Product({ product }: ProductProps) {
           sizes="(max-width: 1200px) 100%"
         />
       </div>
+
       <h3 className="m-0 text-xl font-semibold">{product.name}</h3>
       <p className="text-lg">{price}</p>
-
       <AddToCartButton product={product} />
     </div>
   );

@@ -7,10 +7,17 @@ import { CreditCard, ShoppingCart } from "lucide-react";
 import { useState } from "react";
 import { CartItem } from "./cart-item";
 import { formatPrice } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 export function Cart() {
   const { products, total, updateProduct, removeProduct } = useCart();
   const [open, setOpen] = useState(false);
+  const router = useRouter();
+
+  const handleGoToCheckout = () => {
+    router.push("/checkout");
+    setOpen(false);
+  };
 
   const totalProducts = products.reduce(
     (acc, product) => acc + product.quantity,
@@ -57,7 +64,7 @@ export function Cart() {
               </ul>
 
               <div className="mt-4">
-                <Button className="w-full">
+                <Button className="w-full" onClick={handleGoToCheckout}>
                   <CreditCard className="mr-2" />
                   Finalizar Pedido
                 </Button>

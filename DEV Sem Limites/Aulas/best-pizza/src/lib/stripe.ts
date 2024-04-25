@@ -9,6 +9,11 @@ interface Product {
   image: string;
 }
 
+export interface LineItems {
+  name: string;
+  quantity: number;
+}
+
 export async function getProducts(): Promise<Product[]> {
   const response = await stripe.products.list({
     active: true,
@@ -27,4 +32,19 @@ export async function getProducts(): Promise<Product[]> {
   });
 
   return products;
+}
+
+export async function createPaymentIntent(
+  amount: number,
+  lineItems: LineItems[],
+): Promise<Stripe.Response<Stripe.PaymentIntent>> {
+  const paymentIntent = await stripe.paymentIntents.create({
+    amount,
+    currency: "brl",
+    metadata: {
+      lineItems: JSON.stringify(lineItems),
+    },
+  });
+
+  return paymentIntent;
 }

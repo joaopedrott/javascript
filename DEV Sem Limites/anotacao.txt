@@ -1,4 +1,4 @@
 Possiveis projetos
 1-Blog de noticias de games
-2-Vitrine de oculos de grau
-3-Loja de camisas Nerd
+2-Loja de camisas Nerd
+3-Vitrine de oculos de grau

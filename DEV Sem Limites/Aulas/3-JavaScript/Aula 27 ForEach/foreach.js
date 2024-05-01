@@ -10,6 +10,7 @@ const pessoas = [
     {nome: 'Pedro', idade: 51},
     {nome: 'Paula', idade: 61}
 ]
+//OBS: o funcao foreach() recebe uma funcao como parametro que podem ter ate 3 parametros
 //pode ser tambem: pessoas.forEach((pessoa,index,array)=>{
 pessoas.forEach((pessoa,index)=>{
     console.log(pessoa,index)

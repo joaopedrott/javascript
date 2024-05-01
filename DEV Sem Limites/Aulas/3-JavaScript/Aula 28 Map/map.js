@@ -12,6 +12,7 @@ const pessoas = [
     {nome: 'Paula', idade: 61}
 ]
 
+//OBS: o funcao map() recebe uma funcao como parametro que podem ter ate 3 parametros
 // pode ser ate...const pessoaV2 = pessoas.map((pessoa,index,array)=>{})
 const pessoaV2 = pessoas.map((pessoa)=>{
     return {

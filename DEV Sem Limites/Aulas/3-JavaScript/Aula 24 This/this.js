@@ -1,0 +1,7 @@
+/*
+This
+    Varia dependendo do contexto da execucao. 
+    Dependendo do local e da forma com que voce executa a funcao o this pode variar.
+
+
+*/

@@ -1,6 +1,6 @@
 /*
 Map()
-Percorre uma lista gerando outra array com algum ou alguns dados da primeira array usada
+Percorre uma lista gerando outra array com algum ou todos dados da primeira array usada
 */
 
 

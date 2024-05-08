@@ -48,6 +48,7 @@ getPosts((posts)=>{ //em seguida podemos fazer  oq quiser com o retorno, no caso
     console.log(posts)
 
     // callback hell (inferno) PROBLEMA!
+    //callback dentro de callback
     getComments(posts[0].id, (comments)=>{
         console.log(comments)
     })

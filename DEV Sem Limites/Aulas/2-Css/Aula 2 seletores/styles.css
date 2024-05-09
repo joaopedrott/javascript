@@ -1,0 +1,17 @@
+/*
+* Seletor de tag: Seleciona todos os elementos com a tag especificada
+* Seletor de classe: Seleciona todos os elementos com a classe especificada
+* Seletor de ID: Seleciona todos os elementos com o ID especificado
+*/
+
+h1 {
+    color: red
+}
+
+.titulo {
+    color: blue;
+}
+
+#titulo2 {
+    color: green;
+}

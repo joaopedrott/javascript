@@ -1,4 +1,5 @@
 Possiveis projetos
 1-Blog de noticias de games
-2-Loja de camisas Nerd
-3-Vitrine de oculos de grau ou vitrine da empresa barreto petshop
+2-Landing Page de games ou animes
+3-Loja de camisas Nerd
+

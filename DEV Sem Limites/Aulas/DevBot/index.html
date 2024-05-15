@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/924ba0838d.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="style.css">
+
     <title>DevBot</title>
 </head>
-<body>
+<body class="open-chat">
     
     <div class="container">
         <header>
-            <i class="fa-regular fa-message fa-lg"></i>
-            <h1>DevBot</h1>
+            <div class="logo">
+                <i class="fa-regular fa-message fa-lg"></i>
+                <h1>DevBot</h1>
+            </div>
 
             <button class="close">
                 <i class="fa-solid fa-xmark fa-xl"></i>
@@ -25,6 +32,10 @@
                     <i class="fa-solid fa-robot fa-xl"></i>
                     <p>Ola, sou o <strong>DevBot</strong> 👋 <br/> Como posso te ajudar? </p>
                 </li>
+
+                <li class="message user">
+                    <p>Ola, tudo bem com voce?</p>
+                </li>
             </ul>
         </main>
 
@@ -32,7 +43,9 @@
             <textarea placeholder="Insira uma mensagem..." rows="1" required></textarea>
 
 
-            <i class="fa-regular fa-paper-plane"></i>
+            <button class="send-message">
+                <i class="fa-regular fa-paper-plane fa-xl"></i>
+            </button>
         </footer>
     </div>
 

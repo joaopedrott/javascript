@@ -66,7 +66,7 @@ function handleAutoSize () {
 
 async function handleChat() {
 //funcao trim retira os espacos
-    const textareaValue = textarea.value.trim()
+    const textareaValue = textarea.value.trim()//pega o valor digitado no textarea
     
     if(!textareaValue) {
         //textarea.focus()

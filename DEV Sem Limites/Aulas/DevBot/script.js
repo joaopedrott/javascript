@@ -59,7 +59,7 @@ function handleTogglerChat () {//funcao para abrir e fechar o chat usando o bota
     document.body.classList.toggle('open-chat')
 }
 
-function handleAutoSize () {
+function handleAutoSize () {//ajusta o tamanho do textarea automaticamente
     textarea.style.height = `${initialTextAreaHight}px`
     textarea.style.height = `${textarea.scrollHeight}px`
 }

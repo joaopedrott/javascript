@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/924ba0838d.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://kit.fontawesome.com/924ba0838d.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+
 
     <title>DevBot</title>
 </head>
-<body class="open-chat">
+<body>
     
     <div class="container">
         <header>
@@ -21,7 +23,7 @@
                 <h1>DevBot</h1>
             </div>
 
-            <button class="close">
+            <button class="close" onclick="handleCloseChat()">
                 <i class="fa-solid fa-xmark fa-xl"></i>
             </button>
         </header>
@@ -33,24 +35,29 @@
                     <p>Ola, sou o <strong>DevBot</strong> 👋 <br/> Como posso te ajudar? </p>
                 </li>
 
-                <li class="message user">
+<!--                 <li class="message user">
                     <p>Ola, tudo bem com voce?</p>
-                </li>
+                </li> -->
             </ul>
         </main>
 
         <footer>
-            <textarea placeholder="Insira uma mensagem..." rows="1" required></textarea>
+            <textarea 
+            placeholder="Insira uma mensagem..." 
+            rows="1" 
+            required 
+            onkeydown="hendleChatOnKeyDown(event)" 
+            oninput="handleAutoSize()"></textarea>
 
 
-            <button class="send-message">
+            <button class="send-message" onclick="handleChat()">
                 <i class="fa-regular fa-paper-plane fa-xl"></i>
             </button>
         </footer>
     </div>
 
 
-    <button class="toggler">
+    <button class="toggler" onclick="handleTogglerChat()">
         <i class="fa-regular fa-message fa-xl"></i>
         <i class="fa-solid fa-xmark fa-xl"></i>
     </button>

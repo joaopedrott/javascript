@@ -87,6 +87,11 @@ main { /*todo o conteudo das mensagens do chat seja do usuario ou bot*/
     background: var(--gray);
 }
 
+.bot p.error {/*mensagens do chatbot*/
+    color: var(--danger);
+    background: var(--danger-light);
+}
+
 .bot i{/*mensagens do chatbot*/
     color: var(--primary);
     align-self: flex-end;

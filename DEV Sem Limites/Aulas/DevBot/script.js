@@ -12,7 +12,7 @@ function hendleChatOnKeyDown (event) { //funcao para enviar mensagem apertando e
 
 async function createBotReply (content) {//funcao do chat bot do chatGPT
     const API_URL = 'https://api.openai.com/v1/chat/completions'
-    const API_KEY = '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'
+    const API_KEY = ''
 
     const response = await fetch(API_URL, {
         method: 'POST',

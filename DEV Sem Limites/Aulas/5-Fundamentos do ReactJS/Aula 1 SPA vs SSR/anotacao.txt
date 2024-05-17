@@ -1,0 +1,20 @@
+SPA (single page aplication)
+E uma aplicacao que ela aparentemente parece ter uma unica pagina (vamos comecar usando esse jeito de fazer aplicacao)
+    Com o SPA somente o primeiro carregamento do site ele carrega o site por completo. Depois somente os elementos que devem ser atualizados sao atualizados.
+
+    Funcionamento do SPA
+    1- o navegador faz uma requisicao inicial pedindo todos os arquivos, ai o servidor responde enviando todos os arquivos html,css e javascript (esqueleto de todo o site)
+    2- Por meio da requisicao http o cliente (navegador) pede os dados em seguida o servidor envia os dados em formato JSON para o navegador
+
+    Vantagens
+    Aplicacoes um pouco mais rapidas que o SSR
+
+    Desvantagens
+    Nao eh facilmente indexada no google
+
+
+    SSR
+    Eh o oposto muito utilizado no passado, o servidor redenrizava os elementos ja com os dados inseridos neles e retornava a requisicao com esses elementos.
+
+    Vantagens
+    Facilmente indexada no google

@@ -1,0 +1,33 @@
+/*
+propriedade e valor exemplo>  color: red
+*/
+html {
+    font-family: 'Roboto',sans-serif;
+
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+.container {
+    height: 100%;
+}
+
+.box {
+    background-color: #343434;
+    border: 1px solid #484848;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 24px;
+
+    width: 100px;
+    height: 100px;
+/*aprendemos sobre min-width e max-width
+min-height e max-height
+*/
+    
+}
+

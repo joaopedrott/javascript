@@ -1,0 +1,16 @@
+/*
+propriedade e valor exemplo>  color: red
+*/
+html {
+    font-family: 'Roboto',sans-serif;
+
+}
+
+body {
+    
+    background-color: #282828;
+}
+
+h1 {
+    color: #E3E935;
+}

@@ -1,0 +1,41 @@
+html {
+    font-family: 'Roboto',sans-serif;
+    background-color: #282828;
+}
+
+
+.container {
+    border: 1px solid rgb(141, 141, 141);
+    padding: 10px;
+
+    margin-bottom: 80px;
+    border-radius: 8px;
+    margin: 60px;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    height: auto;
+
+    background-color: rgb(77, 77, 77);
+    border: 1px solid rgb(141, 141, 141);
+    border-radius: 8px;
+    color: white;
+    
+}
+
+.grid {
+    display: grid;
+    grid-template-columns:repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-rows: repeat(4, 100px) ;
+    gap: 16px 32px;
+
+/*     grid-auto-rows: 100px;
+    grid-auto-flow: column; */
+}
+
+

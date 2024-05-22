@@ -1,0 +1,66 @@
+html {
+    font-family: 'Roboto',sans-serif;
+    background-color: #282828;
+}
+
+.container {
+    
+    display: flex;
+
+
+    padding: 10px;
+    margin-bottom: 80px;
+    border-radius: 8px;
+    margin: 60px;
+    height: 100000px;
+    
+
+   
+}
+
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 110px;
+    height: 110px;
+
+    margin: 5px;
+
+    background-color: rgb(77, 77, 77);
+    border: 1px solid rgb(141, 141, 141);
+    border-radius: 8px;
+    color: white;
+    
+}
+
+
+.item-1 {
+    /* position: static; */ /*padrao*/
+    position: sticky;
+    top: 10px;
+    
+}
+
+/*
+Position absolute:
+quando tem um position absolute em uma caixa, ela se baseia na proxima
+tag pai que tiver position relative, se caso nao tiver nas proximas tags pai`s, a caixa se baseia no topo da pagina ou nos outros cantos.
+    Alem disso a caixa com abosulute ela fica por cima de todos os outros elementos da pagina como se tivesse isolada em uma pagina por cima da outra.
+
+
+Position relative:
+A caixa se baseia sua posicao na caixa que a envolve e pronto. (bem mais facil que a absolute)
+
+Position fixed:
+Assim como a absolute a fixed faz com que a caixa va para cima de todos os outros elementos como se estivesse em uma pagina acima e alem disso ele baseia sua posicao na proxima tag pai que tiver position relative tambem e se nao achar a caixa se baseia nos cantos da pagina.
+ Entretanto a unica diferenca eh que caixa fica fixa na tela como se fosse um botao de whatsapp em um site.
+
+
+Position sticky: 
+O sticky faz com que a caixa acompanhe a rolagem da pagina fixa na tela assim como o fixed entretanto nao fica por cima dos outros elementos. Ela parte do ponto inicial estipulado no css e fica sempre na tela quando o usuario rolar a pagina.
+
+*/
+

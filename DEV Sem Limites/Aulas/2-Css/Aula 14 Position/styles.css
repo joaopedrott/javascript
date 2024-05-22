@@ -46,7 +46,7 @@ html {
 
 /*
 Position absolute:
-quando tem um position absolute em uma caixa, ela se baseia na proxima
+quando tem um position absolute em uma caixa, ela baseia sua posicao na proxima
 tag pai que tiver position relative, se caso nao tiver nas proximas tags pai`s, a caixa se baseia no topo da pagina ou nos outros cantos.
     Alem disso a caixa com abosulute ela fica por cima de todos os outros elementos da pagina como se tivesse isolada em uma pagina por cima da outra.
 

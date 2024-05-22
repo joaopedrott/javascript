@@ -2,4 +2,3 @@ Possiveis projetos
 1-Blog de noticias de games
 2-Landing Page de games ou animes
 3-Loja de camisas Nerd
-

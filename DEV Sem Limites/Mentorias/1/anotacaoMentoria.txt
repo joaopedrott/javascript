@@ -1,0 +1,76 @@
+Mentoria 1- Como fazer aplicacoes escalaveis e acessiveis atendendo as necessidades do cliente:
+
+Como podemos construir nossas aplicacoes?
+ 3 pontos que vamos falar.
+*Escalabilidade
+	*Arquitetura de software 
+		*Monolito
+			Sempre fazer a aplicacao pensando no modelo monolito (escalar monolito 				assim que precisar usando servicos em nuuvem)
+		*Micro servicos
+		*Api first
+			*RESTful
+			*GraphQL
+
+
+	*Infraestrutura
+		*Cloud Computing
+		*Conteineres e orquestracao
+			*Docker
+			*Kubermetes
+
+	*Cache
+		*CND
+		*Caching local e distribuicao
+
+	*Banco de dados
+		*Sharding
+		*Replicacao
+			Eh bom ter replica de dados para nao perder acesso a informacoes
+		*Full Table Scan
+			Devemos evitar isso, que seria ler todo o banco de dados para procurar uma 			unica informacao
+
+	*Monitoramento e logging
+		*Monitoramento continuo
+			ter uma plataforma para monitorar a aplicacao 24H por dia
+		*Alertas
+			Ter alertas para notificar os erros
+
+
+
+
+*Acessibilidade
+	*Design Inclusivo
+		*WCAG
+			No site do WCAG tras um grupo de regras para acessibilidade no codigo da 			aplicacao 
+		*Tecnologias Assistivas
+			Tecnologia para ajudar, a usar o site como :screen readers
+			
+		*Contraste de Cores
+
+		*Navegacao por Teclado
+		*Labels e Descriptions
+			Sempre que tiver um elemento que nao tiver descricao usar sempre o area-			label para descrever em um screen reader
+		*Fontes Legiveis
+		*Design Responsivo
+
+	*Performance
+		*Otimizacao de Imagens e Recursos
+			usar o webp para imagens e
+		*Lazy Loading
+		*Paginacao
+	
+*Lidando com cliente
+	*Reunioes Frequentes
+	*Estorias do Usuario
+	*Metodologias Ageis
+		*Scrum
+		*Kanan
+
+
+
+links
+scrool inifito na pagina
+https://www.npmjs.com/package/react-infinite-scroll-component
+
+para alerta de erro temporario
+https://www.npmjs.com/package/react-toastify

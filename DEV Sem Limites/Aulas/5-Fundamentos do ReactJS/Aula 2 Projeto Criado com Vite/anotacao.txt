@@ -2,7 +2,12 @@ Aula 2- Projeto Criado com Vite
 vitejs.dev/guide
 
 Primeiro instalar o vite:
-yarn create vite
+com o yarn instalado...
+1-yarn create vite projeto-01-quiz --templete react
+
+Depois, entrar no terminal da pasta do projeto instalar dependencias. No terminal
+2-yarn
+
 
 
 Aula 3- 

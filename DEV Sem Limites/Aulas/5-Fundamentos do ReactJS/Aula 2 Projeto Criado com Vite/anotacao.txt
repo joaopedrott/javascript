@@ -10,9 +10,11 @@ Depois, entrar no terminal da pasta do projeto instalar dependencias. No termina
 
 
 
-Aula 3- 
+Aula 3- Importando Fontes e Criando Estilo Global
+    botamos a fonte roboto e criamos o global.css
 
-Aula 4- 
+Aula 4- Entendendo Componentes e JSX no React
+    
 
 Aula 5- 
 

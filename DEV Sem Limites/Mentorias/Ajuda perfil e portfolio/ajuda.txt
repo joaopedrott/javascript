@@ -1,0 +1,19 @@
+No geral, gostei do seu portfólio, porém identifiquei alguns pontos que podem ser aprimorados. Separei uma lista das principais informações que devem estar presentes no seu portfólio sempre que possível:
+
+•	Informação das ferramentas utilizadas em cada projeto;
+•	Inclusão de uma imagem demonstrativa juntamente com o nome do projeto;
+•	Breve resumo da proposta de cada projeto;
+•	Lista dos requisitos específicos de cada projeto;
+•	Demonstração da aplicação, se possível;
+•	Instruções claras para visualizar cada projeto;
+•	Referências e observações relevantes.
+
+
+
+Observando o seu LinkedIn, percebo que você tem se mantido ativo na plataforma, o que é ótimo. No entanto, sugiro algumas alterações para enriquecer ainda mais o seu perfil:
+•	Foto de capa: A inserção de uma imagem com as principais tecnologias em que você tem conhecimento pode melhorar a estética do perfil.
+•	Título: É importante adicionar informações sobre sua senioridade para facilitar que recrutadores o encontrem. Considere incluir se é Junior, por exemplo.
+•	Sobre: Adicione um texto resumindo sua trajetória profissional, destacando suas stacks e soft skills.
+•	Conexões: Busque estabelecer conexões com outros desenvolvedores e recrutadores, principalmente aqueles vinculados a empresas nas quais você tem interesse.
+•	Experiências: Detalhe suas experiências profissionais de forma sucinta, destacando suas stacks utilizadas.
+•	Projetos: Certifique-se de incluir seus projetos mais relevantes no seu portfólio

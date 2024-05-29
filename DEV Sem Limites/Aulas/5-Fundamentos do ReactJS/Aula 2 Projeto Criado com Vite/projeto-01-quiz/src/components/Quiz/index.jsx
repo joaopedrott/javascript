@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import {  QuestionAnswer  } from '../QuestionAnswer'
 
 import S from './styles.module.css'
@@ -35,9 +37,27 @@ const QUESTIONS = [
 
 export function Quiz () {
     const currentQuestion = QUESTIONS[0];
+    const  [correctAnsersCount, setCorrectAnsersCount] = useState(0)
+    const [isCurrentQuestionAswerd, setIsCurrentQuestionAswerd] = useState(false)
 
     const handleAnswerQuestion = (event, question, answer) => {
-        console.log({event, question, answer})
+        if(isCurrentQuestionAswerd){/* a pergunta ja foi respondida?(true?) */
+            return //acaba a funcao
+        }//caso false contrario, continua com a resolucao da questao
+
+        const isCorretAnser= question.correctAnswer === answer /* se a resposta for igual a respostaCorreta= True */
+
+        const resultClassName = isCorretAnser ? S.correct : S.incorrect
+        event.currentTarget.classList.toggle(resultClassName) 
+
+        if(isCorretAnser){ /* se true */
+            setCorrectAnsersCount(correctAnsersCount + 1) /* mais um ponto */
+            /* event.currentTarget.classList.toggle(S.correct) */
+        } /* else {
+            event.currentTarget.classList.toggle(S.incorrect)
+        } */
+
+        setIsCurrentQuestionAswerd(true) //pergunta respondida
     }
 
     return (
@@ -49,13 +69,21 @@ export function Quiz () {
                         <p className={S.question}>{currentQuestion.question}</p> {/* Nome da pergunta */}
                     </header>
 
+
                     <ul className={S.answers}>
                         {currentQuestion.answers.map(answer =>( /* possiveis respostas da pergunta */
-                        <li key={answer} className={S.answerItem}>
-                            <QuestionAnswer answer={answer} question={currentQuestion}
+                        <li key={answer} className={S.answerItem}> 
+                        {/* OBS: quando fazemos map de uma lista devemos passar a key */}
+
+                        {/* fazemos uma lista de botoes de possiveis respostas a serem escolhidas */}
+                        {/* Lembrando que QuestionAnswer eh um componente botao */}
+                        <QuestionAnswer answer={answer} question={currentQuestion}
                             handleAnswerQuestion={handleAnswerQuestion}
-                            />
+                                //passagem de parametro para outro componente eh chamado de props
+                            /> 
                         </li>
+                       /*  Explicacao
+                        Quando o botao eh clicado (<QuestionAnswer/>), oque esta escrito nele (answer={answer}), eh enviado como props junto com toda a questao a qual ele se refere (question={currentQuestion}) e a funcao para verificar se a resposta esta correta ou nao (handleAnswerQuestion={handleAnswerQuestion}) */
                         ))}
 
                     </ul>

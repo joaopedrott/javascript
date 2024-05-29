@@ -16,13 +16,13 @@ Aula 3- Importando Fontes e Criando Estilo Global
 Aula 4- Entendendo Componentes e JSX no React
     no componente tag com letra minuscula sao do proprio (Nativa) do html e tag com a primeira letra Maiuscula representa um componente customizado que criamos 
 
-Aula 5- 
+Aula 5- falou de criar repositorio github
 
-Aula 6- 
+Aula 6- criamos o componente da tela e estilizamos
 
-Aula 7- 
+Aula 7-  entendemos props e fizemos as questoes e respostas dinamicas usando props
 
-Aula 8- 
+Aula 8- ententendo state adicionando contagem de pontos de acerto, a verificacao da resposta e dando feedback na cor da borda do botao
 
 Aula 9- 
 

@@ -1,8 +1,12 @@
 import S from './styles.module.css'
-export function QuestionAnswer () {
+
+export function QuestionAnswer (props) {
     return (
-        <button className={S.container}>
-            Test 1
+        <button 
+        className={S.container}
+        onClick={(event)=>props.handleAnswerQuestion(event, props.question, props.answer)}
+        >
+            {props.answer}
         </button>
     )
 }

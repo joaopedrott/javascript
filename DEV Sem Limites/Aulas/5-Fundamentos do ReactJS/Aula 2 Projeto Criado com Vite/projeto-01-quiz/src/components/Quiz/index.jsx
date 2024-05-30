@@ -3,6 +3,7 @@ import { useState } from 'react';
 import {  QuestionAnswer  } from '../QuestionAnswer'
 
 import S from './styles.module.css'
+import { Button } from '../Button';
 
 const QUESTIONS = [
     {
@@ -36,7 +37,8 @@ const QUESTIONS = [
 
 
 export function Quiz () {
-    const currentQuestion = QUESTIONS[0];
+    
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
     const  [correctAnsersCount, setCorrectAnsersCount] = useState(0)
     const [isCurrentQuestionAswerd, setIsCurrentQuestionAswerd] = useState(false)
 
@@ -60,6 +62,19 @@ export function Quiz () {
         setIsCurrentQuestionAswerd(true) //pergunta respondida
     }
 
+    //paginacao de pergunta (Questions)
+    //so avanca para a proxima pergunta se a pergunta atual
+    //Ou seja, paginacao entre as perguntas usando a mudanca de estado do index!
+    const handleNextQuestion = ()=> {
+        if(currentQuestionIndex + 1 < QUESTIONS.length){
+            setCurrentQuestionIndex(index => index+1)
+        } //avanca para a proxima pergunta
+
+        setIsCurrentQuestionAswerd(false)//reseta para pergunta nao respondida
+    }
+
+    //questao atual recebe a Questions[index atual]
+    const currentQuestion = QUESTIONS[currentQuestionIndex];
     return (
         <div className={S.container}>
             <div className={S.card}>
@@ -87,6 +102,7 @@ export function Quiz () {
                         ))}
 
                     </ul>
+                    {isCurrentQuestionAswerd && (<Button onClick={handleNextQuestion}>Proxima Pergunta</Button>) }
                 </div>
             </div>
         </div>

@@ -24,7 +24,7 @@ Aula 7-  entendemos props e fizemos as questoes e respostas dinamicas usando pro
 
 Aula 8- ententendo state adicionando contagem de pontos de acerto, a verificacao da resposta e dando feedback na cor da borda do botao
 
-Aula 9- 
+Aula 9- Adicionando Navegacao Entre as Perguntas
 
 Aula 10- 
 

@@ -6,7 +6,7 @@ export function QuestionAnswer (props) {//props eh como se fosse um pacote com t
         <button 
         className={S.container}
         onClick={(event)=>props.handleAnswerQuestion(event, props.question, props.answer)}
-        > quando o botao eh apertado, 
+        > {/* quando o botao eh apertado, */} 
             {props.answer} {/*o botao exibe o answer escrito nele, independente se foi apertado ou nao*/}
         </button>
     )

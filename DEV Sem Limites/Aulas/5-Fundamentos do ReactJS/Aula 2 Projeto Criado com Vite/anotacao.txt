@@ -24,11 +24,13 @@ Aula 7-  entendemos props e fizemos as questoes e respostas dinamicas usando pro
 
 Aula 8- ententendo state adicionando contagem de pontos de acerto, a verificacao da resposta e dando feedback na cor da borda do botao
 
-Aula 9- Adicionando Navegacao Entre as Perguntas
+Aula 9- Adicionando Navegacao Entre as Perguntas com o uso do state
 
-Aula 10- 
 
-Aula 11- 
+Aula 10- foi ele fazendo commit no github
+
+Aula 11- Criando componente de resultado
+tivemos que criar estados e funcao para resetar o game
 
 Aula 12- 
 

@@ -5,32 +5,32 @@ import {  QuestionAnswer  } from '../QuestionAnswer'
 import S from './styles.module.css'
 import { Button } from '../Button';
 import { Result } from '../Result';
-
+import {  ProgressBar  } from '../ProgressBar'
 const QUESTIONS = [
     {
         id: 1,
-        question: 'Qual o meu nome?',
-        answers: ['Miguel', 'Luiz', 'Matheus', 'Ana'],
-        correctAnswer: 'Matheus',
+        question: 'Qual é a capital do Brasil?',
+        answers: ['Sao Paulo', 'Rio de Janeiro', 'Brasilia', 'Salvador'],
+        correctAnswer: 'Brasilia',
     },
     {
         id: 2,
-        question: 'Qual e a minha idade?',
-        answers: ['12', '2', '26', '32'],
-        correctAnswer: '26',
+        question: 'Quantos planetas existem no sistema solar?',
+        answers: ['7', '8', '9', '10'],
+        correctAnswer: '8',
     },
     {
         id: 3,
-        question: 'O que eu sou?',
-        answers: ['Desenvolvedor', 'Medico', 'Eletricista', 'Jogador de Futebol'],
-        correctAnswer: 'Desenvolvedor',
+        question: 'Quem pintou a Mona Lisa?',
+        answers: ['Vincent van Gogh', 'Pablo Picasso', 'Leonardo da Vinci', 'Michelangelo'],
+        correctAnswer: 'Leonardo da Vinci',
         
     },
     {
         id: 4,
-        question: 'Quem e Daniel?',
-        answers: ['Homem de ferro', 'Super man', 'Homem aranha', 'Homem formiga'],
-        correctAnswer: 'Homem formiga',
+        question: 'Qual é o símbolo químico para o elemento oxigênio?',
+        answers: ['O', 'Ox', 'O2', 'O3'],
+        correctAnswer: 'O',
     },
 ]
 
@@ -44,6 +44,7 @@ export function Quiz () {
     const [isCurrentQuestionAswerd, setIsCurrentQuestionAswerd] = useState(false)
     const [isTakingQuiz, setIsTakingQuiz] = useState(true)
     const quizSize = QUESTIONS.length //tamanho da quantidade de perguntas
+    const currentQuestionNumber = currentQuestionIndex +1// numero atual da pergunta
 
     const handleAnswerQuestion = (event, question, answer) => {//verifica cada resposta de cada pergunta
         if(isCurrentQuestionAswerd){/* a pergunta ja foi respondida?(true?) */
@@ -69,9 +70,10 @@ export function Quiz () {
     //so avanca para a proxima pergunta se a pergunta atual
     //Ou seja, paginacao entre as perguntas usando a mudanca de estado do index!
     const handleNextQuestion = ()=> {//mudanda de perguntas
-        if(currentQuestionIndex + 1 < quizSize){
+        if(currentQuestionNumber < quizSize){
                 //avanca para a proxima pergunta
             setCurrentQuestionIndex(index => index+1)
+
         } else {
             setIsTakingQuiz(false)// desabilita as perguntas e habilita o componente de resultado
         }
@@ -87,14 +89,15 @@ export function Quiz () {
 
     //questao atual recebe a Questions[index atual]
     const currentQuestion = QUESTIONS[currentQuestionIndex];
-    const navigationButtonText = currentQuestionIndex +1 === quizSize ? 'Ver Resultado' : 'Proxima Pergunta'
+    const navigationButtonText = currentQuestionNumber === quizSize ? 'Ver Resultado' : 'Proxima Pergunta'
     return (
         <div className={S.container}>
             <div className={S.card}>
                 {isTakingQuiz ? (
                     <div className={S.quiz}>
+                        <ProgressBar size={quizSize} currentStep={currentQuestionNumber}/>
                     <header className={S.quizHeader}>
-                        <span className={S.questionCount}>Pergunta 1/3</span>
+                        <span className={S.questionCount}>Pergunta {currentQuestionNumber}/{quizSize}</span>
                         <p className={S.question}>{currentQuestion.question}</p> {/* Nome da pergunta */}
                     </header>
 

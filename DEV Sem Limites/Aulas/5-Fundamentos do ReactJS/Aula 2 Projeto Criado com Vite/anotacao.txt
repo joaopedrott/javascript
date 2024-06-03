@@ -32,7 +32,9 @@ Aula 10- foi ele fazendo commit no github
 Aula 11- Criando componente de resultado
 tivemos que criar estados e funcao para resetar o game
 
-Aula 12- 
+Aula 12- criando barra de progresso
+Criamos o componente ProgressBar
+usamos no terminal o yarn add classnames para usar a biblioteca class names para concatenar mais de um class names para uma tag no index.jsx do ProgressBar
 
 Aula 13- 
 

@@ -36,7 +36,41 @@ Aula 12- criando barra de progresso
 Criamos o componente ProgressBar
 usamos no terminal o yarn add classnames para usar a biblioteca class names para concatenar mais de um class names para uma tag no index.jsx do ProgressBar
 
-Aula 13- 
+Aula 13- Fundamentos do TypeScript
+ TypeScript eh um superset emcima do javascript. Ele faz com que passamos os dados corretos do tipo correto para nossas funcoes. Ele amarra nosso codigo para ser feito de forma correta, do tipo correto. Tipando nossas funcoes.
+    ex:
+
+    //essa eh a interface responsavel por fazer a tipagem (TypeScript) do que a funcao vai receber
+        //1
+    interface Question {
+        id: number
+        question: string
+        answer: string[]
+        correctAnswer: string
+    }
+
+    //esta eh a funcao, que vai receber os dados logo apos o : temos o nome da interface, Question
+        //2
+    function getCorrectAnswer (question : Question){
+        return question.correctAnswer
+    }
+
+    //aqui esta a chamada de funcao passando todos os dados do jeito que devem ser passados. 
+        //3
+    getCorrectAnswer({
+        id: 1,
+        question: 'Qual eh meu nome?',
+        answer: ['Matheus','Ana'],
+        correctAnswer: 'Matheus'
+    })
+
+    //Agora a tipagem do retorno da funcao. Depois dos parenteses logo depois do : passamos o tipo, neste caso, String.
+    function getCorrectAnswer (question : Question) : string{
+        return question.correctAnswer
+    }
+    
+    Lembrando que gracas 
+    a tipagem, os dados passados como parametro tem por obrigatorio ser do modelo estipulado pela interface, causando logo um erro de imediato se caso estiver fora do padrao criado, assim, evitando possiveis bugs no futuro. Resumindo,  sem a tipagem de parametro poderia acarretar em bugs ou problemas pois poderia ser passado parametros de outros tipos.
 
 Aula 14- 
 

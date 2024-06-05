@@ -72,8 +72,20 @@ Aula 13- Fundamentos do TypeScript
     Lembrando que gracas 
     a tipagem, os dados passados como parametro tem por obrigatorio ser do modelo estipulado pela interface, causando logo um erro de imediato se caso estiver fora do padrao criado, assim, evitando possiveis bugs no futuro. Resumindo,  sem a tipagem de parametro poderia acarretar em bugs ou problemas pois poderia ser passado parametros de outros tipos.
 
-Aula 14- 
+Aula 14- Migrando Quiz para TypeScript
+1- primeiro vamos adicionar o TypeScript no projeto:
+no terminal digitar: yarn add typescript -D
+    obs: com isso no package.json foi adicionado o typescript nesse arquivo
 
+2-criamos o arquivo vite-env.d.ts escrito dentro dele:
+    /// <reference types="vite/client" />
+
+3-criamos um arquivo chamado tsconfig.json na raiz do projeto com tudo que esta escrito nele
+
+4- criamos mais um arquivo na raiz do projeto, agora chamado de: tsconfig.node.json 
+
+    Pronto, projeto Vite com suporte a typagem!
+    
 Aula 15- 
 
 

@@ -1,0 +1,14 @@
+Criando projeto usando VITE:
+vitejs.dev/guide
+
+Primeiro instalar o vite:
+com o yarn instalado...
+1-yarn create vite projeto-01-quiz --templete react
+
+Depois, entrar no terminal da pasta do projeto instalar dependencias. No terminal
+2-yarn
+
+3- executar projeto no vite
+No terminal digitar: yarn dev ou yarn start
+
+4- tirar arquivos para limpar o projeto instalado deixando-o zerado

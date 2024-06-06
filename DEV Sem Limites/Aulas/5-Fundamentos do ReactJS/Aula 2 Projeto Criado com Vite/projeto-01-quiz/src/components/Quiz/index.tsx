@@ -1,12 +1,21 @@
-import { useState } from 'react';
+import { MouseEvent,useState } from 'react';
 
-import {  QuestionAnswer  } from '../QuestionAnswer'
+import {  QuestionAnswer  } from '../QuestionAnswer/index.js'
 
 import S from './styles.module.css'
-import { Button } from '../Button';
-import { Result } from '../Result';
-import {  ProgressBar  } from '../ProgressBar'
-const QUESTIONS = [
+import { Button } from '../Button/index.js';
+import { Result } from '../Result/index.js';
+import {  ProgressBar  } from '../ProgressBar/index.js'
+
+export interface Question {// tipagem da questao inteira
+    id: number
+    question: string
+    answers: string[]
+    correctAnswer: string
+}//tipagem
+
+
+const QUESTIONS: Question[] = [//preciso tipar tambem a array de question
     {
         id: 1,
         question: 'Qual é a capital do Brasil?',
@@ -46,7 +55,8 @@ export function Quiz () {
     const quizSize = QUESTIONS.length //tamanho da quantidade de perguntas
     const currentQuestionNumber = currentQuestionIndex +1// numero atual da pergunta
 
-    const handleAnswerQuestion = (event, question, answer) => {//verifica cada resposta de cada pergunta
+        //funcao tipada
+    const handleAnswerQuestion = (event: MouseEvent<HTMLButtonElement>, question: Question, answer : string):void => {//Funcao verifica cada resposta de cada pergunta
         if(isCurrentQuestionAswerd){/* a pergunta ja foi respondida?(true?) */
             return //acaba a funcao
         }//caso false contrario, continua com a resolucao da questao
@@ -69,7 +79,7 @@ export function Quiz () {
     //paginacao de pergunta (Questions)
     //so avanca para a proxima pergunta se a pergunta atual
     //Ou seja, paginacao entre as perguntas usando a mudanca de estado do index!
-    const handleNextQuestion = ()=> {//mudanda de perguntas
+    const handleNextQuestion = ()=> {//Funcao mudanca de perguntas
         if(currentQuestionNumber < quizSize){
                 //avanca para a proxima pergunta
             setCurrentQuestionIndex(index => index+1)
@@ -81,7 +91,7 @@ export function Quiz () {
         setIsCurrentQuestionAswerd(false)//reseta para pergunta nao respondida
     }
 
-    const handleTryAgain = () => {//reseta o game
+    const handleTryAgain = () => {//Funcao reseta o game
         setIsTakingQuiz(true)
         setCorrectAnsersCount(0)
         setCurrentQuestionIndex(0)
@@ -115,7 +125,7 @@ export function Quiz () {
                             /> 
                         </li>
                        /*  Explicacao
-                        Quando o botao eh clicado (<QuestionAnswer/>), oque esta escrito nele (answer={answer}), eh enviado como props junto com toda a questao a qual ele se refere (question={currentQuestion}) e a funcao para verificar se a resposta esta correta ou nao (handleAnswerQuestion={handleAnswerQuestion}) */
+                        Quando o botao eh clicado (<QuestionAnswer/>), oque esta escrito nele (answer={answer}) ou a possivel resposta da questao, eh enviado como props junto com toda a questao a qual ele se refere (question={currentQuestion}) e a funcao para verificar se a resposta esta correta ou nao (handleAnswerQuestion={handleAnswerQuestion}) */
                         ))}
 
                     </ul>

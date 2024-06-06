@@ -1,6 +1,17 @@
+import {MouseEvent} from 'react'
 import S from './styles.module.css'
+import { Question } from '../Quiz'
 //componente botao
-export function QuestionAnswer (props) {//props eh como se fosse um pacote com todos os parametros passados
+
+
+
+interface QuestionAnswerProps {//tipagem dos parametros
+    answer: string //possivel respota da pergunta
+    question: Question  // questao inteira
+    handleAnswerQuestion: (event: MouseEvent<HTMLButtonElement>, question:Question, answer:string) => void
+}//tipagem dentro de tipagem
+
+export function QuestionAnswer (props: QuestionAnswerProps) {//props eh como se fosse um pacote com todos os parametros passados
     //neste caso o props tem: question, answer e handleAnswerQuestion
     return (
         <button 

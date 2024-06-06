@@ -2,7 +2,13 @@ import classNames from 'classnames'
 
 import S from './styles.module.css'
 
-export function ProgressBar (props) {
+interface ProgressBarProps {
+    size: number
+    currentStep: number
+}//tipagem do props
+
+
+export function ProgressBar (props: ProgressBarProps) {
     const progressBarSteps = Array.from({  length: props.size }, (_, index)=> index +1)
 
     return (

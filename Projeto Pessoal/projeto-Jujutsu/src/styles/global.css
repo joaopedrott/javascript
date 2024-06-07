@@ -10,10 +10,16 @@
 }
 
 body {
-    background-color: #15242d;
+     background-color: #15242d; 
+     background: url("https://jujutsukaisen.jp/images/top_r/bg.jpg");
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center center;
+
+
     box-sizing: border-box;
-    height: 100vh;
-    width: 100vw;
+   /*  height: 100vh; */
+    /* width: 100vw; */
     font-size: 18px;
     font-weight: bold;
     font-family: "Comic Neue", cursive;

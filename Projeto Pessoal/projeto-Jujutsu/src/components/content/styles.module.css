@@ -1,0 +1,46 @@
+.header {
+    
+
+
+    
+} 
+
+.banner img {
+    display: flex;
+    width: 100vw;
+    height: 100%;
+}
+
+
+ .logoConteudo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+    margin-top: -40px;
+    /* position: relative;
+    bottom: 50px; 
+    bottom ou margin top
+    */
+   
+}  
+
+ .logoConteudo img {
+    min-width: 200px;
+    
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    margin-left: 100px;
+    margin-top: 100px;
+    color: white;
+    
+}
+
+.content p {
+    width: 500px;
+    margin: 0 20px 50px 20px;
+}

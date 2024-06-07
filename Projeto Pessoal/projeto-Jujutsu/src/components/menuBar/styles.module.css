@@ -1,0 +1,19 @@
+.menu {
+    display: flex;
+    align-items: center;
+
+    background-color: #15242d;
+    padding: 10px;
+    height: 60px;
+    
+}
+
+.menu li{
+    /* text-decoration: none; */
+
+    list-style: none;
+    color: white;
+    margin-right: 25px;
+    margin-left: 30px;
+    
+}

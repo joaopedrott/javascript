@@ -3,13 +3,14 @@
 .header {
     
 /* background-color: blue; */
-
+position: relative;
     
 } 
 
 
 .banner {
-    
+    display: flex;
+
 }
 
 .banner img {
@@ -21,19 +22,20 @@
 
  .logoConteudo {
     display: flex;
-     align-items: center;
-    justify-content: center; 
+      align-items: center;
+    justify-content: center;  
 
-    background-color: red;
-     margin-top: -95px; 
+     background-color: black; 
+     margin-top: 0px;  
      /* position: relative;
     bottom: 50px;  */
     /* bottom ou margin top */
 }  
 
  .logoConteudo img { 
-    min-width: 100px;
-    width: 400px;
+    max-width: 300px;
+    position: absolute; 
+
     
     
 }

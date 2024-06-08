@@ -14,27 +14,27 @@
 
 .banner img {
     width: 100%;
-    margin-top: 50px;
+
 }
 
 
 
  .logoConteudo {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    
-     margin-top: -40px; 
+     align-items: center;
+    justify-content: center; 
+
+    background-color: red;
+     margin-top: -95px; 
      /* position: relative;
     bottom: 50px;  */
     /* bottom ou margin top */
-    
-   
 }  
 
  .logoConteudo img { 
-    min-width: 200px;
+    min-width: 100px;
+    width: 400px;
+    
     
 }
 
@@ -45,18 +45,24 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
-
+    background: url("https://jujutsukaisen.jp/images/top_r/bg.jpg");
+    
     color: white;
-    /* background-color: blueviolet; */
+     /* background-color: blueviolet;  */
     width: 100%;
-    margin-bottom: 40px;
+    padding-bottom: 80px;
+    padding-top: 80px;
+    
 }
 
 .content p {
     max-width: 500px;
     text-align: justify;
+    padding-left: 80px;
 }
-
+.content h1 {
+    padding-left: 85px;
+}
 .content img {
     width: 350px;
     height: 500px;

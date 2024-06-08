@@ -6,14 +6,14 @@ export function Content () {
         <>
             <div className={S.header}>
             
-            <div className={S.banner}>
-            <img  src="https://pbs.twimg.com/media/Ei7nh5_X0AAvuav?format=jpg&name=large" alt="" />
-            </div>
-                
+                <div className={S.banner}>
+                    <img  src="https://pbs.twimg.com/media/Ei7nh5_X0AAvuav?format=jpg&name=large" alt="" />
+                </div>
+                    
 
 
                 <div className={S.logoConteudo}> 
-                    <img src="https://p325k7wa.twic.pics/high/jujutsu-kaisen/jujutsu-kaisen-cursed-clash/00-page-setup/new-asset/JJKCC-logo-white.png?twic=v1/resize=500/step=10/quality=80" alt="" />
+                    <img src="https://image.tmdb.org/t/p/original/tEmqJ1k4MdjuaKaetn8wGyZGcyC.png" alt="" />
                 </div>
             </div>
 

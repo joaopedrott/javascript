@@ -12,9 +12,9 @@ html {
     margin-bottom: 80px;
     border-radius: 8px;
     margin: 60px;
-    height: 100000px;
+    height: 12000px;
     
-
+    /* position: relative; */
    
 }
 
@@ -39,23 +39,31 @@ html {
 
 .item-1 {
     /* position: static; */ /*padrao*/
-    position: sticky;
-    top: 10px;
+    position: relative;
+   /*  top: ; 
+    bottom: ;
+    left: ;
+    right: ; */
     
 }
 
 /*
+Position static:
+    E a posicao padrao que todas as caixas tem no html e ela NAO aceita top,bottom, left e right.
+
 Position absolute:
-quando tem um position absolute em uma caixa, ela baseia sua posicao na proxima
-tag pai que tiver position relative, se caso nao tiver nas proximas tags pai`s, a caixa se baseia no topo da pagina ou nos outros cantos.
-    Alem disso a caixa com abosulute ela fica por cima de todos os outros elementos da pagina como se tivesse isolada em uma pagina por cima da outra.
+Quando tem um position absolute em uma caixa ela fica por cima de todos as outras caixas, como se a caixa fosse excluida do html e fosse para outro html acima.
+
+    Ela baseia sua posicao na proxima
+    tag pai que tiver position relative, se caso nao tiver nas proximas tags pai`s, a caixa se baseia no topo da pagina.
+     
 
 
 Position relative:
-A caixa se baseia sua posicao na caixa que a envolve e pronto. (bem mais facil que a absolute)
+A caixa se baseia sua posicao na caixa que a envolve e pronto. (bem mais facil que a absolute) ou seja Ele faz referencia ao pai dele independente da position do pai.
 
 Position fixed:
-Assim como a absolute a fixed faz com que a caixa va para cima de todos os outros elementos como se estivesse em uma pagina acima e alem disso ele baseia sua posicao na proxima tag pai que tiver position relative tambem e se nao achar a caixa se baseia nos cantos da pagina.
+Assim como a absolute a fixed faz com que a caixa va para cima de todos os outros elementos como se fosse retirada do html e fosse para um outro html acima acompanhando a rolagem da pagina e alem disso ele baseia sua posicao na proxima tag pai que tiver position relative tambem e se nao achar a caixa se baseia nos cantos da pagina.
  Entretanto a unica diferenca eh que caixa fica fixa na tela como se fosse um botao de whatsapp em um site.
 
 

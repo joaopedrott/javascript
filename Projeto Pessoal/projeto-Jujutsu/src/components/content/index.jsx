@@ -37,6 +37,7 @@ export function Content () {
                 <img src="https://jujutsukaisen.jp/images/chara_category1/chara_detail7.png" alt="" />
             </div>
             <div className={S.carrossel}>
+                
                 {/* Aqui ficara o carrossel de imagens dos personagens */}
                 <Swiper
                     slidesPerView={1}

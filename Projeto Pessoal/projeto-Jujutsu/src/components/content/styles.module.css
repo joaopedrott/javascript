@@ -69,14 +69,50 @@ position: relative;
     width: 350px;
     height: 500px;
     margin-top: 40px;
+    margin-left: -20px;
 }
 
 
 /* Apresentacao de personagens */
 .carrossel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     flex-direction: row; 
+    background-image: url('https://jujutsukaisen.jp/images/bg_sub.jpg');
     background-color: aliceblue;
     height: 800px;
+    color: aliceblue;
 }
+.slide {
+    width: 600px;
+
+    margin: 10px 10px 10px 10px;
+}
+.slideItem{/* foto de slide */
+    
+    width: 200px;
+    height: 550px;
+    object-fit: cover;
+
+    float: left; /* Faz a imagem flutuar à esquerda */
+    margin-right: 10px; /* Espaçamento entre a imagem e o parágrafo */
+ 
+}
+
+.bioSlide {/* biografia da foto de cada slide */
+    
+    text-align: justify;
+    margin-bottom: 40px;
+    
+    flex: 1; /* Ocupa o espaço restante */
+  margin-left: 10px; /* Espaçamento entre a imagem e o texto */
+}
+
+
+
+
+
 
 /* creditos do site */
 .rodape {

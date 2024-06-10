@@ -1,0 +1,3 @@
+fiz o projeto com vite
+adicionei o slide de imagens usando o swiper
+link da aula do swiper: https://www.youtube.com/watch?v=cux7yaycIzs

@@ -29,33 +29,48 @@ export function Content () {
 
 
             <div className={S.content}>
-                
+                <div className={S.history}>
                 <div className={S.text}>
-                    <h1>A historia</h1>
+                    <h1>Historia</h1>
                     <p>"Jujutsu Kaisen" é uma jornada épica que começa com **Yuji Itadori**, um estudante colegial comum que tem sua vida transformada após um encontro fatídico com o sobrenatural. Quando Yuji acidentalmente liberta uma terrível maldição contida em um artefato amaldiçoado, ele se vê imerso em um mundo de trevas e perigo. Determinado a proteger aqueles que ama, Yuji acaba ingerindo um artefato amaldiçoado que era parte do corpo de **Sukuna**, a mais forte maldição que já existiu, o que acaba lhe transformando num usuário de **jujutsu**, uma forma de combate espiritual que usa energia amaldiçoada para enfrentar maldições e entidades malignas. Com a orientação do enigmático professor **Satoru Gojo**, Yuji se junta a outros usuários de jujutsu, incluindo **Megumi Fushiguro** e **Nobara Kugisaki**, em uma missão para salvar a humanidade do caos iminente. Ao longo de sua jornada, Yuji e seus companheiros enfrentam desafios terríveis, encontram aliados improváveis e descobrem segredos obscuros sobre o mundo oculto ao seu redor. Enquanto lutam para proteger o mundo dos vivos, também devem enfrentar seus próprios demônios internos e dilemas morais complexos.</p>
                 </div>
                 <img src="https://jujutsukaisen.jp/images/chara_category1/chara_detail7.png" alt="" />
-            </div>
-            <div className={S.carrossel}>
+                </div>
                 
-                {/* Aqui ficara o carrossel de imagens dos personagens */}
-                <Swiper
-                    slidesPerView={1}
-                    pagination={{clickable: true}}
-                    navigation
-                    className={S.slide}
-                >
-                    {data.map((item)=>(
-                        <SwiperSlide key={item.id}>
-                            <img
-                                src={item.image}
-                                alt="Slider"
-                                className={S.slideItem}
-                            /> {/* imagem */}
-                            <p className={S.bioSlide}>{item.bio}</p>{/* texto */}
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+            </div>
+            <div className={S.titulocarrossel}>
+                <h1>Personagens</h1>
+                <img src="https://uploaddeimagens.com.br/images/004/797/064/original/Personagens-11-06-2024.png?1718149320" alt="" />
+                <div className={S.carrossel}>
+            
+                    {/* Aqui ficara o carrossel de imagens dos personagens */}
+                    <Swiper
+                        slidesPerView={1}
+                        pagination={{clickable: true}}
+                        navigation
+                        className={S.slide}
+                    >
+                        {data.map((item)=>(
+                            <SwiperSlide key={item.id}>
+                                <img
+                                    src={item.image}
+                                    alt="Slider"
+                                    className={S.slideItem}
+                                /> {/* imagem */}
+                                <p className={S.bioSlide}>{item.bio}</p>{/* texto */}
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                
+                </div>
+            </div>
+            
+            <div className={S.games}>
+            <h1>Jogos</h1>
+            <h1>teste</h1>
+            
+
+            <img src="https://uploaddeimagens.com.br/images/004/797/063/original/Jogos-11-06-2024.png?1718149190" alt="" /> 
             </div>
 
             <div className={S.rodape}>

@@ -44,11 +44,11 @@ position: relative;
 
 /* A historia e imagem do gojo */
 .content {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* flex-direction: row; */
     background: url("https://jujutsukaisen.jp/images/top_r/bg.jpg");
-    
+    margin: auto;
     color: white;
      /* background-color: blueviolet;  */
     width: 100%;
@@ -76,19 +76,22 @@ position: relative;
 /* Apresentacao de personagens */
 .carrossel {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
-     flex-direction: row; 
+
     background-image: url('https://jujutsukaisen.jp/images/bg_sub.jpg');
     background-color: aliceblue;
     height: 800px;
+    
     color: aliceblue;
 }
 .slide {
+    margin: auto;
     width: 600px;
-
-    margin: 10px 10px 10px 10px;
+    height: 600px;
+    
 }
+
 .slideItem{/* foto de slide */
     
     width: 200px;

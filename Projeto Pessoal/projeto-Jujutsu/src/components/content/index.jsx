@@ -39,8 +39,8 @@ export function Content () {
                 
             </div>
             <div className={S.titulocarrossel}>
-                <h1>Personagens</h1>
-                <img src="https://uploaddeimagens.com.br/images/004/797/064/original/Personagens-11-06-2024.png?1718149320" alt="" />
+                <h1>Character</h1>
+                {/* <img src="https://uploaddeimagens.com.br/images/004/797/064/original/Personagens-11-06-2024.png?1718149320" alt="" /> */}
                 <div className={S.carrossel}>
             
                     {/* Aqui ficara o carrossel de imagens dos personagens */}
@@ -66,11 +66,12 @@ export function Content () {
             </div>
             
             <div className={S.games}>
-            <h1>Jogos</h1>
-            <h1>teste</h1>
-            
+                <h1>Game</h1>
 
-            <img src="https://uploaddeimagens.com.br/images/004/797/063/original/Jogos-11-06-2024.png?1718149190" alt="" /> 
+                {/* <img src="https://uploaddeimagens.com.br/images/004/797/063/original/Jogos-11-06-2024.png?1718149190" alt="" />  */}
+                <div className={S.jogo}>
+                    Fotos e texto
+                </div>
             </div>
 
             <div className={S.rodape}>

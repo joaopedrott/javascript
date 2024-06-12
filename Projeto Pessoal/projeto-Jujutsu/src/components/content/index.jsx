@@ -1,6 +1,6 @@
 import S from './styles.module.css'
 import { Swiper, SwiperSlide } from 'swiper/react'
-
+import { Button } from '../button'
 
 
 export function Content () {
@@ -73,7 +73,19 @@ export function Content () {
 
                 {/* <img src="https://uploaddeimagens.com.br/images/004/797/063/original/Jogos-11-06-2024.png?1718149190" alt="" />  */}
                 <div className={S.jogo}>
-                    Fotos e texto
+                        <div className={S.opcoes}>
+                        
+                            <p>Jujutsu Kaisen: Cursed Clash é um jogo de ação em 3D baseado no anime Jujutsu Kaisen. Nele, os jogadores formam equipes de feiticeiros e maldições, usando técnicas amaldiçoadas para lutar contra inimigos em combates 2x2. O jogo inclui sistemas de energia amaldiçoada, movimentos finais, ataques conjuntos e modos online. Foi lançado em 2 de fevereiro de 2024 para várias plataformas</p>
+                            
+                            
+                            <h1>Plataformas</h1>
+                            <Button src={"https://uploaddeimagens.com.br/images/004/797/531/original/logo-steam.png"} name={"Steam"}/>
+                            <Button src={"https://uploaddeimagens.com.br/images/004/797/575/original/logotipo-do-playstation.png"}  name={"Playstation"}/>
+                            <Button src={"https://uploaddeimagens.com.br/images/004/797/576/original/interruptor-nintendo.png"}  name={"Nintendo"}/>
+                            <Button  src={"https://uploaddeimagens.com.br/images/004/797/573/original/logotipo-do-xbox.png"} name={"Xbox Series"}/>
+
+                        </div>
+                    <img src="https://media.graphassets.com/a2dNrEouRpOOPqsVQs8m" alt="Capa do Jogo" />
                 </div>
             </div>
 

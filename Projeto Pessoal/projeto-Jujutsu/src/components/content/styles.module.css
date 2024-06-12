@@ -165,8 +165,39 @@ position: relative;
 .jogo {
     color: aliceblue;
     display: flex;
-    /* align-items: center; */
+     align-items: center; 
     justify-content: center;
+    flex-direction: row; /* responsividade dos botos do jogo */
+
+}
+
+/* .jogo button {
+    width: 100px;
+    height: 50px;
+} */
+
+.jogo img {
+    
+}
+
+.jogo h1 {
+  
+}
+
+.opcoes {
+    max-width: 400px;
+}
+
+.opcoes p {
+
+    color: aliceblue;
+    margin-bottom: 50px;
+    text-align: justify;
+}
+
+.opcoes img {
+    
+ 
 }
 
 /* creditos do site */

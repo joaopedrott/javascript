@@ -1,0 +1,28 @@
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center; 
+    
+    height: 50px;
+    max-width: 300px;
+
+    padding: 0 5px 0 5px;
+
+
+    color: aliceblue;
+    background-color: transparent;
+
+    border-radius: 8px;
+    border: 1px solid white;
+    margin: 5px;
+    cursor: pointer;
+    
+}
+
+.button img {
+width: 20px;
+margin: 0;
+margin-right: 4px;
+margin-left: 5px;
+
+}

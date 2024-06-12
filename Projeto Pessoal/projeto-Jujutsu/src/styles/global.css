@@ -8,8 +8,8 @@ html, body {
     height: 100%;
     width: 100%;
     font-size: 18px;
-    font-weight: bold;
-    font-family: "Comic Neue", cursive;
+    /* font-weight: bold; */
+    font-family: "Roboto", cursive;
     background-color: black;
     overflow-x: hidden;
 }

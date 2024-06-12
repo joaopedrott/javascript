@@ -77,15 +77,22 @@ position: relative;
 
 /* Apresentacao de personagens */
 .titulocarrossel{
-    display: flex;
-    flex-direction: column;
     
+     display: flex;
+    flex-direction: column;
+     
     background-image: url('https://jujutsukaisen.jp/images/bg_sub.jpg');
     color: aliceblue;
+
+   
     
 }
 .titulocarrossel h1 {
-    
+    /* transform: rotate(90deg); */
+    font-size: 70px;
+    left: 40px;
+    top: 10px;
+    position: relative;
 }
 
 /* .titulocarrossel img {
@@ -96,7 +103,7 @@ position: relative;
     display: flex; 
     justify-content: center; 
     
-    /* align-items: center; */
+    align-items: center;
      
 
     background: transparent;
@@ -104,11 +111,12 @@ position: relative;
     height: auto;
     
     color: aliceblue;
+    /* position: relative; */
 }
-.carrossel h1{
-    
-   
-}
+
+
+
+
 .slide {
     margin: 50px 40px 50px 40px;
     width: 600px;
@@ -148,13 +156,10 @@ position: relative;
 
 }
 
-.games h1{
-    
-    color: aliceblue;
-}
+
 .games img {
-    width: 200px;
-    height: 100px;
+    width: 330px;
+    margin: 20px;
 }
 
 .jogo {
@@ -166,6 +171,6 @@ position: relative;
 
 /* creditos do site */
 .rodape {
-    background-color: goldenrod;
-    height: 100px;
+    background-color: black;
+    height: 500px;
 }

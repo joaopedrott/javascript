@@ -31,7 +31,7 @@ export function Content () {
             <div className={S.content}>
                 <div className={S.history}>
                 <div className={S.text}>
-                    <h1>Historia</h1>
+                    
                     <p>"Jujutsu Kaisen" é uma jornada épica que começa com **Yuji Itadori**, um estudante colegial comum que tem sua vida transformada após um encontro fatídico com o sobrenatural. Quando Yuji acidentalmente liberta uma terrível maldição contida em um artefato amaldiçoado, ele se vê imerso em um mundo de trevas e perigo. Determinado a proteger aqueles que ama, Yuji acaba ingerindo um artefato amaldiçoado que era parte do corpo de **Sukuna**, a mais forte maldição que já existiu, o que acaba lhe transformando num usuário de **jujutsu**, uma forma de combate espiritual que usa energia amaldiçoada para enfrentar maldições e entidades malignas. Com a orientação do enigmático professor **Satoru Gojo**, Yuji se junta a outros usuários de jujutsu, incluindo **Megumi Fushiguro** e **Nobara Kugisaki**, em uma missão para salvar a humanidade do caos iminente. Ao longo de sua jornada, Yuji e seus companheiros enfrentam desafios terríveis, encontram aliados improváveis e descobrem segredos obscuros sobre o mundo oculto ao seu redor. Enquanto lutam para proteger o mundo dos vivos, também devem enfrentar seus próprios demônios internos e dilemas morais complexos.</p>
                 </div>
                 <img src="https://jujutsukaisen.jp/images/chara_category1/chara_detail7.png" alt="" />
@@ -39,10 +39,12 @@ export function Content () {
                 
             </div>
             <div className={S.titulocarrossel}>
-                <h1>Character</h1>
+               <h1>Character</h1> 
                 {/* <img src="https://uploaddeimagens.com.br/images/004/797/064/original/Personagens-11-06-2024.png?1718149320" alt="" /> */}
+                
                 <div className={S.carrossel}>
-            
+                
+                {/* <h1>Character</h1> */}
                     {/* Aqui ficara o carrossel de imagens dos personagens */}
                     <Swiper
                         slidesPerView={1}
@@ -61,12 +63,13 @@ export function Content () {
                             </SwiperSlide>
                         ))}
                     </Swiper>
-                
+                    
                 </div>
+                
             </div>
             
             <div className={S.games}>
-                <h1>Game</h1>
+                <img src="https://p325k7wa.twic.pics/high/jujutsu-kaisen/jujutsu-kaisen-cursed-clash/00-page-setup/new-asset/JJKCC-logo-white.png?twic=v1/resize=500/step=10/quality=80" alt="" />
 
                 {/* <img src="https://uploaddeimagens.com.br/images/004/797/063/original/Jogos-11-06-2024.png?1718149190" alt="" />  */}
                 <div className={S.jogo}>

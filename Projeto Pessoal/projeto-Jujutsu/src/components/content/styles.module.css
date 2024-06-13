@@ -1,5 +1,5 @@
 
-/* banner junto com logo de jujutsu */
+/* banner junto com logo de jujutsu ---------------------*/
 .header {
     
 /* background-color: blue; */
@@ -42,7 +42,7 @@ position: relative;
 
 
 
-/* A historia e imagem do gojo */
+/* A historia e imagem do gojo----------------------------- */
 .content {
 
     background: url("https://jujutsukaisen.jp/images/top_r/bg.jpg");
@@ -75,7 +75,7 @@ position: relative;
 }
 
 
-/* Apresentacao de personagens */
+/* Apresentacao de personagens -------------------------------*/
 .titulocarrossel{
     
      display: flex;
@@ -147,13 +147,13 @@ position: relative;
 
 
 
-/* Games */
+/* Game -----------------------------------------------------*/
 .games {
     
     background: url("https://p325k7wa.twic.pics/high/jujutsu-kaisen/jujutsu-kaisen-cursed-clash/00-page-setup/new-asset/JJKCC-bg-2.jpg?twic=v1/focus=auto&twic=v1/focus=auto/cover-max=1980x1343");
     background-color: darkseagreen;
-    height: 800px;
-
+    height: auto;
+    padding-bottom: 50px;
 }
 
 
@@ -171,18 +171,6 @@ position: relative;
 
 }
 
-/* .jogo button {
-    width: 100px;
-    height: 50px;
-} */
-
-.jogo img {
-    
-}
-
-.jogo h1 {
-  
-}
 
 .opcoes {
     max-width: 400px;
@@ -195,13 +183,21 @@ position: relative;
     text-align: justify;
 }
 
-.opcoes img {
-    
- 
+
+
+/* creditos do site --------------------------------------------------*/
+.rodape {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    color: aliceblue;
+
+    height: auto;
+    padding: 40px 0 40px 0;
 }
 
-/* creditos do site */
-.rodape {
-    background-color: black;
-    height: 500px;
+.rodape h1 {
+    margin-bottom: 20px;
 }

@@ -6,7 +6,7 @@
     height: 50px;
     max-width: 300px;
 
-    padding: 0 5px 0 5px;
+    padding: 0 10px 0 5px;
 
 
     color: aliceblue;
@@ -17,7 +17,10 @@
     margin: 5px;
     cursor: pointer;
     
+    
 }
+
+
 
 .button img {
 width: 20px;
@@ -25,4 +28,9 @@ margin: 0;
 margin-right: 4px;
 margin-left: 5px;
 
+}
+
+.button:hover {
+    background-color: brown;
+    transition: 0.3s;
 }

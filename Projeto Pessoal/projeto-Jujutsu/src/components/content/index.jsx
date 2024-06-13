@@ -1,6 +1,10 @@
 import S from './styles.module.css'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Button } from '../button'
+import { Swiper, SwiperSlide } from 'swiper/react'/* slide */
+import { Button } from '../button'/* botoes */
+import playLogo from '../../assets/play.svg'
+import xboxLogo from '../../assets/xbox.svg'
+import nintendoLogo from '../../assets/nintendo.svg'
+import steamLogo from '../../assets/steam.svg'
 
 
 export function Content () {
@@ -10,9 +14,12 @@ export function Content () {
 
         {id: '2', image: 'https://i.pinimg.com/564x/ac/82/3a/ac823a652522d108b4fef25b76b1954d.jpg', bio: 'Satoru Gojo é um dos principais personagens de Jujutsu Kaisen. Ele é um feiticeiro jujutsu de Grau Especial, conhecido por ser o mais poderoso dos tempos modernos. Carismático e habilidoso em combate, Gojo usa a técnica “Limitless” com maestria. Sua personalidade cativante e visual marcante o tornam um dos personagens mais populares da série.'},
 
-        {id: '3', image: 'https://i.pinimg.com/564x/18/a7/16/18a7167e35ea0b4d34c4d525d7ee8524.jpg', bio: 'Yuta Okkotsu é um personagem central na trama de Jujutsu Kaisen. Sua história é marcada por crescimento pessoal, batalhas sobrenaturais e a busca por redenção e paz interior. Yuta era um menino tímido e solitário que sofreu muito bullying enquanto crescia. Devido ao espírito amaldiçoado de Rika, ele perdeu a confiança em si mesmo e se isolou das pessoas. No entanto, Yuta possui habilidades excepcionais como feiticeiro de grau especial. Seu poder vem da relação com Michizane Sugawara e da energia amaldiçoada ilimitada de Rika. Mesmo após o evento, Yuta retém uma quantidade imensa de energia amaldiçoada, rivalizando com o lendário Gojo Satoru. '},
+        {id: '3', image: 'https://i.pinimg.com/564x/18/a7/16/18a7167e35ea0b4d34c4d525d7ee8524.jpg', bio: 'Yuta Okkotsu é um personagem central na trama de Jujutsu Kaisen. Sua história é marcada por crescimento pessoal, batalhas sobrenaturais e a busca por redenção e paz interior. Yuta era um menino tímido e solitário que sofreu muito bullying enquanto crescia. Devido ao espírito amaldiçoado de Rika, ele perdeu a confiança em si mesmo e se isolou das pessoas. No entanto, Yuta possui habilidades excepcionais como feiticeiro de grau especial. Seu poder vem da relação com Michizane Sugawara e da energia amaldiçoada ilimitada de Rika. Mesmo após o evento, Yuta retém uma quantidade imensa de energia amaldiçoada, rivalizando com o lendário Gojo Satoru.'},
 
         {id: '4', image: 'https://i.pinimg.com/564x/5f/ef/89/5fef89a3131b13249358b4fd2c4a68b0.jpg', bio: 'Maki Zenin é uma personagem importante em Jujutsu Kaisen. Ela nasceu no Clã Zenin, uma das Três Grandes Famílias de Feiticeiros, mas enfrentou discriminação por não possuir energia amaldiçoada. Determinada a superar sua família, Maki se tornou uma feiticeira e, após os eventos em Shibuya, sofreu queimaduras graves. Agora, com cicatrizes e cabelo curto, ela é uma das mais fortes do mangá.'},
+        {id: '5', image: 'https://i.pinimg.com/564x/62/1d/93/621d9395088e88b9e6d7de6d7e57278d.jpg', bio: 'Megumi Fushiguro é o deuteragonista da série Jujutsu Kaisen. Ele é um feiticeiro de jujutsu de nível 2 e estudante do primeiro ano na Tokyo Jujutsu High, junto com Yuji Itadori e Nobara Kugisaki. Megumi é filho de Toji Fushiguro e também um descendente do Clã Zenin. Satoru Gojo o encontrou e o matriculou na escola de feiticeiros. Ele é conhecido por sua aparência séria e habilidades como invocador de espíritos demoníacos para auxiliá-lo em batalhas.'},
+        {id: '6', image: 'https://i.pinimg.com/564x/fd/92/f1/fd92f1a435c90b307bb442d4c77d9b0e.jpg', bio: 'Nobara Kugisaki é a tritagonista da série Jujutsu Kaisen. Ela é uma estudante do primeiro ano e uma feiticeira de nível 3 na Tokyo Jujutsu High, estudando sob a orientação de Satoru Gojo, ao lado de Yuji e Megumi. Nobara é confiante, determinada e orgulha-se de ser tanto uma garota bonita quanto uma lutadora forte. Embora inicialmente pareça arrogante, ela é, na verdade, cuidadosa e leal aos seus aliados. Sua aparência inclui cabelos castanhos e olhos alaranjados, e ela veste o uniforme da escola de feiticeiros com um cinto marrom que carrega suas ferramentas de jujutsu. Nobara é uma personagem cativante e essencial para a trama da série.'},
+        {id: '7', image: 'https://i.pinimg.com/564x/54/b2/53/54b2534036f6d4b488411bb974133abc.jpg', bio: 'Sukuna, também conhecido como Ryomen Sukuna, é o feiticeiro jujutsu mais forte de mais de mil anos atrás. Ele é considerado o Rei Incontestável das Maldições e um dos principais antagonistas da série Jujutsu Kaisen. Sukuna era originalmente um humano, mas se tornou um demônio imaginário durante a Era Heian. Após sua morte, ele dividiu seu poder em vinte dedos indestrutíveis, que foram espalhados como objetos amaldiçoados. Quando Yuji Itadori consumiu um desses dedos, Sukuna foi reencarnado em seu corpo. Sua aparência monstruosa inclui quatro braços, quatro olhos e uma boca em seu estômago. Ele é sadista e só se preocupa consigo mesmo, causando dor e sofrimento aos outros.'},
     ]
 
     return (
@@ -79,10 +86,10 @@ export function Content () {
                             
                             
                             <h1>Plataformas</h1>
-                            <Button src={"https://uploaddeimagens.com.br/images/004/797/531/original/logo-steam.png"} name={"Steam"}/>
-                            <Button src={"https://uploaddeimagens.com.br/images/004/797/575/original/logotipo-do-playstation.png"}  name={"Playstation"}/>
-                            <Button src={"https://uploaddeimagens.com.br/images/004/797/576/original/interruptor-nintendo.png"}  name={"Nintendo"}/>
-                            <Button  src={"https://uploaddeimagens.com.br/images/004/797/573/original/logotipo-do-xbox.png"} name={"Xbox Series"}/>
+                            <Button src={steamLogo} name={"Steam"} link={"https://store.steampowered.com/app/1877020/Jujutsu_Kaisen_Cursed_Clash/"}/>
+                            <Button src={playLogo}  name={"Playstation"} link={"https://www.playstation.com/pt-br/games/jujutsu-kaisen-cursed-clash/"}/>
+                            <Button src={nintendoLogo}  name={"Nintendo"} link={"https://www.nintendo.com/pt-br/store/products/jujutsu-kaisen-cursed-clash-switch/"}/>
+                            <Button  src={xboxLogo} name={"Xbox Series"} link={"https://www.xbox.com/pt-BR/games/store/jujutsu-kaisen-cursed-clash/9N1T03Q2J6NH/0010"}/>
 
                         </div>
                     <img src="https://media.graphassets.com/a2dNrEouRpOOPqsVQs8m" alt="Capa do Jogo" />
@@ -90,7 +97,10 @@ export function Content () {
             </div>
 
             <div className={S.rodape}>
-                Aqui ficara o rodape
+                <h1>Projeto Desenvolvido Por Joao Pedro Guedes Torres</h1>
+                <p>© Gege Akutami/Shueisha, JUJUTSU KAISEN Project</p>
+                <p>© Gege Akutami/Shueisha</p>
+                <p>©Bandai Namco Entertainment Inc.</p>
             </div>
 
             

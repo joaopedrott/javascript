@@ -1,32 +1,22 @@
 .header {
     height: 60px;
+    position: -webkit-sticky; /* Para suporte no Safari */
     position: sticky;
     top: 0;
-
     z-index: 2;
-    
+    background-color: #15242d; /* Certifique-se de adicionar uma cor de fundo */
 }
 
 .menu {
     display: flex;
     align-items: center;
-
-    background-color: #15242d;
-    
     padding: 10px;
     height: 60px;
-    
-    
-
-    
 }
 
-.menu li{
-    /* text-decoration: none; */
-    
+.menu li {
     list-style: none;
     color: white;
     margin-right: 25px;
     margin-left: 30px;
-    
 }

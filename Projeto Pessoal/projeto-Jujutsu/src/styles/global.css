@@ -3,28 +3,22 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
-    height: 100%; 
-}
-
-html {
-   
-}
-html, body {
-    
-    width: 100%;
-    font-size: 18px;
-    /* font-weight: bold; */
-    font-family: "Roboto", cursive;
-    background-color: black;
     overflow-x: hidden;
 }
+html, body {
 
-
-
+    margin: 0;
+    padding: 0;
+    
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    background-color: black;
+}
 
 #root {
-    /* height: 100%; */ /* desabilitar para o menu sticky funcionar corretamente */
     width: 100%;
+    /* height: 100%;  *//* Certifique-se de que o contêiner principal ocupa toda a altura */
+    display: flex;
+    flex-direction: column;
 }

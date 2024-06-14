@@ -4,8 +4,15 @@
     box-sizing: border-box;
 }
 
+body {
+    height: 100%; 
+}
+
+html {
+   
+}
 html, body {
-    height: 100%;
+    
     width: 100%;
     font-size: 18px;
     /* font-weight: bold; */
@@ -18,6 +25,6 @@ html, body {
 
 
 #root {
-    /* height: 100%; */
+    /* height: 100%; */ /* desabilitar para o menu sticky funcionar corretamente */
     width: 100%;
 }

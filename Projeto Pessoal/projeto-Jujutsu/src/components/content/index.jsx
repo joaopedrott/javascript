@@ -5,9 +5,15 @@ import playLogo from '../../assets/play.svg'
 import xboxLogo from '../../assets/xbox.svg'
 import nintendoLogo from '../../assets/nintendo.svg'
 import steamLogo from '../../assets/steam.svg'
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Importe os estilos do AOS
+import { useEffect } from 'react';
 
 export function Content () {
+
+    useEffect(() => {
+        AOS.init(); // Inicialize o AOS
+      }, []);
 
     const data = [
         {id: '1', image: 'https://i.pinimg.com/736x/8d/ed/36/8ded36c1b713c1b600eceabcc001ad57.jpg', bio: 'Yuji Itadori é o protagonista do mangá e anime “Jujutsu Kaisen”. Ele é um estudante do ensino médio com habilidades físicas excepcionais. Após encontrar um objeto amaldiçoado, ele se envolve no mundo dos feiticeiros e luta contra maldições para proteger os outros. Yuji é corajoso, determinado e tem um grande senso de justiça.'},
@@ -29,7 +35,7 @@ export function Content () {
                 <div className={S.banner}>
                     <img  src="https://pbs.twimg.com/media/Ei7nh5_X0AAvuav?format=jpg&name=large" alt="" />
                 </div>
-                <div className={S.logoConteudo}> 
+                <div data-aos="fade-down" className={S.logoConteudo} > 
                     <img src="https://image.tmdb.org/t/p/original/tEmqJ1k4MdjuaKaetn8wGyZGcyC.png" alt="" />
                 </div>
             </div>
@@ -37,19 +43,25 @@ export function Content () {
 
             <div className={S.content}>
                 <div className={S.history}>
-                <div className={S.text}>
-                    
+                <div  className={S.text}>
+                    <div data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine" >
                     <p>"Jujutsu Kaisen" é uma jornada épica que começa com **Yuji Itadori**, um estudante colegial comum que tem sua vida transformada após um encontro fatídico com o sobrenatural. Quando Yuji acidentalmente liberta uma terrível maldição contida em um artefato amaldiçoado, ele se vê imerso em um mundo de trevas e perigo. Determinado a proteger aqueles que ama, Yuji acaba ingerindo um artefato amaldiçoado que era parte do corpo de **Sukuna**, a mais forte maldição que já existiu, o que acaba lhe transformando num usuário de **jujutsu**, uma forma de combate espiritual que usa energia amaldiçoada para enfrentar maldições e entidades malignas. Com a orientação do enigmático professor **Satoru Gojo**, Yuji se junta a outros usuários de jujutsu, incluindo **Megumi Fushiguro** e **Nobara Kugisaki**, em uma missão para salvar a humanidade do caos iminente. Ao longo de sua jornada, Yuji e seus companheiros enfrentam desafios terríveis, encontram aliados improváveis e descobrem segredos obscuros sobre o mundo oculto ao seu redor. Enquanto lutam para proteger o mundo dos vivos, também devem enfrentar seus próprios demônios internos e dilemas morais complexos.</p>
+                    </div>
+                    
                 </div>
-                <img src="https://jujutsukaisen.jp/images/chara_category1/chara_detail7.png" alt="" />
+                <img data-aos="fade-left"
+     data-aos-offset="100"
+     data-aos-easing="ease-in-sine" src="https://jujutsukaisen.jp/images/chara_category1/chara_detail7.png" alt="" />
                 </div>
                 
             </div>
-            <div className={S.titulocarrossel}>
-               <h1>Character</h1> 
+            <div className={S.titulocarrossel} >
+               <h1 >Character</h1> 
                 {/* <img src="https://uploaddeimagens.com.br/images/004/797/064/original/Personagens-11-06-2024.png?1718149320" alt="" /> */}
                 
-                <div className={S.carrossel}>
+                <div data-aos="flip-left" data-aos-offset="400" className={S.carrossel}>
                 
                 {/* <h1>Character</h1> */}
                     {/* Aqui ficara o carrossel de imagens dos personagens */}

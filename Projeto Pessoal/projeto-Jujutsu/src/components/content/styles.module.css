@@ -74,6 +74,12 @@ position: relative;
     margin-left: -20px;
 }
 
+.text {
+    animation-fill-mode: forwards;
+    visibility: visible;
+    min-height: 20px;
+}
+
 
 /* Apresentacao de personagens -------------------------------*/
 .titulocarrossel{

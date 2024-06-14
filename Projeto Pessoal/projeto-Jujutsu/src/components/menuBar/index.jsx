@@ -10,6 +10,7 @@ export function MenuBar () {
             <li>Personagens</li>
             <li>Jogos</li>
             </ul>
+            
         </div>
         
       

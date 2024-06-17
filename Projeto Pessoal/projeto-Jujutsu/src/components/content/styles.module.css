@@ -1,9 +1,11 @@
 
 /* banner junto com logo de jujutsu ---------------------*/
+
 .header {
-    
+    margin-top: 60px;
+    /* top: 60px; */
 /* background-color: blue; */
-position: relative;
+
     
 } 
 
@@ -26,15 +28,17 @@ position: relative;
     justify-content: center;  
 
      background-color: black; 
-     margin-top: 0px;  
+       
+
      /* position: relative;
     bottom: 50px;  */
     /* bottom ou margin top */
+   
 }  
 
  .logoConteudo img { 
     max-width: 300px;
-    position: absolute; 
+    position: absolute;
 
     
     
@@ -43,14 +47,16 @@ position: relative;
 
 
 /* A historia e imagem do gojo----------------------------- */
+
 .content {
 
     background: url("https://jujutsukaisen.jp/images/top_r/bg.jpg");
     
     color: white;
      /* background-color: blueviolet;  */
-    width: 100%;
-
+    
+    height: auto;
+    
 }
 .history {
     display: flex; 

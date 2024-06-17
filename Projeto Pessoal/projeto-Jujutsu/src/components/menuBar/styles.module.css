@@ -1,10 +1,12 @@
+
 .header {
     height: 60px;
     position: -webkit-sticky; /* Para suporte no Safari */
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 2;
     background-color: #15242d; /* Certifique-se de adicionar uma cor de fundo */
+    width: 100%;
 }
 
 .menu {

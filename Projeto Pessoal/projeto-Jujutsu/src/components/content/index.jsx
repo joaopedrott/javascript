@@ -30,8 +30,8 @@ export function Content () {
     ]
 
     return (
-        <>
-            <section id='home'>
+        <div>
+            
                 <div className={S.header}>
                 
                     <div className={S.banner}>{/* baner do site */}
@@ -41,7 +41,7 @@ export function Content () {
                         <img src="https://image.tmdb.org/t/p/original/tEmqJ1k4MdjuaKaetn8wGyZGcyC.png" alt="" />
                     </div>
                 </div>
-            </section>
+            
 
 
             <section id='intro'>
@@ -124,7 +124,7 @@ export function Content () {
             </div>
 
             
-        </>
+        </div>
         
     )
 }

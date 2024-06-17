@@ -1,0 +1,27 @@
+sites que sao importantes para desenvolvimento:
+
+vitejs.dev/guide
+
+https://michalsnik.github.io/aos/
+
+https://swiperjs.com/
+
+https://icon-icons.com/
+
+https://www.flaticon.com/br/buscar?word=linguagem%20de%20programacao
+
+https://br.pinterest.com/
+
+https://fontawesome.com/
+
+https://uiverse.io/elements?search=space
+
+https://v2.tailwindcss.com/docs
+
+https://ui.shadcn.com/
+
+https://stripe.com/br
+
+https://fonts.google.com/selection/embed
+
+https://next-auth.js.org/getting-started/example

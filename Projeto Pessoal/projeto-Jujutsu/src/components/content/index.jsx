@@ -32,15 +32,17 @@ export function Content () {
     return (
         <div>
             
-                <div className={S.header}>
-                
-                    <div className={S.banner}>{/* baner do site */}
-                        <img  src="https://pbs.twimg.com/media/Ei7nh5_X0AAvuav?format=jpg&name=large" alt="" />
+                <section id='home'>
+                    <div className={S.header}>
+                    
+                        <div className={S.banner}>{/* baner do site */}
+                            <img  src="https://pbs.twimg.com/media/Ei7nh5_X0AAvuav?format=jpg&name=large" alt="" />
+                        </div>
+                        <div data-aos="fade-down" className={S.logoConteudo} > {/* logo presente no baner do site */}
+                            <img src="https://image.tmdb.org/t/p/original/tEmqJ1k4MdjuaKaetn8wGyZGcyC.png" alt="" />
+                        </div>
                     </div>
-                    <div data-aos="fade-down" className={S.logoConteudo} > {/* logo presente no baner do site */}
-                        <img src="https://image.tmdb.org/t/p/original/tEmqJ1k4MdjuaKaetn8wGyZGcyC.png" alt="" />
-                    </div>
-                </div>
+                </section>
             
 
 

@@ -11,12 +11,12 @@ import { useEffect } from 'react';
 
 export function Content () {
 
-    useEffect(() => {
+    useEffect(() => { // para animacao de algumas tags
         AOS.init({ duration: 1000
          }); // Inicialize o AOS
       }, []);
 
-    const data = [
+    const data = [//base de imagens do slide 
         {id: '1', image: 'https://i.pinimg.com/736x/8d/ed/36/8ded36c1b713c1b600eceabcc001ad57.jpg', bio: 'Yuji Itadori é o protagonista do mangá e anime “Jujutsu Kaisen”. Ele é um estudante do ensino médio com habilidades físicas excepcionais. Após encontrar um objeto amaldiçoado, ele se envolve no mundo dos feiticeiros e luta contra maldições para proteger os outros. Yuji é corajoso, determinado e tem um grande senso de justiça.'},
 
         {id: '2', image: 'https://i.pinimg.com/564x/ac/82/3a/ac823a652522d108b4fef25b76b1954d.jpg', bio: 'Satoru Gojo é um dos principais personagens de Jujutsu Kaisen. Ele é um feiticeiro jujutsu de Grau Especial, conhecido por ser o mais poderoso dos tempos modernos. Carismático e habilidoso em combate, Gojo usa a técnica “Limitless” com maestria. Sua personalidade cativante e visual marcante o tornam um dos personagens mais populares da série.'},
@@ -31,18 +31,21 @@ export function Content () {
 
     return (
         <>
-            <div className={S.header}>
-            
-                <div className={S.banner}>
-                    <img  src="https://pbs.twimg.com/media/Ei7nh5_X0AAvuav?format=jpg&name=large" alt="" />
+            <section id='home'>
+                <div className={S.header}>
+                
+                    <div className={S.banner}>{/* baner do site */}
+                        <img  src="https://pbs.twimg.com/media/Ei7nh5_X0AAvuav?format=jpg&name=large" alt="" />
+                    </div>
+                    <div data-aos="fade-down" className={S.logoConteudo} > {/* logo presente no baner do site */}
+                        <img src="https://image.tmdb.org/t/p/original/tEmqJ1k4MdjuaKaetn8wGyZGcyC.png" alt="" />
+                    </div>
                 </div>
-                <div data-aos="fade-down" className={S.logoConteudo} > 
-                    <img src="https://image.tmdb.org/t/p/original/tEmqJ1k4MdjuaKaetn8wGyZGcyC.png" alt="" />
-                </div>
-            </div>
+            </section>
 
 
-            <div className={S.content}>
+            <section id='intro'>
+            <div className={S.content}>{/* Introducao sobre jujutsu */}
                 <div className={S.history}>
                 <div  className={S.text}>
                     <div data-aos="fade-right"
@@ -58,58 +61,62 @@ export function Content () {
                 </div>
                 
             </div>
-            <div className={S.titulocarrossel} >
-               <h1 >Character</h1> 
-                {/* <img src="https://uploaddeimagens.com.br/images/004/797/064/original/Personagens-11-06-2024.png?1718149320" alt="" /> */}
-                
-                <div data-aos="flip-left" data-aos-offset="400" className={S.carrossel}>
-                
-                {/* <h1>Character</h1> */}
-                    {/* Aqui ficara o carrossel de imagens dos personagens */}
-                    <Swiper
-                        slidesPerView={1}
-                        pagination={{clickable: true}}
-                        navigation
-                        className={S.slide}
-                    >
-                        {data.map((item)=>(
-                            <SwiperSlide key={item.id}>
-                                <img
-                                    src={item.image}
-                                    alt="Slider"
-                                    className={S.slideItem}
-                                /> {/* imagem */}
-                                <p className={S.bioSlide}>{item.bio}</p>{/* texto */}
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                    
+            </section>
+
+
+
+            <section id='character'>
+                <div className={S.titulocarrossel} >{/* Apresentacao dos personagens da obra*/}
+                    <h1 >Character</h1> 
+                    {/* <img src="https://uploaddeimagens.com.br/images/004/797/064/original/Personagens-11-06-2024.png?1718149320" alt="" /> */}
+                    <div data-aos="flip-left" data-aos-offset="400" className={S.carrossel}>
+                    {/* <h1>Character</h1> */}
+                        {/* Aqui ficara o carrossel de imagens dos personagens */}
+                        <Swiper
+                            slidesPerView={1}
+                            pagination={{clickable: true}}
+                            navigation
+                            className={S.slide}
+                        >
+                            {data.map((item)=>(
+                                <SwiperSlide key={item.id}>
+                                    <img
+                                        src={item.image}
+                                        alt="Slider"
+                                        className={S.slideItem}
+                                    /> {/* imagem */}
+                                    <p className={S.bioSlide}>{item.bio}</p>{/* texto */}
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
                 </div>
-                
-            </div>
+            </section>
             
-            <div className={S.games}>
-                <img src="https://p325k7wa.twic.pics/high/jujutsu-kaisen/jujutsu-kaisen-cursed-clash/00-page-setup/new-asset/JJKCC-logo-white.png?twic=v1/resize=500/step=10/quality=80" alt="" />
+            <section id='game'>
+                <div className={S.games}>{/* Apresentacao do jogo da obra */}
+                    <img src="https://p325k7wa.twic.pics/high/jujutsu-kaisen/jujutsu-kaisen-cursed-clash/00-page-setup/new-asset/JJKCC-logo-white.png?twic=v1/resize=500/step=10/quality=80" alt="" />
 
-                {/* <img src="https://uploaddeimagens.com.br/images/004/797/063/original/Jogos-11-06-2024.png?1718149190" alt="" />  */}
-                <div className={S.jogo}>
-                        <div data-aos="fade-right" className={S.opcoes}>
-                        
-                            <p>Jujutsu Kaisen: Cursed Clash é um jogo de ação em 3D baseado no anime Jujutsu Kaisen. Nele, os jogadores formam equipes de feiticeiros e maldições, usando técnicas amaldiçoadas para lutar contra inimigos em combates 2x2. O jogo inclui sistemas de energia amaldiçoada, movimentos finais, ataques conjuntos e modos online. Foi lançado em 2 de fevereiro de 2024 para várias plataformas</p>
+                    {/* <img src="https://uploaddeimagens.com.br/images/004/797/063/original/Jogos-11-06-2024.png?1718149190" alt="" />  */}
+                    <div className={S.jogo}>
+                            <div data-aos="fade-right" className={S.opcoes}>
                             
-                            
-                            <h1>Plataformas</h1>
-                            <Button src={steamLogo} name={"Steam"} link={"https://store.steampowered.com/app/1877020/Jujutsu_Kaisen_Cursed_Clash/"}/>
-                            <Button src={playLogo}  name={"Playstation"} link={"https://www.playstation.com/pt-br/games/jujutsu-kaisen-cursed-clash/"}/>
-                            <Button src={nintendoLogo}  name={"Nintendo"} link={"https://www.nintendo.com/pt-br/store/products/jujutsu-kaisen-cursed-clash-switch/"}/>
-                            <Button  src={xboxLogo} name={"Xbox Series"} link={"https://www.xbox.com/pt-BR/games/store/jujutsu-kaisen-cursed-clash/9N1T03Q2J6NH/0010"}/>
+                                <p>Jujutsu Kaisen: Cursed Clash é um jogo de ação em 3D baseado no anime Jujutsu Kaisen. Nele, os jogadores formam equipes de feiticeiros e maldições, usando técnicas amaldiçoadas para lutar contra inimigos em combates 2x2. O jogo inclui sistemas de energia amaldiçoada, movimentos finais, ataques conjuntos e modos online. Foi lançado em 2 de fevereiro de 2024 para várias plataformas</p>
+                                
+                                
+                                <h1>Plataformas</h1>
+                                <Button src={steamLogo} name={"Steam"} link={"https://store.steampowered.com/app/1877020/Jujutsu_Kaisen_Cursed_Clash/"}/>
+                                <Button src={playLogo}  name={"Playstation"} link={"https://www.playstation.com/pt-br/games/jujutsu-kaisen-cursed-clash/"}/>
+                                <Button src={nintendoLogo}  name={"Nintendo"} link={"https://www.nintendo.com/pt-br/store/products/jujutsu-kaisen-cursed-clash-switch/"}/>
+                                <Button  src={xboxLogo} name={"Xbox Series"} link={"https://www.xbox.com/pt-BR/games/store/jujutsu-kaisen-cursed-clash/9N1T03Q2J6NH/0010"}/>
 
-                        </div>
-                    <img data-aos="fade-left" src="https://media.graphassets.com/a2dNrEouRpOOPqsVQs8m" alt="Capa do Jogo" />
+                            </div>
+                        <img data-aos="fade-left" src="https://media.graphassets.com/a2dNrEouRpOOPqsVQs8m" alt="Capa do Jogo" />
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <div className={S.rodape}>
+            <div className={S.rodape}>{/* rodape do site com informacoes */}
                 <h1>Projeto Desenvolvido Por Joao Pedro Guedes Torres</h1>
                 <p>© Gege Akutami/Shueisha, JUJUTSU KAISEN Project</p>
                 <p>© Gege Akutami/Shueisha</p>

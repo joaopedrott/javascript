@@ -213,3 +213,14 @@
 .rodape h1 {
     margin-bottom: 20px;
 }
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .jogo {
+        flex-direction: column;
+    }
+
+    .history {
+        flex-direction: column;
+    }
+}

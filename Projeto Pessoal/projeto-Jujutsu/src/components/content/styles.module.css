@@ -215,12 +215,18 @@
 }
 
 /* Responsividade */
-@media (max-width: 480px) {
+
+@media (max-width: 768px) {
+    .history {
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 650px) {
     .jogo {
         flex-direction: column;
     }
 
-    .history {
-        flex-direction: column;
-    }
+  
 }

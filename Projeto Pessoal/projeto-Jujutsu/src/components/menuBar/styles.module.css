@@ -35,6 +35,9 @@
     font-size: 24px;
     cursor: pointer;
     color: aliceblue;
+    margin-top: 15px;
+    margin-left: 15px;
+    position: absolute;
 }
 
 
@@ -49,6 +52,7 @@
     right: 20px;
     font-size: 36px;
     margin-left: 50px;
+    margin-top: 15px;
     cursor: pointer;
     border: none;
     background: none;
@@ -94,6 +98,7 @@
 @media (max-width: 480px) {
     .toggleBtn {
         display: block;
+        
     }
 
     .menu {

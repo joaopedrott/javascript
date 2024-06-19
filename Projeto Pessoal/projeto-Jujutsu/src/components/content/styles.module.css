@@ -208,6 +208,7 @@
 
     height: auto;
     padding: 40px 0 40px 0;
+    text-align: center;
 }
 
 .rodape h1 {
@@ -220,6 +221,11 @@
     .history {
         flex-direction: column;
     }
+
+    .rodape {
+        
+        margin: 0px 5px 0 5px;
+    }
 }
 
 
@@ -228,5 +234,24 @@
         flex-direction: column;
     }
 
-  
+    .titulocarrossel p{
+        margin-right: 5px;
+    }
+
+    .jogo {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .rodape {
+        
+        margin: 0px 5px 0 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulocarrossel h1 {
+       font-size: 52px;
+
+    }
 }

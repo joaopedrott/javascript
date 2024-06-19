@@ -5,3 +5,8 @@ link da aula do swiper: https://www.youtube.com/watch?v=cux7yaycIzs
 fiz as animacoes com AOS
 link da aula: https://www.youtube.com/watch?v=1RHecbwTK_U
 link : https://michalsnik.github.io/aos/
+
+usei o react-scroll no menu
+
+usei o swiper para slide com personagens e suas descricoes
+https://swiperjs.com/

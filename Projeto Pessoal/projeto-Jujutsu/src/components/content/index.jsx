@@ -69,7 +69,7 @@ export function Content () {
 
             <section id='character'>
                 <div className={S.titulocarrossel} >{/* Apresentacao dos personagens da obra*/}
-                    <h1 >Character</h1> 
+                    <h1 >Personagens</h1> 
                     {/* <img src="https://uploaddeimagens.com.br/images/004/797/064/original/Personagens-11-06-2024.png?1718149320" alt="" /> */}
                     <div data-aos="flip-left" data-aos-offset="400" className={S.carrossel}>
                     {/* <h1>Character</h1> */}

@@ -1,11 +1,13 @@
 DevBooks
 1-Overview do Projeto
-OBS:
+OBS: Vimos como sera o projeto
 
-2-
-OBS:
+2-Iniciando DevBooks
+OBS: usamos o comando "yarn create vite projeto-02-devbooks --template react-ts" para criar o projeto. 
+Em seguida usamos o comando "yarn" para instalar dependencias
+Em seguida usamos o comando "yarn dev" para abrir o projeto no navegador
 
-3-
+3-Configurando ESLint e Prettier
 OBS:
 
 4-

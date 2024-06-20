@@ -51,7 +51,7 @@
 .content {
 
     background: url("https://jujutsukaisen.jp/images/top_r/bg.jpg");
-    
+    background-size: cover;
     color: white;
      /* background-color: blueviolet;  */
     
@@ -164,6 +164,7 @@
     
     background: url("https://p325k7wa.twic.pics/high/jujutsu-kaisen/jujutsu-kaisen-cursed-clash/00-page-setup/new-asset/JJKCC-bg-2.jpg?twic=v1/focus=auto&twic=v1/focus=auto/cover-max=1980x1343");
     background-color: darkseagreen;
+    background-size: cover;
     height: auto;
     padding-bottom: 50px;
 }

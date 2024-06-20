@@ -27,3 +27,7 @@ https://fonts.google.com/selection/embed
 https://next-auth.js.org/getting-started/example
 
 https://compressjpeg.com/pt/#google_vignette
+
+https://imagecompressor.com/pt/
+
+https://www.iloveimg.com/pt/comprimir-imagem

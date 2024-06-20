@@ -25,3 +25,5 @@ https://stripe.com/br
 https://fonts.google.com/selection/embed
 
 https://next-auth.js.org/getting-started/example
+
+https://compressjpeg.com/pt/#google_vignette

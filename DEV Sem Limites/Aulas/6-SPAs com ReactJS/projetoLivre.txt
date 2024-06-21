@@ -8,7 +8,9 @@ Em seguida usamos o comando "yarn" para instalar dependencias
 Em seguida usamos o comando "yarn dev" para abrir o projeto no navegador
 
 3-Configurando ESLint e Prettier
-OBS:
+OBS:criei os arquivos .eslintrc.json e .prettierrc com as configuracoes do link e adicionei ao arquivo settings.json do VScode as configuracoes do link. (para abrir o settings.json devemos abrir usando ctrl + shift + p = preferencias: abrir as configuracoes do usuario)
+
+https://gist.github.com/gcmatheusj/54c966371a4485c8318ab75a618d6dc2
 
 4-
 OBS:

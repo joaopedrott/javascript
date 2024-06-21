@@ -12,7 +12,7 @@ OBS:criei os arquivos .eslintrc.json e .prettierrc com as configuracoes do link 
 
 https://gist.github.com/gcmatheusj/54c966371a4485c8318ab75a618d6dc2
 
-4-
+4-Configurando Axios
 OBS:
 
 5-

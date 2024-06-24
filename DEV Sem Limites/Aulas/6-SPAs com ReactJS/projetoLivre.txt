@@ -13,7 +13,13 @@ OBS:criei os arquivos .eslintrc.json e .prettierrc com as configuracoes do link 
 https://gist.github.com/gcmatheusj/54c966371a4485c8318ab75a618d6dc2
 
 4-Configurando Axios
-OBS:
+OBS: usamos a API https://www.googleapis.com/books/v1/volumes?q=search+terms do site do google: https://developers.google.com/books/docs/v1/using?hl=pt-br#PerformingSearch mas para isso instalamos antes o AXIOS, no terminal: yarn add axios
+
+deletamos alguns arquivos bases da criacao do react do vite como app.css e main.css alem de limpar o codigo do app.tsx
+
+deletamos a pasta assets
+
+criamos a pasta services e dentro dela criamos o arquivo responsavel por fazer a requisicao no google books utilizando o AXIOS
 
 5-
 OBS:

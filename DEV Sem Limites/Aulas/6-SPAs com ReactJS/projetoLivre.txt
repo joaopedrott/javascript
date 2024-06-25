@@ -21,8 +21,13 @@ deletamos a pasta assets
 
 criamos a pasta services e dentro dela criamos o arquivo responsavel por fazer a requisicao no google books utilizando o AXIOS
 
-5-
-OBS:
+5-Configurando Styled Components
+OBS: adicionamos a biblioteca styled components no terminao do projeto : yarn add styled-components
+
+em seguida instalando as definicoes de tipos no terminal:
+yarn add @types/styled-components -D
+
+criamos os estilos globais: criamos uma pasta styles e dentro dela o arquivo global.ts
 
 6-
 OBS:

@@ -29,8 +29,9 @@ yarn add @types/styled-components -D
 
 criamos os estilos globais: criamos uma pasta styles e dentro dela o arquivo global.ts
 
-6-
-OBS:
+6-Configurando React Router Dom (Páginas)
+OBS: criei a pasta pages e dentros delas as pages search, books e bookdetail 
+logo depois instalei usando o terminal: yarn add react-router-dom para fazer a navegacao entre essas paginas
 
 7-
 OBS:

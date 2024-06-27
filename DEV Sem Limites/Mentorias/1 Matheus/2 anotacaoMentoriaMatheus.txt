@@ -1,0 +1,6 @@
+Mentoria 2- Principais atualizacoes do React (versao 19 do react)
+Chamada para banco de dados
+
+	
+	usememo vai sumir
+	usecallback vai sumir

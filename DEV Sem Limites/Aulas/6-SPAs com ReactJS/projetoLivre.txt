@@ -33,8 +33,18 @@ criamos os estilos globais: criamos uma pasta styles e dentro dela o arquivo glo
 OBS: criei a pasta pages e dentros delas as pages search, books e bookdetail 
 logo depois instalei usando o terminal: yarn add react-router-dom para fazer a navegacao entre essas paginas
 
-7-
-OBS:
+7-Criando SearchBox
+OBS: criei a pasta components e criei a searchbox. 
+
+Logo apos isso criei a pasta icons e criei o svg da lupa para colocar no searchbox.
+
+Para utilizar esse svg, instalamos no projeto usando o terminal um plugin para svg no vite: 
+yarn add vite-plugin-svgr
+
+Depois adicionamos a configuracao no arquivo vite.config.ts o import do svgr e logo abaixo adicionei 
+svgr()
+
+Por ultimo no arquivo tsconfig.json, bem no final adicionei: "types": ["vite-plugin-svgr/client"]
 
 8-
 OBS:

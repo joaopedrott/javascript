@@ -1,6 +1,12 @@
 Mentoria 2- Principais atualizacoes do React (versao 19 do react)
 Chamada para banco de dados
-
-	
+Novos Hooks que facilitam o desenvolvimento
+	Actions
+	before-Actions
+	use-action-state
+	use-form-status
+	use-optimistic
+	use-transition
+	use (muito flexivel)
 	usememo vai sumir
 	usecallback vai sumir

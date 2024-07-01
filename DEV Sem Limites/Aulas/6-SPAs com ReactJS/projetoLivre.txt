@@ -46,8 +46,8 @@ svgr()
 
 Por ultimo no arquivo tsconfig.json, bem no final adicionei: "types": ["vite-plugin-svgr/client"]
 
-8-
-OBS:
+8-Criando Página de Busca
+OBS: fiz a estilizacao da primeira pagina, dentro da pasta Search no arquivo Search.styles.ts
 
 9-
 OBS:

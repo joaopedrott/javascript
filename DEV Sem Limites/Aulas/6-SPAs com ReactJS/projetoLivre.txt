@@ -49,8 +49,25 @@ Por ultimo no arquivo tsconfig.json, bem no final adicionei: "types": ["vite-plu
 8-Criando Página de Busca
 OBS: fiz a estilizacao da primeira pagina, dentro da pasta Search no arquivo Search.styles.ts
 
-9-
+9-Entendendo o hook useEffect
 OBS:
+
+/* useEffect(()=>{
+        // imprimi a palavra Efeito a cada 1 segundo
+        const interval = setInterval(()=> { 
+            console.log('Efeito')
+        }, 1000)
+
+        //se caso mudarmos de pagina o use effect para gracas a esse return
+        return () => {
+            clearInterval(interval)
+        }
+
+    },[])//com a chaves "[]" (array de dependencia) vazia, podemos fazer com que o useEffect so execute uma vez e bem na hora que a pagina abrir. */
+    obs: se eu colocar algo dentro da array de dependencias, se esse algo sofrer alteracao ele ira executar o useEffect, como se fosse realmente um efeito colateral.
+
+
+
 
 10-
 OBS:

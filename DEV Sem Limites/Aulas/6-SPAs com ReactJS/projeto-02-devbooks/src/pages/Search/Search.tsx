@@ -11,6 +11,8 @@ export function Search() {
     const handleSearch = () => {
         if (search) {
             //navegar para a pagina de resultados
+            //e depois
+            //adiciona o que foi digitado na barra de pesquisa, a barra de enderecos
             navigate(`/books?q=${search}`)
         }
     }

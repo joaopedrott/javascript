@@ -1,25 +1,64 @@
 import { useEffect, useState } from 'react'
-//entendendo o useEffect
-export function Books () {
-    const [count, setCount] = useState(0)
+import { Navigate, useLocation, useSearchParams } from 'react-router-dom'
+import { googleBooksApi } from '../../services/googleBooksApi'
 
-    /* useEffect(()=>{
-        // imprimi a palavra Efeito a cada 1 segundo
-        const interval = setInterval(()=> { 
-            console.log('Efeito')
-        }, 1000)
-
-        //se caso mudarmos de pagina o use effect para gracas a esse return
-        return () => {
-            clearInterval(interval)
+//4-modela as informacoes do livro para minha aplicacao ou faz um modelo para facil acesso as informacoes vindas da api livros
+interface Book {
+    id: string
+    volumeInfo: {
+        title:string
+        description: string
+        imageLinks?: {
+            thumbnail: string
         }
+    }
+}
+interface BooksState {
+    totalItems: number
+    items: Book[]
+}
+//---------------------------------------------------------------------------------------------------------------------------
 
-    },[])//com a chaves "[]" (array de dependencia) vazia, podemos fazer com que o useEffect so execute uma vez e bem na hora que a pagina abrir. */
+
+export function Books () {
+    //2-crio hook que armazena os livros achados na pesquisa/ 5- uso a tipagem para fazer a interface criada se conectar ao dados do livro que eu quero
+    const [books, setBooks] = useState<BooksState | null>(null)
+
+    const location = useLocation()
+
+   //0-pego oq foi escrito no parametro q na barra de endereco
+    // Uso hook (useSearchParams) para pegar o parametro ou livro digitado na barra de pesquisa que foi enviado na barra de endereco (pagina Search)
+    const params = useSearchParams()
+    const [searchParams] = params
+    const q = searchParams.get('q')
+    //coloco oq tem no parametro q e coloco na variavel 'q'
+
+    //1- faz a requisicao dos livros na hora que a pagina abre, usando o useEffect
+    useEffect(()=>{
+        googleBooksApi.get(`/v1/volumes?q=${q}&maxResults=20`)
+        //3-coloca a lista de livros da chamada no meu hook useState que antes era vazio (null)
+        .then((response)=> setBooks(response.data))
+
+    }, [q])
+
+    if(!q){ //Extra-trato um possivel erro que pode ocorrer se caso o q for pesquisado vazio
+    // impede de buscar livro sem nome, pela barra de pesquisa
+        return <Navigate to="/" state={{ from: location }} replace />
+    }
+
 
     return (
+        //pagina que mostra a lista de livros da busca
         <>
-        <span>{count}</span>
-        <button onClick={()=> setCount(count+1)}>Increment</button>
+            <h1>Resultado da sua busca</h1>
+    {/* 6- Imprimo na pagina do site, uma lista de livros usando o map no estado que tem a lista de livros */}
+            {books && (
+                <ul>
+                    {books.items.map(book=> (
+                        <span key={book.id}>{book.volumeInfo.title}</span>
+                    ))}
+                </ul>
+            )}
         </>
     )
 }

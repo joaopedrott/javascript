@@ -74,7 +74,7 @@ OBS: uso a api para buscar os livros, crio um hook useEffect para fazer essa bus
 Com livros em "maos" armazeno em um estado useState e faco duas interfaces
 
 11-Criando Thumbnail dos Livros
-OBS:
+OBS: Criei a pasta Thumbnail e criei o componente Thumbnail, que sera usado na pagina books.tsx ou seja, na pagina do resultado dos livros
 
 12-
 OBS:

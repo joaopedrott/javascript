@@ -73,7 +73,7 @@ OBS:
 OBS: uso a api para buscar os livros, crio um hook useEffect para fazer essa busca assim que a pagina abrir usando oq foi digitado que foi passado como parametro na barra de pesquisa. 
 Com livros em "maos" armazeno em um estado useState e faco duas interfaces
 
-11-
+11-Criando Thumbnail dos Livros
 OBS:
 
 12-

@@ -1,13 +1,18 @@
+
+
 import { useEffect, useState } from 'react'
 import { Navigate, useLocation, useSearchParams } from 'react-router-dom'
 import { googleBooksApi } from '../../services/googleBooksApi'
 import { Thumbnail } from '../../components/Thumbnail/Thumbnail'
+
+import { Container, Title, Subtitle } from './Books.styles'
 
 //4-modela as informacoes do livro para minha aplicacao ou faz um modelo para facil acesso as informacoes vindas da api livros
 interface Book {
     id: string
     volumeInfo: {
         title:string
+        subtitle: string
         description: string
         imageLinks?: {
             thumbnail: string
@@ -50,7 +55,7 @@ export function Books () {
 
     return (
         //pagina que mostra a lista de livros da busca
-        <>
+        <Container>
             <h1>Resultado da sua busca</h1>
     {/* 6- Imprimo na pagina do site, uma lista de livros usando o map no estado que tem a lista de livros */}
             {books && (
@@ -62,11 +67,12 @@ export function Books () {
                             title={book.volumeInfo.title}
                             bgColor='#d9d9d9'
                             />
-                            <h1>{book.volumeInfo.title}</h1>
+                            <Title>{book.volumeInfo.title}</Title>
+                            <Subtitle>{book.volumeInfo.subtitle}</Subtitle>
                         </li>
                     ))}
                 </ul>
             )}
-        </>
+        </Container>
     )
 }

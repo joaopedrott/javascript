@@ -79,8 +79,11 @@ OBS: Criei a pasta Thumbnail e criei o componente Thumbnail, que sera usado na p
 12-Estilizando Página de Resultados
 OBS: estilizei a pagina dos livros com o arquivo books.styles.ts. O titulo, subtitulo, li e ul 
 
-13-
-OBS:
+13-Criando Página de Detalhes do Livro
+OBS:criei a rota e a pagina com sua e estilziacao entretanto na descricao do livro, vem com html e para retirar tag html nessa descricao no texto da descricao do livro, instalei :
+yarn add react-html-parser e yarn add @types/react-html-parser -D. Logo apois isso adicionei o import: import ReactHTMLParser from 'react-html-parser'. Essa biblioteca se chama: React Html Parser.
+
+Por ultimo, criamos um botao de retorno
 
 14-
 OBS:

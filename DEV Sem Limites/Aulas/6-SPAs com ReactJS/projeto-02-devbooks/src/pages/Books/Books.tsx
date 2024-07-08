@@ -1,24 +1,17 @@
 
 
 import { useEffect, useState } from 'react'
-import { Navigate, useLocation, useSearchParams } from 'react-router-dom'
+import { Link, Navigate, useLocation, useSearchParams } from 'react-router-dom'
+
+import { BookState as Book } from '../BookDetail'
+
 import { googleBooksApi } from '../../services/googleBooksApi'
 import { Thumbnail } from '../../components/Thumbnail/Thumbnail'
 
 import { Container, Title, Subtitle } from './Books.styles'
 
 //4-modela as informacoes do livro para minha aplicacao ou faz um modelo para facil acesso as informacoes vindas da api livros
-interface Book {
-    id: string
-    volumeInfo: {
-        title:string
-        subtitle: string
-        description: string
-        imageLinks?: {
-            thumbnail: string
-        }
-    }
-}
+
 interface BooksState {
     totalItems: number
     items: Book[]
@@ -62,13 +55,17 @@ export function Books () {
                 <ul>
                     {books.items.map(book=> (
                         <li key={book.id}>
-                            <Thumbnail 
-                            thumbnail={book.volumeInfo.imageLinks?.thumbnail} 
-                            title={book.volumeInfo.title}
-                            bgColor='#d9d9d9'
-                            />
-                            <Title>{book.volumeInfo.title}</Title>
-                            <Subtitle>{book.volumeInfo.subtitle}</Subtitle>
+
+                            <Link to={`/books/${book.id}`}>
+                                <Thumbnail 
+                                thumbnail={book.volumeInfo.imageLinks?.thumbnail} 
+                                title={book.volumeInfo.title}
+                                bgColor='#d9d9d9'
+                                />
+
+                                <Title>{book.volumeInfo.title}</Title>
+                                <Subtitle>{book.volumeInfo.subtitle}</Subtitle>
+                            </Link>
                         </li>
                     ))}
                 </ul>

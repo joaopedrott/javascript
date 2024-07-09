@@ -85,7 +85,7 @@ yarn add react-html-parser e yarn add @types/react-html-parser -D. Logo apois is
 
 Por ultimo, criamos um botao de retorno
 
-14-
+14-Adicionando Spinner (Loading)
 OBS:
 
 15-

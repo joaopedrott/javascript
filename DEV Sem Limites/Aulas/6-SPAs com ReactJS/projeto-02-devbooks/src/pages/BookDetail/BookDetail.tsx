@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import ReactHTMLParser from 'react-html-parser'
 
-import { Container, Content, Title, Subtitle, Description, BackButton } from './BookDetail.styles'
+import { Container, Content, Title, Subtitle, Description, BackButton, SpinnerContainer } from './BookDetail.styles'
 
 
 
@@ -22,6 +22,7 @@ import { googleBooksApi } from "../../services/googleBooksApi"
 import { Thumbnail } from "../../components/Thumbnail/Thumbnail"
 
 import { default as ArrowLeftIcon } from '../../icons/arrow-left.svg?react'
+import { Spinner } from "../../components/Spinner"
 
 
 export function BookDetail () {
@@ -43,7 +44,7 @@ export function BookDetail () {
   
     return (
         <Container>
-            {book && (
+            {book ? (
                 <>
                 <BackButton onClick={handleGoBack}>
                     <ArrowLeftIcon/>
@@ -57,6 +58,11 @@ export function BookDetail () {
                     </Content>
 
                 </>
+            ): (
+                <SpinnerContainer>
+                    <Spinner/>
+                </SpinnerContainer>
+                
             )}
         </Container>
     )

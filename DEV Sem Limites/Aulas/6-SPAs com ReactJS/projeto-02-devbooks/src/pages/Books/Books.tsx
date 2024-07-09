@@ -9,6 +9,7 @@ import { googleBooksApi } from '../../services/googleBooksApi'
 import { Thumbnail } from '../../components/Thumbnail/Thumbnail'
 
 import { Container, Title, Subtitle } from './Books.styles'
+import { Spinner } from '../../components/Spinner'
 
 //4-modela as informacoes do livro para minha aplicacao ou faz um modelo para facil acesso as informacoes vindas da api livros
 
@@ -50,8 +51,11 @@ export function Books () {
         //pagina que mostra a lista de livros da busca
         <Container>
             <h1>Resultado da sua busca</h1>
+
+            
+
     {/* 6- Imprimo na pagina do site, uma lista de livros usando o map no estado que tem a lista de livros */}
-            {books && (
+            {books ? (
                 <ul>
                     {books.items.map(book=> (
                         <li key={book.id}>
@@ -69,6 +73,8 @@ export function Books () {
                         </li>
                     ))}
                 </ul>
+            ): (
+                <Spinner/>
             )}
         </Container>
     )

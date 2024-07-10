@@ -12,6 +12,12 @@ h1 {
     margin-bottom: 24px;
     color: #222;
 }
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 23px;
+    }
+}
 `
 
 export const SearchContainer = styled.div`

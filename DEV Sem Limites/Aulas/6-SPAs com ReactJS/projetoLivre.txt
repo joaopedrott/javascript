@@ -89,5 +89,5 @@ Por ultimo, criamos um botao de retorno
 OBS:Criei o componente spinner e coloquei ele na pagina Books.tsx e BookDetail.tsx
 
 15-Tornando o DevBooks Responsivo
-OBS:
+OBS:fiz o site ficar responsivo
 

@@ -91,7 +91,7 @@ OBS:Criei o componente spinner e coloquei ele na pagina Books.tsx e BookDetail.t
 15-Tornando o DevBooks Responsivo
 OBS:fiz o site ficar responsivo
 
-Parte 2 do projeto devbooks
+Parte 2 do projeto devbooks-------------------------------------------------------
 
 1-
 OBS:

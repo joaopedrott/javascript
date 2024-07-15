@@ -1,2 +1,0 @@
-export { SearchBox } from './SearchBox'
-

@@ -100,7 +100,7 @@ OBS:Criei o arquivo theme.ts com varios estilos css e em seguida criei o arquivo
 OBS: Normalizei o global.ts dos estilos globais usando o theme
 
 3-Criando Button
-OBS:Deletei as pages e os componentes e em seguida criei uma nova page inicial, a page SignIn
+OBS:Deletei as pages e os componentes e em seguida criei uma nova page inicial, a page SignIn. Logo apos eu criei o estilo do componente botao. Vale lembrar que o botao nao foi criado pois reaproveitamos o botao do proprio react, apenas criamos o button.styles.ts do botao.
 
 4-
 OBS:

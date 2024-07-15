@@ -96,8 +96,8 @@ Parte 2 do projeto devbooks-----------------------------------------------------
 1-Criando Tema da Aplicação
 OBS:Criei o arquivo theme.ts com varios estilos css e em seguida criei o arquivo styled-components.d.ts para fazer a interface do arquivo theme.ts para entao o vscode entender o tipo de dado do theme. Para ter acesso as informacoes dele.
 
-2-
-OBS:
+2-Atualizando Estilos Globais
+OBS: Normalizei o global.ts dos estilos globais usando o theme
 
 3-
 OBS:

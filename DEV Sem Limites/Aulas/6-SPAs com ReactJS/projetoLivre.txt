@@ -102,8 +102,8 @@ OBS: Normalizei o global.ts dos estilos globais usando o theme
 3-Criando Button
 OBS:Deletei as pages e os componentes e em seguida criei uma nova page inicial, a page SignIn. Logo apos eu criei o estilo do componente botao. Vale lembrar que o botao nao foi criado pois reaproveitamos o botao do proprio react, apenas criamos o button.styles.ts do botao.
 
-4-
-OBS:
+4-Criando Input
+OBS: Adicionei a cor do texto global no global.ts usando o theme. fiz o componente input por completo, index.ts, input.styles.ts, input.tsx. E por ultimo coloquei o componente input criado na pagina SignIn.tsx 
 
 5-
 OBS:

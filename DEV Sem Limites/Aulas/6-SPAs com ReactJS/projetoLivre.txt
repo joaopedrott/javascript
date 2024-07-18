@@ -22,7 +22,7 @@ deletamos a pasta assets
 criamos a pasta services e dentro dela criamos o arquivo responsavel por fazer a requisicao no google books utilizando o AXIOS
 
 5-Configurando Styled Components
-OBS: adicionamos a biblioteca styled components no terminao do projeto : yarn add styled-components
+OBS: adicionamos a biblioteca styled components no terminal do projeto : yarn add styled-components
 
 em seguida instalando as definicoes de tipos no terminal:
 yarn add @types/styled-components -D
@@ -108,7 +108,7 @@ OBS: Adicionei a cor do texto global no global.ts usando o theme. fiz o componen
 5-Criando Link
 OBS:Criei o componente link, mas nao criei exatamente o componente pois vamos usar o componente link do react router doom. No fim adicionei na pagina SignIn
 
-6-
+6-Criando Logo DevBooks
 OBS:
 
 7-

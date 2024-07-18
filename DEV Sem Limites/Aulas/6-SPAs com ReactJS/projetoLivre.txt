@@ -105,8 +105,8 @@ OBS:Deletei as pages e os componentes e em seguida criei uma nova page inicial, 
 4-Criando Input
 OBS: Adicionei a cor do texto global no global.ts usando o theme. fiz o componente input por completo, index.ts, input.styles.ts, input.tsx. E por ultimo coloquei o componente input criado na pagina SignIn.tsx 
 
-5-
-OBS:
+5-Criando Link
+OBS:Criei o componente link, mas nao criei exatamente o componente pois vamos usar o componente link do react router doom
 
 6-
 OBS:

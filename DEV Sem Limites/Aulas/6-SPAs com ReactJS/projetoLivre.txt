@@ -109,10 +109,10 @@ OBS: Adicionei a cor do texto global no global.ts usando o theme. fiz o componen
 OBS:Criei o componente link, mas nao criei exatamente o componente pois vamos usar o componente link do react router doom. No fim adicionei na pagina SignIn
 
 6-Criando Logo DevBooks
-OBS:
+OBS:criei a logo utilizando o vite svgr
 
-7-
-OBS:
+7-Página de Login
+OBS:Criei a estilizacao da pagina de login criando o arquivo Auth.styles.ts, mas esse arquivo fica apenas dentro da pasta Auth pois esse mesmo arquivo de estilo servira tambem para a pagina de SignOut 
 
 8-
 OBS:

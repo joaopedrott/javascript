@@ -114,8 +114,8 @@ OBS:criei a logo utilizando o vite svgr
 7-Página de Login
 OBS:Criei a estilizacao da pagina de login criando o arquivo Auth.styles.ts, mas esse arquivo fica apenas dentro da pasta Auth pois esse mesmo arquivo de estilo servira tambem para a pagina de SignOut 
 
-8-
-OBS:
+8-Página de Cadastro
+OBS:Criei a interface de cadastro (SignUp) com a mesma estrutura do SignIn para manter o padrao de design do site. Adicionei a rota no App.tsx e a rota do botao "cadastre-se" no SignIn.tsx
 
 9-
 OBS:

@@ -5,7 +5,7 @@ import { Logo } from "../../../components/Logo/Logo";
 
 import { Container,FormContainer,LogoContainer,InputContainer,Heading } from '../Auth.styles'
 
-export function SingIn() {
+export function SingUp() {
 
     return(
         <Container>
@@ -16,16 +16,19 @@ export function SingIn() {
                 </LogoContainer>
                 
                 <Heading>
-                <h1>Faca seu login!</h1>
+                <h1>Cadastre-se de graca</h1>
                 <p>
-                    Nao tem uma conta? 
-                    <Link color="secondary" to="/cadastro">cadastre-se</Link>
+                    Ja tem uma conta? 
+                    <Link color="secondary" to="/">Entrar</Link>
                 </p>
                 </Heading>
-                
+
+                <InputContainer>
+                    <Input id="name" label="Nome Completo" type="text" />
+                </InputContainer>
             
                 <InputContainer>
-                    <Input id="email" label="Email" type="email" error="Email e obrigatorio"/>
+                    <Input id="email" label="Email" type="email" />
                 </InputContainer>
 
                 <InputContainer>

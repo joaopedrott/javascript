@@ -36,7 +36,7 @@ export function SingIn() {
                 </Heading>
                 
             
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(onSubmit)}> {/* register atua como um ref */}
                     <InputContainer>
                         <Input id="email" label="Email" type="email" {...register('email')}/>
                     </InputContainer>

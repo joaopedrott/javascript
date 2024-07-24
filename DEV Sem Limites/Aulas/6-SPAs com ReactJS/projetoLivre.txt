@@ -123,8 +123,9 @@ OBS:Componentes controlados e componente nao controlado. Componente controlado e
 
 Ja no nao controlado, nao existe o uso do useState. O que acontece eh que o componente input acessa diretamente os dados digitados. A desvantagem eh que nao se tem uma flexibilidade no uso recolhido dos dados. A vantagem eh que o componente somente eh redenrizado apenas uma vez.
 
-10-
-OBS:
+10-Gerenciando Formulários com React Hook Form
+OBS:usamos o react hook form com para usaro useForm, usamos o "register e handleSubmit" de dentro do useForm. Lembrando que o register eh para pegar oq foi digitado no input (exclusivo para componente nao controlado, como neste caso). 
+Fizemos as alteracoes no componente input.tsx, index.ts(index do input), signIn.tsx e singUp.tsx
 
 11-
 OBS:

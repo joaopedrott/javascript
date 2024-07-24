@@ -65,4 +65,4 @@ export const Button = styled.button<ButtonProps>`
         ${fullWidh && buttonFullWidth()}
     `}
 `
-
+//nao eh necessario criar componente botao, pois ele ja existe no react. Neste caso so resta estilizar o button

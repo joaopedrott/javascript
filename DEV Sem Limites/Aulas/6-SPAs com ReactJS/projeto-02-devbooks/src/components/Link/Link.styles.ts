@@ -18,3 +18,5 @@ export const Link = styled(LinkRRD)<LinkProps>`
         }
     `}
 `
+
+//neste caso nao precisa criar o link pois ele ja existe no react router dom. Entao so precisa estilizar ele.

@@ -13,6 +13,7 @@ interface SignInForm {
 }
 
 export function SingIn() {
+    //register busca o valor que foi escrito no input (ele atua exatamente com o ref)
     const {register, handleSubmit} = useForm<SignInForm>()
 
     const onSubmit: SubmitHandler<SignInForm>= async(data)=>{
@@ -36,7 +37,7 @@ export function SingIn() {
                 </Heading>
                 
             
-                <form onSubmit={handleSubmit(onSubmit)}> {/* register atua como um ref */}
+                <form onSubmit={handleSubmit(onSubmit)}> {/* register usano no input */}
                     <InputContainer>
                         <Input id="email" label="Email" type="email" {...register('email')}/>
                     </InputContainer>

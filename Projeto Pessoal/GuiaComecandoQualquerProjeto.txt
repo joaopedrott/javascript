@@ -12,3 +12,5 @@ Depois, entrar no terminal da pasta do projeto instalar dependencias. No termina
 No terminal digitar: yarn dev ou yarn start
 
 4- tirar arquivos para limpar o projeto instalado deixando-o zerado
+
+Criando projeto usando NEXTjs:

@@ -1,0 +1,43 @@
+Preparacao para entrevistas tecnicas e comportamentais
+
+1-Postura
+2-Roupa
+3-Organize suas ideias com:
+    Crie um documento
+    organize por topicos principais
+    Descreva em texto os seus relatos
+
+4-Pesquisar sobre a empresa que esta contratando
+
+
+
+
+
+
+
+
+//Fim da aula-------------------------
+
+perguntas
+
+Qual lugar ou plataforma eu uso para enviar meus curriculos?
+Aonde eu acho as vagas para me candidatar?
+*Glassdoor, Indeed, Bossabox
+https://br.indeed.com/
+https://www.glassdoor.com.br/index.htm
+https://bossabox.com/
+
+Sobre projetos, eh ruim ter comentarios em meus projetos?
+Descrever metodos, somente. Nao descrever cada linha de codigo
+
+Para preparar sobre desafios tecnicos envolvendo logica de programacao?
+
+https://leetcode.com/
+
+
+
+
+
+
+
+  

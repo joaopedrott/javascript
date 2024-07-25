@@ -123,14 +123,15 @@ OBS:Componentes controlados e componente nao controlado. Componente controlado e
 
 Ja no nao controlado, nao existe o uso do useState. O que acontece eh que o componente input acessa diretamente os dados digitados. A desvantagem eh que nao se tem uma flexibilidade no uso recolhido dos dados. A vantagem eh que o componente somente eh redenrizado apenas uma vez.
 
-10-Gerenciando Formulários com React Hook Form
+10- Instalei o react hoock form, no terminal: yarn add react-hook-form
+Gerenciando Formulários com React Hook Form
 OBS:usamos o react hook form com para usaro useForm, usamos o "register e handleSubmit" de dentro do useForm. Lembrando que o register eh para pegar oq foi digitado no input (exclusivo para componente nao controlado, como neste caso). register atua exatamente como ref
 Fizemos as alteracoes no componente input.tsx, index.ts(index do input), signIn.tsx e singUp.tsx
 
 Ref no react eh um meio de acessar diretamente no html da pagina.
 
-11-
-OBS:
+11-Validando Formulários com Zod
+OBS: Para validar os dados no input email e senha, vamos instalar o zod e hookform/resolvers(uma biblioteca para integrar o react hookform ao zod). No terminal: yarn add zod @hookform/resolvers. Lembrando que anteriormente eu instalei o react hookform.
 
 12-
 OBS:

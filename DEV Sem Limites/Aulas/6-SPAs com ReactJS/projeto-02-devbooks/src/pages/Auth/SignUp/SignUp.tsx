@@ -1,4 +1,6 @@
 import { SubmitHandler, useForm } from "react-hook-form";
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
 
 import { Button } from "../../../components/Button";
 import { Input } from "../../../components/Input";
@@ -6,13 +8,20 @@ import { Link } from "../../../components/Link";
 import { Logo } from "../../../components/Logo";
 
 import { Container,FormContainer,LogoContainer,InputContainer,Heading } from '../Auth.styles'
-interface SignUpForm {
-    name: string
-    email: string
-    password: string
-}
+
+const validationSchema =z.object({//esquema de validacao de nome, email e password
+    name: z.string().min(1, {message: 'Nome eh obrigatorio'}),
+    email: z.string().min(1, {message: 'Email eh obrigatorio!'}).email({message: 'Insira um email valido'}),
+    password: z.string().min(8,{message: 'A senha deve ter pelo menos 8 caracteres'})
+})
+
+type SignUpForm =z.infer<typeof validationSchema>
+
+
 export function SingUp() {
-    const {register, handleSubmit} = useForm<SignUpForm>()
+    const {register, handleSubmit, formState: {errors}} = useForm<SignUpForm>({
+        resolver: zodResolver(validationSchema)
+    })
 
     const onSubmit: SubmitHandler<SignUpForm>= async(data)=>{
         console.log(data)
@@ -36,15 +45,15 @@ export function SingUp() {
 
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <InputContainer>
-                        <Input id="name" label="Nome Completo" type="text" {...register('name')} />
+                        <Input id="name" label="Nome Completo" type="text" error={errors.name?.message} {...register('name')} />
                     </InputContainer>
                 
                     <InputContainer>
-                        <Input id="email" label="Email" type="email" {...register('email')}/>
+                        <Input id="email" label="Email" type="email" error={errors.email?.message} {...register('email')}/>
                     </InputContainer>
 
                     <InputContainer>
-                        <Input id="password" label="Senha" type="password" {...register('password')}/>
+                        <Input id="password" label="Senha" type="password" error={errors.password?.message} {...register('password')}/>
                     </InputContainer>
                     
                     <Button fullWidh={true}>Entrar</Button>

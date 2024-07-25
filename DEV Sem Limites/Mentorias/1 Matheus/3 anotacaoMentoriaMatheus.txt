@@ -1,0 +1,3 @@
+Mentoria 2- Tirando duvidas
+
+o componente puro que so tera estilizacao, posso apenas criar o arquivo do estilo styled component. para uma adicao de outros componentes e tags e logica, assim personalizando meu componente eu devo criar o componente.

@@ -131,7 +131,9 @@ Fizemos as alteracoes no componente input.tsx, index.ts(index do input), signIn.
 Ref no react eh um meio de acessar diretamente no html da pagina.
 
 11-Validando Formulários com Zod
-OBS: Para validar os dados no input email e senha, vamos instalar o zod e hookform/resolvers(uma biblioteca para integrar o react hookform ao zod). No terminal: yarn add zod @hookform/resolvers. Lembrando que anteriormente eu instalei o react hookform.
+OBS: Para validar os dados no input email e senha, vamos instalar o zod e hookform/resolvers(uma biblioteca para integrar o react hookform ao zod). No terminal: yarn add zod @hookform/resolvers. Lembrando que anteriormente eu instalei o react hookform. 
+Em seguida importei o zodresolver e o z, criei o validationSchema (esquema de validacao) e subistitui a interface pelo z.infer typeof. 
+Fiz a integracao do zod com react hookform. com o formState: {errors} peguei a mensagem de erro e coloquei ela no em cada input nas paginas SignIn e SignUp.
 
 12-
 OBS:

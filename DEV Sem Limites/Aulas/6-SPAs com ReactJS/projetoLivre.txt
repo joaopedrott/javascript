@@ -135,8 +135,8 @@ OBS: Para validar os dados no input email e senha, vamos instalar o zod e hookfo
 Em seguida importei o zodresolver e o z, criei o validationSchema (esquema de validacao) e subistitui a interface pelo z.infer typeof. 
 Fiz a integracao do zod com react hookform. com o formState: {errors} peguei a mensagem de erro e coloquei ela no em cada input nas paginas SignIn e SignUp.
 
-12-
-OBS:
+12-Introdução a Context API
+OBS:Revisei o problema de prop drilling, que seria a passagem de props em 3 ou mais componentes. para resolver isso existe o context api que seria o uso do hook useContext.
 
 13-
 OBS:

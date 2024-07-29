@@ -139,7 +139,7 @@ Fiz a integracao do zod com react hookform. com o formState: {errors} peguei a m
 OBS:Revisei o problema de prop drilling, que seria a passagem de props em 3 ou mais componentes. para resolver isso existe o context api que seria o uso do hook useContext.
 
 13-Criando Contexto de Autenticação
-OBS:assim como no passo 12, criamos uma autenticacao para a aplicacao.
+OBS:assim como no passo 12, criamos um contexto de autenticacao para a aplicacao. Criei a pasta context e seus arquivos, criei a pasta constants e seu arquivo storage e adicionei a tag AuthProvider no app.tsx
 
 14-
 OBS:

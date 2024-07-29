@@ -6,6 +6,7 @@ import { GlobalStyles } from './styles/global'
 import { theme } from './styles/theme'
 import { SingIn } from './pages/Auth/SignIn'
 import { SingUp } from './pages/Auth/SignUp'
+import { AuthProvider } from './context/AuthContext'
 
 
 function App() {
@@ -13,11 +14,15 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles/>
       <BrowserRouter>
-        <Routes>
+
+      <AuthProvider>
+      <Routes>
           <Route path='/' element={<SingIn />} />
           <Route path='/cadastro' element={<SingUp />} />
-
         </Routes>
+      </AuthProvider>
+
+
       </BrowserRouter>
     </ ThemeProvider>
     

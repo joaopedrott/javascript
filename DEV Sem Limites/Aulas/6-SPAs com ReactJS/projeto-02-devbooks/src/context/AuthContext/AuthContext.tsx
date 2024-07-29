@@ -35,7 +35,8 @@ interface AuthContexType {
 
 export const AuthContext = createContext<AuthContexType>({} as AuthContexType)
 
-export function AuthProvider ({children}: PropsWithChildren){
+export function AuthProvider ({children}: PropsWithChildren){ 
+    //tudo aqui dentro ficara compartilhado globalmente para os componentes
     const [session, setSession] = useState<Session | null>(()=> {
         const session = localStorage.getItem(DEV_BOOKS_SESSION_KEY)
 

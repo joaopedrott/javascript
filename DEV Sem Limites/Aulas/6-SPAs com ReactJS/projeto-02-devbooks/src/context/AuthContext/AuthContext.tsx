@@ -32,9 +32,10 @@ interface AuthContexType {
     signOut: ()=> Promise<void>
 }
 
-
+//criei contexto
 export const AuthContext = createContext<AuthContexType>({} as AuthContexType)
 
+//defino provider para tornar global
 export function AuthProvider ({children}: PropsWithChildren){ 
     //tudo aqui dentro ficara compartilhado globalmente para os componentes
     const [session, setSession] = useState<Session | null>(()=> {

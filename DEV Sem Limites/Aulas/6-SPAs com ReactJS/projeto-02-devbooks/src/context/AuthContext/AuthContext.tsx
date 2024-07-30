@@ -24,7 +24,7 @@ interface Session {//guardar informacoes do usuario logado
     refreshToken: string
 }
 
-interface AuthContexType {
+interface AuthContexType { //tipando os dados que serao expostos com o contextapi
     isAuthenticated: boolean 
     user?: User
     signIn: (user: SignInUser) => Promise<void>
@@ -37,7 +37,7 @@ export const AuthContext = createContext<AuthContexType>({} as AuthContexType)
 
 //defino provider para tornar global
 export function AuthProvider ({children}: PropsWithChildren){ 
-    //tudo aqui dentro ficara compartilhado globalmente para os componentes
+    //esse useState eh para armazenar ou NAO(null) dados do usuario logado, cadastrado (session)
     const [session, setSession] = useState<Session | null>(()=> {
         const session = localStorage.getItem(DEV_BOOKS_SESSION_KEY)
 

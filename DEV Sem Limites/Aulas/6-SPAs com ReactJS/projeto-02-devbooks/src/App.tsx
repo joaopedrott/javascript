@@ -16,7 +16,7 @@ function App() {
       <BrowserRouter>
 
       <AuthProvider>
-      <Routes>
+        <Routes>
           <Route path='/' element={<SingIn />} />
           <Route path='/cadastro' element={<SingUp />} />
         </Routes>

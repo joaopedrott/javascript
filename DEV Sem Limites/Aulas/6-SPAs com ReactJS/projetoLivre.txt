@@ -117,18 +117,25 @@ OBS:Criei a estilizacao da pagina de login criando o arquivo Auth.styles.ts, mas
 8-Página de Cadastro
 OBS:Criei a interface de cadastro (SignUp) com a mesma estrutura do SignIn para manter o padrao de design do site. Adicionei a rota no App.tsx e a rota do botao "cadastre-se" no SignIn.tsx
 
-9-Controlled vs Uncontrolled
+9-Controlled vs Uncontrolled (estudo)
 OBS:Componentes controlados e componente nao controlado. Componente controlado e o componente que armazena estado, por exemplo em um imput. Resumindo o componente pai armazena com um useState para ser usado em um componente input dentro do retorno do codigo. A desvantagem eh que cada vez que o usuario digita um caractere no input o componente eh reenderizado, fazendo assim mais processamento. A vantagem eh a flexibilidade no uso dos dados digitados no input.
 
 
-Ja no nao controlado, nao existe o uso do useState. O que acontece eh que o componente input acessa diretamente os dados digitados. A desvantagem eh que nao se tem uma flexibilidade no uso recolhido dos dados. A vantagem eh que o componente somente eh redenrizado apenas uma vez.
+Ja no nao controlado, nao existe o uso do useState. O que acontece eh que o componente input acessa diretamente os dados digitados. A desvantagem eh que nao se tem uma flexibilidade no uso recolhido dos dados. A vantagem eh que o componente somente eh redenrizado apenas uma vez. No projeto DEVbooks eh usado o nao controlado no input na pagina de login e cadastro.
 
-10- Instalei o react hoock form, no terminal: yarn add react-hook-form
-Gerenciando Formulários com React Hook Form
-OBS:usamos o react hook form com para usaro useForm, usamos o "register e handleSubmit" de dentro do useForm. Lembrando que o register eh para pegar oq foi digitado no input (exclusivo para componente nao controlado, como neste caso). register atua exatamente como ref
-Fizemos as alteracoes no componente input.tsx, index.ts(index do input), signIn.tsx e singUp.tsx
+10- Gerenciando Formulários com React Hook Form
+Instalei o react hoock form, no terminal: yarn add react-hook-form
+Alterei o input adicionando o forwardRef por fora do componente Input para que ele consiga receber a ref.
+Ja no signIn.tsx eu coloquei o register em cada input.
 
-Ref no react eh um meio de acessar diretamente no html da pagina.
+Alem de pegar o register de dentro do useForm, pegamos o handleSubmit tambem (essas funcoes ja vem com o useForm). 
+Criei a funcao onSubmit, para usar no handleSubmit. A funcao handleSubmit faz com que os dados sejam enviados para algum lugar, e o onSubmit que criei faz a execucao dos dados digitados no input junto com handleSubmit
+
+obs: Lembrando que o register eh para pegar oq foi digitado no input (exclusivo para componente nao controlado, como neste caso). register atua exatamente como ref (Ref no react eh um meio de acessar diretamente no html da pagina. Acessa oque foi digitado no input no html. Entao o register adiciona ref ao componente input.)
+
+resumindo: Fizemos as alteracoes no componente input.tsx, index.ts(index do input), signIn.tsx e singUp.tsx
+
+
 
 11-Validando Formulários com Zod
 OBS: Para validar os dados no input email e senha, vamos instalar o zod e hookform/resolvers(uma biblioteca para integrar o react hookform ao zod). No terminal: yarn add zod @hookform/resolvers. Lembrando que anteriormente eu instalei o react hookform. 
@@ -142,8 +149,13 @@ OBS:Revisei o problema de prop drilling, que seria a passagem de props em 3 ou m
 13-Criando Contexto de Autenticação
 OBS:assim como no passo 12, criamos um contexto de autenticacao para a aplicacao(site). Criei a pasta context e seus arquivos, criei a pasta constants e seu arquivo storage e adicionei a tag AuthProvider no app.tsx (para que os componentes tenham acesso ao contexto)
 
-14-
-OBS:
+14-Hook useAuth
+OBS:Criei um custom hook chamado useAuth.ts dentro da pasta hooks, que acessa todos os dados do contexto criado no passo 13 (ou seja o: sessions, signIn, signUp, signOut, isAuthenticated, user). E para realmente ter acesso ao dados do contexto, inseri o hook criado (useAuth) na pagina de signIn.tsx e signUp.tsx.
+
+Dentro do signIn.tsx eu inseri: const { signIn } =useAuth() 
+e logo depois dentro da funcao onSubmit inseri: await signIn(data)
+
+Fiz a mesma coisa na pagina de signUp (pagina de cadastro)
 
 15-
 OBS:

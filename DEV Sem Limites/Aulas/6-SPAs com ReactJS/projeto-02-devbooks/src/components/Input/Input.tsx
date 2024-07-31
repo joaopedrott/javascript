@@ -1,7 +1,7 @@
 import { InputHTMLAttributes, forwardRef } from 'react'
 import { Container } from './Input.styles'
 
-//essa interface diz quais tipos de dados o componente ira receber. com extends eu adiciono uma interface ja existente com todos as props tipadas em minha interface InputProps que acabei de fazer.
+//essa interface diz quais tipos de dados o componente ira receber. com extends eu adiciono uma interface ja existente (HTMLInputElement) com todos as props tipadas em minha interface InputProps que acabei de fazer.
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> { 
     label: string;
     error?: string;

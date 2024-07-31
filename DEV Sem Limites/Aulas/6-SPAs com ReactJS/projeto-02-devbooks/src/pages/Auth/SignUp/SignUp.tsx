@@ -8,6 +8,7 @@ import { Link } from "../../../components/Link";
 import { Logo } from "../../../components/Logo";
 
 import { Container,FormContainer,LogoContainer,InputContainer,Heading } from '../Auth.styles'
+import { useAuth } from "../../../hooks/useAuth";
 
 const validationSchema =z.object({//esquema de validacao de nome, email e password
     name: z.string().min(1, {message: 'Nome eh obrigatorio'}),
@@ -15,16 +16,17 @@ const validationSchema =z.object({//esquema de validacao de nome, email e passwo
     password: z.string().min(8,{message: 'A senha deve ter pelo menos 8 caracteres'})
 })
 
-type SignUpForm =z.infer<typeof validationSchema>
+type SignUpForm =z.infer<typeof validationSchema>//tipagem dos dados. Substitui a interface
 
 
 export function SingUp() {
     const {register, handleSubmit, formState: {errors}} = useForm<SignUpForm>({
         resolver: zodResolver(validationSchema)
     })
+    const { signUp } = useAuth()
 
     const onSubmit: SubmitHandler<SignUpForm>= async(data)=>{
-        console.log(data)
+        await signUp(data)
     }
 
     return(
@@ -56,7 +58,7 @@ export function SingUp() {
                         <Input id="password" label="Senha" type="password" error={errors.password?.message} {...register('password')}/>
                     </InputContainer>
                     
-                    <Button fullWidh={true}>Entrar</Button>
+                    <Button fullWidh={true}>Cadastrar</Button>
                 </form>
                 
             </FormContainer>

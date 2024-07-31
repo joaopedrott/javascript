@@ -9,6 +9,7 @@ import { Link } from "../../../components/Link";
 import { Logo } from "../../../components/Logo";
 
 import { Container,FormContainer,LogoContainer,InputContainer,Heading } from '../Auth.styles';
+import { useAuth } from "../../../hooks/useAuth";
 
 const validationSchema =z.object({//esquema de validacao de email e password
     email: z.string().min(1, {message: 'Email eh obrigatorio!'}).email({message: 'Insira um email valido'}),
@@ -23,9 +24,10 @@ export function SingIn() {
     const {register, handleSubmit, formState: {errors}} = useForm<SignInForm>({
         resolver: zodResolver(validationSchema)//integracao do zod com react hookform
     })
+    const { signIn } =useAuth()
 
     const onSubmit: SubmitHandler<SignInForm>= async(data)=>{
-        console.log(data)
+        await signIn(data)
     }
 
     return(

@@ -157,10 +157,10 @@ e logo depois dentro da funcao onSubmit inseri: await signIn(data)
 
 Fiz a mesma coisa na pagina de signUp (pagina de cadastro)
 
-15-
-OBS:
+15-setup devbooks api
+OBS: instalei os programas e banco de dados seguindo esse tutorial https://github.com/joaopedrott/devbooks-api
 
-16-
+16-Configurando React Query
 OBS:
 
 17-

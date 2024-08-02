@@ -24,7 +24,7 @@
       "ecmaVersion": 2018,
       "sourceType": "module"
     },
-    "plugins": ["react", "react-hooks", "@typescript-eslint"],
+    "plugins": ["react", "react-hooks", "@typescript-eslint", "@tanstack/query"],
     "rules": {
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",

@@ -161,7 +161,24 @@ Fiz a mesma coisa na pagina de signUp (pagina de cadastro)
 OBS: instalei os programas e banco de dados seguindo esse tutorial https://github.com/joaopedrott/devbooks-api
 
 16-Configurando React Query
-OBS:
+OBS: React Query eh um gerenciador de estado assincrono. Ele serve para auxiliar para quando a gente trabalha com dados que vem de servidor ( de uma api(backend)) a gente consegue criar cache dos dados que vem do servidor entre outras coisas.
+
+Primeiro instalei no terminal do projeto:
+yarn add @tanstack/react-query
+
+depois
+yarn add @tanstack/eslint-plugin-query -D
+
+adicionei no arquivo .eslintrc.json:
+"plugins": ["react", "react-hooks", "@typescript-eslint", "@tanstack/query"],
+
+no arquivo app.tsx eu coloquei:
+const queryClient = new QueryClient
+
+e adicionei a tag QueryClientProvider para envolver toda a aplicacao
+<QueryClientProvider client={queryClient}> </QueryClientProvider>
+
+    Com isso configurei o react query de forma global.
 
 17-
 OBS:

@@ -7,7 +7,9 @@ import { theme } from './styles/theme'
 import { SingIn } from './pages/Auth/SignIn'
 import { SingUp } from './pages/Auth/SignUp'
 import { AuthProvider } from './context/AuthContext'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
+const queryClient = new QueryClient
 
 function App() {
   return (
@@ -15,12 +17,15 @@ function App() {
       <GlobalStyles/>
       <BrowserRouter>
 
-      <AuthProvider>
-        <Routes>
-          <Route path='/' element={<SingIn />} />
-          <Route path='/cadastro' element={<SingUp />} />
-        </Routes>
-      </AuthProvider>
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider>
+          <Routes>
+            <Route path='/' element={<SingIn />} />
+            <Route path='/cadastro' element={<SingUp />} />
+          </Routes>
+        </AuthProvider>
+      </QueryClientProvider>
+
 
 
       </BrowserRouter>

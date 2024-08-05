@@ -7,22 +7,22 @@ interface User {
     name: string
 }
 
-interface SignInUser {
+interface SignInUser {//dados enviados
     email: string
     password: string
 }
 
-interface SignInResponse {
+interface SignInResponse {//dados recebidos no login
     user: User
     accessToken: string
     refreshToken: string
 }
 
-async function signInUser ({
-    email, 
+async function signInUser ({ // metodo de login (comunicacao com servidor)
+    email,
     password
 }: SignInUser): Promise<SignInResponse> {
-    const { data } = await api.post<SignInResponse>('/user/signin',{
+    const { data } = await api.post<SignInResponse>('/user/signin',{//responsavel por enviar os dados de login para fazer a autenticacao
         email,
         password
     })
@@ -31,6 +31,6 @@ async function signInUser ({
     return data
 }
 
-export function useSignIn (){
-    return useMutation({mutationFn: (data: SignInUser)=> signInUser(data)})
+export function useSignIn (){//criacao do hook
+    return useMutation({mutationFn: (data: SignInUser)=> signInUser(data)})// esse hook chama o metodo acima passando os dados de login
 }

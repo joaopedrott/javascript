@@ -48,10 +48,10 @@ export function AuthProvider ({children}: PropsWithChildren){
 
         return null
     })
-    const signInMutation = useSignIn()
+    const signInMutation = useSignIn()//hook de requisicao de login
 
-    const signIn = async (user: SignInUser):Promise<void> => {
-        await signInMutation.mutateAsync(user, {
+    const signIn = async (user: SignInUser):Promise<void> => {//funcao de login
+        await signInMutation.mutateAsync(user, {//uso do hock useSignIn
             onSuccess: (session) => {
                 setSession(session)
                 localStorage.setItem(DEV_BOOKS_SESSION_KEY, JSON.stringify(session))

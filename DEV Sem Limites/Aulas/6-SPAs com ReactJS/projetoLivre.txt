@@ -180,8 +180,22 @@ e adicionei a tag QueryClientProvider para envolver toda a aplicacao
 
     Com isso configurei o react query de forma global.
 
-17-
-OBS:
+17-Hook useSignInMutation
+OBS: Para fazer requisicao, fiz o hook useSignIn. 
+Primeiro, criei o arquivo .env na raiz do projeto.
+Segundo, criei o arquivo api  na pasta services e exclui o arquivo googleBooksApi.js
+Terceiro, criei o arquivo useSignIn.ts (esse eh o hook para fazer requisicoes de login)
+Quarto, adicionei ao AuthContext.tsx a linha: const signInMutation = useSignIn()
+logo apos isso adicionei na funcao signIn dentro do AuthContext.tsx:         
+
+await signInMutation.mutateAsync(user,{
+            onSuccess: (session) => {
+                setSession(session)
+                localStorage.setItem(DEV_BOOKS_SESSION_KEY, JSON.stringify(session))
+            }
+        })
+
+
 
 18-
 OBS:

@@ -28,7 +28,7 @@ async function signInUser ({ // metodo de login (comunicacao com servidor)
     })
 
 
-    return data
+    return data//o retorno sera  o signinresponse
 }
 
 export function useSignIn (){//criacao do hook

@@ -52,8 +52,8 @@ export function AuthProvider ({children}: PropsWithChildren){
 
     const signIn = async (user: SignInUser):Promise<void> => {//funcao de login
         await signInMutation.mutateAsync(user, {//mutate chama o metodo e nao o hook, passando usuario
-            onSuccess: (session) => {
-                setSession(session)
+            onSuccess: (session) => {//se os dados do usuario forem retornados com sucesso
+                setSession(session)//passar esses dados para o contexto
                 localStorage.setItem(DEV_BOOKS_SESSION_KEY, JSON.stringify(session))
             }
         })

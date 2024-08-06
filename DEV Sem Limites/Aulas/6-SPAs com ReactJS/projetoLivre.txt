@@ -183,6 +183,8 @@ e adicionei a tag QueryClientProvider para envolver toda a aplicacao
 
     Em todos os lugares que precisar usar os hooks do react query, irei ter todos os dados de cache nesse componente <QueryClientProvider>
 
+    O cache eh importante pois diminui a quantidade de requisicoes pois se caso for feita uma mesma requisicao mais de 1 vez ele usara o cache da ultima requisicao para assim nao precisar fazer requisicao a API do backend
+
 17-Hook useSignInMutation
 OBS: Para fazer requisicao, fiz o hook useSignIn. 
 Primeiro, criei o arquivo .env na raiz do projeto.

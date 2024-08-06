@@ -191,7 +191,7 @@ Primeiro, criei o arquivo .env na raiz do projeto.
 Segundo, criei o arquivo api  na pasta services e exclui o arquivo googleBooksApi.js
 Terceiro, criei o arquivo useSignIn.ts (esse eh o hook para fazer requisicoes de login)
 Quarto, adicionei ao AuthContext.tsx a linha: const signInMutation = useSignIn()
-logo apos isso adicionei na funcao signIn dentro do AuthContext.tsx:         
+logo apos isso adicionei dentro da funcao signIn no arquivo do AuthContext.tsx:         
 
 await signInMutation.mutateAsync(user,{
             onSuccess: (session) => {
@@ -202,7 +202,7 @@ await signInMutation.mutateAsync(user,{
 
 
 
-18-
+18-Hook useSignUpMutation
 OBS:
 
 19-

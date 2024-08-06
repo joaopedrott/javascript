@@ -1,6 +1,7 @@
 import { createContext, PropsWithChildren, useState } from "react";
 import { DEV_BOOKS_SESSION_KEY } from "../../constants/storage";
 import { useSignIn } from "../../hooks/useSignIn";
+import { useSignUp } from "../../hooks/useSignUp";
 
 interface User {
     id: number
@@ -49,6 +50,7 @@ export function AuthProvider ({children}: PropsWithChildren){
         return null
     })
     const signInMutation = useSignIn()//hook de requisicao de login
+    const signUpMutation = useSignUp()//hook de requisicao de cadastro
 
     const signIn = async (user: SignInUser):Promise<void> => {//funcao de login
         await signInMutation.mutateAsync(user, {//mutate chama o metodo e nao o hook, passando usuario
@@ -59,7 +61,7 @@ export function AuthProvider ({children}: PropsWithChildren){
         })
     }
     const signUp = async (user: SignUpUser):Promise<void> => {
-        console.log(user)
+        await signUpMutation.mutateAsync(user)
     }
 
     const signOut = async (): Promise<void> => {

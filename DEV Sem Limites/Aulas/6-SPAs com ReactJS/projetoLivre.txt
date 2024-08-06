@@ -178,7 +178,10 @@ const queryClient = new QueryClient
 e adicionei a tag QueryClientProvider para envolver toda a aplicacao
 <QueryClientProvider client={queryClient}> </QueryClientProvider>
 
-    Com isso configurei o react query de forma global.
+    Com isso, configurei o react query de forma global.
+    Lembrando. Dentro de client={queryClient} teremos o cache salvo nele
+
+    Em todos os lugares que precisar usar os hooks do react query, irei ter todos os dados de cache nesse componente <QueryClientProvider>
 
 17-Hook useSignInMutation
 OBS: Para fazer requisicao, fiz o hook useSignIn. 

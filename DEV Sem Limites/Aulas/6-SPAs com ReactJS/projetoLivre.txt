@@ -144,13 +144,19 @@ Fiz a integracao do zod com react hookform. com o formState: {errors} peguei a m
 
 12-Introdução a Context API
 OBS:Revisei o problema de prop drilling, que seria a passagem de props em 3 ou mais componentes. para resolver isso existe o context api que seria o uso do hook useContext. Com o context api um estado pode ficar acessivel a todos os componentes independente da onde eles estiverem.
-    Primeiro para criar o contexto, precisamos fazer duas coisas, criar o createContext({} as user) com valor fazio nas chaves e Segundo, criar o provider para criar e tornar um estado global.
+    Primeiro para criar o contexto, precisamos fazer duas coisas, criar o createContext({} as user) com valor fazio nas chaves e Segundo, criar o provider para criar e tornar um estado global. (ISSO FIZ DENTRO DO AuthContext.tsx)
 
 13-Criando Contexto de Autenticação
-OBS:assim como no passo 12, criamos um contexto de autenticacao para a aplicacao(site). Criei a pasta context e seus arquivos, criei a pasta constants e seu arquivo storage e adicionei a tag AuthProvider no app.tsx (para que os componentes tenham acesso ao contexto)
+OBS:assim como no passo 12, criamos um contexto de autenticacao para a aplicacao(site). Criei a pasta context e seus arquivos AuthContext, criei a pasta constants e seu arquivo storage e adicionei a tag AuthProvider no app.tsx (para que os componentes tenham acesso ao contexto)
+
+Dentro do AuthContext.tsx, temos o context e o AuthProvider. no retorno do AuthProvider, no value temos que colocar tudo que for compartilhado globalmente entre os componentes.
+
+
 
 14-Hook useAuth
-OBS:Criei um custom hook chamado useAuth.ts dentro da pasta hooks, que acessa todos os dados do contexto criado no passo 13 (ou seja o: sessions, signIn, signUp, signOut, isAuthenticated, user). E para realmente ter acesso ao dados do contexto, inseri o hook criado (useAuth) na pagina de signIn.tsx e signUp.tsx.
+OBS: Sabemos que para usar o contexto (o que foi gravado como globalmente, seja funcoes e variaveis) temos que usar o hook useContext mas nesse caso criei um hook (useAuth) para subistituir ele, para tratar o erro para caso nao conseguir pegar o contexto.
+
+Criei um custom hook chamado useAuth.ts dentro da pasta hooks, que acessa todos os dados do contexto criado no passo 13 (ou seja o: sessions, signIn, signUp, signOut, isAuthenticated, user). E para realmente ter acesso ao dados do contexto, inseri o hook criado (useAuth) na pagina de signIn.tsx e signUp.tsx. Isto para que a pagina signIn possa acessar.
 
 Dentro do signIn.tsx eu inseri: const { signIn } =useAuth() 
 e logo depois dentro da funcao onSubmit inseri: await signIn(data)
@@ -200,6 +206,7 @@ await signInMutation.mutateAsync(user,{
             }
         })
 
+resumindo, a pagina de login SignIn.tsx tem acesso a funcao de login global compartilhada pelo context api. Quando o botao do formulario da pagina for apertado ele envia os dados de login para essa funcao de login da context api no arquivo AuthContext.tsx, essa funcao de signIn chama a funcao useSignIn dentro do arquivo useSignIn.ts passando como props os dados de login ainda no arquivo useSignIn.ts ela chama a funcao asincrona signInUser .
 
 
 18-Hook useSignUpMutation

@@ -34,17 +34,18 @@ interface AuthContexType { //tipando os dados que serao expostos com o contextap
     signOut: ()=> Promise<void>
 }
 
-//criei contexto
+//1-criei contexto
 export const AuthContext = createContext<AuthContexType>({} as AuthContexType)
 
-//defino provider para tornar global
+//2-defino provider para tornar global
 export function AuthProvider ({children}: PropsWithChildren){ 
-//esse useState eh para armazenar ou NAO(null) dados do usuario logado, cadastrado (session). Ou seja, um banco de dados de usuarios cadastrados ficam aqui
+//esse useState eh para armazenar ou NAO(null) dados do usuario logado.
     const [session, setSession] = useState<Session | null>(()=> {
+        //busca os dados de sessao no localstorage
         const session = localStorage.getItem(DEV_BOOKS_SESSION_KEY)
 
         if(session) {
-            return JSON.parse(session)
+            return JSON.parse(session)//converte string em objeto
         }
 
         return null
@@ -57,7 +58,7 @@ export function AuthProvider ({children}: PropsWithChildren){
             onSuccess: (session) => {//se os dados do usuario forem retornados com sucesso
                 setSession(session)//passar esses dados para o contexto
                 localStorage.setItem(DEV_BOOKS_SESSION_KEY, JSON.stringify(session))
-            }
+            }, 
         })
     }
     const signUp = async (user: SignUpUser):Promise<void> => {

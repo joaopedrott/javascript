@@ -23,9 +23,9 @@ export function SingUp() {
     const {register, handleSubmit, formState: {errors}} = useForm<SignUpForm>({
         resolver: zodResolver(validationSchema)
     })
-    const { signUp } = useAuth()
+    const { signUp } = useAuth()//pega a funcao signIp que esta globalmente definida como contexto (context api)
 
-    const onSubmit: SubmitHandler<SignUpForm>= async(data)=>{
+    const onSubmit: SubmitHandler<SignUpForm>= async(data)=>{//faz cadastro
         await signUp(data)
     }
 

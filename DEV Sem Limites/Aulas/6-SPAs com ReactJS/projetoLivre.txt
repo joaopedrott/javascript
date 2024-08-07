@@ -210,7 +210,7 @@ resumindo, a pagina de login SignIn.tsx tem acesso a funcao de login global comp
 
 
 18-Hook useSignUpMutation
-OBS:
+OBS:fiz quase examamente como na criacao do useSignInMutation, so que mais simples
 
 19-
 OBS:

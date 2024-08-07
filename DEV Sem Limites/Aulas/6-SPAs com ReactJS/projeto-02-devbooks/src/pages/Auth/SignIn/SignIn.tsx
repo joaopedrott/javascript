@@ -24,8 +24,8 @@ export function SingIn() {
     const {register, handleSubmit, formState: {errors}} = useForm<SignInForm>({
         resolver: zodResolver(validationSchema)//integracao do zod com react hookform
     })
-    const { signIn } =useAuth()//pega a funcao signIn que esta globalmente definida como contexto (context api)
-
+    const { signIn, user } =useAuth()//pega a funcao signIn que esta globalmente definida como contexto (context api)
+    console.log(user)
     const onSubmit: SubmitHandler<SignInForm>= async(data)=>{//faz login
         await signIn(data)
     }

@@ -39,7 +39,7 @@ export const AuthContext = createContext<AuthContexType>({} as AuthContexType)
 
 //defino provider para tornar global
 export function AuthProvider ({children}: PropsWithChildren){ 
-    //esse useState eh para armazenar ou NAO(null) dados do usuario logado, cadastrado (session)
+//esse useState eh para armazenar ou NAO(null) dados do usuario logado, cadastrado (session). Ou seja, um banco de dados de usuarios cadastrados ficam aqui
     const [session, setSession] = useState<Session | null>(()=> {
         const session = localStorage.getItem(DEV_BOOKS_SESSION_KEY)
 

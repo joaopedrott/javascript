@@ -10,6 +10,7 @@ import { Logo } from "../../../components/Logo";
 
 import { Container,FormContainer,LogoContainer,InputContainer,Heading } from '../Auth.styles';
 import { useAuth } from "../../../hooks/useAuth";
+import { AlertBanner } from "../../../components/AlertBanner";
 
 const validationSchema =z.object({//esquema de validacao de email e password
     email: z.string().min(1, {message: 'Email eh obrigatorio!'}).email({message: 'Insira um email valido'}),
@@ -58,6 +59,8 @@ export function SingIn() {
                     </InputContainer>
                     
                     <Button fullWidh={true}>Entrar</Button>
+
+                    <AlertBanner variant="error" message="Algo deu errado!"/>
                 </form>
                 
             </FormContainer>

@@ -212,8 +212,9 @@ resumindo, a pagina de login SignIn.tsx tem acesso a funcao de login global comp
 18-Hook useSignUpMutation
 OBS:fiz quase examamente como na criacao do useSignInMutation, so que mais simples
 
-19-
-OBS:
+19-Criando AlertBanner
+OBS:Atualizei o theme adicionando cor para success e warning.
+Primeiro eu criei o componente AlertBanner e seus arquivos, adicionei os icones check-circle, exclamation-circle e exclamation-triangle. Por fim eu adicionei o na pagina de login SignIn.tsx a linha <AlertBanner variant="error" message="Algo deu errado!"/> para teste
 
 20-
 OBS:

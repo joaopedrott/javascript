@@ -33,6 +33,14 @@ export const theme = {
       danger: {
         main: '#d74544',
         light: '#fdeded'
+      },
+      success: {
+        main: '#488a49',
+        light: '#edf7ed'
+      },
+      warning: {
+        main: '#653d01',
+        light: '#fff4e5'
       }
     },
     spacings: {

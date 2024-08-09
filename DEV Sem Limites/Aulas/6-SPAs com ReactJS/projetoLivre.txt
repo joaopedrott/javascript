@@ -216,8 +216,22 @@ OBS:fiz quase examamente como na criacao do useSignInMutation, so que mais simpl
 OBS:Atualizei o theme adicionando cor para success e warning.
 Primeiro eu criei o componente AlertBanner e seus arquivos, adicionei os icones check-circle, exclamation-circle e exclamation-triangle. Por fim eu adicionei o na pagina de login SignIn.tsx a linha <AlertBanner variant="error" message="Algo deu errado!"/> para teste
 
-20-
-OBS:
+20-Tratando Erros
+OBS:Primeiro, criei um hook useError para tratar erros na aplicacao.
+Segundo, na pagina de login (SignIn.tsx) adicionei a linha:
+const { error,handleError,clearError }=useError()
+
+Terceiro, atualizei a onSubmit (requisicao de login) com um try catch para tratamento de erros:
+    const onSubmit: SubmitHandler<SignInForm>= async(data)=>{//faz login
+        try {
+            clearError()
+            await signIn(data)//faz requisicao de login
+        } catch (error) {
+            /*console.log(error) */
+            handleError(error)
+
+        }
+    }
 
 21-
 OBS:

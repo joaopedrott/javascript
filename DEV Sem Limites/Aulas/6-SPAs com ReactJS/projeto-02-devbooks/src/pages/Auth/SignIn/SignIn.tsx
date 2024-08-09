@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { isAxiosError } from "axios";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod'
@@ -11,6 +13,8 @@ import { Logo } from "../../../components/Logo";
 import { Container,FormContainer,LogoContainer,InputContainer,Heading } from '../Auth.styles';
 import { useAuth } from "../../../hooks/useAuth";
 import { AlertBanner } from "../../../components/AlertBanner";
+import { useError } from "../../../hooks/useError";
+
 
 const validationSchema =z.object({//esquema de validacao de email e password
     email: z.string().min(1, {message: 'Email eh obrigatorio!'}).email({message: 'Insira um email valido'}),
@@ -25,11 +29,20 @@ export function SingIn() {
     const {register, handleSubmit, formState: {errors}} = useForm<SignInForm>({
         resolver: zodResolver(validationSchema)//integracao do zod com react hookform
     })
-    const { signIn, user } =useAuth()//pega a funcao signIn que esta globalmente definida como contexto (context api)
-    console.log(user)
+    const { signIn } =useAuth()//pega a funcao signIn que esta globalmente definida como contexto (context api)
+    const { error,handleError,clearError }=useError()
     const onSubmit: SubmitHandler<SignInForm>= async(data)=>{//faz login
-        await signIn(data)
+        try {
+            clearError()
+            await signIn(data)
+        } catch (error) {
+            /*console.log(error) */
+            handleError(error)
+
+        }
     }
+
+/*     console.log({ error }) */
 
     return(
         <Container>
@@ -50,17 +63,26 @@ export function SingIn() {
             
                 <form onSubmit={handleSubmit(onSubmit)}> 
                     <InputContainer>
-                        <Input id="email" label="Email" type="email" error={errors.email?.message} {...register('email')}/>
+                        <Input 
+                        id="email" 
+                        label="Email" 
+                        type="email" 
+                        error={errors.email?.message} 
+                        {...register('email')}/>
                     </InputContainer>
 
                     <InputContainer>
-                        <Input id="password" label="Senha" type="password" 
-                        error={errors.password?.message}{...register('password')}/>
+                        <Input 
+                        id="password" 
+                        label="Senha" 
+                        type="password" 
+                        error={errors.password?.message}
+                        {...register('password')}/>
                     </InputContainer>
                     
                     <Button fullWidh={true}>Entrar</Button>
 
-                    <AlertBanner variant="error" message="Algo deu errado!"/>
+                    {error && <AlertBanner variant="error" message={error}/>}
                 </form>
                 
             </FormContainer>

@@ -8,6 +8,8 @@ import { SingIn } from './pages/Auth/SignIn'
 import { SingUp } from './pages/Auth/SignUp'
 import { AuthProvider } from './context/AuthContext'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { RequireAuth } from './components/RequireAuth/RequireAuth'
+import { Home } from './pages/Home/Home'
 
 const queryClient = new QueryClient
 
@@ -22,6 +24,7 @@ function App() {
           <Routes>
             <Route path='/' element={<SingIn />} />
             <Route path='/cadastro' element={<SingUp />} />
+            <Route path='/home' element={<RequireAuth><Home/></RequireAuth>} />
           </Routes>
         </AuthProvider>
       </QueryClientProvider>

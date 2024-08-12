@@ -20,7 +20,7 @@ interface SignUpUser {
     password: string
 }
 
-interface Session {//guardar informacoes do usuario logado
+export interface Session {//guardar informacoes do usuario logado
     user: User
     accessToken: string
     refreshToken: string

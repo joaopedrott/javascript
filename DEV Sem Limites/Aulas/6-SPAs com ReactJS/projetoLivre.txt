@@ -221,7 +221,7 @@ OBS:Primeiro, criei um hook useError para tratar erros na aplicacao.
 Segundo, na pagina de login (SignIn.tsx) adicionei a linha:
 const { error,handleError,clearError }=useError()
 
-Terceiro, atualizei a onSubmit (requisicao de login) com um try catch para tratamento de erros:
+Terceiro, atualizei a onSubmit (requisicao de login) com um try catch para tratamento de erros no login:
     const onSubmit: SubmitHandler<SignInForm>= async(data)=>{//faz login
         try {
             clearError()
@@ -233,8 +233,16 @@ Terceiro, atualizei a onSubmit (requisicao de login) com um try catch para trata
         }
     }
 
-21-
-OBS:
+21-Rotas Autenticadas
+OBS: Primeiro, Criei o componente RequireAuth que so armazena uma logica para que qualquer pagina apenas seja acessada se o usuario seja autenticado
+
+Segundo, criei uma rota fake para teste com nome Home na pasta Pages
+
+Terceiro, adicionei a nova rota fake em app.tsx : 
+<Route path='/home' element={<RequireAuth><Home/></RequireAuth>} />
+
+Ainda eu adicionei ao arquivo api.ts o : api.interceptors.request.use
+para que eu possa o accesstoken de forma automatica no localStorage
 
 22-
 OBS:

@@ -236,6 +236,12 @@ Terceiro, atualizei a onSubmit (requisicao de login) com um try catch para trata
 21-Rotas Autenticadas
 OBS: Primeiro, Criei o componente RequireAuth que so armazena uma logica para que qualquer pagina apenas seja acessada se o usuario seja autenticado
 
+Lembrando que dentro de RequireAuth.tsx eu criei uma linha:
+if(!isAuthenticated){
+        return <Navigate to="/" state={{ from: location }} replace />
+    }
+    Essa linha faz com que quando o accesstoken inspire e volte para a pagina de login, assim quando fizer o login novamente o usuario volte para a pagina antes do accesstoken espirar, melhorando a experiencia do usuario.
+
 Segundo, criei uma rota fake para teste com nome Home na pasta Pages
 
 Terceiro, adicionei a nova rota fake em app.tsx : 
@@ -243,8 +249,10 @@ Terceiro, adicionei a nova rota fake em app.tsx :
 
 Ainda eu adicionei ao arquivo api.ts o : api.interceptors.request.use
 para que eu possa o accesstoken de forma automatica no localStorage
+Na AuthContext.tsx eu coloquei export na interface Session para usar ela no api.ts para tipar com as Session
 
-22-
+
+22-Adicionando Navegação no Login
 OBS:
 
 23-

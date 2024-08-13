@@ -13,6 +13,7 @@ import { Container,FormContainer,LogoContainer,InputContainer,Heading } from '..
 import { useAuth } from "../../../hooks/useAuth";
 import { AlertBanner } from "../../../components/AlertBanner";
 import { useError } from "../../../hooks/useError";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 
 const validationSchema =z.object({//esquema de validacao de email e password
@@ -28,20 +29,30 @@ export function SingIn() {
     const {register, handleSubmit, formState: {errors}} = useForm<SignInForm>({
         resolver: zodResolver(validationSchema)//integracao do zod com react hookform
     })
-    const { signIn } =useAuth()//pega a funcao signIn que esta globalmente definida como contexto (context api)
+    const { signIn, isAuthenticated } =useAuth()//pega a funcao signIn que esta globalmente definida como contexto (context api)
     const { error,handleError,clearError }=useError()
+    const location = useLocation()//22
+    const navigate = useNavigate()//22
+
+    const from = location.state?.from?.pathname || 'home'//22
+
     const onSubmit: SubmitHandler<SignInForm>= async(data)=>{//faz login
         try {
             clearError()
             await signIn(data)
+
+            navigate(from)//22
         } catch (error) {
-            /*console.log(error) */
+
             handleError(error)
 
         }
     }
 
-/*     console.log({ error }) */
+    if (isAuthenticated) {
+//faz com que se o usuario estiver logado, ele nao tenha acesso a pagina de login. Sempre iniciando na pagina Home.
+        return <Navigate to="/home" />
+    }
 
     return(
         <Container>

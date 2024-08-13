@@ -253,7 +253,9 @@ Na AuthContext.tsx eu coloquei export na interface Session para usar ela no api.
 
 
 22-Adicionando Navegação no Login
-OBS:
+OBS:Prmeiro no signIn.tsx eu criei o hook uselocation e usenavigate
+Segundo, eu criei a variavel from (que armazenara o caminho da pagina home), 
+Terceiro, dentro de TRY eu adicionei navigate(from), isso fara com que seja redirecionado para a pagina home quando o login for feito.
 
 23-
 OBS:

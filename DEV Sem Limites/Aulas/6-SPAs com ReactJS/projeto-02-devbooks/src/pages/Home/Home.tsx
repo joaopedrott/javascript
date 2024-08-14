@@ -4,7 +4,7 @@ import { api } from '../../services/api'
 export function Home() {
   useEffect(() => {
     api
-      .get('/books?q=teste')
+      .get('/books?q=teste&maxResults=10')
       .then((data) => console.log(data))
       .catch((error) => console.log(error))
   }, [])

@@ -258,7 +258,7 @@ Segundo, eu criei a variavel from (que armazenara o caminho da pagina home),
 Terceiro, dentro de TRY eu adicionei navigate(from), isso fara com que seja redirecionado para a pagina home quando o login for feito.
 
 23-Adicionando Refresh Session
-OBS:Naturalmente depois de implementar o api.interceptors.request.use no meu api, eu deveria implementar o tempo limite ao accesstoken para deslogar automaticamente o usuario para entao ele fazer o login novamente, ai entao depois do login seria gerado um novo par de accesstoken e refreshtoken, mas, para uma melhor experiencia do usuario farei a adicao do Refresh Session que checa se o accesstoken expirou e por meio de um refreshtoken que tem um tempo de expiracao maior, do que o accesstoken, a gente utiliza esse refreshtoken para gerar novos pares de accesstoken e refreshtoken para entao nao ter a necessidade do usuario ter que fazer o login novamente.
+OBS:Naturalmente depois de implementar o api.interceptors.request.use no meu api, eu deveria implementar o tempo limite ao accesstoken para deslogar automaticamente o usuario para entao ele fazer o login novamente, ai entao depois do login seria gerado um novo par de accesstoken e refreshtoken, mas, para uma melhor experiencia do usuario farei a adicao do Refresh Session que checa se o accesstoken expirou e por meio de um refreshtoken que tem um tempo de expiracao maior, do que o accesstoken, a gente utiliza esse refreshtoken para gerar novos pares de accesstoken e refreshtoken para entao nao ter a necessidade do usuario ter que fazer o login novamente e so depois de expirar o refreshtoken que a conta seria deslogada.
 
 24-
 OBS:

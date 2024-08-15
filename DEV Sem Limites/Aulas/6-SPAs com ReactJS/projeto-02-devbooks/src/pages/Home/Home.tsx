@@ -1,13 +1,12 @@
-import { useEffect } from 'react'
-import { api } from '../../services/api'
+import { Header } from "../../components/Header";
 
 export function Home() {
-  useEffect(() => {
-    api
-      .get('/books?q=teste&maxResults=10')
-      .then((data) => console.log(data))
-      .catch((error) => console.log(error))
-  }, [])
 
-  return <h1>Home Page</h1>
+
+  return (
+    <>
+    <Header/>
+    <h1>Home Page</h1>
+    </>
+  )
 }

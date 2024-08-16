@@ -265,8 +265,10 @@ OBS:Essa eh a criacao do menu ou Cabeçalho do site que aparecera quando for log
 Primeiro, criei o componente Header que sera o menu. Dentro da pasta tem Header.styles.ts, Header.tsx e index.ts
 Segundo, apos isso coloquei o Header na pagina logada que seria a pagina Home.tsx e para isso eu limpei ela e coloquei comente o Header.
 
-25-
-OBS:
+25-Criando Layout da Área Logada
+OBS: A necessidade de criar esse main layout eh para que eu nao deva sempre passar o menu/header/Cabeçalho para toda a pagina que eu criar, pode ser usado tambem com o footer/rodape do site.
+ Primeiro eu criei a pasta Layouts e dentro dela criei o componente MainLayout com seus arquivos: index.ts, MainLayout.styles.ts e MainLayout.tsx.
+ Segundo eu adicionei no pagina Home.tsx envovlendo o conteudo do site com a tag MainLayout do componente MainLayout.tsx
 
 26-
 OBS:

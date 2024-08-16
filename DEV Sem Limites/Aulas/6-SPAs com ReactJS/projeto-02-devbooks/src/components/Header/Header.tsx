@@ -17,7 +17,7 @@ export function Header () {
                 </NavContainer>
 
                 <Avatar>
-                    <span>MC</span>
+                    <span>JP</span>
                 </Avatar>
             </HeaderContainer>
 

@@ -1,12 +1,15 @@
-import { Header } from "../../components/Header";
+import { MainLayout } from "../../Layouts/MainLayout"
+
 
 export function Home() {
 
 
   return (
     <>
-    <Header/>
-    <h1>Home Page</h1>
+    <MainLayout>
+      <h1>Home Page</h1>
+    </MainLayout>
+    
     </>
   )
 }

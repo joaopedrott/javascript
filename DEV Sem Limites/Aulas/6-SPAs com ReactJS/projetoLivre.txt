@@ -271,7 +271,8 @@ OBS: A necessidade de criar esse main layout eh para que eu nao deva sempre pass
  Segundo eu adicionei no pagina Home.tsx envovlendo o conteudo do site com a tag MainLayout do componente MainLayout.tsx
 
 26-Criando Campo de Busca
-OBS:
+OBS:Primeiro, Criei o componente de SearchBox e seus arquivos: index.ts, SearchBox.styles.ts e SearchBox.tsx
+Segundo, coloquei o searchbox no componente Header.tsx
 
 27-
 OBS:

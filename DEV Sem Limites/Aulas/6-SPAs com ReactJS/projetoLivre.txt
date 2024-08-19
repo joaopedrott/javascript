@@ -270,7 +270,7 @@ OBS: A necessidade de criar esse main layout eh para que eu nao deva sempre pass
  Primeiro eu criei a pasta Layouts e dentro dela criei o componente MainLayout com seus arquivos: index.ts, MainLayout.styles.ts e MainLayout.tsx.
  Segundo eu adicionei no pagina Home.tsx envovlendo o conteudo do site com a tag MainLayout do componente MainLayout.tsx
 
-26-
+26-Criando Campo de Busca
 OBS:
 
 27-

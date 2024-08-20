@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { Logo } from "../Logo";
 import { Avatar, Container, HeaderContainer, NavContainer } from "./Header.styles";
-import { SearchBox } from "../SearchBox";
+
+import { Search } from "../../Search";
 
 export function Header () {
     return (
@@ -16,7 +17,7 @@ export function Header () {
                         <Link to='/favoritos' >Favoritos</Link>
                     </nav>
 
-                    <SearchBox/>
+                    <Search/>
                 </NavContainer>
 
                 <Avatar>

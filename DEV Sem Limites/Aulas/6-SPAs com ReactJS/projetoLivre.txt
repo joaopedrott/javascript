@@ -274,8 +274,9 @@ OBS: A necessidade de criar esse main layout eh para que eu nao deva sempre pass
 OBS:Primeiro, Criei o componente de SearchBox e seus arquivos: index.ts, SearchBox.styles.ts e SearchBox.tsx
 Segundo, coloquei o searchbox no componente Header.tsx
 
-27-
-OBS:
+27-Buscando Livros
+OBS:Criei um novo componente chamado Search com seus arquivos: index.ts, Search.tsx e Search.styles.ts.
+segundo troquei o searchbox por serch dentro do componente Header.tsx
 
 28-
 OBS:

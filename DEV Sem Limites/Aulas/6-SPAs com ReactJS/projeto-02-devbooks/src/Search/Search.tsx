@@ -3,21 +3,11 @@ import { Link } from "../components/Link";
 import { SearchBox } from "../components/SearchBox";
 import { Container, SearchResult, SearchResultBookContainer, SeeAllContainer } from "./Search.styles";
 import { api } from "../services/api";
+import { Book, SearchResultBook } from "../components/SearchResultBook/SearchResultBook";
 
-interface BookItem {
-    id: string
-    volumeInfo: {
-        title: string
-        description: string
-        imageLinks?: {
-            thumbnail: string
-        }
-        authors: string[]
-    }
-}
 
 interface ResultState {
-    items: BookItem[]
+    items: Book[]
 }
 
 
@@ -60,7 +50,7 @@ export function Search () {
         
                         {/* lista de livros */}
                         <SearchResultBookContainer>
-                            {result && !loading? (result.items.map(item => <span key={item.id}>{item.volumeInfo.title}</span>)): (<span>Carregando...</span>)}
+                            {result && !loading? (result.items.map(item => <SearchResultBook key={item.id} book={item} />)): (<span>Carregando...</span>)}
 
                         </SearchResultBookContainer>
         

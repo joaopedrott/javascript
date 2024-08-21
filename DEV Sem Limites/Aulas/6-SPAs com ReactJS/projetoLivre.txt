@@ -270,16 +270,28 @@ OBS: A necessidade de criar esse main layout eh para que eu nao deva sempre pass
  Primeiro eu criei a pasta Layouts e dentro dela criei o componente MainLayout com seus arquivos: index.ts, MainLayout.styles.ts e MainLayout.tsx.
  Segundo eu adicionei no pagina Home.tsx envovlendo o conteudo do site com a tag MainLayout do componente MainLayout.tsx
 
+ Vantagem disso eh que eu nao preciso estilizar o conteudo da pagina home na pagina home, como o conteudo vai ser enviado para o componente MainLayout eu estilizo o conteudo da pagina home no componente  MainLayout.
+
 26-Criando Campo de Busca
 OBS:Primeiro, Criei o componente de SearchBox e seus arquivos: index.ts, SearchBox.styles.ts e SearchBox.tsx
 Segundo, coloquei o searchbox no componente Header.tsx
+
+resultado foi a criacao da barra de pesquisa de livros colocando ele no componente Header
 
 27-Buscando Livros
 OBS:Criei um novo componente chamado Search com seus arquivos: index.ts, Search.tsx e Search.styles.ts.
 segundo troquei o searchbox por serch dentro do componente Header.tsx
 
-28-
-OBS:
+resultado foi um componente foi a criacao de um componente Search.tsx que tem o searchbox importado dentro dele e que faz a busca de livros assim que o usuario digita na pesquisa e aperta Enter, os livros aparecem como se fosse uma preview da pesquisa e abaixo dela tem um texto para ver todos os livros que foram achados na pesquisa abrindo outra pagina. Ainda somente uma lista de nomes do titulo do livro
+
+28-Estilizando Resultado da Busca
+OBS: criei o componente para exibir realmente os livros com titulo, nome do autor e a imagem de cada livro. 
+
+Primeiro criei o componente SearchResultBook e com seus arquivos index.ts, SearchResultBook.tsx e SearchResultBook.styles.ts
+
+Segundo: atualizei o serach.tsx, no retorno, dentro da tag SearchResultBookContainer coloquei a tag do nosso SearchResultBook passando os livros achados formatando o titulo, autor e imagem
+
+resultado foi a preview da busca mais bonita e formatada com a imagem de cada livro
 
 29-
 OBS:

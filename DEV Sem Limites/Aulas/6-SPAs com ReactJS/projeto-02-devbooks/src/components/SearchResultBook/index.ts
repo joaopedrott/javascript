@@ -1,0 +1,1 @@
+export { SearchResultBook } from './SearchResultBook'

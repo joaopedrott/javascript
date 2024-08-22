@@ -293,8 +293,12 @@ Segundo: atualizei o serach.tsx, no retorno, dentro da tag SearchResultBookConta
 
 resultado foi a preview da busca mais bonita e formatada com a imagem de cada livro
 
-29-
-OBS:
+29-Criando Skeleton Loader
+OBS:Vou criar um skeleton loader ou seja um esqueleto da pagina que pulsa enquanto a informacao nao esta disponivel na interface.
+Primeiro criei o componente SkeletonLoader e seus arquivos: index.ts, SkeletonLoader.tsx e SkeletonLoader.styles.ts
+Segundo, adicionei <SkeletonLoader width="200px" height="26px"/> no arquivo Search.tsx
+
+resultado foi uma barra que com tamanho 200 por 26 com uma animacao 
 
 30-
 OBS:

@@ -300,7 +300,7 @@ Segundo, adicionei <SkeletonLoader width="200px" height="26px"/> no arquivo Sear
 
 resultado foi uma barra que com tamanho 200 por 26 com uma animacao 
 
-30-
+30-Criando Search Loader
 OBS:
 
 31-

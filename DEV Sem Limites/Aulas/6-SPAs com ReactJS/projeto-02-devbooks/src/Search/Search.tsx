@@ -5,6 +5,7 @@ import { Container, SearchResult, SearchResultBookContainer, SeeAllContainer } f
 import { api } from "../services/api";
 import { Book, SearchResultBook } from "../components/SearchResultBook/SearchResultBook";
 import { SkeletonLoader } from "../components/SkeletonLoader";
+import { SearchLoader } from "./SearchLoader";
 
 
 interface ResultState {
@@ -49,11 +50,14 @@ export function Search () {
                         <SearchResult>
                         <span>Resultado da Busca</span> {/* titulo */}
 
-                        <SkeletonLoader width="200px" height="26px"/>
+
 
                         {/* lista de livros */}
                         <SearchResultBookContainer>
-                            {result && !loading? (result.items.map(item => <SearchResultBook key={item.id} book={item} />)): (<span>Carregando...</span>)}
+                            {result && !loading? (result.items.map(item => <SearchResultBook key={item.id} book={item} />)
+                        ): (
+                        <SearchLoader/>
+                        )}
 
                         </SearchResultBookContainer>
         

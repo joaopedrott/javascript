@@ -301,7 +301,8 @@ Segundo, adicionei <SkeletonLoader width="200px" height="26px"/> no arquivo Sear
 resultado foi uma barra que com tamanho 200 por 26 com uma animacao 
 
 30-Criando Search Loader
-OBS:
+OBS:Primeiro criei a pasta SearchLoader dentro da pasta Search, junto com seus arquivos: index.ts, search.styles.ts e Search.tsx
+Segundo, retirei o SkeletonLoader do arquivo Search.tsx, retirei o span escrito carregando... e no lugar desse span eu adicionei a tag <SearchLoader/> do componente que acabei de criar
 
 31-
 OBS:

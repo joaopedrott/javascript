@@ -1,4 +1,4 @@
-import { KeyboardEvent, useState } from "react";
+import { KeyboardEvent, useRef, useState } from "react";
 import { Link } from "../components/Link";
 import { SearchBox } from "../components/SearchBox";
 import { Container, SearchResult, SearchResultBookContainer, SeeAllContainer } from "./Search.styles";
@@ -6,6 +6,7 @@ import { api } from "../services/api";
 import { Book, SearchResultBook } from "../components/SearchResultBook/SearchResultBook";
 import { SkeletonLoader } from "../components/SkeletonLoader";
 import { SearchLoader } from "./SearchLoader";
+import { useOutSideInteraction } from "../hooks/useOutsideInteraction";
 
 
 interface ResultState {
@@ -18,6 +19,13 @@ export function Search () {
     const [result, setResult]= useState<ResultState | null>(null)//livros achados
     const [loading, setLoading] = useState(false)//para aparecer o nome loading
     const [showResult, setshowResult] = useState(false)//faz somente aparecer a janela de livros quando for feita a pesquisa
+    const searchRef = useRef<HTMLDivElement | null>(null)// para passar referencia da div container para o useOutSideInteraction
+
+    const handleCloseResult =  () => {//fecha a preview de busca de livros
+        setshowResult(false)
+    }
+
+    useOutSideInteraction(searchRef, handleCloseResult)//passa a ref e funcao para o hook
 
     const handleSearch = async ()=> {
         if(search){
@@ -43,7 +51,7 @@ export function Search () {
 
 
     return (
-        <Container>
+        <Container ref={searchRef}>
             <SearchBox value={search} onChange={(e)=> setSearch(e.target.value)} onKeyDown={handleKeyPress}/>
 
         {showResult &&  (

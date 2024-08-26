@@ -304,8 +304,12 @@ resultado foi uma barra que com tamanho 200 por 26 com uma animacao
 OBS:Primeiro criei a pasta SearchLoader dentro da pasta Search, junto com seus arquivos: index.ts, search.styles.ts e Search.tsx
 Segundo, retirei o SkeletonLoader do arquivo Search.tsx, retirei o span escrito carregando... e no lugar desse span eu adicionei a tag <SearchLoader/> do componente que acabei de criar
 
-31-
-OBS:
+31-Fechando Dropdown de Resultados
+OBS:para fechar a preview da busca quando eh clicado fora da barra de pesquisa eu criei um hook e atualizei  o search.tsx
+Primeiro eu criei um hook chamado useOutSideInteraction dentro da pasta hooks
+Segundo eu criei dentro do arquivo Search.tsx: searchRef para guardar a ref da tag, nesse caso foi a div Container.
+Terceiro, criei a funcao handleCloseResult para fechar a preview da busca
+Quarto, chamei o hook useOutSideInteraction(searchRef, handleCloseResult) com ref e a funcao passando como parametros
 
 32-
 OBS:

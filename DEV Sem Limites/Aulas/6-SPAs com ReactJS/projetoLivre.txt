@@ -268,7 +268,7 @@ Segundo, apos isso coloquei o Header na pagina logada que seria a pagina Home.ts
 25-Criando Layout da Área Logada
 OBS: A necessidade de criar esse main layout eh para que eu nao deva sempre passar o menu/header/Cabeçalho para toda a pagina que eu criar, pode ser usado tambem com o footer/rodape do site.
  Primeiro eu criei a pasta Layouts e dentro dela criei o componente MainLayout com seus arquivos: index.ts, MainLayout.styles.ts e MainLayout.tsx.
- Segundo eu adicionei no pagina Home.tsx envovlendo o conteudo do site com a tag MainLayout do componente MainLayout.tsx
+ Segundo eu adicionei no pagina Home.tsx envovendo o conteudo do site com a tag MainLayout do componente MainLayout.tsx
 
  Vantagem disso eh que eu nao preciso estilizar o conteudo da pagina home na pagina home, como o conteudo vai ser enviado para o componente MainLayout eu estilizo o conteudo da pagina home no componente  MainLayout.
 
@@ -311,8 +311,16 @@ Segundo eu criei dentro do arquivo Search.tsx: searchRef para guardar a ref da t
 Terceiro, criei a funcao handleCloseResult para fechar a preview da busca
 Quarto, chamei o hook useOutSideInteraction(searchRef, handleCloseResult) com ref e a funcao passando como parametros
 
-32-
-OBS:
+32-Adicionando Ver Todos os Livros
+OBS: Primeiro criei a pasta Books dentro de pages. Essa vai ser a pagina de livros achados na pesquisa.
+
+Segundo, dentro de Search.tsx eu modifiquei a linha para <Link to={`/livros?q=${search}`}>Ver Todos</Link> Passando o termo que foi buscado para a barra de link do navegador
+
+Terceiro, no arquivo App.tsx eu adicionei a pagina Books.tsx como uma das rotas da pagina, o nome dessa pagina sera '/livros'
+
+Quarto, criei o hook useBooksQuery para fazer a pesquisa de livros, passando para ele o q (oque foi digitado e passado na barra de endereco) e passando o numero de livros que sera exibido assim que for clicado para ver mais livros no link(botao) 'Ver Todos'
+
+
 
 33-
 OBS:

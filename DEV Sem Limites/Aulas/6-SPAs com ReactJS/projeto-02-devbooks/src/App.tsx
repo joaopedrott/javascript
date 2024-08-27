@@ -1,15 +1,17 @@
 import { ThemeProvider } from 'styled-components'
-
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 import { GlobalStyles } from './styles/global'
 import { theme } from './styles/theme'
+
+import { RequireAuth } from './components/RequireAuth/RequireAuth'
+
 import { SingIn } from './pages/Auth/SignIn'
 import { SingUp } from './pages/Auth/SignUp'
 import { AuthProvider } from './context/AuthContext'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { RequireAuth } from './components/RequireAuth/RequireAuth'
-import { Home } from './pages/Home/Home'
+import { Home } from './pages/Home'
+import { Books } from './pages/Books'
 
 const queryClient = new QueryClient
 
@@ -24,7 +26,15 @@ function App() {
           <Routes>
             <Route path='/' element={<SingIn />} />
             <Route path='/cadastro' element={<SingUp />} />
-            <Route path='/home' element={<RequireAuth><Home/></RequireAuth>} />
+
+            <Route path='/home' element={<RequireAuth>
+              <Home/>
+              </RequireAuth>} />
+
+            <Route path='/livros' element={<RequireAuth>
+              <Books/>
+              </RequireAuth>} />
+
           </Routes>
         </AuthProvider>
       </QueryClientProvider>

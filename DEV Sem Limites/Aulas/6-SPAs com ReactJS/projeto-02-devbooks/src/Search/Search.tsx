@@ -71,7 +71,7 @@ export function Search () {
         
                     {/* link de ver mais livros */}
                         <SeeAllContainer>
-                            <Link to="/livros">Ver Todos</Link>
+                            <Link to={`/livros?q=${search}`}>Ver Todos</Link>
                         </SeeAllContainer>
                     </SearchResult>
         )}

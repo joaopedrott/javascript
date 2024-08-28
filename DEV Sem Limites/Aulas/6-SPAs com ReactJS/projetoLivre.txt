@@ -322,8 +322,8 @@ Quarto, criei o hook useBooksQuery para fazer a pesquisa de livros, passando par
 
 
 
-33-
-OBS:
+33-Adicionando Cache a Query de Ver Todos os Livros
+OBS:adicionei o cache no reactQuery adicionando "staleTime: Infinity" no arquivo useBooksQuery.ts
 
 34-
 OBS:

@@ -23,6 +23,7 @@ async function fetchBooks ({search, maxResults}:BooksQueryArgs): Promise<BooksQu
 export function useBooksQuery ({ search, maxResults}: BooksQueryArgs) {
     return useQuery ({
         queryKey: ['books', search, maxResults],
-        queryFn: async()=> await fetchBooks({search, maxResults})
+        queryFn: async()=> await fetchBooks({search, maxResults}),
+        staleTime: Infinity
     })
 }

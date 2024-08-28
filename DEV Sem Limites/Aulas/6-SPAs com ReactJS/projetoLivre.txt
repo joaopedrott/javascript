@@ -325,8 +325,12 @@ Quarto, criei o hook useBooksQuery para fazer a pesquisa de livros, passando par
 33-Adicionando Cache a Query de Ver Todos os Livros
 OBS:adicionei o cache no reactQuery adicionando "staleTime: Infinity" no arquivo useBooksQuery.ts
 
-34-
-OBS:
+34-Adicionando Cache na Query do Campo de Busca
+OBS:Adicionei o cache de busca, para a preview de busca de livros. 
+Primeiro adicionei no arquivo useBooksQuery.ts a funcao useLazyBooksQuery para fazer o cache
+Segundo no arquivo Search.tsx eu exclui o estados, result e loading
+Terceiro, ainda em Search.tsx, dentro de handleSearch troquei api.get por fetch
+Quarto, ainda em Search.tsx, dentro da tag SearchResultBookContainer em return, troquei result por data e loading por isLoading
 
 35-
 OBS:

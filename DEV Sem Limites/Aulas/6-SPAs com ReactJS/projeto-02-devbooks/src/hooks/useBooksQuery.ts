@@ -2,6 +2,7 @@
 import { useQuery } from "@tanstack/react-query"
 import { Book } from "../components/SearchResultBook/SearchResultBook"
 import { api } from "../services/api"
+import { useState } from "react"
 
 interface BooksQueryResponse {
     totalItems: number
@@ -26,4 +27,24 @@ export function useBooksQuery ({ search, maxResults}: BooksQueryArgs) {
         queryFn: async()=> await fetchBooks({search, maxResults}),
         staleTime: Infinity
     })
+}
+
+export function useLazyBooksQuery () {//cache da preview de busca de livros
+    const [vairiables, setVariables] = useState<BooksQueryArgs | null>(null)
+
+    const query = useQuery ({
+        queryKey: ['lazy-books', vairiables],
+        queryFn: async()=> await fetchBooks(vairiables as BooksQueryArgs),
+        staleTime: Infinity,
+        enabled: Boolean(vairiables)
+    })
+
+    const fetch = (queryVariables: BooksQueryArgs) => {
+        setVariables(queryVariables)
+    }
+
+    return {
+        fetch,
+        ...query
+    }
 }

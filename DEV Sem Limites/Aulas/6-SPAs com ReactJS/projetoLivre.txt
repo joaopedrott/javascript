@@ -332,8 +332,17 @@ Segundo no arquivo Search.tsx eu exclui o estados, result e loading
 Terceiro, ainda em Search.tsx, dentro de handleSearch troquei api.get por fetch
 Quarto, ainda em Search.tsx, dentro da tag SearchResultBookContainer em return, troquei result por data e loading por isLoading
 
-35-
-OBS:
+35-Estilizando Ver Todos
+OBS: Estilizei os livros achados na pesquisa.
+Primeiro, criei o componente BookCard, com seus arquivos, index.ts, BookCard.tsx e BookCard.styles.ts.
+
+segundo, na pasta src, eu criei a pasta models e dentro dela eu criei o arquivo Book.ts, aonde ficou uma interface que servira para varios componentes. Logo depois atualizei importanto esse model (interface Book) do arquivo Book.ts na interface BooksQueryResponse  no arquivo useBooksQuery.ts na pasta hooks.
+O arquivo componente SearchResultBook.tsx dentro da pasta SearchResultBook tambem foi atualizado com o importe do Book.ts na sua interface SearchResultBookProps. (SOMENTE UMA ATUALIZACAO DE INTERFACES)
+
+Terceiro, dentro do map no arquivo Books.tsx na pasta Books que esta na pasta pages, da seguinte forma: 
+                        <li key={item.id}>
+                            <BookCard key={item.id} book={item}/>
+                        </li>
 
 36-
 OBS:

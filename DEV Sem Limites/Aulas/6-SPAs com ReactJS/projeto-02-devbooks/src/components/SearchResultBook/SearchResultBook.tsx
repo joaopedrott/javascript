@@ -1,16 +1,7 @@
+import { Book } from "../../models/Book"
 import { Container, Details, Thumbnail } from "./SearchResultBook.styles"
 
-export interface Book {
-    id: string
-    volumeInfo: {
-        title: string
-        description: string
-        imageLinks?: {
-            thumbnail: string
-        }
-        authors: string[]
-    }
-}
+
 
 interface SearchResultBookProps {
     book: Book

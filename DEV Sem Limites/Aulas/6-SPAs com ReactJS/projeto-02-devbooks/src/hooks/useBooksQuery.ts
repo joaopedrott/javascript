@@ -1,8 +1,9 @@
 //hook para buscar dados na api utilizando o react query para fazer cache para nao fazer pesquisa de algo que ja foi feito
-import { useQuery } from "@tanstack/react-query"
-import { Book } from "../components/SearchResultBook/SearchResultBook"
-import { api } from "../services/api"
 import { useState } from "react"
+import { useQuery } from "@tanstack/react-query"
+
+import { api } from "../services/api"
+import { Book } from "../models/Book"
 
 interface BooksQueryResponse {
     totalItems: number

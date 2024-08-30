@@ -344,8 +344,25 @@ Terceiro, dentro do map no arquivo Books.tsx na pasta Books que esta na pasta pa
                             <BookCard key={item.id} book={item}/>
                         </li>
 
-36-
-OBS:
+36-Adicionando Skeleton Loader em Ver Todos
+OBS:Adicionei o skeleton na pagina com o resultado de todos os livros.
+    Primeiro, criei o componente BookLoader(pasta) dentro da pasta Books pois sera um componente que somente sera utilizado pela pagina books, entao sera um componente criado exclusivamente para a pagina dos livros achados da busca. Criei o componente com seus arquivos BookLoader.tsx, index.ts e BookLoader.styles.ts. 
+
+    Segundo, dentro do Books.tsx no seu retorno eu modifiquei fazendo um ternario da seguinte forma adicionando a tag do componente BookLoader que acabei de criar:
+
+    {data && 
+                    !isLoading? (
+                        data.items.map((item)=> (
+                            <li key={item.id}>
+                                <BookCard key={item.id} book={item}/>
+                            </li>
+                        ))
+                    ): (
+                        <BookLoader/>
+                    )}
+
+o skeleton so aparece quando nao aparecer os livros achados
+
 
 37-
 OBS:

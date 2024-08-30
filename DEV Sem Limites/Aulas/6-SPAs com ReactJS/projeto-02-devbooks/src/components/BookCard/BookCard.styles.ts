@@ -30,8 +30,8 @@ export const Thumbnail = styled.img`
     
     border: ${theme.border.radius.small};
 
-    /* width: 16rem; 
-    height: 22rem; */  
+    max-width: 16rem; 
+    height: 22rem;  
   
   `}
 `

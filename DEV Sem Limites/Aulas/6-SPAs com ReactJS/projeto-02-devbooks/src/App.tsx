@@ -12,6 +12,7 @@ import { SingUp } from './pages/Auth/SignUp'
 import { AuthProvider } from './context/AuthContext'
 import { Home } from './pages/Home'
 import { Books } from './pages/Books'
+import { BookDetail } from './pages/BookDetail'
 
 const queryClient = new QueryClient
 
@@ -33,6 +34,10 @@ function App() {
 
             <Route path='/livros' element={<RequireAuth>
               <Books/>
+              </RequireAuth>} />
+
+              <Route path='/livros/:bookId' element={<RequireAuth>
+              <BookDetail/>
               </RequireAuth>} />
 
           </Routes>

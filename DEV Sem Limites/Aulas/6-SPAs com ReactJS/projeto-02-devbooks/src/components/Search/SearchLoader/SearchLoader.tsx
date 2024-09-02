@@ -1,4 +1,4 @@
-import { SkeletonLoader } from "../../components/SkeletonLoader";
+import { SkeletonLoader } from "../../SkeletonLoader";
 import { Container, TextContainer } from "./SearchLoader.styles";
 
 export function SearchLoader () {

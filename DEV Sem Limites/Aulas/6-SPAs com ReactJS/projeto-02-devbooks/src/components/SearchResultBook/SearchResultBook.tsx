@@ -10,7 +10,7 @@ interface SearchResultBookProps {
 
 export function SearchResultBook ({ book }: SearchResultBookProps) {
     return (
-        <Container>
+        <Container to={`/livros/${book.id}`}>
             <Thumbnail src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w400-h600&source=gbs_api`} alt={book.volumeInfo.title} />
 
             <Details>

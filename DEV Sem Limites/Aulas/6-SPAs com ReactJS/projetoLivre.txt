@@ -364,8 +364,14 @@ OBS:Adicionei o skeleton na pagina com o resultado de todos os livros.
 o skeleton so aparece quando nao aparecer os livros achados
 
 
-37-
-OBS:
+37-Criando Página de Detalhes do Livro
+OBS:Primeiro, criei a pagina dos detalhes dos livros: Na pasta pages, a pasta BookDetail e seus arquivos, index.ts, BookDetail.tsx e BookDetail.styles.ts
+
+Segundo, criei dois hooks, useBookDetails.ts para pegar os detalhes do livro na api. E useThumbnail para pegar as thumbnails dos livros 
+
+Terceiro, criei a rota para a pagina  BookDetail
+
+Quarto(extra), fiz algumas correcoes, como: mudei o componente Search de lugar, coloquei ele dentro da pasta components,
 
 38-
 OBS:

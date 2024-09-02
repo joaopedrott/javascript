@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled(Link)`
     ${({theme})=>css`
         display: flex;
         border-radius: ${theme.border.radius.default};
@@ -9,6 +10,7 @@ export const Container = styled.div`
         background-color: transparent;
         cursor: pointer;
         text-decoration: none;
+        color: ${theme.colors.blue};
 
         &:hover {
             background-color: ${theme.colors.mainBackground};

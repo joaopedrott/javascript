@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Logo } from "../Logo";
 import { Avatar, Container, HeaderContainer, NavContainer } from "./Header.styles";
 
-import { Search } from "../../Search";
+import { Search } from "../Search";
 
 export function Header () {
     return (

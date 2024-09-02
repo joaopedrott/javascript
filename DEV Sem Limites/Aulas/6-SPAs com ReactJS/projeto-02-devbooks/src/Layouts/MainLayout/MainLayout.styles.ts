@@ -4,7 +4,7 @@ export const Container = styled.div`
 ${({theme})=>css`
     background-color: ${theme.colors.mainBackground};
     padding-bottom: 6.4rem;
-    height: 100%;
+    min-height: 100vh;
 `}
 
 `

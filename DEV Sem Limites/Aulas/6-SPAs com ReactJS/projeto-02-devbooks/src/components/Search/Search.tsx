@@ -1,18 +1,15 @@
 import { KeyboardEvent, useRef, useState } from "react";
-import { Link } from "../components/Link";
-import { SearchBox } from "../components/SearchBox";
+import { Link } from "../Link";
+import { SearchBox } from "../SearchBox";
 import { Container, SearchResult, SearchResultBookContainer, SeeAllContainer } from "./Search.styles";
-/* import { api } from "../services/api"; */
-import { /* Book, */ SearchResultBook } from "../components/SearchResultBook/SearchResultBook";
-/* import { SkeletonLoader } from "../components/SkeletonLoader"; */
+
+import { SearchResultBook } from "../SearchResultBook/SearchResultBook";
+
 import { SearchLoader } from "./SearchLoader";
-import { useOutSideInteraction } from "../hooks/useOutsideInteraction";
-import { useLazyBooksQuery } from "../hooks/useBooksQuery";
+import { useOutSideInteraction } from "../../hooks/useOutsideInteraction";
+import { useLazyBooksQuery } from "../../hooks/useBooksQuery";
 
 
-/* interface ResultState {
-    items: Book[]
-} */
 
 
 export function Search () {

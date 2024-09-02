@@ -1,3 +1,5 @@
+type BookState = 'IS_READING' | 'READ' | 'WANTS_TO_READ'
+
 export interface Book {
     id: string
     volumeInfo: {
@@ -7,6 +9,10 @@ export interface Book {
             thumbnail: string
         }
         authors: string[],
-        averageRating?: number
-    }
+        averageRating?: number,
+        publisher: string
+        publishedDate: string
+        pageCount: number
+    },
+    bookState: BookState
 }

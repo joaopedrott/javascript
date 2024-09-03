@@ -380,6 +380,8 @@ Primeiro, no terminal: yarn add react-html-parser
 
 Segundo, no terminal: yarn add @types/react-html-parser -D
 
+Terceiro, dentro do BookDetail.tsx dentro da tag Description, coloquei o reactHtmlParser para remover as tags html do texto de descricao do livro
+
 39-
 OBS:
 

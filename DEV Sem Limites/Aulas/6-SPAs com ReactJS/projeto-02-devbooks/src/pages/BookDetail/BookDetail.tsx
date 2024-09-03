@@ -1,9 +1,16 @@
 import { useParams } from "react-router-dom";
+import reactHtmlParser from 'react-html-parser'
+
 import { useBookDetailsQuery } from "../../hooks/useBookDetails";
-import { BackgroundThumbnail, ButtonsContainer, Container, ContentContainer, Description, DescriptionContainer, DetailColumn, DetailsContainer, PublisherContainer, Thumbnail, ThumbnailContainer } from "./BookDetail.styles";
-import { MainLayout } from "../../Layouts/MainLayout";
-import { Button } from "../../components/Button";
 import { useThumbnail } from "../../hooks/useThumbnail";
+
+
+import { MainLayout } from "../../Layouts/MainLayout";
+
+import { Button } from "../../components/Button";
+
+import { BackgroundThumbnail, ButtonsContainer, Container, ContentContainer, Description, DescriptionContainer, DetailColumn, DetailsContainer, PublisherContainer, Thumbnail, ThumbnailContainer } from "./BookDetail.styles";
+
 
 import { default as StarIcon } from '../../icons/star.svg?react'
 
@@ -59,7 +66,7 @@ export function BookDetail () {
                     <DescriptionContainer>
                     <h3>Sobre este livro</h3>
 
-                    <Description>{data?.volumeInfo.description}</Description>
+                    <Description>{reactHtmlParser(data?.volumeInfo.description as string)}</Description>
                 </DescriptionContainer>
                 </ContentContainer>
 

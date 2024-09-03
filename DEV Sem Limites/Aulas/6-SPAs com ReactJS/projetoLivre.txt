@@ -373,8 +373,12 @@ Terceiro, criei a rota para a pagina  BookDetail
 
 Quarto(extra), fiz algumas correcoes, como: mudei o componente Search de lugar, coloquei ele dentro da pasta components,
 
-38-
-OBS:
+38-Adicionando React HTML Parser
+OBS:como o texto do detalhe do livro vem com tags html, faz necessario usar o HTML parser
+
+Primeiro, no terminal: yarn add react-html-parser
+
+Segundo, no terminal: yarn add @types/react-html-parser -D
 
 39-
 OBS:

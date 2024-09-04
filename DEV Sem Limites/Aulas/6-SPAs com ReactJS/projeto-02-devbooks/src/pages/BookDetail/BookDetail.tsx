@@ -13,11 +13,12 @@ import { BackgroundThumbnail, ButtonsContainer, Container, ContentContainer, Des
 
 
 import { default as StarIcon } from '../../icons/star.svg?react'
+import { BookDetailLoader } from "./BookDetailLoader";
 
 export function BookDetail () {
     const params= useParams()
 
-    const { data } = useBookDetailsQuery({bookId: params.bookId as string})
+    const { data, isLoading } = useBookDetailsQuery({bookId: params.bookId as string})
 
     const thumbnailSrc = useThumbnail({bookId: data?.id as string})
 
@@ -30,53 +31,57 @@ export function BookDetail () {
     
     return(
         <MainLayout>
-            <Container>
-                <ContentContainer>
-                <h1>{data?.volumeInfo.title}</h1>
-
-                <h2>{data?.volumeInfo.authors?.[0]}</h2>
-
-                <PublisherContainer>
-                    {data && (
-                        <span>{formatDate(new Date(data?.volumeInfo.publishedDate))}</span>
-                    )} .{' '}
-                    <span>{data?.volumeInfo.publisher}</span>
-                </PublisherContainer>
-
-                    <DetailsContainer>
-                        <DetailColumn>
-                            <strong>{data?.volumeInfo.averageRating ? data?.volumeInfo.averageRating: 4 }
-
-                                <StarIcon/>
-                            </strong>
-                            <span>Avaliacoes</span>
-                        </DetailColumn>
-
-                        <DetailColumn>
-                            <strong>{data?.volumeInfo.pageCount}</strong>
-                            <span>Paginas</span>
-                        </DetailColumn>
-                    </DetailsContainer>
-
-                    <ButtonsContainer>
-                        <Button variant="outlined">Estou Lendo</Button>
-                        <Button variant="outlined">Quero Ler</Button>
-                        <Button variant="outlined">Ja Li</Button>
-                    </ButtonsContainer>
-                    <DescriptionContainer>
-                    <h3>Sobre este livro</h3>
-
-                    <Description>{reactHtmlParser(data?.volumeInfo.description as string)}</Description>
-                </DescriptionContainer>
-                </ContentContainer>
-
-
-
-                <ThumbnailContainer>
-                    <Thumbnail src={thumbnailSrc}/>
-                    <BackgroundThumbnail src={thumbnailSrc}/>
-                </ThumbnailContainer>
-            </Container>
+            {data && !isLoading ? (
+                            <Container>
+                            <ContentContainer>
+                            <h1>{data.volumeInfo.title}</h1>
+            
+                            <h2>{data.volumeInfo.authors?.[0]}</h2>
+            
+                            <PublisherContainer>
+                                {data && (
+                                    <span>{formatDate(new Date(data?.volumeInfo.publishedDate))}</span>
+                                )} .{' '}
+                                <span>{data?.volumeInfo.publisher}</span>
+                            </PublisherContainer>
+            
+                                <DetailsContainer>
+                                    <DetailColumn>
+                                        <strong>{data.volumeInfo.averageRating ? data.volumeInfo.averageRating: 4 }
+            
+                                            <StarIcon/>
+                                        </strong>
+                                        <span>Avaliacoes</span>
+                                    </DetailColumn>
+            
+                                    <DetailColumn>
+                                        <strong>{data.volumeInfo.pageCount}</strong>
+                                        <span>Paginas</span>
+                                    </DetailColumn>
+                                </DetailsContainer>
+            
+                                <ButtonsContainer>
+                                    <Button variant="outlined">Estou Lendo</Button>
+                                    <Button variant="outlined">Quero Ler</Button>
+                                    <Button variant="outlined">Ja Li</Button>
+                                </ButtonsContainer>
+                                <DescriptionContainer>
+                                <h3>Sobre este livro</h3>
+            
+                                <Description>{reactHtmlParser(data.volumeInfo.description )}</Description>
+                            </DescriptionContainer>
+                            </ContentContainer>
+            
+            
+            
+                            <ThumbnailContainer>
+                                <Thumbnail src={thumbnailSrc}/>
+                                <BackgroundThumbnail src={thumbnailSrc}/>
+                            </ThumbnailContainer>
+                        </Container>
+            ):(
+                <BookDetailLoader/>
+            )}
         </MainLayout>
     )
 }

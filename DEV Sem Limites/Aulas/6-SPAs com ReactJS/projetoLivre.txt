@@ -382,8 +382,13 @@ Segundo, no terminal: yarn add @types/react-html-parser -D
 
 Terceiro, dentro do BookDetail.tsx dentro da tag Description, coloquei o reactHtmlParser para remover as tags html do texto de descricao do livro
 
-39-
-OBS:
+39-Adicionando Skeleton Loader em Detalhes do Livro
+OBS:Adicionei o skeleton de carregamento para a pagina dos livros,
+Primeiro, criei a pasta BookDetailLoader dentro da pasta BookDetail que esta dentro da pasta pages. Junto com seus arquivos: index.ts, BookDetailLoader.styles.ts e BookDetailLoader.tsx
+
+Segundo, atualizei o arquivo BookDetail.tsx para case nao tiver dados a serem mostrados do livro, apareca o BookDetailLoader.
+
+Terceiro (extra retirei interrogacoes(?) dos datas pois ja nao era necessario)
 
 40-
 OBS:
@@ -416,4 +421,16 @@ OBS:
 OBS:
 
 50-
+OBS:
+
+51-
+OBS:
+
+52-
+OBS:
+
+53-
+OBS:
+
+54-
 OBS:

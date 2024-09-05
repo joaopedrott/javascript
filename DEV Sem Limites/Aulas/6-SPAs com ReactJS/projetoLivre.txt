@@ -390,8 +390,16 @@ Segundo, atualizei o arquivo BookDetail.tsx para case nao tiver dados a serem mo
 
 Terceiro (extra retirei interrogacoes(?) dos datas pois ja nao era necessario)
 
-40-
-OBS:
+40-Adicionando Livros em Meus Livros
+OBS: para adicionar a funcao de adicionar livros em minha lista, lendo, quero ler e ja li. Eu preciso criar um novo botao me baseando no botao que ja existe no react e ainda assim aproveitei e usei o botao roxo que ja teve sua aparencia modificada nos meus componentes. Como esse botao eh exclusivo da pagina bookdetail eu criei esse novo componente MyBookButton dentro da pasta BookDetail dentro da pasta Pages.
+
+Primeiro, criei a pasta MyBookButton e seus arquivos: index.ts, MyBookButton.tsx e MyBookButton.styles.ts.
+
+Segundo, criei o hook useAddToMyBooksMutaiton.ts para se comunicar com o beckend e adicionar o livro a lista de Quero ler, Estou lendo e Ja li.
+
+Terceiro, atualizei o arquivo BookDetail.tsx e mudeu a tag button para a tag MyBookButton
+
+Quarto ( extra ), modifiquei Book.ts e criei novos models BookState.ts e MyBook.ts na pasta models
 
 41-
 OBS:

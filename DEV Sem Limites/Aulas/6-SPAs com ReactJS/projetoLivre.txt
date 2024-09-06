@@ -401,6 +401,8 @@ Terceiro, atualizei o arquivo BookDetail.tsx e mudeu a tag button para a tag MyB
 
 Quarto ( extra ), modifiquei Book.ts e criei novos models BookState.ts e MyBook.ts na pasta models
 
+    Devo lembrar do conceito Higher Order Function, que seria uma funcao que chama outra funcao. Neste projeto foi feito uma funcao chamada handleAddToMyBookList dentro do arquivo BookDetail.tsx que recebe um bookState e nao faz nada ate o botao ser apertado ai a funcao da continuidade chamando a funcao  que esta dentro dela.
+
 41-
 OBS:
 

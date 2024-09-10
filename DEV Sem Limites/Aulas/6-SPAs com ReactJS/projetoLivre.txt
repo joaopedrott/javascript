@@ -409,8 +409,15 @@ OBS: adicionei o comportamento de atualizar a UI antes de ter o retorno do becke
 Primeiro, dentro do arquivo useAddToMyBooksMutaiton, adicionei os metodos onMutation, onError e onSettled:
 
 
-42-
-OBS:
+42-Criando Página de Meus Livros
+OBS:Criei a pagina em que mostra as listas dos livros que Estou Lendo, Quero Ler e Lido.
+Primeiro, criei a pasta MyBooks dentro da pasta Pages, com seus arquivos: index.ts, MyBooks.styles.ts e MyBooks.tsx
+
+Segundo, criei um hook useMyBooksQuery.ts, esse hook eh para 
+
+(extra) exclui o useThumbnail e criei a pasta utils e o arquivo generateThumbnailSrc.ts para prover a imagem dos livros.
+(extra) criei um arquivo clampText.ts dentro de styles e deletei esse estilo clampText que estava no arquivo BookCard.styles.ts, para que esse estilo css seja compartilhado para duas paginas. Vai ser compartilhado para BookCard.styles.ts e MyBook.styles.ts
+
 
 43-
 OBS:

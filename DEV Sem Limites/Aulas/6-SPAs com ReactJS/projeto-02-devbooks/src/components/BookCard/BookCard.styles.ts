@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled, { css } from 'styled-components'
+import { clampText } from '../../styles/clampText'
 
 export const Container = styled(Link)`
   ${({ theme }) => css`
@@ -36,13 +37,6 @@ export const Thumbnail = styled.img`
   `}
 `
 
-const clampText = css`
-  text-overflow: ellipsis;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-`
 
 export const Details = styled.div`
   ${({ theme }) => css`
@@ -57,7 +51,7 @@ export const Details = styled.div`
       margin-top: ${theme.spacings.xxsmall};
       color: ${theme.colors.blue};
 
-      ${clampText}
+      ${clampText(3)}
     }
 
     h3 {

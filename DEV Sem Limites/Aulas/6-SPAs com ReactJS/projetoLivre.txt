@@ -419,8 +419,8 @@ Segundo, criei um hook useMyBooksQuery.ts, esse hook eh para
 (extra) criei um arquivo clampText.ts dentro de styles e deletei esse estilo clampText que estava no arquivo BookCard.styles.ts, para que esse estilo css seja compartilhado para duas paginas. Vai ser compartilhado para BookCard.styles.ts e MyBook.styles.ts
 
 
-43-
-OBS:
+43-Criando Card de Leitura
+OBS: atualizei o arquivo MyBooks.tsx e MyBooks.styles.ts fazendo um card, com o texto de cada livro, com a imagem de cada livro, com seu titulo, autor e barra de progresso, tudo no arquivo de MyBook.styles.ts
 
 44-
 OBS:

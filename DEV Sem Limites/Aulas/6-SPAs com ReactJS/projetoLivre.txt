@@ -422,8 +422,16 @@ Segundo, criei um hook useMyBooksQuery.ts, esse hook eh para
 43-Criando Card de Leitura
 OBS: atualizei o arquivo MyBooks.tsx e MyBooks.styles.ts fazendo um card, com o texto de cada livro, com a imagem de cada livro, com seu titulo, autor e barra de progresso, tudo no arquivo de MyBook.styles.ts
 
-44-
-OBS:
+44-Adicionando Loading na Página de Meus Livros
+OBS: adicionei o loading ou skeletons para a pagina MyBooks.tsx que seria a pagina aonde estam os livros: Lendo, Quero ler e Lidos. Para isso:
+
+Primeiro, criei a pasta MyBooksLoader e seus arquivos: index.ts, MyBooksLoader.tsx e MyBooksLoader.styles.ts.
+
+Segundo, criei o arquivo generateSkeleton.ts (que usa um for que recebe o numero de iteracoes que era fazer) na pasta utils para gerar skeletons.
+
+Terceiro, adicionei a tag desse loading <MyBooksLoader/> no arquivo MyBooks.tsx
+
+Quarto(extra), adicionei um atraso na requisicao dos livros da lista, lendo, quero ler e lidos. No arquivo useMyBooksQuery.ts na pasta hooks. O atraso foi feito por uma funcao chamada sleep. Fez necessario pois sem esse atraso nao deu para ver o loading do skeleton na pratica. Resumindo isso foi criado para teste.
 
 45-
 OBS:

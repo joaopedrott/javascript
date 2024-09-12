@@ -3,6 +3,7 @@ import { useMyBooksQuery } from "../../hooks/useMyBooksQuery";
 import { MainLayout } from "../../Layouts/MainLayout";
 import { generateThumbnailSrc } from "../../utils/generateThumbnailSrc";
 import { Book, BookContainer, Container, Details, PageCountText, ProgressBar, ProgressBarContainer, ReadingCard, ReadingList, Thumbnail } from "./MyBooks.styles";
+import { MyBooksLoader } from "./MyBooksLoader";
 
 export function MyBooks () {
     const { data, isLoading } =useMyBooksQuery()
@@ -74,7 +75,7 @@ export function MyBooks () {
                 </Container>
                 
             ):(
-                <span>Carregando...</span>
+                <MyBooksLoader/>
             )}
         </MainLayout>
     )

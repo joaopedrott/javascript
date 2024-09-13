@@ -433,8 +433,14 @@ Terceiro, adicionei a tag desse loading <MyBooksLoader/> no arquivo MyBooks.tsx
 
 Quarto(extra), adicionei um atraso na requisicao dos livros da lista, lendo, quero ler e lidos. No arquivo useMyBooksQuery.ts na pasta hooks. O atraso foi feito por uma funcao chamada sleep. Fez necessario pois sem esse atraso nao deu para ver o loading do skeleton na pratica. Resumindo isso foi criado para teste.
 
-45-
-OBS:
+45-Componente de Atualização de Leitura
+OBS:criei o componente de atualizacao de leitura ao clicar no botao Atualizar Leitura.
+
+Primeiro, criei o componente ReadingBookCard e seus arquivos: index.ts, ReadingBookCard.tsx e ReadingBookCard.styles.ts 
+
+Segundo, alterei o arquivo MyBooks.tsx antes e depois de criar o componente ReadingBookCard.tsx
+
+Terceiro, retirei alguns estilos do MyBook.styles.tsx
 
 46-
 OBS:

@@ -4,6 +4,7 @@ import { generateThumbnailSrc } from "../../utils/generateThumbnailSrc";
 import { Button } from "../Button";
 import { ButtonsContainer, Details, InputContainer, PageCountText, ProgressBar, ProgressBarContainer, ReadingCard, Thumbnail } from "./ReadingBookCard.styles";
 import { Input } from "../Input";
+import { useUpdateReadingMutation } from "../../hooks/useUpdateReadingMutation";
 
 
 
@@ -13,14 +14,35 @@ interface ReadingBookCardProps {
 
 export function ReadingBookCard ({myBook}: ReadingBookCardProps) {
     const [openUpdateReading, setOpenUpdateReading] = useState(false)
+    const [page, setPage] = useState('')
+    const { mutateAsync } = useUpdateReadingMutation()
 
     const handleOpenUpdateReading = () => {
         setOpenUpdateReading(true)
+        setPage('')
     }
 
     const handleCloseUpdateReading = () => {
         setOpenUpdateReading(false)
     }
+
+    const handleUpdateReading = async () => {//atualiza o status de leitura do livro
+        if(!page) {
+            return
+        }
+
+        await mutateAsync({
+            bookId: myBook.bookId,
+            page: Number(page)
+        })
+        setOpenUpdateReading(false)
+        
+    }
+
+    const currentPage = myBook.currentPage || 0;//pagina atual
+    const remaingPages = myBook.totalPages - currentPage; //paginas faltando
+
+    const progress = Math.round((currentPage / myBook.totalPages) * 100);//calculo da barra de progresso
 
     return(
         <ReadingCard >
@@ -33,12 +55,12 @@ export function ReadingBookCard ({myBook}: ReadingBookCardProps) {
                         {myBook.book.volumeInfo.authors &&(<h3>{myBook.book.volumeInfo.authors[0]}</h3>) }
 
                         <ProgressBarContainer>
-                        <ProgressBar progress={30}/>
-                        <span>30%</span>
+                        <ProgressBar progress={progress}/>
+                        <span>{progress}%</span>
                         </ProgressBarContainer>
 
                         <PageCountText>
-                            Faltam 200 pag. para terminar.
+                            Faltam {remaingPages} pag. para terminar.
                         </PageCountText>
                                                         
                         <Button variant="outlined"  size="small"
@@ -51,12 +73,17 @@ export function ReadingBookCard ({myBook}: ReadingBookCardProps) {
                             <h2>Atualizar leitura</h2>
 
                             <InputContainer>
-                                <Input label="Pagina atual"/>
+                                <Input 
+                                label="Pagina atual" 
+                                type="number"
+                                value={page} 
+                                onChange={(e)=> setPage(e.target.value)}
+                                />
                             </InputContainer>
 
                             <ButtonsContainer>
                                 <Button size="small" variant="outlined" fullWidh onClick={handleCloseUpdateReading}>Cancelar</Button>
-                                <Button size="small"  fullWidh>Salvar</Button>
+                                <Button size="small"  fullWidh onClick={handleUpdateReading}>Salvar</Button>
                             </ButtonsContainer>
                         </>
                 )}

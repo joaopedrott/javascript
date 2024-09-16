@@ -438,12 +438,17 @@ OBS:criei o componente de atualizacao de leitura ao clicar no botao Atualizar Le
 
 Primeiro, criei o componente ReadingBookCard e seus arquivos: index.ts, ReadingBookCard.tsx e ReadingBookCard.styles.ts 
 
-Segundo, alterei o arquivo MyBooks.tsx antes e depois de criar o componente ReadingBookCard.tsx
+Segundo, alterei o arquivo MyBooks.tsx na pasta MyBooks dentro da pasta pages, antes e depois de criar o componente ReadingBookCard.tsx
 
 Terceiro, retirei alguns estilos do MyBook.styles.tsx
 
-46-
-OBS:
+46-Persistindo Atualização de Leitura
+OBS:Fiz atualizar quantas paginas faltam e barra de progresso da lista de livros de Lendo
+Primeiro, dentro do arquivo ReadingBookCard.tsx(na pasta ReadingBookCard na pasta components), comecei adicionando variaveis para alterar a quantidade de paginas e alterar a barra de progresso do livro quando apertar em atualizar leitura.
+
+Segundo, criei um hook chamado useUpdateReadingMutation.ts na pasta hooks. Esse hook pega o id do livro que eu passo para ele junto com a pagina atual que eu estou, baseado no id ele guarda o numero da pagina que eu estou neste livro
+
+Terceiro, no arquivo ReadingBookCard.tsx toda vez que apertar em salvar, esse botao chama uma funcao que por sua vez chama o hook passando o id do livro e a page(pagina atual)
 
 47-
 OBS:

@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { MyBook } from "../models/MyBook";
 import { api } from "../services/api";
 
-interface MyBooks {
+export interface MyBooks {
     isReading: MyBook[]
     read: MyBook[]
     wantsToRead: MyBook[]

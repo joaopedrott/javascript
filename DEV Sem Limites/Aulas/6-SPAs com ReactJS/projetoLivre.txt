@@ -393,7 +393,7 @@ Terceiro (extra retirei interrogacoes(?) dos datas pois ja nao era necessario)
 40-Adicionando Livros em Meus Livros
 OBS: para adicionar a funcao de adicionar livros em minha lista, lendo, quero ler e ja li. Eu preciso criar um novo botao, me baseei no botao que ja existe no react e ainda assim aproveitei e usei o botao roxo que ja teve sua aparencia modificada nos meus componentes. Como esse botao eh exclusivo da pagina bookdetail eu criei esse novo componente MyBookButton dentro da pasta BookDetail dentro da pasta Pages.
 
-Primeiro, criei a pasta MyBookButton e seus arquivos: index.ts, MyBookButton.tsx e MyBookButton.styles.ts.
+Primeiro, criei a pasta MyBookButton e seus arquivos: index.ts, MyBookButton.tsx e MyBookButton.styles.ts. Dentro da pasta BookDetail dentro da pasta pages
 
 Segundo, criei o hook useAddToMyBooksMutaiton.ts para se comunicar com o beckend e adicionar o livro a lista de Quero ler, Estou lendo e Ja li.
 
@@ -413,7 +413,7 @@ Primeiro, dentro do arquivo useAddToMyBooksMutaiton, adicionei os metodos onMuta
 OBS:Criei a pagina em que mostra as listas dos livros que Estou Lendo, Quero Ler e Lido.
 Primeiro, criei a pasta MyBooks dentro da pasta Pages, com seus arquivos: index.ts, MyBooks.styles.ts e MyBooks.tsx
 
-Segundo, criei um hook useMyBooksQuery.ts, esse hook eh para 
+Segundo, criei um hook useMyBooksQuery.ts, (esse hook eh para buscar as listas dos livros, Lendo, quero ler e lido)
 
 (extra) exclui o useThumbnail e criei a pasta utils e o arquivo generateThumbnailSrc.ts para prover a imagem dos livros.
 (extra) criei um arquivo clampText.ts dentro de styles e deletei esse estilo clampText que estava no arquivo BookCard.styles.ts, para que esse estilo css seja compartilhado para duas paginas. Vai ser compartilhado para BookCard.styles.ts e MyBook.styles.ts
@@ -450,8 +450,11 @@ Segundo, criei um hook chamado useUpdateReadingMutation.ts na pasta hooks. Esse 
 
 Terceiro, no arquivo ReadingBookCard.tsx toda vez que apertar em salvar, esse botao chama uma funcao que por sua vez chama o hook passando o id do livro e a page(pagina atual)
 
-47-
-OBS:
+47-UI Otimista na Atualização de Leitura
+OBS: Agora, com UI otimista, vou fazer com que a UI atualize imediatamente quando for atualizado a pagina atual do livro da lista Estou Lendo
+Primeiro, no arquivo hook, useUpdateReadingMutation.ts. Eu adicionei a funcao onMutate
+
+Segundo(extra) adicionei o export em MyBooks no hook useMyBooksQuery
 
 48-
 OBS:

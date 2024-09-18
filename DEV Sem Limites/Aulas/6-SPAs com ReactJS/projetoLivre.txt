@@ -456,8 +456,11 @@ Primeiro, no arquivo hook, useUpdateReadingMutation.ts. Eu adicionei a funcao on
 
 Segundo(extra) adicionei o export em MyBooks no hook useMyBooksQuery
 
-48-
-OBS:
+48-Adicionando Spinner
+OBS:o spiner aparece no botao salvar assim que eh clicado para demonstrar que esta processando a acao.
+Primeiro, criei o componente Spinner e seus arquivos, index.ts, Spinner.tsx e Spinner.styles.ts. Dentro da pasta components.
+
+Segundo, atualizei o componente ReadingBookCard.tsx dentro da pasta componets, com um ternario no botao salvar para alternar entre o nome salvar e o spinner que criei.
 
 49-
 OBS:

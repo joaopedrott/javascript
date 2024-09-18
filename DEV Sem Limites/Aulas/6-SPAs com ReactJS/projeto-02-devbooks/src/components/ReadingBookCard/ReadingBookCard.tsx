@@ -1,11 +1,19 @@
 import { useState } from "react";
+
 import { MyBook } from "../../models/MyBook";
 import { generateThumbnailSrc } from "../../utils/generateThumbnailSrc";
 import { Button } from "../Button";
-import { ButtonsContainer, Details, InputContainer, PageCountText, ProgressBar, ProgressBarContainer, ReadingCard, Thumbnail } from "./ReadingBookCard.styles";
+import { Spinner } from "../Spinner";
+import { ButtonsContainer, 
+    Details, InputContainer, 
+    PageCountText, 
+    ProgressBar, 
+    ProgressBarContainer, 
+    ReadingCard, 
+    Thumbnail 
+} from "./ReadingBookCard.styles";
 import { Input } from "../Input";
 import { useUpdateReadingMutation } from "../../hooks/useUpdateReadingMutation";
-
 
 
 interface ReadingBookCardProps {
@@ -15,7 +23,9 @@ interface ReadingBookCardProps {
 export function ReadingBookCard ({myBook}: ReadingBookCardProps) {
     const [openUpdateReading, setOpenUpdateReading] = useState(false)
     const [page, setPage] = useState('')
-    const { mutateAsync } = useUpdateReadingMutation()
+    const { mutateAsync, status } = useUpdateReadingMutation()
+    const isLoading = status === 'pending';
+
 
     const handleOpenUpdateReading = () => {
         setOpenUpdateReading(true)
@@ -83,7 +93,13 @@ export function ReadingBookCard ({myBook}: ReadingBookCardProps) {
 
                             <ButtonsContainer>
                                 <Button size="small" variant="outlined" fullWidh onClick={handleCloseUpdateReading}>Cancelar</Button>
-                                <Button size="small"  fullWidh onClick={handleUpdateReading}>Salvar</Button>
+                                <Button 
+                                size="small"  
+                                fullWidh 
+                                onClick={handleUpdateReading}
+                                disabled={isLoading}
+                                >
+                                    {isLoading ? <Spinner size={20}/> : 'Salvar'}</Button>
                             </ButtonsContainer>
                         </>
                 )}

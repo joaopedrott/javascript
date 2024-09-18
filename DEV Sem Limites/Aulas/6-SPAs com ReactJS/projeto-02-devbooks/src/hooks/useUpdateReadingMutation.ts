@@ -21,7 +21,7 @@ export function useUpdateReadingMutation () {
     return useMutation ({
         mutationFn: async (data: UpdateReading)=> await updateReading(data),
         onMutate: async (data) => {
-            await queryClient.cancelQueries(['my-books'])
+            await queryClient.cancelQueries({ queryKey: ['my-books'] })
 
             const previousData = queryClient.getQueryData(['my-books'])
 
@@ -53,7 +53,7 @@ export function useUpdateReadingMutation () {
             queryClient.setQueryData(['my-books'], context?.previousData)
         },
         onSettled: () => {
-            queryClient.invalidateQueries(['my-books'])
+            queryClient.invalidateQueries({ queryKey: ['my-books'] })
         }
     })
 }

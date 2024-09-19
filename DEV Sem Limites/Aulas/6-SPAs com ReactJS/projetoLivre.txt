@@ -456,11 +456,19 @@ Primeiro, no arquivo hook, useUpdateReadingMutation.ts. Eu adicionei a funcao on
 
 Segundo(extra) adicionei o export em MyBooks no hook useMyBooksQuery
 
+obs2: Provalmente por conta de uma atualizacao no importe :(useQueryClient  from "@tanstack/react-query") no arquivo useUpdateReadingMutation.tsx na pasta hook.
+O :  await queryClient.cancelQueries({ queryKey: ['my-books'] }) e queryClient.invalidateQueries({ queryKey: ['my-books'] }) passaram a somente receber objeto em vez de somente await queryClient.cancelQueries(['my-books]) e queryClient.invalidateQueries(['my-books])
+
 48-Adicionando Spinner
 OBS:o spiner aparece no botao salvar assim que eh clicado para demonstrar que esta processando a acao.
 Primeiro, criei o componente Spinner e seus arquivos, index.ts, Spinner.tsx e Spinner.styles.ts. Dentro da pasta components.
 
 Segundo, atualizei o componente ReadingBookCard.tsx dentro da pasta componets, com um ternario no botao salvar para alternar entre o nome salvar e o spinner que criei.
+
+obs2: Vale lembrar que tive que fazer uma adaptacao em cima do que foi feito na aula, pois acredito que por conta de alguma atualizacao referente a esse importe que esta presente no arquivo na pasta hook useUpdateReadingMutation.ts: 
+import { useMutation, useQueryClient } from "@tanstack/react-query, foi necessario essa adaptacao feita no arquivo ReadingBookCard.tsx que foi a utilizacao do status em vez de isLoading, oq da a entender que o isLoading nao existe mais no react-query. 
+Importando o status, coloquei ele dentro da variavel isLoading que eu mesmo criei.
+
 
 49-Iniciando Página de Perfil
 OBS: Neste passo eu criei a estrutura da pagina de perfil.

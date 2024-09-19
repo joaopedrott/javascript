@@ -462,8 +462,14 @@ Primeiro, criei o componente Spinner e seus arquivos, index.ts, Spinner.tsx e Sp
 
 Segundo, atualizei o componente ReadingBookCard.tsx dentro da pasta componets, com um ternario no botao salvar para alternar entre o nome salvar e o spinner que criei.
 
-49-
-OBS:
+49-Iniciando Página de Perfil
+OBS: Neste passo eu criei a estrutura da pagina de perfil.
+Primeiro eu criei dentro da pasta de pages a pasta Profile e seus arquivos: index.ts, Profile.tsx e Profile.styles.ts.
+
+Segundo, eu adicionei a nova rota atualizando o arquivo App.tsx na pasta rais do projeto.
+
+Terceiro, dentro da pasta components, dentro de Header, no arquivo Header.tsx adicionei um link para a pagina Perfil na tag Avatar.
+
 
 50-
 OBS:

@@ -20,9 +20,11 @@ export function Header () {
                     <Search/>
                 </NavContainer>
 
+            <Link to='/perfil'>
                 <Avatar>
                     <span>JP</span>
                 </Avatar>
+            </Link>
             </HeaderContainer>
 
         </Container>

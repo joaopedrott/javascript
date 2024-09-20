@@ -28,6 +28,11 @@ export const Container = styled.div<ContainerProps>`
                 border: 0.2rem solid ${theme.colors.primary};
             }
 
+            &:disabled {
+                cursor: not-allowed;
+                background-color: #eee;
+            }
+
         }
 
         p {

@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
-import { Logo } from "../Logo";
-import { Avatar, Container, HeaderContainer, NavContainer } from "./Header.styles";
 
+import { Logo } from "../Logo";
 import { Search } from "../Search";
+import { Avatar } from "../Avatar";
+
+import { Container, HeaderContainer, NavContainer } from "./Header.styles";
+
+
+
 
 export function Header () {
     return (
@@ -21,9 +26,7 @@ export function Header () {
                 </NavContainer>
 
             <Link to='/perfil'>
-                <Avatar>
-                    <span>JP</span>
-                </Avatar>
+                <Avatar  />
             </Link>
             </HeaderContainer>
 

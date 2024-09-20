@@ -479,8 +479,18 @@ Segundo, eu adicionei a nova rota atualizando o arquivo App.tsx na pasta rais do
 Terceiro, dentro da pasta components, dentro de Header, no arquivo Header.tsx adicionei um link para a pagina Perfil na tag Avatar.
 
 
-50-
-OBS:
+50-Componente Dados Pessoais
+OBS:Neste passo eu criei o componente Personal data que abriga todos os dados pessoais, neste caso, Nome completo, email e avatar do usuario logado.
+Primeiro, criei o componente PersonalData dentro da pasta components, com seus arquivos: index.ts, PersonalData.tsx e PersonalData.styles.ts.
+
+Segundo, dentro do PersonalData.tsx eu precisei colocar o Avatar, entao como ja existe um avatar ha barra Header.tsx, era necessario criar um componente Avatar, para ser chamado tanto no Header.tsx quanto no PersonalData.tsx.
+
+ Entao criei o componente Avatar dentro da pasta components com seus arquivos: index.ts, Avatar.tsx e Avatar.styles.ts. Retirei o estilo do avatar, que antes existia em Header.styles.ts e retirei a tag Avatar dentro de Header.tsx.
+ Ai depois eu atualizei o header.tsx importando o Avatar.tsx com sua tag <Avatar /> em Header.tsx
+
+ Dentro do arquivo PersonalData.tsx eu criei um input que eh para o email entao fiz ele ser disabled para indicar visualmente que nao pode ser modificado. Para deixar melhor o visual no arquivo input.styles.ts na pasta componets, eu adicionei um estilo para quando estiver disabled.
+
+ Terceiro dentro de Profile.tsx que foi o arquivo que criei no passo 49(anterior), eu chamo o PersonalData.tsx com sua tag <PersonalData/>, fazendo assim ser exibido os dados do usuario na page Profile.tsx
 
 51-
 OBS:

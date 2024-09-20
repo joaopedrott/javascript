@@ -38,22 +38,3 @@ export const NavContainer = styled.div`
     `}
 `
 
-export const Avatar = styled.div`
-    ${({theme})=>css`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        background-color: ${theme.colors.primary};
-        height: 4rem;
-        width: 4rem;
-        border-radius: ${theme.border.radius.small};
-        cursor: pointer;
-        color: #fff;
-
-        span {
-            font-weight: ${theme.font.weight.normal};
-        }
-
-    `}
-`

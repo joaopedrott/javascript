@@ -2,6 +2,7 @@ import { useState } from "react";
 import { MainLayout } from "../../Layouts/MainLayout";
 import { PersonalData } from "../../components/PersonalDAta";
 import { Container, ProfileMenu, ProfileMenuItem } from "./Profile.styles";
+import { Security } from "../../components/Security";
 
 
 type ProfileTab = 'personal-data' | 'security'
@@ -33,7 +34,7 @@ export function Profile () {
                 </ProfileMenu>
 
             {profileTab ==='personal-data' && <h2><PersonalData /></h2>}
-            {profileTab ==='security' && <h2>Dados Seguranca</h2>}
+            {profileTab ==='security' && <h2><Security /></h2>}
             </Container>
          </MainLayout>
     )

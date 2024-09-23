@@ -492,8 +492,12 @@ Segundo, dentro do PersonalData.tsx eu precisei colocar o Avatar, entao como ja 
 
  Terceiro dentro de Profile.tsx que foi o arquivo que criei no passo 49(anterior), eu chamo o PersonalData.tsx com sua tag <PersonalData/>, fazendo assim ser exibido os dados do usuario na page Profile.tsx
 
-51-
-OBS:
+51-Componente de Segurança
+OBS:Continuando os dados da pagina perfil, anteriormente eu adicionei a alteracao dos dados pessoais, agora eu adicionarei os dados de seguranca ou seja alteracao de senha
+
+Primeiro criei o componente security dentro da pasta componets, a pasta Security tem os seguintes arquivos: index.ts, Security.tsx e Security.styles.ts.
+
+Segundo, em seguida dentro da pasta Pages, dentro da pasta Profile, no arquivo Profile.tsx coloco a tag Security para ser chamada como aba assim como a PersonalData
 
 52-
 OBS:

@@ -2,6 +2,7 @@ import { createContext, PropsWithChildren, useState } from "react";
 import { DEV_BOOKS_SESSION_KEY } from "../../constants/storage";
 import { useSignIn } from "../../hooks/useSignIn";
 import { useSignUp } from "../../hooks/useSignUp";
+import { useMeQuery } from "../../hooks/useMeQuery";
 
 interface User {
     id: number
@@ -53,6 +54,11 @@ export function AuthProvider ({children}: PropsWithChildren){
     const signInMutation = useSignIn()//hook de requisicao de login
     const signUpMutation = useSignUp()//hook de requisicao de cadastro
 
+    const isAuthenticated = Boolean(session)
+    const {data} = useMeQuery(isAuthenticated)
+
+
+
     const signIn = async (user: SignInUser):Promise<void> => {//funcao de login
         await signInMutation.mutateAsync(user, {//mutate chama o metodo e nao o hook, passando usuario
             onSuccess: (session) => {//se os dados do usuario forem retornados com sucesso
@@ -73,7 +79,7 @@ export function AuthProvider ({children}: PropsWithChildren){
         <AuthContext.Provider 
         value={{
             isAuthenticated: Boolean(session),
-            user: session?.user,
+            user: data,
             signIn, 
             signUp, 
             signOut

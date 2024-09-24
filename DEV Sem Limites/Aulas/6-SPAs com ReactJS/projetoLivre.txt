@@ -499,8 +499,19 @@ Primeiro criei o componente security dentro da pasta componets, a pasta Security
 
 Segundo, em seguida dentro da pasta Pages, dentro da pasta Profile, no arquivo Profile.tsx coloco a tag Security para ser chamada como aba assim como a PersonalData
 
-52-
-OBS:
+52-Adicionando useMeQuery
+OBS: Devido a um problema, em que se eu por exemplo alterar o nome do meu usuario do perfil, pode ser alterado no backend mas no front nao seria alterado. E como isso acontece? simples, os dados do usuario sao pegos APENAS no momento que eh feito o login para ser mostrado na tela, entao, na pratica so apareceria o nome atualizado depois que eu fizer novamente o login. Para resolver isso eu preciso criar um hook para sempre pegar os dados do backend sempre que o usuario estiver autenticado (logado), em resumo ele sempre pega os dados sem parar.
+
+Primeiro, dentro da pasta hooks, criei o hook useMeQuery (que fara essa busca sempre que o usuario estiver autenticado)
+
+Segundo, dentro da pasta context, dentro da pasta AuthContext, no arquivo AuthContext.tsx, adicionei as linhas:    
+const isAuthenticated = Boolean(session)
+const {data} = useMeQuery(isAuthenticated)
+
+e no mesmo arquivo la em return coloquei data no lugar do session:
+user: data,
+no lugar de
+user: session?.user,
 
 53-
 OBS:

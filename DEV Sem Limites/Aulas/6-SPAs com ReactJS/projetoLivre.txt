@@ -513,8 +513,21 @@ user: data,
 no lugar de
 user: session?.user,
 
-53-
-OBS:
+53-Atualizando Nome do Usuário
+OBS: Agora fiz um hook para atualizacao dos dados pessoais funcionarem de fato, neste caso foi apenas a mudanca de nome do usuario.
+
+Primeiro criei um hook na pasta hook com nome useUpdateProfileMutation
+Segundo, dentro da pasta components, dentro da pasta PersonalData.tsx, atualizei criando uma funcao para usar o hook para mudar o nome do usuario no backend, o nome da funcao foi handleUpdateProfile.
+
+Terceiro extra: fiz algumas alteracoes no PersonalData.tsx, como trocar value por defaultValue.
+
+Quarto extra: no estilo do botao que chamei no PersonalData.tsx eu adicionei um estilo para quando o botao estiver desabilitado: 
+&:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+obs2: Vale lembrar que a mesma coisa no passo 48, usei o status em vez de isLoading dessa vez so que no arquivo PersonalData.tsx, pois talvez ele nao exista mais por conta de atualizacao.
 
 54-
 OBS:

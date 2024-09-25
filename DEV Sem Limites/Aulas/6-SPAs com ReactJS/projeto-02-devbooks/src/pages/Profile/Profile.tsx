@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MainLayout } from "../../Layouts/MainLayout";
-import { PersonalData } from "../../components/PersonalDAta";
+import { PersonalData } from "../../components/PersonalData";
 import { Container, ProfileMenu, ProfileMenuItem } from "./Profile.styles";
 import { Security } from "../../components/Security";
 

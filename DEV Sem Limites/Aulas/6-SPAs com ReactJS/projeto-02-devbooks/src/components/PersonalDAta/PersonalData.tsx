@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
+import { useUpdateProfileMutation } from "../../hooks/useUpdateProfileMutation";
 import { Avatar } from "../Avatar";
 import { Button } from "../Button";
 import { Input } from "../Input";
@@ -6,7 +8,15 @@ import { AvatarContainer, UpdateProfileContainer } from "./PersonalData.styles";
 
 export function PersonalData () {
     const { user } = useAuth()
+    const [name, setName]= useState('')
+    const { mutateAsync, status } = useUpdateProfileMutation()
+    const isLoading = status === 'pending';
 
+    const handleUpdateProfile = async () => {
+        await mutateAsync({
+            name
+        })
+    }
     return(
         <div>
             <AvatarContainer>
@@ -17,9 +27,11 @@ export function PersonalData () {
             </AvatarContainer>
 
             <UpdateProfileContainer>
-                <Input label="Nome Completo" value={user?.name}/>
-                <Input label="Endereco de Email" value={user?.email} disabled/>
-                <Button>Salvar</Button>
+                <Input label="Nome Completo" defaultValue={user?.name} onChange={(e)=> setName(e.target.value)}/>
+                <Input label="Endereco de Email" defaultValue={user?.email} disabled/>
+                <Button disabled={!name || isLoading} onClick={handleUpdateProfile}>
+                    {isLoading ? 'Salvando...' : 'Salvar'}
+                    </Button>
             </UpdateProfileContainer>
         </div>
     )

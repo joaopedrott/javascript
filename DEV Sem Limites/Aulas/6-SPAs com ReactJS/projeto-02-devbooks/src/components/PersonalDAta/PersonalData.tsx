@@ -9,8 +9,8 @@ import { AvatarContainer, UpdateProfileContainer } from "./PersonalData.styles";
 export function PersonalData () {
     const { user } = useAuth()
     const [name, setName]= useState('')
-    const { mutateAsync, status } = useUpdateProfileMutation()
-    const isLoading = status === 'pending';
+    const { mutateAsync, isPending } = useUpdateProfileMutation()
+    
 
     const handleUpdateProfile = async () => {
         await mutateAsync({
@@ -29,8 +29,8 @@ export function PersonalData () {
             <UpdateProfileContainer>
                 <Input label="Nome Completo" defaultValue={user?.name} onChange={(e)=> setName(e.target.value)}/>
                 <Input label="Endereco de Email" defaultValue={user?.email} disabled/>
-                <Button disabled={!name || isLoading} onClick={handleUpdateProfile}>
-                    {isLoading ? 'Salvando...' : 'Salvar'}
+                <Button disabled={!name || isPending} onClick={handleUpdateProfile}>
+                    {isPending ? 'Salvando...' : 'Salvar'}
                     </Button>
             </UpdateProfileContainer>
         </div>

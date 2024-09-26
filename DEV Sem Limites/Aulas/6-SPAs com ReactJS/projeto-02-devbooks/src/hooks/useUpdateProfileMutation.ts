@@ -1,16 +1,16 @@
-import { useMutation } from "@tanstack/react-query"
-import { api } from "../services/api"
+import { useMutation } from '@tanstack/react-query'
+import { api } from '../services/api'
 
 interface UpdateProfileArgs {
-    name?: string
+  name?: string
 }
 
-async function updateProfile({name}:UpdateProfileArgs) {
-    const { data } = await api.put('/user', { name })
+async function updateProfile({ name }: UpdateProfileArgs) {
+  const { data } = await api.put('/user', { name })
 
-    return data
+  return data
 }
 
-export function useUpdateProfileMutation () {
-    return useMutation ({mutationFn: updateProfile})
+export function useUpdateProfileMutation() {
+  return useMutation({ mutationFn: updateProfile })
 }

@@ -529,5 +529,11 @@ Quarto extra: no estilo do botao que chamei no PersonalData.tsx eu adicionei um 
 
 obs2: Vale lembrar que a mesma coisa no passo 48, usei o status em vez de isLoading dessa vez so que no arquivo PersonalData.tsx, pois talvez ele nao exista mais por conta de atualizacao.
 
-54-
-OBS:
+54-Atualizando Senha
+OBS: Assim como no passo anterior, tive que fazer um hook para atualizar a senha tambem.
+
+Primeiro, criei um hook na pasta hooks, com nome de useUpdatePasswordMutation.ts
+
+Segundo, atualizei o arquivo Security.tsx na pasta Security na pasta components. Para fazer a atualizacao da senha criei uma funcao chamada handleUpdatePassword utilizando o hook useUpdatePasswordMutation.ts e para complementar, tive que usar o hook useError.ts tambem para tratar o erro.
+
+Terceiro (extra) tive que atualizar o hook useError.ts adicionando um else if 

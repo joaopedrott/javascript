@@ -13,5 +13,11 @@ const pessoas = [
 ]
 // filter pode receber ate 3 parametros: ex pessoa,index,array
 const pessoasMaioresDeIdade = pessoas.filter(pessoa => pessoa.idade>=18)
+/*
+ou na forma completa
+const pessoasMaioresDeIdade = pessoas.filter(pessoa => {
+    return pessoa.idade>=18
+    })
+*/
 
 console.log(pessoasMaioresDeIdade)

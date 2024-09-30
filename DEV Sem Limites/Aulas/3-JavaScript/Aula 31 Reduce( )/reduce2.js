@@ -39,3 +39,5 @@ const numeros = [1, 2, 3, 4, 5];
       return acumulador;
     }, []);
     console.log(dobroPar); // Saída: [4, 8]
+
+    //ou seja, tem duas formas de usar o reduce mas acredito que sao raras as chances de usar ele pois o mais usado seria o map

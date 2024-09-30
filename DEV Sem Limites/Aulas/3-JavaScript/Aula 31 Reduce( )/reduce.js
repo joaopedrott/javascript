@@ -43,7 +43,20 @@ const result = numbers.reduce((acc, n) => {
 console.log(result); // [4, 8, 12]
 
 
+  1. Reduzir um array a uma única variável (soma de valores)
 
+    const numeros = [1, 2, 3, 4, 5];
+    const soma = numeros.reduce((acumulador, valorAtual) => acumulador + valorAtual, 0);
 
+    console.log(soma); // Saída: 15
 
+  2. Reduzir um array a outro array (duplicar valores)
+
+    const numeros = [1, 2, 3, 4, 5];
+    const duplicados = numeros.reduce((acumulador, valorAtual) => {
+      acumulador.push(valorAtual * 2);
+      return acumulador;
+    }, []);
+
+    console.log(duplicados); // Saída: [2, 4, 6, 8, 10]
 */

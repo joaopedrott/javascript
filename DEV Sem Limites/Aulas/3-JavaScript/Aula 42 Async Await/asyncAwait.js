@@ -38,7 +38,7 @@ const getPosts=()=> {
     //funcao pega comentarios e retorna com callback
     const getComments = (postId) => {
         return new Promise ((resolve, reject)=> {
-            const error = true
+            const error = false
 
             if(error) {//em caso de erro
                 return reject('Erro ao buscar comentarios')

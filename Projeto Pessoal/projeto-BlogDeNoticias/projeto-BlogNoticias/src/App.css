@@ -1,0 +1,11 @@
+/* Global CSS (pode ser em App.css ou direto no seu App.tsx) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100vw;
+  overflow-x: hidden;
+}

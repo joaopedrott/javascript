@@ -2,18 +2,16 @@ import { ReactNode } from "react";
 import { Header } from "../../components/Header";
 import { Container, Main } from "./MainLayout.styles";
 
-
 interface MAinLayoutProps {
-    children: ReactNode
+  children: ReactNode;
 }
 
-export function MainLayout ({ children }:MAinLayoutProps) {
+export function MainLayout({ children }: MAinLayoutProps) {
+  return (
+    <Container>
+      <Header />
 
-    return (
-        <Container>
-            <Header />
-        
-            <Main>{children}</Main>
-        </Container>
-    )
+      <Main>{children}</Main>
+    </Container>
+  );
 }

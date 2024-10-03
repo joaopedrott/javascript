@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 
-body, html {
-  width: 100vw;
-  overflow-x: hidden;
+hmtl {
+  font-size: 62.5%;
 }

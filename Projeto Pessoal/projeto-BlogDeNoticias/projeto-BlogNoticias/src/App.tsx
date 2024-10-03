@@ -1,15 +1,17 @@
-import React from 'react';
-import Menu from './components/Menu/Menu';
+
 import './App.css'
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import { Home } from './Pages/Home';
 
 function App() {
-  const menuItems = ['Home', 'About', 'Contact'];
+
 
   return (
-    <div>
-      <Menu items={menuItems} />
-      <p>Conteudo do site</p>
-    </div>
+    <BrowserRouter>
+      <Routes>
+      <Route path='/' element={<Home/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

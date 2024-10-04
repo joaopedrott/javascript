@@ -9,6 +9,8 @@ export const MenuWrapper = styled.nav`
   box-sizing: border-box; /* Garantir que padding não afete o width */
 `;
 
+
+
 export const MenuList = styled.ul`
   list-style-type: none;
   padding: 0;

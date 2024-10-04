@@ -8,6 +8,7 @@ export function Home() {
     <>
       <MainLayout>
         <h1>Home Page</h1>
+        <p>Conteúdo da página Home</p>
       </MainLayout>
     </>
   )

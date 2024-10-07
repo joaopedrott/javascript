@@ -1,15 +1,32 @@
-import axios from "axios";
+import axios from 'axios';
 
-const apiKey = "SUA_CHAVE_API";
+const api = axios.create({
+  baseURL: '/api',
 
-export const getSteamUserData = async (steamId: string) => {
+});
+
+interface NewsItem {
+  gid: string;
+  title: string;
+  url: string;
+  author: string;
+  contents: string;
+  date: number;
+}
+
+interface SteamNewsResponse {
+  appnews: {
+    newsitems: NewsItem[];
+  };
+}
+
+export const getGameNews = async (appid: number): Promise<NewsItem[]> => {
   try {
-    const response = await axios.get(
-      `https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=${apiKey}&steamids=${steamId}`
-    );
-    return response.data.response.players[0];
+    const response = await api.get<SteamNewsResponse>(`/ISteamNews/GetNewsForApp/v2/?appid=${appid}`);
+    console.log(response.data.appnews.newsitems);
+    return response.data.appnews.newsitems;
   } catch (error) {
-    console.error("Erro ao buscar dados do usuário Steam:", error);
+    console.error("Erro ao buscar notícias: ", error);
     throw error;
   }
 };

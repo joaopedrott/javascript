@@ -1,45 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import { getGameNews } from '../../services/steamService';
+import { fetchGames } from '../../services/steamService';
 
-interface NewsItem {
-  gid: string;
-  title: string;
-  url: string;
-  author: string;
-  contents: string;
-  date: number;
+interface Game {
+  appid: number;
+  name: string;
+  player_count: number;
 }
 
 export function Home() {
-  const [news, setNews] = useState<NewsItem[]>([]);
-  const appid = 730; // Substitua pelo App ID do jogo desejado
+  const [games, setGames] = useState<Game[]>([]);
 
   useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const data = await getGameNews(appid);
-        setNews(data);
-      } catch (error) {
-        console.error("Erro ao buscar notícias: ", error);
-      }
-    };
-
-    fetchNews();
-  }, [appid]);
+    fetchGames().then(data => {
+      console.log("Games fetched:", data);
+      setGames(data);
+    });
+  }, []);
 
   return (
     <div>
-      <h1>Notícias do Jogo</h1>
+      <h1>Jogos Mais Jogados Online</h1>
       <ul>
-        {news.map((item) => (
-          <li key={item.gid}>
-            <h2>{item.title}</h2>
-            <p>{item.contents}</p>
-            <a href={item.url} target="_blank" rel="noopener noreferrer">Leia mais</a>
-            <p>Autor: {item.author}</p>
-            <p>Data: {new Date(item.date * 1000).toLocaleString()}</p>
-          </li>
-        ))}
+        {games.length > 0 ? (
+          games.map((game) => (
+            <li key={game.appid}>{game.name} - Jogadores Online: {game.player_count}</li>
+          ))
+        ) : (
+          <li>Nenhum jogo encontrado</li>
+        )}
       </ul>
     </div>
   );

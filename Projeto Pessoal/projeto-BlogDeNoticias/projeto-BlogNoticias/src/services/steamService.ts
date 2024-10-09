@@ -6,6 +6,8 @@ interface Game {
   appid: number;
   name: string;
   player_count: number;
+  rank: number;
+  imageUrl: string;
 }
 
 const apiKey = 'SUA_CHAVE_API_AQUI'; // Substitua pela sua chave da API
@@ -22,10 +24,18 @@ export const fetchGames = async (): Promise<Game[]> => {
       const detailsResponse = await axios.get(`/api/store/api/appdetails?appids=${game.appid}`);
       const gameName = detailsResponse.data[game.appid].data.name;
 
+      const imageUrl = detailsResponse.data[game.appid].data.header_image;
+
+      //quantidade de jogadores de cada jogo
+      const response2 = await axios.get(`/api/steam/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=${game.appid}&key=${apiKey}`);
+      const players = response2.data.response.player_count;
+
       return {
         appid: game.appid,
         name: gameName,
-        player_count: game.player_count
+        player_count: players,
+        rank: game.rank,
+        imageUrl: imageUrl
       };
     }));
 

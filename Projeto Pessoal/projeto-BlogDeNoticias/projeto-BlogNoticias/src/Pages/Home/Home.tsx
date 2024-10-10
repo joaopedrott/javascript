@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { fetchGames } from '../../services/steamService';
+import { Card } from '../../components/Card';
+import { HomeContainer } from './Home.styles';
 
-interface Game {
+
+export interface Game {
   appid: number;
   name: string;
   player_count: number;
@@ -20,19 +23,17 @@ export function Home() {
   }, []);
 
   return (
-    <div>
+    <HomeContainer>
       <h1>Os 10 jogos com mais jogadores ativos no momento </h1>
       <ul>
         {games.length > 0 ? (
           games.map((game) => (
-            <li key={game.appid}>
-              <img src={game.imageUrl} alt={game.name} style={{ width: '100px' }} />
-              {game.rank}- {game.name} - Jogadores Online: {game.player_count}</li>
+            <Card key={game.appid} {...game} />
           ))
         ) : (
           <li>Carregando...</li>
         )}
       </ul>
-    </div>
+    </HomeContainer>
   );
 }

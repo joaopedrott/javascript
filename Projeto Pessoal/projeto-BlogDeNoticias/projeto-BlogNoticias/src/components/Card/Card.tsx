@@ -1,5 +1,5 @@
 import { Game } from "../../Pages/Home/Home";
-import { CardContainer, Description,Thumbnail } from "./Card.Styles";
+import { CardContainer, Description,Thumbnail } from "./Card.styles";
 
 
 export function Card(game: Game) {

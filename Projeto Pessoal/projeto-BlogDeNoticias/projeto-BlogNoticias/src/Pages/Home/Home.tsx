@@ -24,7 +24,7 @@ export function Home() {
 
   return (
     <HomeContainer>
-      <h1>Os 10 jogos com mais jogadores ativos no momento </h1>
+      <h1>Os 10 jogos ou aplicativos com mais jogadores ativos no momento </h1>
       <ul>
         {games.length > 0 ? (
           games.map((game) => (

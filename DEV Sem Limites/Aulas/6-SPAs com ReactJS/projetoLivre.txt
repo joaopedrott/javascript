@@ -537,3 +537,7 @@ Primeiro, criei um hook na pasta hooks, com nome de useUpdatePasswordMutation.ts
 Segundo, atualizei o arquivo Security.tsx na pasta Security na pasta components. Para fazer a atualizacao da senha criei uma funcao chamada handleUpdatePassword utilizando o hook useUpdatePasswordMutation.ts e para complementar, tive que usar o hook useError.ts tambem para tratar o erro.
 
 Terceiro (extra) tive que atualizar o hook useError.ts adicionando um else if 
+
+
+Lembrando que para executar o projeto eu preciso executar o docker primeiro e logo apois abrir o projeto DEVBOOKS-API e executar o comando: pnpm run start:dev
+Depois abrir o projeto: projeto-02-devbooks e executar o comando: yarn dev

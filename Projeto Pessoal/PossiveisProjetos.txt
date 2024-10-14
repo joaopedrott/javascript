@@ -3,4 +3,4 @@ Possiveis projetos
 2-Landing Page de games ou animes (FEITO)
 3-Loja de camisas Nerd
 4-Projeto: Qual roupa devo vestir?
-5-Projeto: usando api da steam
+5-Projeto: usando api da steam  (FEITO)

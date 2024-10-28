@@ -2,15 +2,7 @@
 Funcoes
     Sao blocos de codigos 
 */
-/*
-//funcao alternativa
 
-var desejarBoasVindas = function(){
-    console.log('Ola, seja bem vindo ao DSL Fundamentos!')
-}
-
-
-*/
 
 
 function desejarBoasVindas(){

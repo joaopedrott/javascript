@@ -2,6 +2,7 @@
  * @param {string} val
  * @return {Object}
  */
+// funcao ou metodo dentro de objetos toBe e notToBe
 function expect(val1) {
   return {
     toBe: function (val) {

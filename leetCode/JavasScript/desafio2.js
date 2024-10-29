@@ -2,6 +2,7 @@
  * @param {number} n
  * @return {Function} counter
  */
+//passagem de parametro para função interna
 var createCounter = function(n) {
     
     return function(...args) {

@@ -1,0 +1,38 @@
+Para Fazer a aula de testes foi necessario utilizar o projeto  do quiz criado nas aulas 5-Fundamentos do ReactJS
+
+Muito posteriormente instalamos bibliotecas para fazer os testes TDD no projeto do quiz
+1-No terminal:
+
+Yarn add -D jest @testing-library/react @testing-library/jest-dom @testing-library/user-event @testing-library/dom jest-css-modules jest-environment-jsdom ts-jest
+
+2-Dentro da pasta raiz do projeto, criamos o arquivo jest.config.js com o seu conteudo.
+
+3-Dentro de src criamos o arquivo setupTests.ts, com seu conteudo:
+import '@testing-library/jest-dom';
+
+4-Dentro de package.json adicionamos o script de testes: 
+"test": "jest"
+
+Pronto! Agora as configuracoes para testes estao prontas!
+
+obs: adicionei export no function app no arquivo app.jsx
+
+5- Dentro de src criamos o arquivo do primeiro teste: App.test.tsx
+
+5.1-obs: Para dar continuidade, adicionei mais instalacoes no terminal:
+E adicionamos mais duas instalacoes no terminal:
+yarn add -D @types/jest
+e 
+yarn add -D ts-node
+
+Damos continuidade ao arquivo de teste...
+
+6-Para realmente saber se esta tudo bem, vamos testar o teste, no arquivo de teste foi escrito:
+
+describe('App Component', () => {
+  it('should sum 2 numbers', () => {
+    expect(1 + 2).toBe(3);
+  })
+})
+
+e em seguida no terminal digitamos: yarn test

@@ -89,7 +89,7 @@ no terminal digitar: yarn add typescript -D
 Aula 15- Adicionando Tipagem ao Quiz
 migramos todo o codigo para typescript, mudando a extensao de todos os jsx dos componentes para tsx e criamos interfaces para cada um desses componentes
 
------------------------------------------------------------------------
+----------------------------------------------------------------------- TDD
 Muito posteriormente instalamos bibliotecas para fazer os testes TDD no projeto do quiz
 1-No terminal:
 

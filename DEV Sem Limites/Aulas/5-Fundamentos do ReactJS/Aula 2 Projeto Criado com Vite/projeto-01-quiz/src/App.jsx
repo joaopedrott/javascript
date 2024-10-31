@@ -3,7 +3,7 @@ import  './styles/global.css'
 
 
 
-function App() {
+export function App() {
   
 
   return (

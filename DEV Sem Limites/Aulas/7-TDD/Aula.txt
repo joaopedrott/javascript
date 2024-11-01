@@ -28,11 +28,24 @@ yarn add -D ts-node
 Damos continuidade ao arquivo de teste...
 
 6-Para realmente saber se esta tudo bem, vamos testar o teste, no arquivo de teste foi escrito:
-
 describe('App Component', () => {
   it('should sum 2 numbers', () => {
     expect(1 + 2).toBe(3);
   })
 })
-
 e em seguida no terminal digitamos: yarn test
+para  ver se o teste deu certo
+
+7- Criei todos os testes para aplicacao do quiz
+
+
+8-dentro do arquivo de teste, usei o comando
+yarn test --watch 
+para ficar observando os testes e fazer os testes automaticamente
+
+Ainda no terminal:
+yarn test --coverage
+para ver a cobertura dos testes em porcentagem
+
+
+

@@ -122,9 +122,15 @@ describe('App Component', () => {
   })
 })
 e em seguida no terminal digitamos: yarn test
+para  ver se o teste deu certo
+
+7- Criei todos os testes para aplicacao do quiz
 
 
+8-dentro do arquivo de teste, usei o comando
+yarn test --watch 
+para ficar observando os testes e fazer os testes automaticamente
 
-
-
-
+Ainda no terminal:
+yarn test --coverage
+para ver a cobertura dos testes em porcentagem

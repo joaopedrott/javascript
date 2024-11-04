@@ -2,6 +2,8 @@
  * @param {integer} init
  * @return { increment: Function, decrement: Function, reset: Function }
  */
+
+//exercitando o conceito de funcao dentro de funcao
 var createCounter = function(init) {
     let counter = init;
 

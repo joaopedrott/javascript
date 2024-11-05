@@ -1,4 +1,4 @@
-
+// lembrar que para adicionar valores em uma array é necessario usar o push
 var map = function(arr, fn) {
     
         const resultado = arr.reduce((novaArray, valorAtual,index)=>{

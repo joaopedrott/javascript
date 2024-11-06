@@ -1,5 +1,6 @@
 
-
+//obs devo lembrar que o filter retorna uma array com valores +1 que passam no teste --> if
+//esse teste é o nullish coalescing
 var filter = function(arr, fn ) {
     let array = [];
 

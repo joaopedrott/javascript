@@ -1,3 +1,5 @@
+//adicionando mais um tipo de funcao. Funcao de ordem superior
+
 //funcoes interna e externa -------------------------------------------------------------------------------
 
 

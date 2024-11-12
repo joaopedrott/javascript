@@ -20,7 +20,7 @@ var cancellable = function(fn, args, t) {
    const t = 20 ; // tempo em milisegundos para a funcao ser chamada
    const cancelTimeMs = 50; //tempo limite
  
-   const start = performance.now();//tempo inicial
+   const start = performance.now();//tempo inicial em milissegundos //parecido com o Date.now()
  
    const log = (...argsArr) => {//funcao que sera chamada
        const diff = Math.floor(performance.now() - start);
@@ -29,9 +29,9 @@ var cancellable = function(fn, args, t) {
         
    const cancel = cancellable(log, args, t);//chamada da funcao
  
-   const maxT = Math.max(t, cancelTimeMs);//compara e pega o valor maximo entre das duas variaveis
+   const maxT = Math.max(t, cancelTimeMs);//20 ou 50 compara e pega o valor maximo entre das duas variaveis: 50
             
-   setTimeout(cancel, cancelTimeMs);//chamada da funcao de cancelamento
+   setTimeout(cancel, cancelTimeMs);//chamada da funcao de cancelamento depois de 50 milisegundos
  
    setTimeout(() => {//chamada da funcao de log
        console.log(result); // [{"time":20,"returned":10}]

@@ -11,3 +11,5 @@ var chunk = function(arr, size) {
     }
     
 };
+
+//esse algoritmo pega uma array e divide ela em pedaços de acordo com o tamanho que o usuário definir com Size e coloca cada pedaço em um array dentro de outro array

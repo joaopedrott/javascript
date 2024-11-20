@@ -111,3 +111,33 @@ function innerFunction(...args) {
 const outerWithArgs = outerFunction(innerFunction); // Obtendo a função retornada
 const outerResult = outerWithArgs(1, 2, 3); // Passando argumentos para a função retornada
 console.log("Resultado da função externa: " + outerResult);
+
+
+/*
+//resolvi a questao do desafio 10 do leetcode assim:
+
+var once = function(fn) {
+    let called = false;
+    let result;
+
+    return function(...args) {
+        if (!called) {
+            called = true;
+            result = fn(...args);
+            return result;
+        }
+        return undefined;
+    }
+};
+
+
+ //* let fn = (a,b,c) => (a + b + c)
+ //* let onceFn = once(fn)
+ //*
+ //* onceFn(1,2,3); // 6
+ //* onceFn(2,3,6); // returns undefined without calling fn
+ 
+
+
+
+*/

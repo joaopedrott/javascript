@@ -33,6 +33,7 @@ console.log(callCount); // 2
 
 /*
 para melhor visualizacao do cache:
+ex: console.log(memoizedFn(2, 3));
 
 {
   "[2,3]": 5,

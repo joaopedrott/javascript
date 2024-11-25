@@ -1,0 +1,2 @@
+Criando API com NestJS, Prisma e Postgres
+https://www.youtube.com/watch?v=K_3b6SlssMc

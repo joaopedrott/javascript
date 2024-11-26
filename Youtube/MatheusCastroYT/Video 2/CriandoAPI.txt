@@ -1,2 +1,5 @@
 Criando API com NestJS, Prisma e Postgres
 https://www.youtube.com/watch?v=K_3b6SlssMc
+
+
+o neste eh usado para fazer API entao ele nao eh front end.

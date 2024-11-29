@@ -538,6 +538,6 @@ Segundo, atualizei o arquivo Security.tsx na pasta Security na pasta components.
 
 Terceiro (extra) tive que atualizar o hook useError.ts adicionando um else if 
 
-
+-----------------------------------------------------------------------------------------------------------------------
 Lembrando que para executar o projeto eu preciso executar o docker primeiro e logo apois abrir o projeto DEVBOOKS-API e executar o comando: pnpm run start:dev
 Depois abrir o projeto: projeto-02-devbooks e executar o comando: yarn dev

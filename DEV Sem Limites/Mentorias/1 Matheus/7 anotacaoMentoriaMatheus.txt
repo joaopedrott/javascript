@@ -1,3 +1,5 @@
-Mentoria 7- 
+Mentoria 7- tiramos duvidas sobre programacao e trabalho remoto.
+
+Obs: nestjs é um framework para node.js. Ele eh um framework para criar APIs no backend.
 
 

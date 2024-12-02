@@ -20,6 +20,7 @@ function expect(val1) {
         throw new Error("Equal");
       }
     },
+
   };
 }
 
@@ -28,3 +29,8 @@ function expect(val1) {
  * expect(5).notToBe(5); // throws "Equal"
  */
 console.log(expect(5).toBe(5));
+/*
+
+o retorno com {} eh para retornar objeto
+o retorno com () eh para retornar valor
+*/

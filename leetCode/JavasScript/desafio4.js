@@ -3,7 +3,7 @@
  * @return { increment: Function, decrement: Function, reset: Function }
  */
 
-//exercitando o conceito de funcao dentro de funcao
+//exercitando o conceito de funcao dentro de funcao, funcao como objeto
 var createCounter = function(init) {
     let counter = init;
 

@@ -1,3 +1,5 @@
+// algoritmo para adicionar 1 a cada valor da array
+
 // lembrar que para adicionar valores em uma array é necessario usar o push
 var map = function(arr, fn) {
     

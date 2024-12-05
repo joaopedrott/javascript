@@ -1,11 +1,11 @@
 
 //obs devo lembrar que o filter retorna uma array com valores +1 que passam no teste --> if
-//esse teste é o nullish coalescing
+
 var filter = function(arr, fn ) {
     let array = [];
 
     arr.forEach((n,index)=>{
-        if(fn(n,index)){
+        if(fn(n,index)){//esse teste é o nullish coalescing
             array.push(n)
         }
     })
@@ -15,7 +15,7 @@ var filter = function(arr, fn ) {
 
 
 
-const arr = [-2, -1, 0, 1, 2];
+const arr = [10,20];
 const plusOne = (n) => n + 1;
 
 const novosNumeros = filter(arr, plusOne);

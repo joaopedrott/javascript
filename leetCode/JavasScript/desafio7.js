@@ -1,5 +1,8 @@
+//2626. Array Reduce Transformation
+
 var reduce = function(nums, fn, init) {
     let accum = init
+    
     nums.forEach((curr)=>{
          
         accum=fn(accum,curr)

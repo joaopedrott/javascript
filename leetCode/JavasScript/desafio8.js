@@ -1,3 +1,5 @@
+//2629. Function Composition
+
 var compose = function(functions) {
     return function(x) {
         let result
@@ -16,6 +18,13 @@ var compose = function(functions) {
         }
     }
 };
+
+//.slice() faz uma copia do array
+//.reverse() inverte o array
+//dentro do forEach() cada funcao é executada recebendo o valor de x
+//o valor de x é atualizado com o resultado da funcao (result)
+// o valor de x é retornado, esse valor é o retorno de todas a funcoes usando o valor de x para calcular o resultado
+
 
 /**
  * const fn = compose([x => x + 1, x => 2 * x])

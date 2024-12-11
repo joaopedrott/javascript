@@ -114,6 +114,7 @@ console.log("Resultado da função externa: " + outerResult);
 
 
 /*
+//2666. Allow One Function Call
 //resolvi a questao do desafio 10 do leetcode assim:
 
 var once = function(fn) {

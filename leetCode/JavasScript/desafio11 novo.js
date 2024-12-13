@@ -48,6 +48,7 @@ ex: console.log(memoizedFn(2, 3));
 /*
 
 Em um outro exemplo:
+vamos considerar uma outra função:
 function slowFunction(x) { 
     return x * x; 
 } 

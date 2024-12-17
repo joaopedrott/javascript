@@ -1,6 +1,7 @@
 //2621. Sleep
 
 async function sleep(millis) {// recebe milisegundos
+    
     let promise = new Promise ((resolve, reject)=>{
 
         setTimeout(()=>{//apos milisegundos a promise resolve e guarda o valor "done"

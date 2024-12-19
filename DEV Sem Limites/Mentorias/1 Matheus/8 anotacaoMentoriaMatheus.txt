@@ -1,5 +1,8 @@
 Mentoria 8- aula sobre CMS com NEXTjs com Builder.IO
 
 
+para fazer animacoes:
+https://motion.dev/
+
 
 

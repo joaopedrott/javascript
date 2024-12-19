@@ -1,19 +1,18 @@
 // Variaveis
 //let
-let animal = 'cachorro'
-console.log(animal)
+let animal = "cachorro";
+console.log(animal);
 
-animal = 'gato'
-console.log(animal)
+animal = "gato";
+console.log(animal);
 //const
 
-const idade = 29
+const idade = 29;
 
-console.log(idade)
+console.log(idade);
 
 //var
 
-var celular = 'iphone'
+var celular = "iphone";
 
-console.log(celular)
-
+console.log(celular);

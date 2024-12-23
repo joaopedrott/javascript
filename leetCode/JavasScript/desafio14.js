@@ -1,3 +1,5 @@
+//2725. Interval Cancellation
+
 /**
  * @param {Function} fn
  * @param {Array} args
@@ -5,8 +7,8 @@
  * @return {Function}
  */
 var cancellable = function(fn, args, t) {
-    fn(...args); 
-    const timer = setInterval(() => { 
+    fn(...args); //executa imediatamente
+    const timer = setInterval(() => { //setInterval começa a executar fn a cada 35 milissegundos
         fn(...args); 
     }, t);
 
@@ -40,9 +42,9 @@ var cancellable = function(fn, args, t) {
        result.push({"time": diff, "returned": fn(...argsArr)});
    }
         
-   const cancel = cancellable(log, args, t);
+   const cancel = cancellable(log, args, t);//executa a funcao mas o retorno eh a funcao de cancelamento
  
-   setTimeout(cancel, cancelTimeMs);
+   setTimeout(cancel, cancelTimeMs);//manda parar a funcao depois de 190 milisegundos
     
    setTimeout(() => {
        console.log(result); // [

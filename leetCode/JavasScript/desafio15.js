@@ -1,3 +1,5 @@
+//2727. Is Object Empty
+
 /**
  * @param {Object|Array} obj
  * @return {boolean}

@@ -8,7 +8,7 @@
 var timeLimit = function (fn, t) {//funcao que recebe uma funcao e 100 milissegundos
   return async function (...args) {//recebe 150 ou 90 milissegundos
 
-    return await new Promise((resolve, reject) => {//precisa ser promessa por conta do async
+    return new Promise((resolve, reject) => {//precisa ser promessa por conta do async
 
       //Primeiro, crio um temporizador que rejeita a promessa após 't' milissegundos
       const timer = setTimeout(() => {
@@ -53,3 +53,13 @@ limited(90)
 limited(5,10)
 .then(() => console.log("Resolvida")) 
 .catch((error) => console.log(error.message)); // "Time Limit Exceeded" at t=100ms // Para testar a resolução dentro do tempo limite  */
+
+/*
+
+
+anotacoes:
+Async e await são usados para trabalhar com código assíncrono em JavaScript. Async para funcoes e await para pausar a execucao ate que uma promessa seja resolvida para entao continuar a execucao do codigo.
+
+Promise é um objeto que representa o resultado de uma operacao assincrona. Com ele podemos simular uma chamada de uma API, por exemplo, usando o setTimeout para simular uma demora de 1 segundo.
+
+*/

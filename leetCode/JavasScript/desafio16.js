@@ -63,5 +63,7 @@ Async e await são usados para trabalhar com código assíncrono em JavaScript. 
 Promise é um objeto que representa o resultado de uma operacao assincrona. Com ele podemos simular uma chamada de uma API, por exemplo, usando o setTimeout para simular uma demora de 1 segundo.
 
 
-obs: fetch é uma funcao que retorna uma promessa
+obs: fetch é uma funcao que retorna uma promessa. Tanto no fetch quanto na promise nos usamos o then e o catch para tratar o resultado da promessa.
+
+ex: https://www.youtube.com/watch?v=we5Ac8U21lI
 */

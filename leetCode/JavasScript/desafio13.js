@@ -1,46 +1,30 @@
-//2715. Timeout Cancellation
-var cancellable = function(fn, args, t) {
+//2621. Sleep
 
-    const cancelFn = () => {
-        console.log("canceled");
-        clearTimeout(timer);//cancela a funcao setTimeout, fazendo com que a funcao fn nunca seja chamada
-    }
+async function sleep(millis) {// recebe milisegundos
+    
+    let promise = new Promise ((resolve, reject)=>{
 
-    const timer = setTimeout(() => {//depois de t milisegundos, chama a funcao fn com os argumentos args
-        fn(...args);
-        console.log("done");
-    }, t);
-
-    return cancelFn;
-
-};
+        setTimeout(()=>{//apos milisegundos a promise resolve e guarda o valor "done"
+            resolve("done");
+        }, millis);
+    });
+    let response = await promise;//serve para pausar a execução da função assíncrona sleep até que a Promise seja resolvida.
+}
 
 
-   const result = [];
-   const fn = (x) => x * 5; //funcao multiplica numero por 5
-   const args = [2]; //array com numero 2
-   const t = 20 ; // tempo em milisegundos para a funcao ser chamada
-   const cancelTimeMs = 40; //tempo limite
-   const start = performance.now();//tempo inicial em milissegundos //parecido com o Date.now()
+
+
  
+  let t = Date.now()// tempo inicial
+  sleep(100).then(() => console.log(Date.now() - t)) // 100
 
-   //funcao que sera chamada
-   const log = (...argsArr) => {
-       const diff = Math.floor(performance.now() - start);
-       result.push({"time": diff, "returned": fn(...argsArr)});
-       /*
-        pega o tempo atual menos o tempo inicial(start), arredenda o valor do tempo para o inteiro mais proximo e armazena em diff
-        */
-  }
+//obs: o Date.now() retorna o tempo atual em milisegundos desde a época (1 de janeiro de 1970)
+// t representa o tempo inicial e quando chamo date.now() ele retorna o tempo atualizado entao so eh subtrair para encontraro tempo passado desde o inicio ate o fim
 
-        
-   const cancel = cancellable(log, args, t);//chamada da funcao
- 
-   const maxT = Math.max(t, cancelTimeMs);//20 ou 50: Compara e pega o valor maximo entre das duas variaveis: 50
-            
-   setTimeout(cancel, cancelTimeMs);//chamada da funcao de cancelamento depois de 50 milisegundos
- 
-   setTimeout(() => {//chamada da funcao de log
-       console.log(result); // [{"time":20,"returned":10}]
-   }, maxT + 15)
+/*
+neste caso pega o tempo antes da executao de sleep
+quando sleed termina o tempo estipulado para setTimeout, eh pego o tempo novamente e subtrai do tempo pego inicialmente para ter o tempo passado desde o inicio ate o fim do codigo
+
+
+*/
  

@@ -4,7 +4,7 @@
  * @param {number} t
  * @return {Function}
  */
-
+//funcao de ordem superior que recebe uma funcao e um tempo que por sua vez retorna uma promessa
 var timeLimit = function (fn, t) {//funcao que recebe uma funcao e 100 milissegundos
   return async function (...args) {//recebe 150 ou 90 milissegundos
 

@@ -19,12 +19,12 @@ var timeLimit = function (fn, t) {//funcao que recebe uma funcao e 100 milissegu
       fn(...args) //recebe 150 ou 90
         .then((result) => {
           clearTimeout(timer); // Limpa o temporizador se 'fn' resolver a tempo
-          resolve(result);
+          resolve(result);//resolve a promessa
           
         })
         .catch((error) => {
           clearTimeout(timer); // Limpa o temporizador se 'fn' rejeitar
-          reject(error);
+          reject(error);//rejeita a promessa em caso de erro
         });
     });
 

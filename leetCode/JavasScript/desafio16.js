@@ -65,5 +65,7 @@ Promise é um objeto que representa o resultado de uma operacao assincrona. Com 
 
 obs: fetch é uma funcao que retorna uma promessa. Tanto no fetch quanto na promise nos usamos o then e o catch para tratar o resultado da promessa.
 
+obs: a funcao eh funcao de ordem superior, pois ela recebe outra funcao como parametro e retorna uma funcao. Nao necessariamente precisa retornar e receber uma funcao ao mesmo tempo para ser considerada uma funcao de ordem superior.
+
 ex: https://www.youtube.com/watch?v=we5Ac8U21lI
 */

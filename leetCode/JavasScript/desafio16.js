@@ -69,3 +69,4 @@ obs: a funcao eh funcao de ordem superior, pois ela recebe outra funcao como par
 
 ex: https://www.youtube.com/watch?v=we5Ac8U21lI
 */
+

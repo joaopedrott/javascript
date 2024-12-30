@@ -10,16 +10,19 @@ var TimeLimitedCache = function() {
 * @return {boolean} if un-expired key already existed
 */
 TimeLimitedCache.prototype.set = function(key, value, duration) {
-  const now = Date.now();
-  const expiryTime = now + duration;
+  //duration eh o tempo maximo de duracao em milisegundos
+  const now = Date.now();//pega o tempo atual
+  const expiryTime = now + duration;//somando o tempo atual com o tempo de duracao temos o tempo de expiracao maximo
 
-  const existingEntry = this.cache[key];
+  const existingEntry = this.cache[key];// pega o valor e duracao pela chave passada e guarda em existingEntry
+  
+  // se o valor existir e o tempo de expiracao for maior que o tempo atual(inicial)
   if (existingEntry && existingEntry.expiryTime > now) {
       // Substituir valor e tempo de expiração
       this.cache[key] = { value: value, expiryTime: expiryTime };
       return true;
-  } else {
-      // Adicionar novo par de chave-valor com tempo de expiração
+  } else {// primeiro vai entrar no else
+      // Adicionar novo par de chave-valor com tempo de expiração em cache
       this.cache[key] = { value: value, expiryTime: expiryTime };
       return false;
   }

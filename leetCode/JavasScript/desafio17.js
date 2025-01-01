@@ -60,7 +60,7 @@ TimeLimitedCache.prototype.count = function() {
 };
 
 // Exemplo de uso
-const timeLimitedCache = new TimeLimitedCache();
+const timeLimitedCache = new TimeLimitedCache();//cria o objeto
 console.log(timeLimitedCache.set(1, 42, 1000)); // false
 console.log(timeLimitedCache.get(1)); // 42
 setTimeout(() => console.log(timeLimitedCache.get(1)), 1500); // -1 (expirado)

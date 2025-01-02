@@ -15,3 +15,15 @@ var chunk = function(arr, size) {
 };
 
 //esse algoritmo pega uma array e divide ela em pedaços de acordo com o tamanho que o usuário definir com Size e coloca cada pedaço em um array dentro de outro array
+
+/*
+arr =
+[1,2,3,4,5]
+
+size =
+1
+
+Output
+[[1],[2],[3],[4],[5]]
+
+*/

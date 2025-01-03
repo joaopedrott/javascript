@@ -15,3 +15,5 @@ Array.prototype.last = function() {
      * const arr = [1, 2, 3];
      * arr.last(); // 3
      */
+
+    //Este codigo retorna o ultimo elemento da array se caso nao existir ele retorna -1

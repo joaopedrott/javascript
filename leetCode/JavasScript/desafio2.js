@@ -1,3 +1,5 @@
+//2620. Counter
+
 /**
  * @param {number} n
  * @return {Function} counter
@@ -20,3 +22,5 @@ var createCounter = function(n) {
  const counter = createCounter(10)
  console.log(counter())
 console.log(counter())
+
+//esse codigo faz 

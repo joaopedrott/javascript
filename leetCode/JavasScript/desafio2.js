@@ -22,5 +22,3 @@ var createCounter = function(n) {
  const counter = createCounter(10)
  console.log(counter())
 console.log(counter())
-
-//esse codigo faz 

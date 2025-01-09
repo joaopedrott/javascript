@@ -22,3 +22,4 @@ var createCounter = function(n) {
  const counter = createCounter(10)
  console.log(counter())
 console.log(counter())
+//Essa é uma função de ordem superior. Funções de ordem superior são aquelas que retornam outras funções ou recebem funções como argumento. No seu exemplo, a função createCounter retorna uma nova função que incrementa a variável n toda vez que é chamada. Esta abordagem permite criar contadores independentes com diferentes valores iniciais.

@@ -14,3 +14,4 @@ function dizerOla () {
 }
 
 dizerOla()
+//Lembrando que let e const são blocos de escopo ou escopo em bloco, quer dizer que eles só funcionam dentro do bloco que foram declarados.

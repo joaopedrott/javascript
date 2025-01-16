@@ -13,3 +13,5 @@ for (atributo in pessoa) {
     console.log('O atributo '+ atributo +' = ' + pessoa[atributo])
 }
 //ex pessoa[atributo] vai mudar o atributo entre nome, idade,profissao
+
+// quando usado em uma array, o for in vai retornar o indice do array

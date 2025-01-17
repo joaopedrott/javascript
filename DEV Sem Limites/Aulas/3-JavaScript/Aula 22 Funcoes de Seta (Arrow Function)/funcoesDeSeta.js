@@ -20,3 +20,5 @@ const somaV2 = (num1,num2) => num1+num2
 
 
 console.log(somaV2(2,7))
+
+//obs: Devo ficar atento para funcoes de ordem superior

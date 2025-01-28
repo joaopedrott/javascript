@@ -20,3 +20,11 @@ Obs componente Client-Side:
 *O componente client-side nao pode ser assincrono(async).
 
 Obs podemos usar componentes server-side e client-side em um mesmo projeto. Importando um componente client-side dentro de um componente server-side.
+-----------------------------------------------------------------
+server actions:
+*Sao funcoes que podem ser executadas no lado do servidor.
+Para isso basta adicionar o atributo "use server" no topo da funcao.
+
+*Criei um form com botao dentro e uma funcao async handleSearchUsers Para
+buscar usuarios e seus posts.
+-----------------------------------------------------------------

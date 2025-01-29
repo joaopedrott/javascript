@@ -28,3 +28,5 @@ Para isso basta adicionar o atributo "use server" no topo da funcao.
 *Criei um form com botao dentro e uma funcao async handleSearchUsers Para
 buscar usuarios e seus posts.
 -----------------------------------------------------------------
+Rotas dinamicas:
+criei a pasta [id] dentro de posts e modifiquei o page.tsx do post colocando export no Postprops e adicionei a tag Link do post deixando tudo dinamico.

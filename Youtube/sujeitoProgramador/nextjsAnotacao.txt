@@ -30,3 +30,19 @@ buscar usuarios e seus posts.
 -----------------------------------------------------------------
 Rotas dinamicas:
 criei a pasta [id] dentro de posts e modifiquei o page.tsx do post colocando export no Postprops e adicionei a tag Link do post deixando tudo dinamico.
+-----------------------------------------------------------------
+Loading UI e Streaming
+1-dentro do arquivo page.tsx da pasta [id] eu adicionei a linha: 
+await new Promise((resolve) => setTimeout(resolve, 4000)) 
+Para simular o carregamento da pagina.
+
+2-criei um arquivo loading.tsx dentro da pasta [id]: esse arquivo sera carregado enquanto a pagina estiver carregando. No fim renomeei o arquivo para _loading.tsx para nao ser carregado para fazer o carregamento da pagina de outro jeito.
+
+3-Para fazer isso eu criei uma pasta chamada components dentro da pasta [id] e criei um arquivo chamado post.tsx.
+Dentro deste arquivo eu passei a pausa usando o promise quanto a requisicao do post para ele.
+Ja, dentro do arquivo page.tsx da pasta [id] eu passei a chamar o componente post.tsx que neste caso se chama PostInfo (que e o nome da funcao/componente).
+
+4-Para mostrar um componente de carregamento, neste arquivo page.tsx da pasta [id] eu adicionei a linha:
+<Suspense fallback={<p>Carregando...</p>}>
+Assim, enquanto o componente PostInfo estiver carregando, ele ira mostrar o texto "Carregando...".
+-----------------------------------------------------------------

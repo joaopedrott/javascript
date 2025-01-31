@@ -46,3 +46,25 @@ Ja, dentro do arquivo page.tsx da pasta [id] eu passei a chamar o componente pos
 <Suspense fallback={<p>Carregando...</p>}>
 Assim, enquanto o componente PostInfo estiver carregando, ele ira mostrar o texto "Carregando...".
 -----------------------------------------------------------------
+Revalidate, cache, ISR
+
+1- Em page.tsx dentro da pasta posts, modifiquei o fetch, adicionando: 
+{
+        cache: 'force-cache',
+        next: {
+            revalidate:  60
+        }
+    }
+
+Isso faz com que seja formado um cache do fetch, ou seja, se eu acessar a pagina novamente, o fetch nao sera executado novamente, ele ira pegar o cache. Com revalidate, eu posso definir o tempo de cache, ou seja, se eu quiser que o cache seja atualizado a cada 60 segundos, eu posso definir isso.
+
+2- Por padrao as paginas ou componentes do NextJS sao estaticos para otimizacao, mas se caso necessitar de uma pagina dinamica ou componente eu posso colocar o codigo: 
+export const revalidate= 60;
+
+assim o NextJS ira gerar uma pagina dinamica a cada 60 segundos.
+
+obs: devo considerar usar o export const revalidate= 60; quando estiver com componente server-side.
+
+3- Dentro do arquivo page.tsx da pasta posts, adicionei o codigo:
+export const revalidate= 60;
+Para atualizar a pagina a cada 60 segundos.

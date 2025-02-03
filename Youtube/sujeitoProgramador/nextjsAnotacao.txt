@@ -22,6 +22,8 @@ Obs componente Client-Side:
 Obs podemos usar componentes server-side e client-side em um mesmo projeto. Importando um componente client-side dentro de um componente server-side.
 -----------------------------------------------------------------
 server actions:
+
+
 *Sao funcoes que podem ser executadas no lado do servidor.
 Para isso basta adicionar o atributo "use server" no topo da funcao.
 
@@ -29,9 +31,13 @@ Para isso basta adicionar o atributo "use server" no topo da funcao.
 buscar usuarios e seus posts.
 -----------------------------------------------------------------
 Rotas dinamicas:
+
+
 criei a pasta [id] dentro de posts e modifiquei o page.tsx do post colocando export no Postprops e adicionei a tag Link do post deixando tudo dinamico.
 -----------------------------------------------------------------
 Loading UI e Streaming
+
+
 1-dentro do arquivo page.tsx da pasta [id] eu adicionei a linha: 
 await new Promise((resolve) => setTimeout(resolve, 4000)) 
 Para simular o carregamento da pagina.
@@ -47,6 +53,7 @@ Ja, dentro do arquivo page.tsx da pasta [id] eu passei a chamar o componente pos
 Assim, enquanto o componente PostInfo estiver carregando, ele ira mostrar o texto "Carregando...".
 -----------------------------------------------------------------
 Revalidate, cache, ISR
+
 
 1- Em page.tsx dentro da pasta posts, modifiquei o fetch, adicionando: 
 {
@@ -68,3 +75,12 @@ obs: devo considerar usar o export const revalidate= 60; quando estiver com comp
 3- Dentro do arquivo page.tsx da pasta posts, adicionei o codigo:
 export const revalidate= 60;
 Para atualizar a pagina a cada 60 segundos.
+-----------------------------------------------------------------
+Middleeware
+
+
+1-Dentro da pasta src eu criei o arquivo middleware.ts e fiz o redirecionamento da pagina
+
+obs: middleware sao funcoes que sao executadas antes de uma requisicao ser feita. Neste caso eu criei para redirecionar a pagina caso o usuario nao esteje autenticado. 
+
+obs: o nome do arquivo nao pode ser diferente de middleware.ts pois o NextJS so reconhece esse nome.

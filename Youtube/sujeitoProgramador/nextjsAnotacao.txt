@@ -84,3 +84,10 @@ Middleeware
 obs: middleware sao funcoes que sao executadas antes de uma requisicao ser feita. Neste caso eu criei para redirecionar a pagina caso o usuario nao esteje autenticado. 
 
 obs: o nome do arquivo nao pode ser diferente de middleware.ts pois o NextJS so reconhece esse nome.
+-----------------------------------------------------------------
+Route handlers
+
+
+1-Dentro da pasta app, eu criei a pasta api>info>route.ts, este arquivo tera as rotas da API.
+
+obs:Podemos ter o backend dentro do NextJS. Com rotas API, podemos criar uma API dentro do NextJS.

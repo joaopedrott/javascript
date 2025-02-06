@@ -1,4 +1,14 @@
 https://www.youtube.com/watch?v=SUavcwCCLN8&ab_channel=DevClub%7CPrograma%C3%A7%C3%A3o
 
+1- instalei o tailwindcss e criei o arquivo index.html
+
+2- criacao de temas
+Dentro do arquivo tailwind.config.js, podemos criar temas personalizados de cores, por exemplo:
+
+theme: {
+      extend: {
+        'blue-44' : '#456456'
+      },
+    },
 
 

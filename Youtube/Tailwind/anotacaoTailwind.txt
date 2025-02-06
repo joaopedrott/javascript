@@ -12,3 +12,6 @@ theme: {
     },
 
 
+https://v2.tailwindcss.com/docs/flex-direction
+https://tailwindui.com/documentation
+https://tailwindcss.com/docs/installation/tailwind-cli

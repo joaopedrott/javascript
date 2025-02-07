@@ -11,7 +11,7 @@ theme: {
       },
     },
 
-
+3- terminei a estilizacao e fiz a responsividade usando o md:
 https://v2.tailwindcss.com/docs/flex-direction
 https://tailwindui.com/documentation
 https://tailwindcss.com/docs/installation/tailwind-cli

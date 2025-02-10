@@ -91,3 +91,4 @@ Route handlers
 1-Dentro da pasta app, eu criei a pasta api>info>route.ts, este arquivo tera as rotas da API.
 
 obs:Podemos ter o backend dentro do NextJS. Com rotas API, podemos criar uma API dentro do NextJS.
+E uma API dentro do NextJS e uma API que roda no lado do servidor, que devolve um json com informacoes ou dados quando requisitada.

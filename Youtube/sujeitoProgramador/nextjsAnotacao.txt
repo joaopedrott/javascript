@@ -2,10 +2,10 @@ https://www.youtube.com/watch?v=e6FigV2fLC8&ab_channel=Sujeitoprogramador
 
 
 
-Por padrao, toda componente do NextJS é um componente server-side.
+Por padrao, todo componente do NextJS é um componente server-side.
 Para ser client side, basta adicionar o atributo "use client" no topo do componente.
 
-Obs componente Server-Side:
+Pontos sobre o componente Server-Side:
 
 *Se mandarmos um console.log() dentro de um componente server-side, ele sera executado no servidor ou seja, imprimira no console do VSCODE ou CMD.
 *No componente server-side, nao conseguimos usar hooks, como: useState, useEffect, useContext, etc.

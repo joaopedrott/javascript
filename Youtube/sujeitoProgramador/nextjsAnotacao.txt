@@ -29,6 +29,8 @@ Para isso basta adicionar o atributo "use server" no topo da funcao.
 
 *Criei um form com botao dentro e uma funcao async handleSearchUsers Para
 buscar usuarios e seus posts.
+*Criei um botao "Buscar posts" que tem onclick que chama a funcao hadleFetchPosts. Dentro dessa funcao tem
+"use server" para que tenha a reatividade do onclick do botao no lado servidor, ja que por padrao o onclick do botao é client-side.
 -----------------------------------------------------------------
 Rotas dinamicas:
 

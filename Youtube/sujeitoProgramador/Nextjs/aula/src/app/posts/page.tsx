@@ -23,7 +23,7 @@ export default async function PostsPage() {
     })
     const data: ResponseProps = await response.json()
 
-    async function hadleFetchPosts(){
+    async function handleFetchPosts(){
         'use server'
         const response = await fetch('https://dummyjson.com/posts')
         const data: ResponseProps = await response.json()
@@ -44,7 +44,7 @@ export default async function PostsPage() {
     return (
         <div>
             <h1 className="text-center mt-5 mb-2 font-bold text-xl">Todos os posts</h1>
-            <button onClick={hadleFetchPosts}>
+            <button onClick={handleFetchPosts}>
                 Buscar posts
             </button>
 

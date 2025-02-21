@@ -20,3 +20,13 @@ https://tailwindcss.com/docs/installation/tailwind-cli
 
 curso de tailwind:
 https://www.youtube.com/watch?v=1eLaBow7Zbo&list=PLcoYAcR89n-r1m-tMfV4qndrRWpT_rb9u&ab_channel=TiagoMatos
+O tailwind:
+w para witdh
+h para height
+md para media query
+sm para small
+lg para large
+xl para extra large
+2xl para 2x large
+group para agrupar
+bg para background

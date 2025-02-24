@@ -30,3 +30,10 @@ xl para extra large
 2xl para 2x large
 group para agrupar
 bg para background
+
+Tambem posso criar classes personalizadas do tailwind:
+npx tailwindcss init
+Com isso o arquivo tailwind.config.js é criado.
+Depois de criar as classes personalizadas devo excluir o arquivo tailwind.css e executar o comando:
+npx tailwindcss -o tailwind.css 
+para gerar o novo arquivo tailwind.css

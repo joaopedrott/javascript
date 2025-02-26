@@ -31,13 +31,25 @@ xl para extra large
 group para agrupar
 bg para background
 
-Tambem posso criar classes personalizadas do tailwind:
+*Aula 11 Tambem posso criar atribuso personalizados em classes existentes do tailwind:
 npx tailwindcss init
 Com isso o arquivo tailwind.config.js é criado.
-Depois de criar as classes personalizadas devo excluir o arquivo tailwind.css e executar o comando:
+Dentro do arquivo tailwind.config.js, podemos criar "classes" personalizadas, por exemplo: colors: com uma cor diferente da padrão do tailwind.
+Depois de criar as "classes" personalizadas devo excluir o arquivo tailwind.css e executar o comando:
 npx tailwindcss -o tailwind.css 
-para gerar o novo arquivo tailwind.css
+para gerar o novo arquivo tailwind.css a partir do arquivo tailwind.config.js
 
 obs: toda vez que modificar o arquivo tailwind.config.js devo excluir o tailwind.css e executar o comando:
 npx tailwindcss -o tailwind.css
 Assim, criando um  novo arquivo tailwind.css atualizado.
+
+*Aula 13-Para criar ou declarar classes customizadas no tailwind, criando css customizado:
+Deleto o tailwind.css se ele existir
+Crio um arquivo style.css para ser meu arquivo de css personalizado
+No terminal eu executo o comando:
+npx tailwindcss -i style.css -o tailwind.css
+(cria o tailwind.css e conecta ele ao style.css)
+
+Toda vez que eu adicionar ou alterar o style.css devo executar o comando:
+npx tailwindcss -i style.css -o tailwind.css
+para atualizar o tailwind.css

@@ -30,6 +30,12 @@ xl para extra large
 2xl para 2x large
 group para agrupar
 bg para background
+p para padding
+pt para padding top
+pb para padding bottom
+pl para padding left
+pr para padding right
+
 
 *Aula 11 Tambem posso criar atribuso personalizados em classes existentes do tailwind:
 npx tailwindcss init

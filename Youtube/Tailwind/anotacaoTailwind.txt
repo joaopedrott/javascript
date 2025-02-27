@@ -35,6 +35,7 @@ pt para padding top
 pb para padding bottom
 pl para padding left
 pr para padding right
+dark para dark mode
 
 
 *Aula 11 Tambem posso criar atribuso personalizados em classes existentes do tailwind:

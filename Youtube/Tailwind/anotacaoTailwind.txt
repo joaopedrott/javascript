@@ -60,3 +60,7 @@ npx tailwindcss -i style.css -o tailwind.css
 Toda vez que eu adicionar ou alterar o style.css devo executar o comando:
 npx tailwindcss -i style.css -o tailwind.css
 para atualizar o tailwind.css
+
+*Aula 15 - botao
+pode ser feito normalmente com oq ja foi aprendido.
+obs: para deixar o botaro mais bonito, podemos usar o ring-2 e usando hover:ring-4

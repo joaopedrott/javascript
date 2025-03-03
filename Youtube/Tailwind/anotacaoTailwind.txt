@@ -64,3 +64,8 @@ para atualizar o tailwind.css
 *Aula 15 - botao
 pode ser feito normalmente com oq ja foi aprendido.
 obs: para deixar o botaro mais bonito, podemos usar o ring-2 e usando hover:ring-4
+
+*Aula 17 - component input
+https://www.youtube.com/watch?v=pf42vam83fw&ab_channel=TiagoMatos
+
+Uso do focus e transition

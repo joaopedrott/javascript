@@ -71,3 +71,7 @@ https://www.youtube.com/watch?v=pf42vam83fw&ab_channel=TiagoMatos
 Uso do focus e transition
 
 *Aula 18 - Criacao do botao drop down
+
+*Aula 19 - Criando tela de login
+Ficar atento ao body, usar w-screen e h-screen para ocupar a tela toda
+https://www.youtube.com/watch?v=MtdhAsvgaSo&ab_channel=TiagoMatos

@@ -84,10 +84,3 @@ https://www.youtube.com/watch?v=MtdhAsvgaSo&ab_channel=TiagoMatos
 fazendo interface do site do resort
 
 
-instalar
-npm install -D tailwindcss
-
-npx tailwindcss init
-
-npm install tailwindcss@latest
-

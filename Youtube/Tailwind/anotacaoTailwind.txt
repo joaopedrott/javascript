@@ -1,6 +1,10 @@
 https://www.youtube.com/watch?v=SUavcwCCLN8&ab_channel=DevClub%7CPrograma%C3%A7%C3%A3o
 
+
+
+
 1- instalei o tailwindcss e criei o arquivo index.html
+https://tailwindcss.com/docs/installation/tailwind-cli
 
 2- criacao de temas
 Dentro do arquivo tailwind.config.js, podemos criar temas personalizados de cores, por exemplo:
@@ -38,7 +42,7 @@ pr para padding right
 dark para dark mode
 
 
-*Aula 11 Tambem posso criar atribuso personalizados em classes existentes do tailwind:
+*Aula 11 Tambem posso criar atributo personalizados em classes existentes do tailwind:
 npx tailwindcss init
 Com isso o arquivo tailwind.config.js é criado.
 Dentro do arquivo tailwind.config.js, podemos criar "classes" personalizadas, por exemplo: colors: com uma cor diferente da padrão do tailwind.
@@ -75,3 +79,15 @@ Uso do focus e transition
 *Aula 19 - Criando tela de login
 Ficar atento ao body, usar w-screen e h-screen para ocupar a tela toda
 https://www.youtube.com/watch?v=MtdhAsvgaSo&ab_channel=TiagoMatos
+
+*Aula 20 - 
+fazendo interface do site do resort
+
+
+instalar
+npm install -D tailwindcss
+
+npx tailwindcss init
+
+npm install tailwindcss@latest
+

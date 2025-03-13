@@ -10,7 +10,7 @@
 
     <!-- Header -->
     <div>
-        <div class="container mx-auto px-4 h-24 flex items-center">
+        <div class="container max-w-5xl mx-auto px-4 h-24 flex items-center">
             <div class="font-black">
                 LOGO
             </div>
@@ -37,7 +37,7 @@
     
     <!-- Banner -->
     <div style="background: url('../img/hero-image-1.png'); height: 450px" >
-        <div class="container mx-auto px-4 h-full flex items-center justify-center">
+        <div class="container max-w-5xl mx-auto px-4 h-full flex items-center justify-center">
             <div>
                 <div class="text-center">
                     <h1 class="text-gray-200 text-3xl mb-1">Onde voce quer ir?</h1>
@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="mt-7">
-                    <form class="space-x-4">
+                    <form class="grid grid-cols-2 lg:grid-cols-3 gap-4">
                         <select class="bg-gray-50 px-3 py-2 border border-gray-300 rounded text-gray-500">
                             <option value="">Escolha o estado</option>
                         </select>
@@ -53,7 +53,7 @@
                         <select class="bg-gray-50 px-3 py-2 border border-gray-300 rounded text-gray-500">
                             <option value="">Escolha cidade</option>
                         </select>
-                        <button class="inline-flex items-center text-yellow-900 bg-yellow-500 font-medium px-3 py-2 rounded cursor-pointer">
+                        <button class="col-span-2 lg:col-span-1 inline-flex items-center justify-center text-yellow-900 bg-yellow-500 font-medium px-3 py-2 rounded cursor-pointer">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                               </svg>
@@ -69,9 +69,9 @@
 
     <!-- featured resort -->
      <div>
-        <div class="container mx-auto px-4 py-10">
-            <div class="flex">
-                <div class="pr-10">
+        <div class="container max-w-5xl mx-auto px-4 py-10">
+            <div class="flex flex-col-reverse lg:flex-row">
+                <div class="lg:pr-10">
                     <div class="text-sm text-gray-400 font-medium">RESORT EM DESTAQUE</div>
                     <div class="text-2xl text-gray-500">Ecoresort Praia do Forte Bahia</div>
                     <div class="text-sm text-gray-400 font-medium mt-2">Hotel qualidade 5 estrelas</div>
@@ -89,7 +89,7 @@
                     </div>
                 </div>
 
-                <div class="flex-shrink-0 ml-auto">
+                <div class="flex-shrink-0 lg:ml-auto mb-5 lg:mb-0">
                     <img src="../img/featured-img.png" width="450">
                 </div>
                 
@@ -100,43 +100,45 @@
     <!-- /featured resort -->
      
     <!-- Resorts grid-->
-        <div class="container mx-auto px-6">
-            <div>
-                <h3 class="text-2xl text-gray-500 font-semibold text-center mb-8">Conheca mais resorts</h3>
-
-                <div class="grid grid-cols-4 grid-rows-2 gap-6">
-                    <div class="relative col-span-2 row-span-2 rounded-md overflow-hidden">
-                        <div class="absolute bottom-0 pl-4 pb-4 text-white font-bold z-20">
-                            Beach Park Resort
+        <div>
+            <div class="container max-w-5xl mx-auto px-4">
+                <div>
+                    <h3 class="text-2xl text-gray-500 font-semibold text-center mb-8">Conheca mais resorts</h3>
+    
+                    <div class="md:grid md:grid-cols-4 md:grid-rows-2 md:gap-6 space-y-6 md:space-y-0">
+                        <div class="relative md:col-span-2 md:row-span-2 rounded-md overflow-hidden">
+                            <div class="absolute bottom-0 pl-4 pb-4 text-white font-bold z-20">
+                                Beach Park Resort
+                            </div>
+                            <img class="absolute bottom-0 left-0 right-0 h-20 z-10" src="../img/image-shadow.png">
+                            <img src="../img/hotel-1.jpeg" class="w-full h-full object-cover">
                         </div>
-                        <img class="absolute bottom-0 left-0 right-0 h-20 z-10" src="../img/image-shadow.png">
-                        <img src="../img/hotel-1.jpeg" class="w-full h-full object-cover">
-                    </div>
-
-                    <div class="relative col-span-2 h-60 rounded-md overflow-hidden">
-                        <div class="absolute bottom-0 pl-4 pb-4 text-white font-bold z-20">
-                            Salinas do Maragogi Resort
+    
+                        <div class="relative md:col-span-2 md:h-40 rounded-md overflow-hidden">
+                            <div class="absolute bottom-0 pl-4 pb-4 text-white font-bold z-20">
+                                Salinas do Maragogi Resort
+                            </div>
+                            <img class="absolute bottom-0 left-0 right-0 h-20 z-10" src="../img/image-shadow.png">
+                            <img src="../img/hotel-2.jpeg" class="w-full h-full object-cover">
                         </div>
-                        <img class="absolute bottom-0 left-0 right-0 h-20 z-10" src="../img/image-shadow.png">
-                        <img src="../img/hotel-2.jpeg" class="w-full h-full object-cover">
-                    </div>
-
-                    <div class="relative rounded-md overflow-hidden">
-                        <div class="absolute bottom-0 pl-4 pb-4 text-white font-bold z-20">
-                            Grand Palladium 
+    
+                        <div class="relative rounded-md overflow-hidden">
+                            <div class="absolute bottom-0 pl-4 pb-4 text-white font-bold z-20">
+                                Grand Palladium 
+                            </div>
+                            <img class="absolute bottom-0 left-0 right-0 h-20 z-10" src="../img/image-shadow.png">
+                            <img src="../img/hotel-3.jpeg" class="w-full h-full object-cover">
                         </div>
-                        <img class="absolute bottom-0 left-0 right-0 h-20 z-10" src="../img/image-shadow.png">
-                        <img src="../img/hotel-3.jpeg" class="w-full h-full object-cover">
-                    </div>
-
-                    <div class="relative rounded-md overflow-hidden">
-                        <div class="absolute bottom-0 pl-4 pb-4 text-white font-bold z-20">
-                            Arraial d`Ajuda Eco Resort
+    
+                        <div class="relative rounded-md overflow-hidden">
+                            <div class="absolute bottom-0 pl-4 pb-4 text-white font-bold z-20">
+                                Arraial d`Ajuda Eco Resort
+                            </div>
+                            <img class="absolute bottom-0 left-0 right-0 h-20 z-10" src="../img/image-shadow.png">
+                            <img src="../img/hotel-4.jpeg" class="w-full h-full object-cover">
                         </div>
-                        <img class="absolute bottom-0 left-0 right-0 h-20 z-10" src="../img/image-shadow.png">
-                        <img src="../img/hotel-4.jpeg" class="w-full h-full object-cover">
+    
                     </div>
-
                 </div>
             </div>
         </div>
@@ -144,8 +146,8 @@
 
     <!-- form search-->
     <div class="py-20">
-        <div class="container mx-auto px-4 flex justify-center">
-            <form class="space-x-4">
+        <div class="container max-w-5xl mx-auto px-4 flex justify-center">
+            <form class="grid grid-cols-2 lg:grid-cols-3 gap-4">
                 <select class="bg-gray-50 px-3 py-2 border border-gray-300 rounded text-gray-500">
                     <option value="">Escolha o estado</option>
                 </select>
@@ -153,11 +155,11 @@
                 <select class="bg-gray-50 px-3 py-2 border border-gray-300 rounded text-gray-500">
                     <option value="">Escolha cidade</option>
                 </select>
-                <button class="inline-flex items-center text-yellow-900 bg-yellow-500 font-medium px-3 py-2 rounded cursor-pointer">
+                <button class="col-span-2 lg:col-span-1 inline-flex items-center justify-center text-yellow-900 bg-yellow-500 font-medium px-3 py-2 rounded cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                    </svg>
-                    
+                      </svg>
+                      
                     Pesquisar resorts
                 </button>
             </form>
@@ -167,7 +169,7 @@
 
     <!-- footer -->
     <div class="border-t border-gray-200">
-        <div class="container mx-auto px-4 p-4 flex items-center justify-between">
+        <div class="container max-w-5xl mx-auto px-4 p-4 flex items-center justify-between">
             <div class="text-gray-400 font-black">
                 LOGO
             </div>

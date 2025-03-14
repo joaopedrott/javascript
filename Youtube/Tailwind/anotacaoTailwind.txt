@@ -84,3 +84,12 @@ https://www.youtube.com/watch?v=MtdhAsvgaSo&ab_channel=TiagoMatos
 fazendo interface do site do resort
 
 
+
+OBS USANDO O TAILWIND CLI
+PRECISO TER a pasta src e dentro dela um arquivo chamado input.css escrito nele:
+@import "tailwindcss";
+para entao, depois executar o comando:
+npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+
+OBS USANDO O TAILWIND CLI eu sempre preciso executar o comando:
+npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch

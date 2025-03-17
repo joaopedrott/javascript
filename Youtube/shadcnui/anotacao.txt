@@ -1,8 +1,11 @@
+Aula Rocketseat:
 https://www.youtube.com/watch?v=er_QPBldsXE&ab_channel=Rocketseat
 -------------------------------------------------------
 Aula shadcn/ui do youtube Sujeitoprogramador:
 https://www.youtube.com/watch?v=PqRe0Q9b5QI&ab_channel=Sujeitoprogramador
+
 -------------------------------------------------------
+
 Seguir o tutorial de criacao do projeto nextjs:
 https://nextjs.org/docs/app/getting-started/installation
 https://www.youtube.com/watch?v=e6FigV2fLC8&t=190s&ab_channel=Sujeitoprogramador

@@ -1,9 +1,12 @@
-import Image from "next/image";
-
+import { Button } from '@/components/ui/button';
 export default function Home() {
   return (
-    <main className="text-red-500 text-2xl font-black">
-      <h1>Projeto Deshboard</h1>
+    <main>
+      <h1 className="text-red-500 text-2xl font-black">Projeto Deshboard</h1>
+
+      <Button>
+        Teste button
+      </Button>
     </main>
   );
 }

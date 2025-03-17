@@ -1,3 +1,26 @@
 https://www.youtube.com/watch?v=er_QPBldsXE&ab_channel=Rocketseat
-
+-------------------------------------------------------
+Aula shadcn/ui do youtube Sujeitoprogramador:
 https://www.youtube.com/watch?v=PqRe0Q9b5QI&ab_channel=Sujeitoprogramador
+-------------------------------------------------------
+Seguir o tutorial de criacao do projeto nextjs:
+https://nextjs.org/docs/app/getting-started/installation
+https://www.youtube.com/watch?v=e6FigV2fLC8&t=190s&ab_channel=Sujeitoprogramador
+
+Seguir o tutorial de instalacao do shadcn/ui:
+https://ui.shadcn.com/docs/installation/next
+https://www.youtube.com/watch?v=PqRe0Q9b5QI&ab_channel=Sujeitoprogramador
+
+-------------------------------------------------------
+
+Lista de comandos mais importantes usados:
+*npx create-next-app@latest aula (cria projeto nextjs)
+*npx shadcn@latest init (instala o shadcn/ui no projeto)
+*yarn run dev (rodar o projeto nextjs)
+*npx shadcn@latest add input (adicionar o componente input ao projeto seguindo o: https://ui.shadcn.com/docs/components/input)
+*
+*
+-------------------------------------------------------
+Passos da aula do shadcn/ui:
+1- instalei o nextjs e depois fui instalando os componentes do shadcn/ui (entre 0 a 10 minutos de video)
+

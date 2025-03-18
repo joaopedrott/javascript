@@ -4,9 +4,6 @@ export default function Home() {
     <main>
       <h1 className="text-red-500 text-2xl font-black">Projeto Deshboard</h1>
 
-      <Button>
-        Teste button
-      </Button>
     </main>
   );
 }

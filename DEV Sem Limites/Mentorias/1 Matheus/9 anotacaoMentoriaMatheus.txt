@@ -6,8 +6,9 @@ https://easypanel.io/
 
 
 pretende fazer varios tipos de usuarios?
+sim, com inteligencia artificial
 
-shadcnui e lucide na interface?
+shadcnui e lucide na interface do bestpizza 2.0?
 nextjs
 tailwind
 postgress

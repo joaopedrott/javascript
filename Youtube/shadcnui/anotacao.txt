@@ -28,3 +28,4 @@ Passos da aula do shadcn/ui:
 1- instalei o nextjs e depois fui instalando os componentes do shadcn/ui (entre 0 a 10 minutos de video)
 
 2- Criei o menu lateral (primeiro irei fazer MOBILE FIRST) (10 minutos ate 26 minutos do video)
+Criei a pasta sidebar e index.tsx

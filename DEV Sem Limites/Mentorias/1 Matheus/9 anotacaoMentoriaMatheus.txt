@@ -5,3 +5,12 @@ pesquisar sobre easypanel para deploy
 https://easypanel.io/
 
 
+pretende fazer varios tipos de usuarios?
+
+shadcnui e lucide na interface?
+nextjs
+tailwind
+postgress
+typescript
+react
+

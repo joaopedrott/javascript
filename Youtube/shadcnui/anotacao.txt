@@ -32,3 +32,11 @@ Criei a pasta sidebar e index.tsx
 
 3- Criei a sidebar do desktop (26 minutos ate 35 minutos do video)
 Ainda dentro do index.tsx criei a tag aside
+
+4-Criei a dashboard (35 minutos ate 51 minutos do video)
+*Dentro de page.tsx eu criei varios cards
+*Instalei o charts do shadcn/ui para fazer o grafico
+*Atualizei o global.css para fazer o grafico funcionar
+*Criei a pasta chart e o arquivo index.tsx, dentro dele criei o grafico. O nome dele eh ChartOverview
+*Adicionei o <ChartOverview/> (grafico/componente/chart) no arquivo page.tsx e pronto
+Resumindo: o <ChartOverview/> eh a juncao tanto do component chart como o component card entre outros

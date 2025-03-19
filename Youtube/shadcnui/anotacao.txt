@@ -29,3 +29,6 @@ Passos da aula do shadcn/ui:
 
 2- Criei o menu lateral (primeiro irei fazer MOBILE FIRST) (10 minutos ate 26 minutos do video)
 Criei a pasta sidebar e index.tsx
+
+3- Criei a sidebar do desktop (26 minutos ate 35 minutos do video)
+Ainda dentro do index.tsx criei a tag aside

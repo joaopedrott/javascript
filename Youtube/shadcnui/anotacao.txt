@@ -6,11 +6,11 @@ https://www.youtube.com/watch?v=PqRe0Q9b5QI&ab_channel=Sujeitoprogramador
 
 -------------------------------------------------------
 
-Seguir o tutorial de criacao do projeto nextjs:
+Tutorial de criacao e utilizacao do projeto nextjs:
 https://nextjs.org/docs/app/getting-started/installation
 https://www.youtube.com/watch?v=e6FigV2fLC8&t=190s&ab_channel=Sujeitoprogramador
 
-Seguir o tutorial de instalacao do shadcn/ui:
+Tutorial de instalacao e utilizacao do shadcn/ui:
 https://ui.shadcn.com/docs/installation/next
 https://www.youtube.com/watch?v=PqRe0Q9b5QI&ab_channel=Sujeitoprogramador
 
@@ -24,7 +24,7 @@ Lista de comandos mais importantes usados:
 *
 *
 -------------------------------------------------------
-Passos da aula do shadcn/ui:
+Passos da aula do shadcn/ui Sujeitoprogramador:
 1- instalei o nextjs e depois fui instalando os componentes do shadcn/ui (entre 0 a 10 minutos de video)
 
 2- Criei o menu lateral (primeiro irei fazer MOBILE FIRST) (10 minutos ate 26 minutos do video)

@@ -1,4 +1,4 @@
-Aula Rocketseat:
+Aula shadcn/ui da Rocketseat:
 https://www.youtube.com/watch?v=er_QPBldsXE&ab_channel=Rocketseat
 -------------------------------------------------------
 Aula shadcn/ui do youtube Sujeitoprogramador:

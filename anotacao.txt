@@ -1,10 +1,5 @@
-Aula shadcn/ui da Rocketseat:
-https://www.youtube.com/watch?v=er_QPBldsXE&ab_channel=Rocketseat
--------------------------------------------------------
-Aula shadcn/ui do youtube Sujeitoprogramador:
-https://www.youtube.com/watch?v=PqRe0Q9b5QI&ab_channel=Sujeitoprogramador
+-------------------Resumo de tecnologias---------------------
 
--------------------------------------------------------
 Lista de comandos mais importantes usados:
 *npx create-next-app@latest aula (cria projeto nextjs)
 *npx shadcn@latest init (instala o shadcn/ui no projeto)
@@ -12,16 +7,23 @@ Lista de comandos mais importantes usados:
 *npx shadcn@latest add input (adicionar o componente input ao projeto seguindo o: https://ui.shadcn.com/docs/components/input)
 *
 *
+
 -------------------------------------------------------
-Tutorial de criacao e utilizacao do projeto nextjs:
+
+Aula shadcn/ui da Rocketseat:
+https://www.youtube.com/watch?v=er_QPBldsXE&ab_channel=Rocketseat
+
+-------------------------------------------------------
+
+Tutorial de criacao e utilizacao do projeto nextjs Sujeitoprogramador:
 https://nextjs.org/docs/app/getting-started/installation
 https://www.youtube.com/watch?v=e6FigV2fLC8&t=190s&ab_channel=Sujeitoprogramador
 
-Tutorial de instalacao e utilizacao do shadcn/ui:
+-------------------------------------------------------
+
+Tutorial de instalacao e utilizacao do shadcn/ui Sujeitoprogramador:
 https://ui.shadcn.com/docs/installation/next
 https://www.youtube.com/watch?v=PqRe0Q9b5QI&ab_channel=Sujeitoprogramador
-
--------------------------------------------------------
 
 Passos da aula do shadcn/ui Sujeitoprogramador:
 1- instalei o nextjs e depois fui instalando os componentes do shadcn/ui (entre 0 a 10 minutos de video)
@@ -43,3 +45,6 @@ Resumindo: o <ChartOverview/> eh a juncao tanto do component chart como o compon
 5-criei o card de ultimos clientes (51 minutos ate 58 minutos do video)
 *Criei a pasta sales dentro da pasta de components, essa pasta tem o arquivo index.tsx.
 Assim como anterior, criei um card e dessa vez com uma lista de ultimos clientes.
+
+-------------------------------------------------------
+

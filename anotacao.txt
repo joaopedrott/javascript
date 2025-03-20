@@ -1,5 +1,9 @@
 -------------------Resumo de tecnologias---------------------
+---------
+NextJS
+shadcn/ui
 
+---------
 Lista de comandos mais importantes usados:
 *npx create-next-app@latest aula (cria projeto nextjs)
 *npx shadcn@latest init (instala o shadcn/ui no projeto)

@@ -1,0 +1,31 @@
+-------------------Resumo de tecnologias---------------------
+---------
+NextJS
+shadcn/ui
+
+---------
+Lista de comandos mais importantes usados:
+*npx create-next-app@latest aula (cria projeto nextjs)
+*npx shadcn@latest init (instala o shadcn/ui no projeto)
+*yarn run dev (rodar o projeto nextjs)
+*npx shadcn@latest add input (adicionar o componente input ao projeto seguindo o: https://ui.shadcn.com/docs/components/input)
+*
+*
+
+-------------------------------------------------------
+
+Aula shadcn/ui da Rocketseat:
+https://www.youtube.com/watch?v=er_QPBldsXE&ab_channel=Rocketseat
+
+-------------------------------------------------------
+
+Tutorial de criacao e utilizacao do projeto nextjs Sujeitoprogramador:
+https://nextjs.org/docs/app/getting-started/installation
+https://www.youtube.com/watch?v=e6FigV2fLC8&t=190s&ab_channel=Sujeitoprogramador
+
+-------------------------------------------------------
+
+Tutorial de instalacao e utilizacao do shadcn/ui Sujeitoprogramador:
+https://ui.shadcn.com/docs/installation/next
+https://www.youtube.com/watch?v=PqRe0Q9b5QI&ab_channel=Sujeitoprogramador
+

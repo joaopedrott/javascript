@@ -53,3 +53,5 @@ getPosts((posts)=>{ //em seguida podemos fazer  oq quiser com o retorno, no caso
         console.log(comments)
     })
 })
+
+//por causa do callback hell, que as promises foram criadas

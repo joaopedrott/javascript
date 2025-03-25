@@ -21,7 +21,7 @@ export default function Home() {
         <button type="submit">Entrar</button>
       </form>
 
-      <button className=" border rounded p-2 m-4" onClick={logout}>Click</button>
+      <button className=" border rounded p-2 m-4" onClick={logout}>logout</button>
     </main>
   );
 }

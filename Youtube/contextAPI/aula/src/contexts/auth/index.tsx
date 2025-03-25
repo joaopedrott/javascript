@@ -19,18 +19,18 @@ const AuthContext = createContext<AuthContextProps>({} as AuthContextProps);
 const AuthProvider = ({ children }:{children: React.ReactNode}) => {
     const [user, setUser] = useState<UseProps | null>(null);
 
-    const login = (user: UseProps) => {
+    const login = (user: UseProps) => {//login
         setUser(user);
 
-        console.log(user);
+        //console.log(user);
     }
 
-    const logout = () => {
+    const logout = () => {//logout
         console.log('logout');
         setUser(null);
     }
 
-    return (
+    return (//retorna o contexto para as tags filhas 
         <AuthContext.Provider value={{
             user,
             login,
@@ -49,4 +49,4 @@ const useAuth = () => {
     return context;
 }
 
-export { AuthContext,useAuth, AuthProvider };
+export { AuthContext,useAuth, AuthProvider };//para exportar o contexto para componentes

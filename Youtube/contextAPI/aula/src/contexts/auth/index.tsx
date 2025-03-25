@@ -1,5 +1,5 @@
 'use client'
-import { createContext, useState } from "react";  
+import { createContext, useContext, useState } from "react";  
 
 export type UseProps = {
     name: string;
@@ -17,10 +17,7 @@ const AuthContext = createContext<AuthContextProps>({} as AuthContextProps);
 
 //criacao do provider
 const AuthProvider = ({ children }:{children: React.ReactNode}) => {
-    const [user, setUser] = useState<UseProps | null>({
-        name: 'Lucas',
-        token: '123'
-    });
+    const [user, setUser] = useState<UseProps | null>(null);
 
     const login = (user: UseProps) => {
         setUser(user);
@@ -46,4 +43,10 @@ const AuthProvider = ({ children }:{children: React.ReactNode}) => {
 
 }
 
-export { AuthContext, AuthProvider };
+const useAuth = () => {
+    //hook para simplificar o uso do contexto no componete
+    const context = useContext(AuthContext);
+    return context;
+}
+
+export { AuthContext,useAuth, AuthProvider };

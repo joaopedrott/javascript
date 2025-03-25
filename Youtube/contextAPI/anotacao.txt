@@ -17,3 +17,8 @@ OBS: Context API, nao eh gerenciador de estado, eh uma forma de compartilhar inf
 3-Dentro do arquivo layout.tsx, preciso envolver o children com a tag AuthProvider. Agora todo componente tera acesso ao contexto.
 
 4-Dentro da Page.tsx eu importo tudo que eu quiser que estiver no contexto, como variavel, estado e funcoes. E uso o 'use client' no topo do arquivo para que o useContext funcione.
+
+4.1(bonus) para uma melhor organizacao, eu crio um arquivo index.tsx dentra da pasta context e dentro dele crio o AppProvider e dentro dele o AuthProvider.
+
+4.2(bonus) dentro do arquivo, layout.tsx eu importo o AppProvider e envolvo o children com a tag AppProvider no lugar de AuthProvider. Isso apenas para organizacao do codigo para que quando for necessario  adicionar mais contextos, nao seja necessario mudar o layout.tsx, basta adicionar o contexto dentro do AppProvider.
+

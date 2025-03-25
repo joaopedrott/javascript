@@ -8,6 +8,14 @@ export default function Home() {
   const { register, handleSubmit } = useForm<{ name: string; token: string }>();
 
   console.log(user);
+
+  const handleLogin = ({ name, token}: { name: string; token: string }) => {
+    const userForm = { 
+      name, 
+      token: 'token' };
+    
+    login(userForm);
+  };
   
   return (
     <main>
@@ -15,7 +23,7 @@ export default function Home() {
 
       <p>{user?.name}</p>
 
-      <form onSubmit={handleSubmit(login)}>
+      <form onSubmit={handleSubmit(handleLogin)}>
         <input type="text" placeholder="Informe seu nome" {...register('name')} />
 
         <button type="submit">Entrar</button>

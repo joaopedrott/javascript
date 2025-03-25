@@ -2,12 +2,12 @@ https://www.youtube.com/watch?v=o1qO2kqsOQE&ab_channel=DevJuniorAlves
 
 https://www.youtube.com/watch?v=06_575UN55A&ab_channel=DevJuniorAlves
 
-Context api
-redux
-zustand
+1-Context api
+2-redux
+3-zustand
 
 
-Context api
+1-Context api
 OBS: Context API, nao eh gerenciador de estado, eh uma forma de compartilhar informacoes entre componentes sem precisar passar props, apenas isso.
 
 1-Para usar o context api eu preciso criar a pasta context, dentro dela a pasta auth e dentro dela o arquivo index.tsx.

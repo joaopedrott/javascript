@@ -6,4 +6,14 @@ Context api
 redux
 zustand
 
-Context API, nao eh gerenciador de estado, eh uma forma de compartilhar informacoes entre componentes sem precisar passar props, apenas isso.
+
+Context api
+OBS: Context API, nao eh gerenciador de estado, eh uma forma de compartilhar informacoes entre componentes sem precisar passar props, apenas isso.
+
+1-Para usar o context api eu preciso criar a pasta context, dentro dela a pasta auth e dentro dela o arquivo index.tsx.
+
+2-Dentro deste arquivo eu crio o context, crio o provider, faco a tipagem se necessario e exporto eles. E adiciono o 'use client' no topo do arquivo para que o useContext funcione.
+
+3-Dentro do arquivo layout.tsx, preciso envolver o children com a tag AuthProvider. Agora todo componente tera acesso ao contexto.
+
+4-Dentro da Page.tsx eu importo tudo que eu quiser que estiver no contexto, como variavel, estado e funcoes. E uso o 'use client' no topo do arquivo para que o useContext funcione.

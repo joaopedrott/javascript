@@ -9,7 +9,7 @@ export default function Home() {
 
   console.log(user);
 
-  const handleLogin = ({ name, token}: { name: string; token: string }) => {
+  const handleLogin = ({ name}: { name: string }) => {
     const userForm = { 
       name, 
       token: 'token' };

@@ -7,17 +7,18 @@ Mentoria 10- Atualizacoes de tecnologias e libs para 2025
 5- aws: storage (s3), DynamoDB, EC2 (servicos de computacao em nuvem)
 
 servicoes de hospedagem de banco de dados/storage:
--prisma.io/postgres (deploy banco de dados)
+-prisma.io/postgres (deploy banco de dados) (matheus usa esse no best delivery 2.0)
 para banco de dados gratis em vez do aws
 -Atlas para mongodb
 https://www.mongodb.com/atlas?msockid=0970694e86c4607510ec7cc18775612e
+-railway (servico de deploy)
 -supabase
 
 
 PLUS:
 -IA
 -Agente de IA (n8n e EvolutionAPI)
--railway (servico de deploy)
+
 
 
 

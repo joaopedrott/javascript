@@ -1,0 +1,42 @@
+Mentoria 10- Atualizacoes de tecnologias e libs para 2025
+
+1- reactjs (core do desenvolvimento frontend: mobile, web, desktop, etc)
+2- nextjs (framework do reactjs para desenvolvimento web)
+3- tailwind (framework de estilizacao do css)
+4- shadcnui (componentes do reactjs)
+5- aws: storage (s3), DynamoDB, EC2 (servicos de computacao em nuvem)
+
+servicoes de hospedagem de banco de dados/storage:
+-prisma.io/postgres (deploy banco de dados)
+para banco de dados gratis em vez do aws
+-Atlas para mongodb
+https://www.mongodb.com/atlas?msockid=0970694e86c4607510ec7cc18775612e
+-supabase
+
+
+PLUS:
+-IA
+-Agente de IA (n8n e EvolutionAPI)
+-railway (servico de deploy)
+
+
+
+
+
+Eu falei sobre essas com Matheus(topicos fora da aula)
+6- zustand (gerenciamento de estado do reactjs) 
+cria informacoes fora do componente react
+7- redux (gerenciamento de estado do reactjs)
+maioria das empresas usam o redux
+9- context api 
+para login
+
+anotacao:
+Estudar sobre arquitetura flux para entender gerenciamento de estado global
+https://medium.com/engenharia-arquivei/arquitetura-flux-26a419871ade
+
+
+Ferrmentas antigas:
+-CRA (create-react-app) - Legado/Depreciado
+-Vite
+

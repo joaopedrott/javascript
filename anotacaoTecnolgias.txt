@@ -1,8 +1,8 @@
 -------------------Resumo de tecnologias---------------------
 ---------
-NextJS
-shadcn/ui
-
+NextJS (v)
+shadcn/ui (v)
+Redux(proxima)
 ---------
 Lista de comandos mais importantes usados:
 *npx create-next-app@latest aula (cria projeto nextjs)

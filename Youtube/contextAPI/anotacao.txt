@@ -21,20 +21,20 @@ OBS: Context API, nao eh gerenciador de estado, eh uma forma de compartilhar inf
 Em resumo: o AuthProvider para compartilhar informacoes entre componentes( como tag no arquivo layout) e AuthContext para acessar essas informacoes dentro dos componentes.
 
 4.1(bonus)Criando um aquivo a parte para reunir providers: 
-1-Para uma melhor organizacao, eu crio um arquivo index.tsx dentra da pasta context e dentro dele crio o AppProvider e dentro dele o AuthProvider ou todos os providers que eu quiser envolvendo um children.
+    1-Para uma melhor organizacao, eu crio um arquivo index.tsx dentra da pasta context e dentro dele crio o AppProvider e dentro dele o AuthProvider ou todos os providers que eu quiser envolvendo um children.
 
-2- dentro do arquivo, layout.tsx eu importo o AppProvider e envolvo o children com a tag AppProvider no lugar de AuthProvider. Isso apenas para organizacao do codigo para que quando for necessario  adicionar mais contextos, nao seja necessario mudar o layout.tsx, basta adicionar o contexto dentro do AppProvider.
+    2- dentro do arquivo, layout.tsx eu importo o AppProvider e envolvo o children com a tag AppProvider no lugar de AuthProvider. Isso apenas para organizacao do codigo para que quando for necessario  adicionar mais contextos, nao seja necessario mudar o layout.tsx, basta adicionar o contexto dentro do AppProvider.
 
 4.2(bonus) Criando um hook para acessar o contexto de forma mais simples:
 Se caso eu nao queira importar o useContext e AuthContext no page.tsx eu precisaria criar um hook, eu posso criar o hook dentro do arquivo do contexto(do passo 1).
 
-1-Dentro deste arquivo(do passo 1), eu crio o hook chamado useAuth
-    Neste hook, eh usado o const context = useContext(AuthContext) e retorna context.
+    1-Dentro deste arquivo(do passo 1), eu crio o hook chamado useAuth
+        Neste hook, eh usado o const context = useContext(AuthContext) e retorna context.
 
-2-Dentro do arquivo page.tsx, antes eu usava: 
+    2-Dentro do arquivo page.tsx, antes eu usava: 
     const { user, login, logout } = useContext(AuthContext)
         obs:useContext eh um hook do proprio react e AuthContext eh o contexto que eu criei no arquivo do contexto(do passo 1).
-Agora eu uso o useAuth() que eh o hook que eu criei no arquivo do contexto(do passo 1):
+    Agora eu uso o useAuth() que eh o hook que eu criei no arquivo do contexto(do passo 1):
     const { user, login, logout } = useAuth()
 
 Resumo:Pronto, agora tem menos importacao e esta mais simples.

@@ -15,7 +15,7 @@ https://www.youtube.com/watch?v=mXI2-gjIZ40
     type eh o tipo da action, ou seja, o que queremos fazer com o estado. EX: se for um login sera do type login.
     payload eh o conteudo da action, ou seja, o que queremos alterar no estado. EX: se for um login, sera o email e senha.
     Cada vez que depachamos uma action, o reducer monitora o type para guardar o payload no estado indicado pelo type. Pois dentro de um reducer, podemos ter alguns ou varios tipos de dados entao precisamos indicar qual estado/dado queremos alterar.
-
+------------------------------------------------------------------------------------------------
 Projeto da aula:
 1-criando o use reducer 
     1- depois de fazer todo o setup exigido pelo professor.
@@ -28,7 +28,7 @@ Projeto da aula:
 
 
 O Hook useSelector eh usado para acessar o estado global do redux.
-        Ou seja, acessa o estado global do redux para pegar os dados armazenados no reducer.
+        Ou seja, acessa o estado global do redux para pegar os dados que foram armazenados no reducer.
         
         ex: 
         const { currentUser } = useSelector(rootReducer => rootReducer.userReducer);
@@ -49,3 +49,27 @@ O Hook useDispatch eh usado para enviar uma action para o reducer.
   };
 
   OBS: todo o objeto passado dentro de dispatch eh chamado do action e esse action eh passado para o reducer.
+
+  OBS2: Dentro do reducer, somente o valor do state eh alterado.
+no exemplo abaixo, o state eh alterado de null para o objeto passado dentro de payload mas o initialState nao eh alterado.
+
+        const initialState = {
+            currentUser: null, // Pode armazenar o nome do usuário ou null
+        };
+
+        const userReducer = (state = initialState, action) => {
+            if(action.type==='user/login') {
+                return {
+                    ...state,
+                    currentUser: action.payload, // Armazena apenas o `name` do usuário
+                };
+            } else if (action.type==='user/logout') {
+                return {
+                    ...state,
+                    currentUser:null, // Reseta o usuário para null no logout
+                }
+            } else {
+                return state;
+            }
+        };
+

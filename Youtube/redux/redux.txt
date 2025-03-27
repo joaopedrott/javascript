@@ -25,3 +25,27 @@ Projeto da aula:
 
 2-criando o user reducer
     1-dentro de reducer.js,
+
+
+O Hook useSelector eh usado para acessar o estado global do redux.
+        Ou seja, acessa o estado global do redux para pegar os dados armazenados no reducer.
+        
+        ex: 
+        const { currentUser } = useSelector(rootReducer => rootReducer.userReducer);
+        console.log({currentUser});
+
+O Hook useDispatch eh usado para enviar uma action para o reducer.
+    Ou seja, envia os dados para o reducer guardar no estado global.
+    ex:
+
+    const handleLoginClick = () => {//acao de login
+    dispatch({ type: "user/login",
+      payload: {
+        name: "joao",
+        email: "joao@gmail.com",
+      },
+      banana: "fruta"
+     });
+  };
+
+  OBS: todo o objeto passado dentro de dispatch eh chamado do action e esse action eh passado para o reducer.

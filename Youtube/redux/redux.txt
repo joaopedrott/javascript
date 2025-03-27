@@ -30,12 +30,12 @@ Projeto da aula:
 O Hook useSelector eh usado para acessar o estado global do redux.
         Ou seja, acessa o estado global do redux para pegar os dados que foram armazenados no reducer.
         
-        ex: 
+        ex no arquivo index.jsx do componente header: 
         const { currentUser } = useSelector(rootReducer => rootReducer.userReducer);
         console.log({currentUser});
 
 O Hook useDispatch eh usado para enviar uma action para o reducer.
-    Ou seja, envia os dados para o reducer guardar no estado global.
+    Ou seja, envia os dados para o reducer guardar no estado global(state).
     ex:
 
     const handleLoginClick = () => {//acao de login
@@ -43,6 +43,7 @@ O Hook useDispatch eh usado para enviar uma action para o reducer.
       payload: {
         name: "joao",
         email: "joao@gmail.com",
+        password: "123456",
       },
       banana: "fruta"
      });
@@ -73,3 +74,10 @@ no exemplo abaixo, o state eh alterado de null para o objeto passado dentro de p
             }
         };
 
+Entao o valor de state sai de currentUser: null 
+para:
+currentUser: {
+        name: "joao",
+        email: "joao@gmail.com",
+        password: "123456",
+}

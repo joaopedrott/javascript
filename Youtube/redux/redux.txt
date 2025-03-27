@@ -1,0 +1,17 @@
+links:
+https://www.youtube.com/watch?v=mXI2-gjIZ40
+
+1-Capitulo(problema que o redux resolve- prop drilling)
+2-Entendendo o redux: reduces e state global
+  Para usar o redux, criamos o Reducer, um lugar que guarda o estado global, ou seja o estado que vai ser compartilhado entre os componentes.
+   Um reducer para cada tipo de dados, um reducer para dados dos usuarios, um reducer para dados de produtos, etc. reducer se torna uma caixa de armazenamento de dados.
+    Para guardar todos estes reducer, criamos um root reducer. (o root reducer eh como um galpao que guarda todas as caixas ou reducers essas caixas/reducer guardam os dados dentro delas)
+3- Entendendo uso do useSelector
+    Para que um componente tenha acesso a um state dentro do reducer que esta dentro do root reducer, precisamos usar um hook chamado useSelector.
+4-Actions e Dispathes
+    Para fazer modificacoes no estado dentro do reducer dentro do root reducer,usamos o hook useDispatch. esse pacote de dados que enviamos para modificar o estado eh chamada de action.
+    O useDispatch e responsavel por enviar esta action para o reducer.
+    Olhando mais de perto, action eh um objeto javascript. Este objeto eh composto por duas propriedades: type e payload.
+    type eh o tipo da action, ou seja, o que queremos fazer com o estado. EX: se for um login sera do type login.
+    payload eh o conteudo da action, ou seja, o que queremos alterar no estado. EX: se for um login, sera o email e senha.
+    Cada vez que depachamos uma action, o reducer monitora o type para guardar o payload no estado indicado pelo type. Pois dentro de um reducer, podemos ter alguns ou varios tipos de dados entao precisamos indicar qual estado/dado queremos alterar.

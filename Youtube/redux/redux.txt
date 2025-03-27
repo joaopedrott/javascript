@@ -15,3 +15,13 @@ https://www.youtube.com/watch?v=mXI2-gjIZ40
     type eh o tipo da action, ou seja, o que queremos fazer com o estado. EX: se for um login sera do type login.
     payload eh o conteudo da action, ou seja, o que queremos alterar no estado. EX: se for um login, sera o email e senha.
     Cada vez que depachamos uma action, o reducer monitora o type para guardar o payload no estado indicado pelo type. Pois dentro de um reducer, podemos ter alguns ou varios tipos de dados entao precisamos indicar qual estado/dado queremos alterar.
+
+Projeto da aula:
+1-criando o use reducer 
+    1- depois de fazer todo o setup exigido pelo professor.
+    2- criei o store.js, depois o root-reducer.js e depois o reducer.js
+    3- no arquivo index.js importei o store e o Provider do react-redux
+    4- no arquivo index.js adicionei a tag <Provider store={store}> envolvendo o app
+
+2-criando o user reducer
+    1-dentro de reducer.js,

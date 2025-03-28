@@ -16,70 +16,87 @@ https://www.youtube.com/watch?v=mXI2-gjIZ40
     payload eh o conteudo da action, ou seja, o que queremos alterar no estado. EX: se for um login, sera o email e senha.
     Cada vez que depachamos uma action, o reducer monitora o type para guardar o payload no estado indicado pelo type. Pois dentro de um reducer, podemos ter alguns ou varios tipos de dados entao precisamos indicar qual estado/dado queremos alterar.
 ------------------------------------------------------------------------------------------------
-Projeto da aula:
-1-criando o use reducer 
-    1- depois de fazer todo o setup exigido pelo professor.
-    2- criei o store.js, depois o root-reducer.js e depois o reducer.js
-    3- no arquivo index.js importei o store e o Provider do react-redux
-    4- no arquivo index.js adicionei a tag <Provider store={store}> envolvendo o app
+5-Setup inicial do redux (Projeto da aula:)
+Depois de fazer o fork do projeto
+yarn install //para instalar dependencias
+yarn add redux react-redux //instala o redux
+yarn start // aniciar o projeto
 
-2-criando o user reducer
-    1-dentro de reducer.js,
+    1-criando o store, root-reducer e use reducer 
+        1- depois de fazer todo o setup exigido pelo professor.
+        2- criei o store.js, depois o root-reducer.js e depois o reducer.js
+        3- no arquivo index.js importei o store e o Provider do react-redux
+        4- no arquivo index.js adicionei a tag <Provider store={store}> envolvendo o app
 
+        resumo dos nomes dos arquivos e funcoes:
+        store (store)
+        root-reducer (rootReducer)
+        reducer (userReducer)
 
-O Hook useSelector eh usado para acessar o estado global do redux.
-        Ou seja, acessa o estado global do redux para pegar os dados que foram armazenados no reducer.
+6-criando o user reducer
+        1-dentro de reducer.js, criei a logica inicial do arquivo reducer.js, ele recebe uma action do tipo(type) user/login(com payload) ou user/logout(sem payload).
+7-acessando dados de um reducer com o useSelector
+    dentro do arquivo index.jsx da pasta header dentro da pasta components:
+        1-importei o useSelector do react-redux e fiz o destructuring do useSelector:
         
-        ex no arquivo index.jsx do componente header: 
         const { currentUser } = useSelector(rootReducer => rootReducer.userReducer);
         console.log({currentUser});
 
-O Hook useDispatch eh usado para enviar uma action para o reducer.
-    Ou seja, envia os dados para o reducer guardar no estado global(state).
-    ex:
+        O Hook useSelector eh usado para acessar o estado global do redux.
+            Ou seja, acessa o estado global do redux para pegar os dados que foram armazenados no reducer.
+        
 
-    const handleLoginClick = () => {//acao de login
-    dispatch({ type: "user/login",
-      payload: {
-        name: "joao",
-        email: "joao@gmail.com",
-        password: "123456",
-      },
-      banana: "fruta"
-     });
-  };
+8-Despachando Actions com useDispatch
+        1-dentro do arquivo index.jsx da pasta header dentro da pasta components:
 
-  OBS: todo o objeto passado dentro de dispatch eh chamado do action e esse action eh passado para o reducer.
+            const handleLoginClick = () => {//acao de login
+            dispatch({ type: "user/login",
+            payload: {
+                name: "joao",
+                email: "joao@gmail.com",
+                password: "123456",
+            },
+            banana: "fruta"
+            });
+            };
 
-  OBS2: Dentro do reducer, somente o valor do state eh alterado.
-no exemplo abaixo, o state eh alterado de null para o objeto passado dentro de payload mas o initialState nao eh alterado.
+        Anotacoes e observacoes:
+        O Hook useDispatch eh usado para enviar uma action para o reducer.
+            Ou seja, envia os dados para o reducer guardar no estado global(state).
+            OBS: todo o objeto passado dentro de dispatch eh chamado do action e esse action eh passado para o reducer.
+            OBS2: Dentro do reducer, somente o valor do state eh alterado.
+            no exemplo abaixo, o state eh alterado de null para o objeto passado dentro de payload mas o initialState nao eh alterado.
+        //Codigo
+            const initialState = {
+                currentUser: null, // Pode armazenar o nome do usuário ou null
+            };
 
-        const initialState = {
-            currentUser: null, // Pode armazenar o nome do usuário ou null
-        };
-
-        const userReducer = (state = initialState, action) => {
-            if(action.type==='user/login') {
-                return {
-                    ...state,
-                    currentUser: action.payload, // Armazena apenas o `name` do usuário
-                };
-            } else if (action.type==='user/logout') {
-                return {
-                    ...state,
-                    currentUser:null, // Reseta o usuário para null no logout
+            const userReducer = (state = initialState, action) => {
+                if(action.type==='user/login') {
+                    return {
+                        ...state,
+                        currentUser: action.payload, // Armazena apenas o `name` do usuário
+                    };
+                } else if (action.type==='user/logout') {
+                    return {
+                        ...state,
+                        currentUser:null, // Reseta o usuário para null no logout
+                    }
+                } else {
+                    return state;
                 }
-            } else {
-                return state;
-            }
-        };
+            };
+        //Codigo
 
-Entao o valor de state sai de currentUser: null 
-para:
-currentUser: {
-        name: "joao",
-        email: "joao@gmail.com",
-        password: "123456",
-}
+        Entao o valor de state sai de 
+        currentUser: null 
+        para
+        currentUser: {
+                name: "joao",
+                email: "joao@gmail.com",
+                password: "123456",
+        }
 
 ate 29 minutos de video
+
+------------------------------------------------------------------------------------------------

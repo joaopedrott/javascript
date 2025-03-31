@@ -100,3 +100,16 @@ yarn start // aniciar o projeto
 ate 29 minutos de video
 
 ------------------------------------------------------------------------------------------------
+09-Action types 
+(organizando o codigo/ organizando os types em um arquivo separado para evitar erros de digitacao do user/login por exemplo)
+
+criei um arquivo chamado action-types.js dentro da pasta user para armazenar os types login e logout.
+
+inseri os types atualizados no index.jsx na pasta header dentro da pasta components.
+
+10-Criando action logout
+    Adicionei a funcao logout no arquivo index.jsx dentro da pasta header dentro da pasta components.
+essa funcao logout nao tem payload, entao so manda o dispatch com o type logout.
+    Depois atualizei o reducer com switch pois eh mais comum usar switch com redux/reducer para tratar mais de um tipo de action.
+
+ate o minuto 34:46 do video

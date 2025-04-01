@@ -7,9 +7,9 @@ Redux(proxima)
 Lista de comandos mais importantes usados:
 *npx create-next-app@latest aula (cria projeto nextjs)
 *npx shadcn@latest init (instala o shadcn/ui no projeto)
-*yarn run dev (rodar o projeto nextjs)
 *npx shadcn@latest add input (adicionar o componente input ao projeto seguindo o: https://ui.shadcn.com/docs/components/input)
-*
+*yarn run dev (rodar o projeto nextjs)
+*yarn add redux react-redux (instala o redux)
 *
 
 -------------------------------------------------------
@@ -28,4 +28,12 @@ https://www.youtube.com/watch?v=e6FigV2fLC8&t=190s&ab_channel=Sujeitoprogramador
 Tutorial de instalacao e utilizacao do shadcn/ui Sujeitoprogramador:
 https://ui.shadcn.com/docs/installation/next
 https://www.youtube.com/watch?v=PqRe0Q9b5QI&ab_channel=Sujeitoprogramador
+
+-------------------------------------------------------
+
+Tutorial de instalacao e utilizacao do redux:
+https://www.youtube.com/watch?v=mXI2-gjIZ40
+
+-------------------------------------------------------
+
 

@@ -113,3 +113,16 @@ essa funcao logout nao tem payload, entao so manda o dispatch com o type logout.
     Depois atualizei o reducer com switch pois eh mais comum usar switch com redux/reducer para tratar mais de um tipo de action.
 
 ate o minuto 34:46 do video
+------------------------------------------------------------------------------------------------
+11-criando um arquivo separado para as actions
+    Criei um arquivo chamado actions.js dentro da pasta User dentro da pasta Redux, que tem as actions login e logout. 
+
+12-debug com redux logger
+instalei a biblioteca, o reduxlogger:
+    yarn add redux-logger
+Depois importei o applyMiddleware do redux
+Depois importei logger do redux-logger no arquivo store.js
+
+Essa biblioteca faz aparecer os dados sobre a action no console do navegador
+
+------------------------------------------------------------------------------------------------

@@ -124,5 +124,6 @@ Depois importei o applyMiddleware do redux
 Depois importei logger do redux-logger no arquivo store.js
 
 Essa biblioteca faz aparecer os dados sobre a action no console do navegador
+ate o minuto 38:00 do video
 
 ------------------------------------------------------------------------------------------------

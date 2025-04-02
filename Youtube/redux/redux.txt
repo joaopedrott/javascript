@@ -127,3 +127,18 @@ Essa biblioteca faz aparecer os dados sobre a action no console do navegador
 ate o minuto 38:00 do video
 
 ------------------------------------------------------------------------------------------------
+13-Criando cart reducer
+ 1-Criei o action-types.js dentro da pasta cart dentro da pasta redux.
+ 2-Criei o actions.js dentro da pasta cart tambem.
+ 3-Criei o reducer.js dentro da pasta cart tambem.
+ 4-atualizei o root-reducer.js para incluir o cartReducer.
+ 5-atualizei o arquivo index.jsx dentro da pasta product-item. Dentro do arquivo, criei a funcao handleProductClick e coloquei o dispatch dentro de uma funcao handleProductClick.
+
+ const handleProductClick = () => {
+    dispatch(addProductToCart(product));
+  };
+
+    Como para fazer o dispatch enviamos um objeto com type e payload, a funcao addProductToCart faz isso, ela recebe o product como parametro para ser o payload e adiciona o type.
+    
+ate o minuto 47:00 do video
+------------------------------------------------------------------------------------------------

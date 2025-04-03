@@ -142,3 +142,20 @@ ate o minuto 38:00 do video
     
 ate o minuto 47:00 do video
 ------------------------------------------------------------------------------------------------
+14-Acessando o Cart Reducer no componente Cart
+Modifiquei o arquivo index.jsx dentro da pasta cart dentro da pasta components.
+    adicionei neste arquivo o products usando o useSelector:
+    const { products } = useSelector(rootReducer => rootReducer.cartReducer);
+
+    Depois adicionei o map para mostrar os produtos:
+    {products.map(product => (
+          <CartItem product={product} />
+        ))}
+
+*Tive que ajeitar o import styles do arquivo index.jsx dentro da pasta cart-item.
+*Tive que adicionar a cor ao svg no CartItemContainer=styled.div
+*Corrigi o erro do initialState no arquivo reducer.js na pasta cart dentro da pasta redux. Antes era: ...initialState e ...initialState.products, agora eh: ...state e ...state.products.
+
+ate o minuto 50:00 do video
+------------------------------------------------------------------------------------------------
+15-Boa pratica: Logicas devem ficar dentro do reducer

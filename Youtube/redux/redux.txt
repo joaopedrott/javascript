@@ -159,3 +159,14 @@ Modifiquei o arquivo index.jsx dentro da pasta cart dentro da pasta components.
 ate o minuto 50:00 do video
 ------------------------------------------------------------------------------------------------
 15-Boa pratica: Logicas devem ficar dentro do reducer
+Apenas foi exmplicado no video que a logica deve ficar dentro do reducer.
+Ele falou da logica de adicionar a quantidade dos mesmos produtos que estao no carrinho.
+------------------------------------------------------------------------------------------------
+16-Aprimorando a adicao de um produto no carrinho
+    no arquivo reducer.js dentro da pasta cart dentro da pasta redux, adicionei a logica de adicionar a quantidade dos mesmos produtos que estao no carrinho.
+
+    OBS:
+    Lembrando que, o quantity so passa a existir quando o produto eh adicionado ao carrinho. Quando o produto eh adicionado ao carrinho, ele cria o quantity com o valor 1. Se houver mais do mesmo produto  no carrinho, ele incrementa o quantity.
+
+    ate o minuto 55:00 do video
+------------------------------------------------------------------------------------------------

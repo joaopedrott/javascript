@@ -170,3 +170,16 @@ Ele falou da logica de adicionar a quantidade dos mesmos produtos que estao no c
 
     ate o minuto 55:00 do video
 ------------------------------------------------------------------------------------------------
+17-Acessando o Cart Reducer no componente Header
+Criacao do numero de produtos adicionados ao carrinho no componente Header, no menu com nome Carrinho.
+
+    Modifiquei o arquivo index.jsx dentro da pasta header dentro da pasta components.
+
+    Adicionei essa logica para pegar o numero de produtos adicionados ao carrinho:
+        const { products } = useSelector(rootReducer => rootReducer.cartReducer);
+        const productsCount =useMemo(()=>{
+        return products.reduce((acc, curr)=> acc+curr.quantity ,0)
+        },[products])
+
+    ate o minuto 57:25 do video
+------------------------------------------------------------------------------------------------

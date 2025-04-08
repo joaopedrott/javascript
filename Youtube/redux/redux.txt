@@ -183,3 +183,16 @@ Criacao do numero de produtos adicionados ao carrinho no componente Header, no m
 
     ate o minuto 57:25 do video
 ------------------------------------------------------------------------------------------------
+18-Removendo um produto do carrinho
+    Para comecar, devemos pensar que devemos retirar um produto do carrinho retirando o produto do estado do redux.
+    Para isso, primeiro, criei uma nova action type dentro do arquivo action-types.js dentro da pasta cart dentro da pasta redux. REMOVE_PRODUCT:'cart/removeProduct'
+
+    Depois criei mais um case no reducer.js dentro da pasta cart dentro da pasta redux. Esse case corresponde a action type REMOVE_PRODUCT que sera recebida. Pega o id do produto selecionado e faz uma lista filtrada do produto selecionado, que eh o que sera retornado ou seja faz uma lista sem o produto selecionado.
+
+    Depois, criei uma nova action no arquivo actions.js dentro da pasta cart dentro da pasta redux. O nome da action eh removeProductFromCart
+
+    Depois, criei uma nova funcao no arquivo index.jsx dentro da pasta cart-item dentro da pasta components. A funcao eh handleRemoveClick onde faz o dispatch do product.id para ser removido do carrinho.
+
+    ate o minuto 1:00:25 do video
+    ------------------------------------------------------------------------------------------------
+    

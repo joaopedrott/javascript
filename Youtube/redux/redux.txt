@@ -203,7 +203,7 @@ Criacao do numero de produtos adicionados ao carrinho no componente Header, no m
     case CartActionnTypes.INCREASE_PRODUCT_QUANTITY:
     Quarto e ultimo, adicionei o dispatch na funcao handleIncreaseClick dentro do arquivo index.jsx dentro da pasta cart-item dentro da pasta components.
 
-
+    ate o minuto 1:03:00 do video
 
  ------------------------------------------------------------------------------------------------
 OBS:

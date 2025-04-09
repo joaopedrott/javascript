@@ -1,0 +1,27 @@
+Mentoria 11- Freelancer
+
+Freelancer com Programacao em 2025
+
+1-Definir o nosso Nicho
+ -Desenvolvedor frontend
+ -Desenvolvedor Backend
+ -Desenvolvedor mobile
+ -Desenvolvedor Fullstack
+ -Gerenciador de automacoes
+
+2-Criar um CNPJ (criar um cnpj usando o MEI)
+ -links
+
+taxa mensal de aproximadamente 75,90 reais mensais para o CNPJ
+Enquadramento ME: taxa de 6% a 8% ao mes
+3-Criar um portfolio
+ -Ter pelo menos um projeto real, que voce implementou e vendeu para um cliente, gerando valor para o mesmo.
+4-Prospeccao de clientes
+ -Buscar na sua cidade/bairro. (Falar com Diego no whatsapp)
+ -links
+5-Valor de hora
+ -Fazer benchmark de valor/h no glassdoor
+6-Fazer networking: Partificar de comunidades, participar de eventos da sua area.
+7- Gestao de trabalho:
+ -trello, clickup, jira, github projects.
+ -google drive

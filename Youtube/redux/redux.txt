@@ -33,6 +33,7 @@ yarn start // aniciar o projeto
         root-reducer (rootReducer)
         reducer (userReducer)
 
+
 6-criando o user reducer
         1-dentro de reducer.js, criei a logica inicial do arquivo reducer.js, ele recebe uma action do tipo(type) user/login(com payload) ou user/logout(sem payload).
 7-acessando dados de um reducer com o useSelector
@@ -195,4 +196,18 @@ Criacao do numero de produtos adicionados ao carrinho no componente Header, no m
 
     ate o minuto 1:00:25 do video
     ------------------------------------------------------------------------------------------------
-    
+19-Aumentando a quantidade de um produto no carrinho
+    Primeiro dentro de actions.js da pasta cart, adicionei increaseProductQuantity.
+    Segundo, dentro de action-types.js na pasta cart adicionei: INCREASE_PRODUCT_QUANTITY: "cart/increaseProductQuantity".
+    Terceiro, dentro de reducer.js na pasta cart, adicionei o case para a action type:
+    case CartActionnTypes.INCREASE_PRODUCT_QUANTITY:
+    Quarto e ultimo, adicionei o dispatch na funcao handleIncreaseClick dentro do arquivo index.jsx dentro da pasta cart-item dentro da pasta components.
+
+
+
+ ------------------------------------------------------------------------------------------------
+OBS:
+    *Dentro do projeto em questao, o componente products e seu arquivo index.jsx que esta dentro da pasta products dentro da pasta components, eh o componente que vai ser usado para mostrar os produtos. Ele eh o componente principal da aplicacao.
+    O componente data e seu arquivo products.js guardam todos os produtos, fazendo um papel parecido como o banco de dados local ou uma API.
+    *O que essa aplicacao faz eh, o componente products pega os produtos do componente data e manda para o componente product-item para ele mostrar na tela e se o usuario apertar no botao ele manda o produto em questao para o redux salvar no carrinho de compras
+ ------------------------------------------------------------------------------------------------

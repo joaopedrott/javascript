@@ -206,6 +206,16 @@ Criacao do numero de produtos adicionados ao carrinho no componente Header, no m
     ate o minuto 1:03:00 do video
 
  ------------------------------------------------------------------------------------------------
+ 20-Diminuindo a quantidade de um produto no carrinho
+    Primeiro dentro de actions.js da pasta cart, adicionei decreaseProductQuantity.
+    Segundo, dentro de action-types.js na pasta cart adicionei: DECREASE_PRODUCT_QUANTITY: "cart/decreaseProductQuantity".
+    Terceiro, dentro de reducer.js na pasta cart, adicionei o case para a action type:
+    case CartActionnTypes.DECREASE_PRODUCT_QUANTITY:
+    Quarto e ultimo, adicionei o dispatch na funcao handleDecreaseClick dentro do arquivo index.jsx dentro da pasta cart-item dentro da pasta components.
+
+ate o minuto 1:05:00 do video
+------------------------------------------------------------------------------------------------
+
 OBS:
     *Dentro do projeto em questao, o componente products e seu arquivo index.jsx que esta dentro da pasta products dentro da pasta components, eh o componente que vai ser usado para mostrar os produtos. Ele eh o componente principal da aplicacao.
     O componente data e seu arquivo products.js guardam todos os produtos, fazendo um papel parecido como o banco de dados local ou uma API.

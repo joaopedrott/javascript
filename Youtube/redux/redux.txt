@@ -215,6 +215,29 @@ Criacao do numero de produtos adicionados ao carrinho no componente Header, no m
 
 ate o minuto 1:05:00 do video
 ------------------------------------------------------------------------------------------------
+21-Selectors(preco e quantidade total R$ do carrinho)
+    OBS: Quanto existe dados que sao modificados a partir de outros dados, devemos usar os selectors. 
+    Por exemplo a quantidade total de produtos no carrinho que vai mudar a cada produto adicionado ao carrinho ou o preco total do carrinho que vai mudar a cada produto adicionado ao carrinho.
+
+    Para exemplificar e melhorar oq foi feito no passo 17. Um novo jeito de contar a quantidade de produtos no carrinho usando selectors e sem usar o useMemo.
+    *Primeiro, criei um novo arquivo chamado cart.selectors.js dentro da pasta cart dentro da pasta redux.
+    *Segundo, dentro deste novo arquivo, criei a funcao selectProductsCount que retorna o numero de produtos no carrinho.
+    *Terceiro, dentro do arquivo index.jsx dentro da pasta cart dentro da pasta components, adicionei o useSelector para pegar o numero de produtos no carrinho:
+    const productsCount = useSelector(selectProductsCount) e eh claro, deletei oq foi feito no passo 17.
+    obs: o selectProductsCount eh a funcao que foi criada no arquivo cart.selectors.js (ela foi importada no arquivo cart.selectors.js)
+    Pronto, o mesmo resultado do passo 17 foi obtido so que melhor.
+
+    Agora para ter a quantidade total em R$ de produtos no carrinho.
+    *Primeiro, dentro de cart.selectors.js dentro da pasta cart dentro da pasta redux, criei a funcao selectProductsTotalPrice que retorna o preco total dos produtos no carrinho.
+    Essa funcao pega cada produto e multiplica produtos iguais pela quantidade de produtos iguais e depois soma a quantidade total em R$, se nao ouver produtos iguais ele multiplica por 1 que seria o proprio valor do produto e soma ao total. Isso acontece sempre que um novo produto eh adicionado ao carrinho.
+    *Segundo, dentro do index.jsx dentro da pasta cart dentro da pasta components, adicionei:
+    const productsTotalPrice = useSelector(selectProductsTotalPrice)
+    e no html:
+    <Styles.CartTotal>Total: R${productsTotalPrice}</Styles.CartTotal>
+    Pronto, agora temos a quantidade total em R$ de produtos adicionados ao carrinho.
+
+ate o minuto 1:10:00 do video
+------------------------------------------------------------------------------------------------
 
 OBS:
     *Dentro do projeto em questao, o componente products e seu arquivo index.jsx que esta dentro da pasta products dentro da pasta components, eh o componente que vai ser usado para mostrar os produtos. Ele eh o componente principal da aplicacao.

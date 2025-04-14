@@ -266,11 +266,11 @@ usando de um jeito mais facil o redux com o redux toolkit.
     import cartReducer from "./cart/slice";
     antes era 
     import cartReducer from "./cart/reducer";
-    
+
     obs: como o reducer do slice eh exportado assim com default: 
     export default cartSlice.reducer;
     O import dele no root-reducer pode ser feito dando a ele qualquer nome pois ele eh importado sem nome/default, por isso que ele fica com o mesmo nome do reduce anterior pois na pratica pode ter qualquer nome que eu quiser na hora do import.
-
+ate o minuto 1:20:00 do video
 ------------------------------------------------------------------------------------------------
 
 OBS:

@@ -1,0 +1,10 @@
+Criei o projeto nextjs = npx create-next-app@latest
+
+instalei o shadcn/ui = npx shadcn@latest init
+
+instalei todos os componentes do shadcn/ui = npx shadcn@latest add avatar badge button calendar card chart checkbox dialog drawer dropdown-menu form input label popover scroll-area select separator sheet sidebar skeleton sonner table tabs textarea tooltip
+
+instalei o prisma = yarn add prisma
+
+executei o prisma = npx prisma init
+

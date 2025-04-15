@@ -1,10 +1,42 @@
-Criei o projeto nextjs = npx create-next-app@latest
+1-Criei o projeto nextjs = npx create-next-app@latest
 
-instalei o shadcn/ui = npx shadcn@latest init
+2-instalei o shadcn/ui = npx shadcn@latest init
 
-instalei todos os componentes do shadcn/ui = npx shadcn@latest add avatar badge button calendar card chart checkbox dialog drawer dropdown-menu form input label popover scroll-area select separator sheet sidebar skeleton sonner table tabs textarea tooltip
+3-instalei todos os componentes do shadcn/ui = npx shadcn@latest add avatar badge button calendar card chart checkbox dialog drawer dropdown-menu form input label popover scroll-area select separator sheet sidebar skeleton sonner table tabs textarea tooltip
 
-instalei o prisma = yarn add prisma
+4-instalei o prisma = yarn add prisma
 
-executei o prisma = npx prisma init
+5-executei o prisma = npx prisma init
+
+6-instalei o docker com ajuda da IA, passando o tutorial que matheus passou:
+    Criando Container do Postgres no Docker:
+
+    https://docs.docker.com/engine/install/
+
+    Você pode criar um container Docker com a imagem oficial do PostgreSQL usando o seguinte comando:
+
+    docker run --name meu-postgres \
+    -e POSTGRES_USER=postgres \
+    -e POSTGRES_PASSWORD=docker \
+    -p 5432:5432 \
+    -d postgres
+    Explicando os parâmetros:
+    --name meu-postgres: nome do container.
+
+    -e POSTGRES_USER=postgres: define o usuário do banco.
+
+    -e POSTGRES_PASSWORD=docker: define a senha.
+
+    -p 5432:5432: mapeia a porta local 5432 para a porta 5432 do container.
+
+    -d: executa o container em segundo plano.
+
+    postgres: é a imagem oficial (será baixada automaticamente se você ainda não tiver ela localmente).
+
+    Verificar se o container está rodando:
+    docker ps
+    Acessar o banco via linha de comando (opcional):
+    docker exec -it meu-postgres psql -U postgres
+
+7-Depois instalei o pg4admin
 

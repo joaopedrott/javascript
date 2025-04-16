@@ -78,3 +78,5 @@ obs2: no arquivo signup-card.tsx, como usa um hook ele precisa ter 'use client' 
 
 Em conjunto com a criacao do layout.tsx, coloquei a logo do projeto ui dentro da pasta components.
 
+6-por ultimo criei a pagina de login identica a pagina de registro mas retirando a necessidade de nome e modificando algumas coisas e alguns textos
+

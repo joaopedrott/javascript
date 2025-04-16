@@ -40,3 +40,41 @@
 
 7-Depois instalei o pg4admin
 
+Aula 4-Implementando Páginas de Autenticação
+criei a pasta (auth) dentro da pasta app, dentro de auth criei a pasta components com seus arquivos signin-card.tsx e signup-card.tsx.
+
+intalei:
+yarn add zod @hookform/resolvers react-hook-form
+
+
+react-hook-form
+para fazer todo gerenciamento dos formulários do projeto
+
+zod junto com @hookform/resolvers
+para fazer a validação dos formulários
+
+2-Criei a pasta modules
+Dentro dessa pasta se encontram os modulos da aplicacao. Nela, vai ter o modulo de autenticacao.
+Alem do modulo de autenticacao, teremos outros modulos aqui nesta pasta no futuro.
+
+Dentro da pasta Modules, criei a pasta Auth (que tera tudo referente a autenticacao), dentro dela criei a pasta components e schemas.
+
+3-Rotas na pasta app
+Para criar a rota de uma pagina, devemos colocar ela dentro da pasta app.
+Neste caso, criei a pasta "(auth)" e dentro dela criei a pasta login e pasta registro com seus arquivos de pagina dentro delas chamados page.tsx. 
+
+OBS: Lembrando que por conta dos parenteses na pasta "(auth)", ela nao passa a fazer parte da rota, isso serve para somente criar uma organizacao nos arquivos do projeto. Esses parenteses sao chamados de grouping rounting
+
+OBS:Em resumo, as paginas dentro de App sao redenrizadas pelo nextjs, que por sua vez chamam as paginas de modules para dentro delas.
+
+4-Implementando os arquivos de modules e schemas do passo 2.
+Criei os aquivos login.ts e register.ts dentro da pasta schemas.
+Criei os arquivos signin-card.tsx e signup-card.tsx dentro da pasta components.
+Implementei o card de signup-card.tsx.
+obs: o arquivo signup-card.tsx necessita do arquivo de schema, register.ts.
+obs2: no arquivo signup-card.tsx, como usa um hook ele precisa ter 'use client' no topo do arquivo.
+
+5-Criei o layout.tsx dentro das pasta app para ser a base de toda a aplicacao ou de todas as rotas da aplicacao. Incrivelmente o layout eh lido automaticamente pelo nextjs oq quer dizer que ele precisa ter esse nome para funcionar.
+
+Em conjunto com a criacao do layout.tsx, coloquei a logo do projeto ui dentro da pasta components.
+

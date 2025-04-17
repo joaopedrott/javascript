@@ -39,7 +39,7 @@ export function SignupCard() {
 
                 <CardDescription className="text-center">
                     Ao criar usa conta, voce concorda com nossa {' '}
-                    <Link href='/politica-de-privacidade' className="text-yellow-500">Politica de Privacidade</Link>{' '}
+                    <Link href='/politica-de-privacidade' className="text-yellow-500">Politica de Privacidade</Link>{' '}e{' '}
 
                     <Link href='/termos-de-servico' className="text-yellow-500">Termos de Servico</Link>
                 </CardDescription>
@@ -114,7 +114,7 @@ export function SignupCard() {
             </div>
 
             <CardContent className="px-7 flex flex-col gap-y-4">
-                <Button className="w-full" variant='secondary'>Criar conta com Google</Button>
+                <Button className="w-full" variant='secondary' size={'lg'}>Criar conta com Google</Button>
             </CardContent>
 
             <CardContent className="px-7 flex items-center justify-center">

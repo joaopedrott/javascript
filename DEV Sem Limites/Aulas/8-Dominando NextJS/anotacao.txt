@@ -81,5 +81,87 @@ criei a pasta (auth) dentro da pasta app, dentro de auth criei a pasta component
     6-por ultimo criei a pagina de login identica a pagina de registro mas retirando a necessidade de nome e modificando algumas coisas e alguns textos
 
 Aula 05 - Personalizando Componentes do Shadcn/UI
-Fiz a atualizacao dos componentes button.tsx e input.tsx do shadcn/ui. Na pasta src/components/ui.
-E tambem atualizei o signin-card.tsx e signup-card.tsx no tamanho do botao usando size='lg' e coloquei 'e' ente os textos : Politica de Privacidade e Termos de Servico
+    Fiz a atualizacao dos componentes button.tsx e input.tsx do shadcn/ui. Na pasta src/components/ui.
+    E tambem atualizei o signin-card.tsx e signup-card.tsx no tamanho do botao usando size='lg' e coloquei 'e' ente os textos : Politica de Privacidade e Termos de Servico
+
+Aula 06 - Configurando Login Social com AuthJS
+    *Segui os passos do tutorial do site do authjs:
+    link:https://authjs.dev/getting-started/installation?framework=yarn
+
+    No terminal:
+        1-Primeiro preciso instalar o authjs:
+        yarn add next-auth@beta
+        2-depois para gerar o arquivo env:
+        npx auth secret
+
+    No projeto:
+        1-O arquivo (env.local) que foi criado com o comando acima, pego oq estava escrito nele e passo para (.env) entao excluo o (.env.local).
+
+    *No projeto ainda no mesmo link:
+    link:link:https://authjs.dev/getting-started/installation?framework=yarn
+    Depois fiz como mandava o tutorial Configure ainda no mesmo link do authjs.
+        1- Dentro da pasta lib, criei o arquivo auth.ts (colocando dentro dele o codigo que o site do authjs me deu)
+        2- Dentro da pasta app, criei as pastas api/auth/[...nextauth] e dentro dela criei o arquivo route.ts (colocando dentro dele o codigo que o site do authjs me deu)
+        3- Dentro da pasta src criei o arquivo middleware.ts. (colocando dentro dele o codigo que o site do authjs me deu)
+    
+    *Agora com o authjs so preparar o authjs para funcionar com o google. Em outro link do authjs, para fazer o login com o google, fiz assim:
+    Acessei o link: https://authjs.dev/getting-started/providers/google 
+    Segui o tutorial para adicionar o provider do google:
+        Adicionei "AUTH_GOOGLE_ID" e "AUTH_GOOGLE_SECRET" no arquivo (.env)
+        e deixei eles em branco  "AUTH_GOOGLE_ID" = "" e "AUTH_GOOGLE_SECRET" = ""
+
+    *No arquivo auth.ts na pasta lib, adicionei o import:
+        import Google from "next-auth/providers/google"
+        E coloquei o Google na array de providers:
+        providers: [Google],
+
+    *Agora precisamos configurar o google para ele gerar dois codigos. Para isso preciso criar no google o taskmaster no link:
+        https://console.cloud.google.com/apis/
+        clico em "Selecione um projeto" e clico em "Novo projeto"
+        Coloquei o nome do projeto "TaskMaster"
+        Deixei sem organizacao
+        Clico em criar
+
+        1-Depois de criar, vou na aba "api e servicos", depois clico em "credenciais".
+        2-Clico em "criar credenciais", depois clico em "ID do cliente OAuth" depois clico em "configurar tela de consentimento do usuario", clico em "Vamos comecar".
+        3-Coloco o nome do app "TaskMaster App" e o email do desenvolvedor.
+        4-Deixo marcado "Externo"
+        5-Coloco meu email
+        6-clico em concordo, continuar e criar.
+
+    *Ainda no site do google, Visão geral de OAuth, clico no botao "Criar um cliente OAuth"
+    Preencho os campos
+        Tipo de aplicativo: Aplicativo da Web
+        Nome do aplicativo: TaskMaster
+        URL de origem: http://localhost:3000
+        URL de redirecionamento autorizado: http://localhost:3000/api/auth/callback/google
+        1-clico em criar
+        2-copio o Client ID e o Client Secret, coloco no arquivo .env nos campos "AUTH_GOOGLE_ID" e "AUTH_GOOGLE_SECRET".
+        3-La no google eu clico em ok.
+
+    *No arquivo signup-card.tsx, no botao de "criar conta com o google" eu adicionei:
+        "onClick={()=>signIn('google')}"
+        e importei o signIn:
+        import { signIn } from "next-auth/react";
+        obs: como neste caso o componente era do lado cliente o metodo signIn vem do next-auth/react.
+        Se fosse do lado do servidor, o metodo signIn vem arquivo lib/auth.ts.
+
+    *modifiquei o signup-card.tsx o onClick do botao:
+        "onClick={()=>signIn('google', {
+            redirectTo: '/',
+        })}"
+
+    *No arquivo signin-card.tsx, no botao de "entrar com o google" eu fiz o mesmo que no signup-card.tsx.
+
+    *feito com sucesso!
+
+    *Para testar, na pasta raiz ou home do projeto, page.tsx, coloquei:
+        1-async no home 
+    Tambem dentro de home:
+
+        2-
+        "const session = await auth();
+        console.log({session});"
+
+    Importei o auth:
+        1-import { auth } from "@/lib/auth";

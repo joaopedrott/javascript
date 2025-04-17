@@ -10,6 +10,7 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from "@/component
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { signIn } from "next-auth/react";
 
 import { registerSchema } from "../schemas/register";
 
@@ -114,7 +115,15 @@ export function SignupCard() {
             </div>
 
             <CardContent className="px-7 flex flex-col gap-y-4">
-                <Button className="w-full" variant='secondary' size={'lg'}>Criar conta com Google</Button>
+                <Button 
+                className="w-full" 
+                variant='secondary' 
+                size={'lg'} 
+                onClick={()=>signIn('google', {
+                    redirectTo: '/',
+                })}>
+                    Criar conta com Google
+                </Button>
             </CardContent>
 
             <CardContent className="px-7 flex items-center justify-center">

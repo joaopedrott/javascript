@@ -165,3 +165,45 @@ Aula 06 - Configurando Login Social com AuthJS
 
     Importei o auth:
         1-import { auth } from "@/lib/auth";
+
+Aula 07 - Configurando Prisma Adapter
+    Necessario fazer a ligacao entre o prisma e o authjs. Pois na situacao em que o usuario faz login e em seguida cria um time na aplicacao, essa informacao eh salva em coockies no navegador mas precisamos que essas informacoes sejam salvas no banco de dados para que essa informacao seja permanenete e acessivel em qualquer dispositivo
+    Para isso, precisamos criar um adapter.
+
+    1-Acessamos o link do authjs: https://authjs.dev/getting-started/adapters/prisma
+    2-executamos os comandos:
+        yarn add @prisma/client @auth/prisma-adapter
+        yarn add prisma -D
+
+    3-Proximo passo seria colocar a:
+        DATABASE_URL=postgresql://USER:PASSWORD@HOST:PORT/DATABASE?schema=SCHEMA
+        Mas ja temos ela no arquivo .env ja configurada:
+        DATABASE_URL="postgresql://postgres:docker@localhost:5432/taskmaster?schema=public"
+
+    4-Criar o arquivo prisma.ts na pasta lib.
+        O arquivo prisma.ts deve ter o codigo sujerido pelo tutorial do site do authjs.
+    obs: esse arquivo prisma.ts serve para fazer a ligacao entre o prisma e o authjs. Deixando o prima globalmente acessivel para a aplicacao. Pois sem ele pode ocorrer erros de excessao pois estariamos fazendo muitiplas conexoes para o banco de dados.
+
+    5-Modificando o auth.ts dentro da pasta lib:
+        import { PrismaAdapter } from "@auth/prisma-adapter";
+        import { prisma } from "./prisma"
+
+        Adicionamos tambem
+        adapter: PrismaAdapter(prisma)
+
+
+    6-Criamos o schema do PostgresSQL
+        Dentro da pasta raiz do projeto, prisma acessando o arquivo schema.prisma. Subistituimos o codigo que havia la pelo o schema completo sujerido pelo tutorial do authjs.
+    obs: o schema.prisma vai conter todas as informacoes necessarias que os providers vao permetir que a gente tenha acesso. Vamos ter acesso ao access token, tempo de expiracao, nome de usuario, imagem de perfil, email, etc.
+
+    7-Precisamos instalar o migrate para atualizar o banco de dados toda vez que foi necessario.
+        Para isso vamos executar no terminal:    
+        yarn prisma migrate dev
+
+        obs: ou seja, como nesta vez que eu modifiquei o banco de dados, adicionando varias tabelas como a tabela, users, account, sessions e etc eu devmo executar o comando yarn prisma migrate dev para subir essa modificacao no banco de dados, parecido com i github.
+
+        Agora, toda vez que o usuario for autenticado, os dados do usuario serao salvos no banco de dados e nao nos coockies como era antes.
+
+        obs: fiz login e notei que no terminal do VSCODE tinha os campos createdAT e updatedAT o que quer dizer que o banco de dados foi atualizado.
+    
+    

@@ -1,14 +1,32 @@
-1-Criei o projeto nextjs = npx create-next-app@latest
+Aula 2 - Criando Projeto e Configurando o Shadcn UI
+    1-Criei o projeto nextjs 
+    npx create-next-app@latest
 
-2-instalei o shadcn/ui = npx shadcn@latest init
+    2-instalei o shadcn/ui  
+    npx shadcn@latest init
 
-3-instalei todos os componentes do shadcn/ui = npx shadcn@latest add avatar badge button calendar card chart checkbox dialog drawer dropdown-menu form input label popover scroll-area select separator sheet sidebar skeleton sonner table tabs textarea tooltip
+    obs: quando instalo o shadcn/ui ele cria a pasta lib com um arquivo chamado utils.ts
+    obs2: o shadcn/ui tambem cria o arquivo de configuracao json chamado components.json
 
-4-instalei o prisma = yarn add prisma
+    3-instalei todos os componentes do shadcn/ui 
+    npx shadcn@latest add avatar badge button calendar card chart checkbox dialog drawer dropdown-menu form input label popover scroll-area select separator sheet sidebar skeleton sonner table tabs textarea tooltip
 
-5-executei o prisma = npx prisma init
+    obs: Depois de instalar os components do shadcn/ui, ele cria uma pasta chamada components e dentro dela tem todos os componentes instalados.
 
-6-instalei o docker com ajuda da IA, passando o tutorial que matheus passou:
+    4-Logo apos instalar os componentes do shadcn/ui, fui no arquivo src/app/page.tsx e limpei ele deixando apenas um texto e botao do shadcn/ui
+
+Aula 3 - Configurando o Prisma
+    link do prisma: https://www.prisma.io/docs/getting-started/quickstart-sqlite
+
+    1-instalei o prisma 
+    yarn add prisma
+
+    2-executei o prisma 
+    npx prisma init
+    obs: O prisma init cria um arquivo chamado prisma/schema.prisma
+    eh neste arquivo que sera usado para criar tabelas para o banco de dados.
+
+    3-instalei o docker com ajuda da IA, passando o tutorial que matheus passou:
     Criando Container do Postgres no Docker:
 
     https://docs.docker.com/engine/install/
@@ -38,47 +56,65 @@
     Acessar o banco via linha de comando (opcional):
     docker exec -it meu-postgres psql -U postgres
 
-7-Depois instalei o pg4admin
+    7-Depois instalei o pg4admin
 
 Aula 4-Implementando Páginas de Autenticação
-criei a pasta (auth) dentro da pasta app, dentro de auth criei a pasta components com seus arquivos signin-card.tsx e signup-card.tsx.
+    1-criei as pasta modules, auth, components e schemas. 
+    Dentro da pasta components adicionei dois arquivos. O signin-card.tsx e o signup-card.tsx.
+    Dentro da pasta schemas adicionei login.ts e register.ts
 
-    intalei:
-    yarn add zod @hookform/resolvers react-hook-form
-
-
-    react-hook-form
-    para fazer todo gerenciamento dos formulários do projeto
-
-    zod junto com @hookform/resolvers
-    para fazer a validação dos formulários
-
-    2-Criei a pasta modules
-    Dentro dessa pasta se encontram os modulos da aplicacao. Nela, vai ter o modulo de autenticacao.
+    obs:
+    Dentro dessa pasta modules, se encontram os modulos da aplicacao. 
+    Nela, vai ter o modulo de autenticacao, que vai estar na pasta auth.
     Alem do modulo de autenticacao, teremos outros modulos aqui nesta pasta no futuro.
 
     Dentro da pasta Modules, criei a pasta Auth (que tera tudo referente a autenticacao), dentro dela criei a pasta components e schemas.
 
-    3-Rotas na pasta app
-    Para criar a rota de uma pagina, devemos colocar ela dentro da pasta app.
-    Neste caso, criei a pasta "(auth)" e dentro dela criei a pasta login e pasta registro com seus arquivos de pagina dentro delas chamados page.tsx. 
 
-    OBS: Lembrando que por conta dos parenteses na pasta "(auth)", ela nao passa a fazer parte da rota, isso serve para somente criar uma organizacao nos arquivos do projeto. Esses parenteses sao chamados de grouping rounting
 
-    OBS:Em resumo, as paginas dentro de App sao redenrizadas pelo nextjs, que por sua vez chamam as paginas de modules para dentro delas.
+    2-Rotas na pasta app
+        Para criar a rota de uma pagina, devemos colocar ela dentro da pasta app.
+        Neste caso, criei a pasta "(auth)" e dentro dela criei a pasta login e pasta registro com seus arquivos de pagina dentro delas chamados page.tsx. 
 
-    4-Implementando os arquivos de modules e schemas do passo 2.
-    Criei os aquivos login.ts e register.ts dentro da pasta schemas.
-    Criei os arquivos signin-card.tsx e signup-card.tsx dentro da pasta components.
-    Implementei o card de signup-card.tsx.
-    obs: o arquivo signup-card.tsx necessita do arquivo de schema, register.ts.
-    obs2: no arquivo signup-card.tsx, como usa um hook ele precisa ter 'use client' no topo do arquivo.
+        OBS: Lembrando que por conta dos parenteses na pasta "(auth)", ela nao passa a fazer parte da rota, isso serve para somente criar uma organizacao nos arquivos do projeto. Esses parenteses sao chamados de grouping rounting
 
-    5-Criei o layout.tsx dentro das pasta app para ser a base de toda a aplicacao ou de todas as rotas da aplicacao. Incrivelmente o layout eh lido automaticamente pelo nextjs oq quer dizer que ele precisa ter esse nome para funcionar.
+        OBS:Em resumo, as paginas dentro de App sao redenrizadas pelo nextjs, que por sua vez chamam as paginas de modules para dentro delas.
 
-    Em conjunto com a criacao do layout.tsx, coloquei a logo do projeto ui dentro da pasta components.
+        Agora, por que eu criei o componente de login e registro loge da pagina?
+        Simples, porque sempre criamos as paginas ou rotas na pasta App e o conteudo ou componente em modules. Se eu criar outra pagina em App, ela vai chamar outro componente na pasta modules, seja qual tipo for, auth ou qualquer outro. Em modules vao ser criados todos os componentes divididos em categorias e na pasta App vai ser criado as rotas.
 
-    6-por ultimo criei a pagina de login identica a pagina de registro mas retirando a necessidade de nome e modificando algumas coisas e alguns textos
+
+    3-instalacao:
+        Para desenvolver os componentes modules/auth/components e modules/auth/schemas, precisamos instalar alguns pacotes.
+
+        intalei:
+        yarn add zod @hookform/resolvers react-hook-form
+
+        obs:
+        react-hook-form (para fazer todo gerenciamento dos formulários do projeto)
+        zod junto com @hookform/resolvers (para fazer a validação dos formulários)
+    
+
+
+
+    4-Implementando os arquivos de components e schemas do passo 1.
+    login.ts e register.ts dentro da pasta schemas.
+    signin-card.tsx e signup-card.tsx dentro da pasta components.
+
+        1-Implementei o card de signup-card.tsx.
+        obs: o arquivo signup-card.tsx necessita do arquivo de schema, register.ts.
+        obs2: no arquivo signup-card.tsx, como usa um hook ele precisa ter 'use client' no topo do arquivo.
+
+        2-Implementei o card de signun-card.tsx
+        obs: Identico ao component signup-card.tsx mas retirando a necessidade de nome e modificando algumas coisas e alguns textos.
+
+        3-Criei o layout da aplicacao
+            1-Criei o layout.tsx dentro das pasta App, dentro da pasta (auth), para ser a base de toda a aplicacao ou de todas as rotas da aplicacao. Incrivelmente o layout eh lido automaticamente pelo nextjs oq quer dizer que ele precisa ter esse nome para funcionar.
+            2-Criei o arquivo logo.tsx dentro da pasta src/components.
+            3-Salvei o logo.svg na pasta public/logo.svg
+            
+            obs: resumindo, o layout.tsx tem o componente logo.tsx dentro dele que por sua vez tem o logo.svg dentro dele.
+
 
 Aula 05 - Personalizando Componentes do Shadcn/UI
     Fiz a atualizacao dos componentes button.tsx e input.tsx do shadcn/ui. Na pasta src/components/ui.
@@ -88,20 +124,24 @@ Aula 06 - Configurando Login Social com AuthJS
     *Segui os passos do tutorial do site do authjs:
     link:https://authjs.dev/getting-started/installation?framework=yarn
 
-    No terminal:
-        1-Primeiro preciso instalar o authjs:
-        yarn add next-auth@beta
-        2-depois para gerar o arquivo env:
-        npx auth secret
+        No site 
+        passo 1: Installing Auth.js (instalar o authjs)
+        Vou no no terminal:
+            yarn add next-auth@beta
 
-    No projeto:
-        1-O arquivo (env.local) que foi criado com o comando acima, pego oq estava escrito nele e passo para (.env) entao excluo o (.env.local).
+        No site
+        passo 2: Setup Environment (para gerar o arquivo .env.local)
+        No terminal:
+            npx auth secret
 
-    *No projeto ainda no mesmo link:
-    link:link:https://authjs.dev/getting-started/installation?framework=yarn
-    Depois fiz como mandava o tutorial Configure ainda no mesmo link do authjs.
+        No projeto:
+            1-O arquivo (env.local) que foi criado com o comando acima, pego oq estava escrito nele e passo para (.env) entao excluo o (.env.local).
+
+    *No projeto, ainda no mesmo link:
+        link:https://authjs.dev/getting-started/installation?framework=yarn
+        Depois fiz como mandava o tutorial Configure ainda no mesmo link do authjs.
         1- Dentro da pasta lib, criei o arquivo auth.ts (colocando dentro dele o codigo que o site do authjs me deu)
-        2- Dentro da pasta app, criei as pastas api/auth/[...nextauth] e dentro dela criei o arquivo route.ts (colocando dentro dele o codigo que o site do authjs me deu)
+        2- Dentro da pasta app, criei as pastas api/auth/[...nextauth] e dentro dela criei o arquivo route.ts (colocando dentro dele o codigo que o site do authjs me deu. Que so foram duas linhas um import e um export)
         3- Dentro da pasta src criei o arquivo middleware.ts. (colocando dentro dele o codigo que o site do authjs me deu)
     
     *Agora com o authjs so preparar o authjs para funcionar com o google. Em outro link do authjs, para fazer o login com o google, fiz assim:
@@ -167,7 +207,7 @@ Aula 06 - Configurando Login Social com AuthJS
         1-import { auth } from "@/lib/auth";
 
 Aula 07 - Configurando Prisma Adapter
-    Necessario fazer a ligacao entre o prisma e o authjs. Pois na situacao em que o usuario faz login e em seguida cria um time na aplicacao, essa informacao eh salva em coockies no navegador mas precisamos que essas informacoes sejam salvas no banco de dados para que essa informacao seja permanenete e acessivel em qualquer dispositivo
+    Necessario fazer a ligacao entre o prisma e o authjs. Pois na situacao em que o usuario faz login e em seguida cria um time na aplicacao, essa informacao eh salva em coockies no navegador mas precisamos que essas informacoes sejam salvas no banco de dados para que essa informacao seja permanente e acessivel em qualquer dispositivo
     Para isso, precisamos criar um adapter.
 
     1-Acessamos o link do authjs: https://authjs.dev/getting-started/adapters/prisma
@@ -206,4 +246,24 @@ Aula 07 - Configurando Prisma Adapter
 
         obs: fiz login e notei que no terminal do VSCODE tinha os campos createdAT e updatedAT o que quer dizer que o banco de dados foi atualizado.
     
-    
+Aula 08 - Verificando Páginas Autenticadas
+    1-No arquivo src/app/page.tsx
+        Adicionei a linha de codigo:
+        if(!session || !session.user) {
+            redirect("/login");
+          }
+
+        obs: para verificar se o usuario esta logado ou nao. Se nao estiver logado, redireciona para a pagina de login.
+    2-No arquivo src/app/(auth)/login/page.tsx
+          Adicionei a linha de codigo:
+
+          if(session) {
+            redirect("/");
+          }
+        obs: para verificar se o usuario esta logado ou nao. Se estiver logado, redireciona para a pagina de home.
+    3-No arquivo src/app/(auth)/registro/page.tsx
+        Adicionei a linha de codigo:
+        if(session) {
+            redirect("/");
+          }
+          obs: para verificar se o usuario esta logado ou nao. Se estiver logado, redireciona para a pagina de home.

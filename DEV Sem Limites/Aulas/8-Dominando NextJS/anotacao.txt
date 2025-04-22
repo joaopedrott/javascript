@@ -267,3 +267,54 @@ Aula 08 - Verificando Páginas Autenticadas
             redirect("/");
           }
           obs: para verificar se o usuario esta logado ou nao. Se estiver logado, redireciona para a pagina de home.
+
+Aula 09 - Configurando HonoJS
+    Do mesmo jeito que criamos rotas na pasta App do site no nextjs, tambem podemos criar rotas para o lado servidor no nextjs, criar rotas para o lado servidor se chama router handlers. por exemplo se criar uma rota app/api/users/[userID]/route.ts, essa rota sera acessada pela url http://localhost:3000/api/users/1 se por acaso dentro do route.ts tivermos escrito userid em vez de userID, nao sera exibido nada ou seja nao eh type safe. Alem disso para definir a rota para o lado servidor/beckend eh feita por pasta igual a rota do cliente.
+
+    A necessidade de criar as rotas no backend não servem exatamente pra "agrupar" dados, mas sim pra fornecer, processar ou receber dados.
+    🔄 GET → pegar dados (ex: /api/jogos retorna lista de jogos)
+
+    📤 POST → enviar dados (ex: /api/contato salva mensagem)
+
+    🔒 Autenticação → validar login, cookies, tokens, etc.
+
+    ⚙️ Lógica server-side → formatar, filtrar, conectar com banco ou API externa
+
+    Ou seja, elas são pontos de entrada pro frontend conversar com o backend. Agrupar dados pode ser uma consequência, mas não o foco principal.
+
+    Explicacao 2:
+
+    👉 **Frontend (navegador)** → **manda requisição** (fetch, axios, etc.) → **para o backend (rotas API)**  
+    👉 Essas rotas **rodam no servidor**, então **é o backend que fala direto com o servidor** (banco de dados, serviços externos, etc.)
+
+    Resumindo:
+
+    - Frontend **nunca acessa o servidor direto**
+    - Sempre passa **pelas rotas backend** (que ficam no servidor)
+    - Essas rotas é que fazem o trabalho pesado (buscar, salvar, validar, etc.)
+
+    É tipo um **intermediário de confiança** entre o navegador e o servidor real.
+
+    1-Acessando o site
+    link: https://hono.dev/docs/getting-started/vercel
+
+    2-Executando o comando:
+    yarn add hono
+
+    3-Criando o arquivo
+        1- na pasta src/app/api criamos a pasta [[...route]] e seu arquivo route.ts
+        2- na pasta src/modules criamos a pasta teams e seu arquivo route.ts
+        3- dentro do route.ts da pasta api adicionamos todas as rotas api/backend do site.
+    
+    4- Configurando RPC
+        1-no arquivo route.ts da pasta [[...route]] criamos a variavel const routes que recebe todas as rotas api, ficou assim:
+        const routes = app.route("/teams", teams);
+        
+        2-Ainda no arquivo route.ts da pasta [[...route]]. Depois adicionamos uma linha de codigo:
+        export type AppType = typeof routes;
+
+        3-Na pasta src/lib criamos o arquivo rpc.ts com seu codigo
+
+        4-No arquivo .env adicionamos a variavel de ambiente:
+        NEXT_PUBLIC_API_URL=http://localhost:3000
+    

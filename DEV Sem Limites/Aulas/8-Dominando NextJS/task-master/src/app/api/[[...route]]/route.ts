@@ -1,11 +1,9 @@
 import { Hono } from 'hono'
 import { handle } from 'hono/vercel'
 
-export const runtime = 'edge'
+import teams from '@/modules/teams/route'
 
 const app = new Hono().basePath('/api')
-
-import teams from '@/modules/teams/route'
 
 const routes = app.route('/teams', teams)
 

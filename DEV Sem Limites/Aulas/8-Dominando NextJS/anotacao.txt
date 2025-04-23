@@ -307,6 +307,9 @@ Aula 09 - Configurando HonoJS
         3- dentro do route.ts da pasta api adicionamos todas as rotas api/backend do site.
     
     4- Configurando RPC
+    RPC (Remote Procedure Call) com tipagem compartilhada.
+    No nosso backend, vamos retornar uma lista de times direto do banco de dados para ser mostrado ao front, por exemplo. E com esse recurso RPC garantimos que os tipos retornados pelo backend seja do mesmo tipo que a gente vai acessar no frontend.
+    
         1-no arquivo route.ts da pasta [[...route]] criamos a variavel const routes que recebe todas as rotas api, ficou assim:
         const routes = app.route("/teams", teams);
         

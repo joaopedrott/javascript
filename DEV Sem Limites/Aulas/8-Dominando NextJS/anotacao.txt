@@ -323,3 +323,16 @@ Aula 09 - Configurando HonoJS
         NEXT_PUBLIC_API_URL=http://localhost:3000
 
 Aula 10 - Adicionando Session Middleware
+    1-Na pasta src/modules/auth  criamos o arquivo sessionMidleware.ts
+        obs: E para que serve ele? Quando fizer uma requisicao para o backend, determinados endpoints sao protegidos e nao podem ser acessados por qualquer usuario. Para isso, criamos o arquivo sessionMiddleware.ts para verificar se o usuario esta logado ou nao. Resumindo, ele faz com que o usuario so tenha acesso a certos endpoints se o usuario estiver autenticado.
+    2- Antes de implementar o sessionMiddleware.ts, precisamos executar o comando:
+    yarn add server-only
+    obs: para bloquear o uso de qualquer codigo no client
+
+    3-no topo do sessionMiddleware.ts adicionamos:
+    import 'server-only';
+    obs: agora o nosso arquivo sessionMiddleware.ts so pode ser executado no lado servidor.
+
+    4- implementando
+        Foi implementado o basico de autenticacao, para ter acesso ao dados. Verifica se o usuario esta logado, caso nao, mostra a mensagem unauthorized. Caso sim, o usuario passa a ter acesso aos dados do banco de dados.
+

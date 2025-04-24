@@ -335,4 +335,24 @@ Aula 10 - Adicionando Session Middleware
 
     4- implementando
         Foi implementado o basico de autenticacao, para ter acesso ao dados. Verifica se o usuario esta logado, caso nao, mostra a mensagem unauthorized. Caso sim, o usuario passa a ter acesso aos dados do banco de dados.
+Aula 11 - Implementando Página de Criação de Times
+    Antes de implementar a pagina de times iremos instalar a biblioteca (TanStack Query) que antigamente era chamada (React Query).
+    link:https://tanstack.com/query/latest/docs/framework/react/installation
+    1-Instalando o TanStack Query
+    yarn add @tanstack/react-query
+    
+    2-Indo na barra de pesquisa no site do TanStack Query, pesquisamos por "advance" e selecionamos a opcao "Advanced Server Rendering" ou acessamos o link: https://tanstack.com/query/latest/docs/framework/react/guides/advanced-ssr#advanced-server-rendering
+          obs: eh uma customizacao a mais que precisamos fazer no  tanstack quando usamos o nextjs.
+    3-Na parte escrito "Initial Setup" copiamos o codigo.
+    4-No projeto, vamos na pasta src/components e criamos o arquivo "query-provider.tsx", e colamos o codigo copiado nele.
+    5-Modifiquei o "query-provider.tsx" retirando o default da ultima funcao e troquei o nome da ultima funcao para QueryProvider
+    6-Na pasta src/app no arquivo layout.tsx adicionamos a tag do QueryProvider envolvendo o children.
+    obs: faz com que o react query fique acessivel para todos os componentes da aplicacao.
 
+    7-Na pasta App, criamos um novo agrupamento de rotas chamado "(no-sidebar)"
+    obs: o no-sidebar quer dizer que toda pagina que estiver dentro dele nao tera barra de navegacao em seu layout, so tera o logo do projeto no topo.
+    8-Criamos dentro de (no-sidebar) o arquivo "layout.tsx" que sera quase igual ao arquivo layout.tsx da pasta src/app/(auth), com a diferenca no nome "NoSideBarLayout" e "NoSideBarLayoutProps" no lugar de "AuthLayout" e "AuthLayoutProps" e adicionamos a tag link envolvendo o logo.
+    9-Na pasta src/app/(no-sidebar) criamos as pastas time/criar e dentro da pasta "criar", criamos o arquivo "page.tsx" com alguns codigos basicos e adicionamos uma tag CreateTeamForm que ainda nao foi implementada.
+    10-Na pasta src/modules/teams criamos a pasta "components" e dentro dessa nova pasta criamos o arquivo "create-team-form.tsx" que sera a implementacao do CreateTeamForm.
+    11- Na pasta src/modules/teams criamos a pasta "schemas" e seu arquivo create-team.ts que sera o schema do create-team-form.tsx para a tipagem.
+    12-Prosseguimos com a implementacao do create-team-form.tsx.

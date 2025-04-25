@@ -8,5 +8,6 @@ const app = new Hono().basePath('/api')
 const routes = app.route('/teams', teams)
 
 export const GET = handle(app)
+export const POST = handle(app)
 
 export type AppType = typeof routes

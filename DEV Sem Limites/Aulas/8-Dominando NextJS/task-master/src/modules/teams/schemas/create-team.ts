@@ -8,3 +8,5 @@ export const createTeamSchema = z.object({
         z.string().transform((value)=>value=='' ? undefined : value)
     ]).optional(),
 })
+
+//Esse arquivo é responsável por validar os dados que estão sendo enviados para o servidor, essa verificacao acontece no front-end.

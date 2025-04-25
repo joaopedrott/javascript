@@ -356,3 +356,33 @@ Aula 11 - Implementando Página de Criação de Times
     10-Na pasta src/modules/teams criamos a pasta "components" e dentro dessa nova pasta criamos o arquivo "create-team-form.tsx" que sera a implementacao do CreateTeamForm.
     11- Na pasta src/modules/teams criamos a pasta "schemas" e seu arquivo create-team.ts que sera o schema do create-team-form.tsx para a tipagem.
     12-Prosseguimos com a implementacao do create-team-form.tsx.
+
+Aula 12 - API de Criação de Times
+    1-Vamos criar schemas no prisma
+        No a pasta prisma vamos no arquivo schema.prisma
+
+    2-Depois de adicionar os schemas e modificar o schema user, vou no terminal e executo o comando para executar a migration:
+    yarn prisma migrate dev
+
+    3-Vamos para a pasta, src/modules/teams/ route.ts e adicionamos a rota "post" para criar times.
+        1- Mas antes de terminar de criar, vamos fazer uma verificacao para o lado do servidor, no front end garantimos com zod que os dados estao no formato que o servidor espera no arquivo "create-steam.ts" na pata src/modules/teams/schemas, mas no lado do servidor, precisamos fazer a mesma verificacao para quando der erro, precisamos saber o que aconteceu, com o zod integrado com hono.
+        
+        2-Para isso vamos instalar a biblioteca:
+        yarn add @hono/zod-validator
+
+        3-Continuamos a implementacao da rota post.
+
+        4-Vamos na pasta src/app/api/[[...route]]/route.ts e adicionamos a rota post.
+        "export const POST = handle(app)"
+        5-Precisamos fazer um hook com react query para interagir com o route.ts da pasta modules/teams/route.ts.
+        
+        Dentro da pasta modules/teams criamos a pasta "hooks" e dentro dela o arquivo "use-create-team.ts" que vai ser nosso hook.
+
+        6-Voltamos para a pasta src/module/teams/components/create-team-form.tsx e adicionamos o hook useCreateTeam.
+            1-Criamos o onSubmit para enviar os dados para o servidor.
+            2-e criamos handleFileChange para mudar a imagem do time.
+        7- por fim, na parte do componente, do arquivo create-team-form.tsx, adicionamos ao input as propriedades:
+            onChange={handleFileChange}
+            disabled={isPending}
+            
+            e adicionamos disabled={isPending} tambem no button. Para que quando o usuario estiver enviando os dados para o servidor, o formulario fique desabilitado.  Para nao ser possivel enviar mais de uma vez os dados.

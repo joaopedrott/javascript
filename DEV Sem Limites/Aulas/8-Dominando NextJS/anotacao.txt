@@ -365,7 +365,7 @@ Aula 12 - API de Criação de Times
     yarn prisma migrate dev
 
     3-Vamos para a pasta, src/modules/teams/ route.ts e adicionamos a rota "post" para criar times.
-        1- Mas antes de terminar de criar, vamos fazer uma verificacao para o lado do servidor, no front end garantimos com zod que os dados estao no formato que o servidor espera no arquivo "create-steam.ts" na pata src/modules/teams/schemas, mas no lado do servidor, precisamos fazer a mesma verificacao para quando der erro, precisamos saber o que aconteceu, com o zod integrado com hono.
+        1- Mas antes de terminar de criar, vamos fazer uma verificacao para o lado do servidor. No front-end garantimos com zod que os dados estao no formato que o servidor espera no arquivo "create-steam.ts" na pata src/modules/teams/schemas, mas no lado do servidor, precisamos fazer a mesma verificacao para quando der erro, precisamos saber o que aconteceu, com o zod integrado com hono.
         
         2-Para isso vamos instalar a biblioteca:
         yarn add @hono/zod-validator
@@ -386,3 +386,9 @@ Aula 12 - API de Criação de Times
             disabled={isPending}
             
             e adicionamos disabled={isPending} tambem no button. Para que quando o usuario estiver enviando os dados para o servidor, o formulario fique desabilitado.  Para nao ser possivel enviar mais de uma vez os dados.
+
+Para exclarecimento o fluxo eh o seguinte:
+1-o componente create-team-form.tsx usa o hook use-create-team.ts.
+Esse hook usa a funcao Post para enviar os dados para o servidor.
+O hook tem acesso ao posto gracas ao arquivo da pasta app/api/[[...route]]/route.ts que exporta a rota post.
+E a rota post ou funcao post eh criada na pasta modules/teams/route.ts.

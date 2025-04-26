@@ -391,4 +391,4 @@ Para exclarecimento o fluxo eh o seguinte:
 1-o componente create-team-form.tsx usa o hook use-create-team.ts.
 Esse hook usa a funcao Post para enviar os dados para o servidor.
 O hook tem acesso ao posto gracas ao arquivo da pasta app/api/[[...route]]/route.ts que exporta a rota post.
-E a rota post ou funcao post eh criada na pasta modules/teams/route.ts.
+E a rota post ou funcao post eh criada na pasta modules/teams/route.ts. os poblema 

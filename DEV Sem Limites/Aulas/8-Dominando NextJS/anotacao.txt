@@ -397,3 +397,6 @@ E a rota post ou funcao post eh criada na pasta modules/teams/route.ts.
 13 - Redirecionando para Criação de Times
     Essa eh a validacao para quando o usuario logar, se caso nao tiver nenhum time ele ira diretamente para a pagina de criacao de times e se caso ele ja tiver um ou mais times, quando logar, ele ira para a pagina do primeiro time criado ou do unico time que ele tiver (ira para a pagina do time retornado.)
     1- na pasta src/module/teams no arquivo queries.ts criamos a funcao getTeams que redireciona o usuario para o primeiro time que ele participa se caso nao participar de nenhum time, ele ira para a pagina de criacao de times.
+
+    2- na pasta src/app/ no arquivo page.tsx e implementamos a funcao getTeams para redirecionar. 
+    obs: o interessante que essa pagina deixa de ser usada para exibir os algo para ser usada somente para redirecionar o usuario pois deletamos o return.

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import Image from "next/image";
+import { getTeams } from "@/modules/teams/queries";
 
 export default async function Home() {
   const session = await auth();
@@ -10,10 +11,12 @@ export default async function Home() {
     redirect("/login");
   }
 
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Hello World</h1>
-      <Button>Fui feito com shadcn</Button>
-    </main>
-  );
+  const teams = await getTeams(session.user.id as string);
+
+  if(teams.length === 0) {
+    redirect("/time/criar");
+  } else {
+    redirect(`/time/${teams[0].id}`);
+  }
+
 }

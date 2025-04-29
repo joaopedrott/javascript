@@ -8,12 +8,13 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import Image from 'next/image'
-import { useRef } from 'react'
+import { use, useRef } from 'react'
 import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
 import { useCreateTeam } from '../hooks/use-create-team'
 import { useRouter } from 'next/navigation'
+import { usePresignedFile } from '@/modules/files/hooks/use-presigned-file'
 
 type CreateTeamForm = z.infer<typeof createTeamSchema>
 
@@ -26,6 +27,7 @@ export function CreateTeamForm() {
         resolver: zodResolver(createTeamSchema)
     })
     const { mutate, isPending } = useCreateTeam()
+    const { mutateAsync: presignFile } = usePresignedFile()
     const router = useRouter()
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,10 +38,35 @@ export function CreateTeamForm() {
     }
 
     const onSubmit = async (data:  CreateTeamForm) => {
+        let image: string | undefined = undefined
+
+        if(data.image instanceof File) {
+            const { url, fields } = await presignFile({
+                json :{
+                    contentType: data.image.type,
+                }
+            })
+
+            const formData = new FormData()
+
+            Object.entries(fields).forEach(([key, value]) => {
+              formData.append(key, value as string)
+            })
+            formData.append('file', data.image)
+
+            //upload file to s3
+            const uploadResponse = await fetch(url, {
+              method: 'POST',
+              body: formData,
+            })
+
+            image = `${url}/${fields.key}`
+        }
+
         mutate({
             json: {
                 name: data.name,
-                image: ''
+                image
             }
         }, {
             onSuccess: ({ data })=> {

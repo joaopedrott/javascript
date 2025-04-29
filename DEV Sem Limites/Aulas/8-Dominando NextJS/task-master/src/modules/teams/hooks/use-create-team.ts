@@ -24,7 +24,7 @@ export function useCreateTeam() {
             })
         },
         onError: ()=> {
-            toast.success('Erro ao criar time!')
+            toast.error('Erro ao criar time!')
         }
     })
 

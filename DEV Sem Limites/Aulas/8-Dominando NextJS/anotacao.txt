@@ -400,3 +400,183 @@ E a rota post ou funcao post eh criada na pasta modules/teams/route.ts.
 
     2- na pasta src/app/ no arquivo page.tsx e implementamos a funcao getTeams para redirecionar. 
     obs: o interessante que essa pagina deixa de ser usada para exibir os algo para ser usada somente para redirecionar o usuario pois deletamos o return.
+
+Aula 14 - Upload de Imagens no AWS s3
+    1-seput do codigo. Primeiro acessamos o link:
+    https://vercel.com/templates/next.js/aws-s3-image-upload-nextjs
+
+    2-Clicamos em "view demo" e vamos ate esse caminho:
+    Depois no caminho: 
+    https://github.com/vercel/examples/blob/main/solutions/aws-s3-image-upload/app/api/upload/route.ts
+    Copiamos quase todo o codigo.
+
+    3- No projeto, na pasta src/modules criamos a pasta files e dentro dela o arquivo "route.ts" faco ate o async, deixando o async vazio.
+
+    4- Vou para a pasta src/app/api/[[...route]]/route.ts e adicionamos a linha:
+    .route('/files', files)
+    5- Na pasta src/modules criamos a pasta schemas e dentro dela o arquivo "file-upload.ts" que sera o schema para o upload de imagens.
+    6- Voltamos a pata src/modules/files/route.ts e adicionamos dentro do async o codigo que copiamos do github(no passo 2).
+    7- Modificamos o codigo.Para fazer essas modificacoes/adaptacoes precisamos instalar as libs:
+    yarn add @aws-sdk/client-s3 @aws-sdk/s3-presigned-post @aws-sdk/signature-v4-crt aws-crt aws-sdk uuid
+    8-Depois instalamos os tipos do uuid:
+    yarn add @types/uuid -D
+    9- Depois de modificar o codigo do src/modules/files/route.ts. Vamos para o arquivo src/modules/teams/components/create-team-form.tsx e adicionamos o codigo para o upload de imagem dentro de onSubmit:
+
+    if(data.image instanceof File) {
+        const { url, fields } = await presignFile({
+            json :{
+                contentType: data.image.type,
+            }
+        })
+    }
+    10- Vamos no link:
+    https://github.com/vercel/examples/blob/main/solutions/aws-s3-image-upload/app/page.tsx
+
+    e copiamos o codigo dele:
+        const formData = new FormData()
+        Object.entries(fields).forEach(([key, value]) => {
+        formData.append(key, value as string)
+        })
+        formData.append('file', file)
+
+        const uploadResponse = await fetch(url, {
+        method: 'POST',
+        body: formData,
+        })
+
+        Colamos esse codigo copiado dentro do if que fizemos no passo 9, mas modificamos uma linha:
+        de 
+        formData.append('file', file)
+        para
+        formData.append('file', data.image)
+
+    11- Seguindo o tutorial do link:
+    https://vercel.com/templates/next.js/aws-s3-image-upload-nextjs
+        1-Criamos um backet no s3 no link:
+        https://console.aws.amazon.com/s3/
+            -clicamos em "criar bucket"
+            -colocamos o nome do bucket de "teskmaster-files-aula"
+            -deixamos selecionado "ACLs enabled" e "Bucket owner prefered"
+            -desmarcamos a opcao "Block all public access"
+            -marcamos a opcao "i acknowledge that the current settings might result in this bucket and the objects within becoming public"
+            -apertamo em "criar bucket"
+
+        2-criamos um usuario no IAM no link:
+        https://aws.amazon.com/iam/
+            -clicamos no unico botao da tela 
+            -No menu da esquerda, clicamos em "usuarios" e depois "criar usuario".
+            -Coloco o nome do usuario
+            -aperto "next", depois em "next" e por ultimo em "criar usuario"
+
+            2.1-Criando a politica
+            -No mesmo lugar assim que criamos o usuario IAM, vamos no menu da esquerda e clicamos em "politicas" e depois "criar politica". 
+            -Na aba servicos, elecionamos s3. 
+            -Na aba Acoes permetidas selecionamos as opcoes: 
+                s3:DeleteObject, s3:GetObject, s3:ListBucket, s3:PutObject, s3:PutObjectAcl
+            -Depois, na aba recursos, clicamos em "Tudo"
+            -Aperto em "proximo"
+            -Coloco o nome da minha politica:
+             "user-test-policies"
+            -Aperto em "criar politica"
+        3-Vamos na pagina do usuario IAM:
+        https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-1#/home
+
+            -clicamos em usuarios
+            -selecionamos o user-aula
+            -clicamos em "adicionar permissoes"
+            -clicamos novamente em "adicionar permissoes"
+            -clicamos em "anexar politicas diretamente"
+            -Pesquisamos por "user-test-policies" e selecionamos ela
+            -Aperto em "next"
+            -Aperto em "adicionar permissoes"
+            Aparece um aviso de politica adicionada em verde no topo da tela.
+        4-Voltamos a pagina do usuario IAM:
+        https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-1#/home
+            -clicamos em usuarios
+            -selecionamos o user-aula
+            -clicamos em "credencias de seguranca"
+            Na aba "Chaves de acesso", clicamos em "criar chave de acesso"
+            -Selecionamos a opcao "Aplicacao executada fora do AWS"
+            -Clico em next
+            -Clico em "criar chave de acesso"
+            Aparece um aviso dizendo que a chave de acesso foi criada em verde no topo da tela.
+    12-Voltamos aos arquivos do github:
+    https://github.com/vercel/examples/blob/main/solutions/aws-s3-image-upload/.env.example
+        1-Vamos no projeto, no arquivo .env e colamos as linhas:
+            AWS_ACCESS_KEY_ID=
+            AWS_SECRET_ACCESS_KEY=
+            AWS_REGION=
+            AWS_BUCKET_NAME=
+
+        e adiciono as chaves que acabei de criar no passo 11.4 e pegamos o mesmo dome do bucket criado no passo 11.1. E colocamos a regiao do bucket "sa-east-1"
+        2-Vamos no arquivo src/modules/files/route.ts e modificamos a             
+            AWS_ACCESS_KEY_ID= ""
+            AWS_SECRET_ACCESS_KEY= ""
+            AWS_REGION= "sa-east-1"
+            AWS_BUCKET_NAME= "teskmaster-files-aula"
+        3- Volto no link do tutorial:
+        https://vercel.com/templates/next.js/aws-s3-image-upload-nextjs
+        
+        Vou no meu bucket na aba de "permissoes":
+        https://sa-east-1.console.aws.amazon.com/s3/buckets/teskmaster-files-aula?region=sa-east-1&bucketType=general&tab=permissions 
+        
+        vou ate o fim em CORS e mando editar, coloco o codigo abaixo e salvo:
+        [
+            {
+                "AllowedHeaders": [
+                    "*"
+                ],
+                "AllowedMethods": [
+                    "GET",
+                    "PUT",
+                    "POST",
+                    "DELETE"
+                ],
+                "AllowedOrigins": [
+                    "*"
+                ],
+                "ExposeHeaders": []
+            }
+           ]
+
+           obs: esse codigo foi copiado do tutorial:
+           https://vercel.com/templates/next.js/aws-s3-image-upload-nextjs
+
+        obs: Pronto, agora se eu executar a aplicacao, yarn dev e ir em localhost:3000/time/criar, e selecionar a imagem e digitar nome do time e mandar criar, vai ser redirecionado para uma pagina com erro 404.
+        Se formos para o bucket, vemos que a imagem foi enviada.
+        https://sa-east-1.console.aws.amazon.com/s3/buckets/teskmaster-files-aula?region=sa-east-1&bucketType=general&tab=objects
+
+        5- Agora precisamos pegar a imagem e salvar no banco de dados.
+            -No projeto, em src/modules/teams/components/create-team-form.tsx( no front-end) adicionamos os codigos para pegar a imagem.
+            adicionamos as linhas:
+
+                *let image: string | undefined = undefined
+                *image = `${url}/${fields.key}`
+                dentro de 
+                "mutate({
+                    json: {
+                        name: data.name,
+                        image: ""
+                    }
+                }"
+            So apaguei os dois pontos e aspas duplas.
+
+            -No projeto, em src/modules/teams/route.ts (no beckend) 
+                Na linha:
+                    "const { name, image } = c.req.valid('json')"
+                    obs:Adicionei image
+                Na linha:
+                "const team = await prisma.team.create({
+                    data: {
+                    name,
+                    userId: user.id as string,
+                    inviteCode: 'abc123',
+                    image: image as  string,
+                    },
+                })"
+                obs: adicionei: "image: image as  string,"
+            Pronto, dicionamos o codigo para salvar a imagem no banco de dados. Se testar de novo criando um novo time e olhar no. PGAdmin 4, na tabela "Team" podemos ver o time criado e o link da imagem do time salva.
+            Alem disso, no https://sa-east-1.console.aws.amazon.com/s3/buckets/teskmaster-files-aula?region=sa-east-1&tab=objects&bucketType=general, podemos ver que a imagem esta la tambem.
+
+
+

@@ -1,0 +1,5 @@
+Mentoria 12 - Estratégias de Gerenciamento de Estado
+
+contextapi
+zustand
+redux

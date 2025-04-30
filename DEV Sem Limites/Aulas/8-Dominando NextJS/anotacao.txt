@@ -402,11 +402,11 @@ E a rota post ou funcao post eh criada na pasta modules/teams/route.ts.
     obs: o interessante que essa pagina deixa de ser usada para exibir os algo para ser usada somente para redirecionar o usuario pois deletamos o return.
 
 Aula 14 - Upload de Imagens no AWS s3
-    1-seput do codigo. Primeiro acessamos o link:
+    1-seput do codigo. Primeiro acessamos o link para seguir o tutorial dele:
     https://vercel.com/templates/next.js/aws-s3-image-upload-nextjs
+    Clicamos em "view demo"
 
-    2-Clicamos em "view demo" e vamos ate esse caminho:
-    Depois no caminho: 
+    2-Vamos para esse arquivo:
     https://github.com/vercel/examples/blob/main/solutions/aws-s3-image-upload/app/api/upload/route.ts
     Copiamos quase todo o codigo.
 

@@ -105,8 +105,9 @@ Aula 4-Implementando Páginas de Autenticação
         obs: o arquivo signup-card.tsx necessita do arquivo de schema, register.ts.
         obs2: no arquivo signup-card.tsx, como usa um hook ele precisa ter 'use client' no topo do arquivo.
 
-        2-Implementei o card de signun-card.tsx
+        2-Implementei o card de signin-card.tsx
         obs: Identico ao component signup-card.tsx mas retirando a necessidade de nome e modificando algumas coisas e alguns textos.
+        obs: o arquivo signin-card.tsx necessita do arquivo de schema, login.ts.
 
         3-Criei o layout da aplicacao
             1-Criei o layout.tsx dentro das pasta App, dentro da pasta (auth), para ser a base de toda a aplicacao ou de todas as rotas da aplicacao. Incrivelmente o layout eh lido automaticamente pelo nextjs oq quer dizer que ele precisa ter esse nome para funcionar.

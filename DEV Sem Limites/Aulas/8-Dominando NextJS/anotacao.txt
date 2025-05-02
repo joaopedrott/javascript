@@ -137,6 +137,8 @@ Aula 06 - Configurando Login Social com AuthJS
 
         No projeto:
             1-O arquivo (env.local) que foi criado com o comando acima, pego oq estava escrito nele e passo para (.env) entao excluo o (.env.local).
+            obs: o que foi pego de env.local foi o: 
+           " AUTH_SECRET="" "
 
     *No projeto, ainda no mesmo link:
         link:https://authjs.dev/getting-started/installation?framework=yarn

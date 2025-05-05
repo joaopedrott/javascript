@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
@@ -23,9 +17,9 @@ model User {
   sessions      Session[]
   // Optional for WebAuthn support
   Authenticator Authenticator[]
-  teams         Team[]
-  members       Member[]
- 
+  teams       Team[]
+  members     Member[]
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -98,7 +92,6 @@ model Team {
   updatedAt   DateTime @updatedAt
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-
 }
 
 enum MemberRole {
@@ -106,18 +99,13 @@ enum MemberRole {
   MEMBER
 }
 
-
-
 model Member {
   id        String @id @default(cuid())
   userId    String
   teamId    String
   role      MemberRole
-  
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-
-
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   team Team @relation(fields: [teamId], references: [id], onDelete: Cascade)
 }

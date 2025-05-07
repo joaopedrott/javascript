@@ -14,3 +14,5 @@ console.log(pessoa.idade)
 console.log(pessoa.profissao)
 console.log(pessoa.empregado)
 pessoa.dizerOla()
+
+//Lembrando que objetos sao utilizados sempre.

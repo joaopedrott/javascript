@@ -1,7 +1,7 @@
 /*
 some()
 
-Esse metodo every() eh muito util quando pretendemos testar se Algum dos elementos da lista (array) passam em uma condicional
+Esse metodo some() eh muito util quando pretendemos testar se Algum dos elementos da lista (array) passam em uma condicional
 
 
 */

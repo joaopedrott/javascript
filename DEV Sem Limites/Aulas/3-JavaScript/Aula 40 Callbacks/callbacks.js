@@ -55,3 +55,15 @@ getPosts((posts)=>{ //em seguida podemos fazer  oq quiser com o retorno, no caso
 })
 
 //por causa do callback hell, que as promises foram criadas
+
+
+//exemplo chat gpt
+function fetchData(callback) {
+  setTimeout(() => {
+    callback("Dados carregados!");
+  }, 1000);
+}
+
+fetchData((data) => {
+  console.log(data);
+});

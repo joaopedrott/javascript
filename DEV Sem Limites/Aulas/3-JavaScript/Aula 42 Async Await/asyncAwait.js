@@ -68,3 +68,20 @@ async function run() {
 }
 
 run();
+
+
+//exemplo chat gpt
+async function fetchData() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Dados carregados!");
+    }, 1000);
+  });
+}
+
+async function getData() {
+  const data = await fetchData();
+  console.log(data);
+}
+
+getData();

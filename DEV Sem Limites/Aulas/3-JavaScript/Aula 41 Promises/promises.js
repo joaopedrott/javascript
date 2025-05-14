@@ -62,3 +62,16 @@ const getPosts=()=> {
   .then(posts => getComments(posts[0].id))
   .then(comments => console.log(comments))
   .catch(error => console.log(error))
+
+//exemplo chat gpt
+function fetchData() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Dados carregados!");
+    }, 1000);
+  });
+}
+
+fetchData().then((data) => {
+  console.log(data);
+});

@@ -633,5 +633,17 @@ Aula 14 - Upload de Imagens no AWS s3
             Pronto, dicionamos o codigo para salvar a imagem no banco de dados. Se testar de novo criando um novo time e olhar no. PGAdmin 4, na tabela "Team" podemos ver o time criado e o link da imagem do time salva.
             Alem disso, no https://sa-east-1.console.aws.amazon.com/s3/buckets/teskmaster-files-aula?region=sa-east-1&tab=objects&bucketType=general, podemos ver que a imagem esta la tambem.
 
+15 - Criando Sidebar
+    1-Vamos no site: https://ui.shadcn.com/docs/components/sidebar
+    
+    2-Fomos na pasta src/components e criamos um arquivo (app-sidebar.tsx) e escrevemos o codigo dela,
+    e fomos na pasta src/modules/teams e criamos um arquivo (team-navigation.tsx) e escrevemos o codigo dela.
+           Para complementar o (team-navigation.tsx), vamos na pasta src/modules/hooks e criamos o arquivo (use-team-id.tsx) que na verdade eh um hook para pegar o id.
+           E importamos esse hook no (team-navigation.tsx).
 
+    3-Na pasta src/app criamos um novo agrupamento de rotas (sidebar) que serao todas as rotas que terao o sidebar.
+    Dentro dessa pasta criei o (layout.tsx) que eh o layout do sidebar. (lembrando que o layout.tsx eh use client ou client-side)
+    
+    4-movemos  o (page.tsx) da raiz do projeto para dentro de src/app/(sidebar) e aceitamos tudo para nao ter erro com importacoes e arquivos de compilacao do nextjs.
 
+    5-Dentro de src/app/(sidebar)/ criamos a pasta time e dentro dela a pasta [teamid] e dentro dela criamos o arquivo (page.tsx)

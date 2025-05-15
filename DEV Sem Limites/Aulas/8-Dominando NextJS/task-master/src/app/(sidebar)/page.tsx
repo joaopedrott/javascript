@@ -1,7 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
-import Image from "next/image";
 import { getTeams } from "@/modules/teams/queries";
 
 export default async function Home() {

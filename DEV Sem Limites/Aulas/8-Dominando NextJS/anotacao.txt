@@ -647,3 +647,11 @@ Aula 14 - Upload de Imagens no AWS s3
     4-movemos  o (page.tsx) da raiz do projeto para dentro de src/app/(sidebar) e aceitamos tudo para nao ter erro com importacoes e arquivos de compilacao do nextjs.
 
     5-Dentro de src/app/(sidebar)/ criamos a pasta time e dentro dela a pasta [teamid] e dentro dela criamos o arquivo (page.tsx)
+
+
+
+16 - Criando Seletor de Times
+    1-Comecamos pela pasta src/modules/teams e modificamos o arquivo (route.ts) em ".get"( que eh o endpoint), adicionamos o codigo para pegar as informacoes do time que eu sou membro.
+    2-Em src/modules/teams/hooks criamos um novo hook chamado (use-get-teams.ts)
+    3-em src/modules/teams/components criamos o arquivo componente (teams-switecher.tsx)
+    4-em src/components/app-sidebar, criamos a tag <TeamsSwitcher/> que eh o componente com o nome do time que vai ser renderizado no sidebar.

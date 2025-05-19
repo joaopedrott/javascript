@@ -656,3 +656,44 @@ Aula 14 - Upload de Imagens no AWS s3
     3-em src/modules/teams/components criamos o arquivo componente (teams-switecher.tsx)
     4-em src/components/app-sidebar.tsx, criamos a tag <TeamsSwitcher/> que eh o componente com o nome do time que vai ser renderizado no sidebar.
     5-Em src/modules/teams/components criamos o arquivo (team-avatar.tsx)
+
+17 - Adicionando Modal de Criação de Times
+Antes tinhamos a pagina de criacao de times mas essa pagina aparecia quando criamos uma conta e nao tinhamos time, entao vamos criar um modal para criar um time
+mesmo ja tendo uma conta mesmo ja tendo um time ou varios.
+    1- No arquivo, src/modules/teams/components/teams-switcher.tsx trocados a tag <Separator /> por <DropdownMenuSeparator />
+    2-Modificamos alguns estilos.
+    3-Dentro da pasta src/modules/teams/components Criamos o componente (create-team-dialog.tsx)
+    4-No arquivo src/app/(sidebar)/layout.tsx, adicionamos a tag <CreateTeamDialog />
+    
+    Dentro do componente (create-team-dialog.tsx) vamos utilizar um hook que vai ser responsavel por abrir esse modal de criacao de time com base na nossa query string da nosssa url.
+    Esse hook vai basicamente fazer uma interface para dentro da biblioteca nuqs. Nuqs eh uma biblioteca muito util quando precisamos adicionar valores ou query string na nossa URL e a gente usar esses valores como um estado de certa forma.
+
+    5-instalamos a biblioteca nuqs
+        yarn add nuqs
+    6- Na pasta src/modules/teams/hooks criamos o arquivo(use-create-team-modal.ts)
+        Notamos que um codigo como esse, poderiamos usar em um usestate normal sem precisar do nuqs.
+        Mas a vantagem de usar o nuqs eh que com ele, o vamor da nossa modal vai estar presente na nossa URL, ou seja, se compartilharmos o link com o modal de criar time aberto, a outra pessoa que clicar no link vai estar com o modal de criar time aberto.
+    7- No   (create-team-dialog.tsx) criamos a lingacao com o hook (use-create-team-modal.ts) usando esse hook.
+    8-Na pasta src/modules/team/components, no arquivo (create-team-form.tsx), atualizamos ele criando a interface:
+    "
+    interface CreateTeamFormProps {
+    onCancel?: () => void
+    }
+    "
+
+    tipamos a funcao que CreateTeamForm vai receber com essa interface:
+    "
+    export function CreateTeamForm({ onCancel } :CreateTeamFormProps) {
+    "
+    no botao cancelar, colocamos:
+    "onClick={onCancel}"
+    e ainda no botao cancelar, colocamos:
+    "className={cn(!onCancel && 'invisible')}"
+    9-Deu erro, indo no link https://err.47ng.com/NUQS-404 e depois https://nuqs.47ng.com/docs/adapters#nextjs-app-router
+    Notamos que precisamos criar um adapter.
+        9.1 Fomos na pasta src/app/ no arquivo layout.tsx e importamos o nuqs adapter:
+        "import { NuqsAdapter } from 'nuqs/adapters/next/app'"
+        E depois:
+        envolvi o {children} com a tag <NuqsAdapter>  
+    10- Na pasta src/modules/teams/components/create-team-dialog.tsx, vamos adicionar os estilos
+       

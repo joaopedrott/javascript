@@ -8,17 +8,22 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import Image from 'next/image'
-import { use, useRef } from 'react'
+import { useRef } from 'react'
 import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
 import { useCreateTeam } from '../hooks/use-create-team'
 import { useRouter } from 'next/navigation'
 import { usePresignedFile } from '@/modules/files/hooks/use-presigned-file'
+import { cn } from '@/lib/utils'
 
 type CreateTeamForm = z.infer<typeof createTeamSchema>
 
-export function CreateTeamForm() {
+interface CreateTeamFormProps {
+    onCancel?: () => void
+}
+
+export function CreateTeamForm({ onCancel } :CreateTeamFormProps) {
     const inputRef = useRef<HTMLInputElement>(null)
     const form = useForm<CreateTeamForm>({
         defaultValues: {
@@ -55,7 +60,7 @@ export function CreateTeamForm() {
             formData.append('file', data.image)
 
             //upload file to s3
-            const uploadResponse = await fetch(url, {
+            /* const uploadResponse =  */await fetch(url, {
               method: 'POST',
               body: formData,
             })
@@ -159,10 +164,11 @@ export function CreateTeamForm() {
 
                             <div className='flex items-center justify-end gap-2'>
                                 <Button
+                                className={cn(!onCancel && 'invisible')}
                                 variant={'secondary'}
                                 size={'lg'}
                                 type='button'
-                                onClick={()=>{}}
+                                onClick={onCancel}
                                 >
                                     Cancelar
                                 </Button>

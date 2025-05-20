@@ -65,7 +65,7 @@ export function CreateTeamForm({ onCancel } :CreateTeamFormProps) {
               body: formData,
             })
 
-            image = `${url}/${fields.key}`
+            image = `${url}${fields.key}`
         }
 
         mutate({

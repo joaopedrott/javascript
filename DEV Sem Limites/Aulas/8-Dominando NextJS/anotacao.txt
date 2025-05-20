@@ -696,4 +696,13 @@ mesmo ja tendo uma conta mesmo ja tendo um time ou varios.
         E depois:
         envolvi o {children} com a tag <NuqsAdapter>  
     10- Na pasta src/modules/teams/components/create-team-dialog.tsx, vamos adicionar os estilos
-       
+
+18 - Configurações do Time
+    1-vamos na pasta src/modules/teams/route.ts e criamos o .patch(que eh o endpoint)
+        Primeiro vou definir uma nova rota 
+    2-Depois vamos na pasta src/modules/team/schemas e criamos o arquivo (update-team.ts)
+    3-em src/modules/teams/hook criamos o arquivo ou hook (use-update-team.ts)
+    4-em src/modules/teams/components criamos o arquivo (update-team-form.tsx)
+    5-Agora vamos criar a pagina de configuracoes, vamos na pasta src/app/(sidebar)/time/[teamId] e criamos a pasta (configuracoes) e dentro o arquivo (page.tsx)
+    6-Vamos na pasta src/api/[[...route]]/route.ts e criamos o .patch
+    "export const PATCH = handle(app)"

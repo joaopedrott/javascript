@@ -7,6 +7,7 @@ import { createTeamSchema } from './schemas/create-team'
 
 import { prisma } from '@/lib/prisma'
 import { MemberRole } from '@prisma/client'
+import { updateTeamSchema } from './schemas/update-team'
 
 const app = new Hono()
   .get('/', sessionMiddleware, async (c) => {
@@ -59,6 +60,48 @@ const app = new Hono()
         data: team
       })
     }
+  )
+  .patch(
+    '/:teamId',
+    sessionMiddleware,
+    zValidator('json', updateTeamSchema),
+    async (c) => {
+      const user = c.get('user')
+
+      const { teamId } = c.req.param()
+      const { name, image } = c.req.valid('json')
+
+      const member = await prisma.member.findFirst({
+        where: {
+          userId: user.id as string,
+          teamId
+        }
+      })
+
+      if(!member || member.role !== MemberRole.ADMIN) {
+        return c.json({
+          error: {
+            message: 'You are not allowed to update this team'
+          }
+        }, 403)
+
+      }
+
+      const team = await prisma.team.update({
+        where: {
+          id: teamId
+        },
+        data: {
+          name,
+          image: image as string
+        }
+      })
+
+      return c.json({
+        data: team
+      })
+    }
+
   )
 
 export default app

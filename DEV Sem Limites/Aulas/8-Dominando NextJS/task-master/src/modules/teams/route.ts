@@ -103,5 +103,43 @@ const app = new Hono()
     }
 
   )
+  .delete(
+    '/:teamId',
+    sessionMiddleware,
+    async (c) => {
+      const user = c.get('user')
+
+      const { teamId } = c.req.param()
+
+      const member = await prisma.member.findFirst({
+        where: {
+          userId: user.id as string,
+          teamId
+        }
+      })
+
+      if(!member || member.role !== MemberRole.ADMIN) {
+        return c.json({
+          error: {
+            message: 'You are not allowed to update this team'
+          }
+        }, 403)
+
+      }
+
+      await prisma.team.delete({
+        where: {
+          id: teamId
+        }
+      })
+
+      return c.json({
+        data: {
+          id: teamId
+        }
+      })
+    }
+  )
+
 
 export default app

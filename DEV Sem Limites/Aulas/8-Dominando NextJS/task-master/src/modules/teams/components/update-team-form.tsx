@@ -29,8 +29,8 @@ export function UpdateTeamForm ({ initialData }: UpdateTeamFormProps) {
   const inputRef = useRef<HTMLInputElement>(null)
   const form = useForm<UpdateTeamForm>({
     defaultValues: {
-      name: initialData?.name,
-      image: initialData?.image as string
+      name: initialData?.name ?? '',
+      image: initialData?.image ?? ''
     },
     resolver: zodResolver(updateTeamSchema)
   })

@@ -1,6 +1,10 @@
-import { z } from "zod";
+import { z } from 'zod'
 
 export const updateTeamSchema = z.object({
-  name: z.string().min(1, 'Nome é obrigatório'),
-  image: z.union([z.string(), z.instanceof(File)]).nullable().optional()
+  name: z.string().min(1, { message: 'Nome é obrigatório' }).optional(),
+  // URL da Imagem
+  image: z.union([
+    z.instanceof(File),
+    z.string().transform((value) => value === '' ? undefined : value)
+  ]).optional(),
 })

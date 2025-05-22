@@ -713,3 +713,13 @@ mesmo ja tendo uma conta mesmo ja tendo um time ou varios.
     4-em src/modules/teams/components criamos o arquivo ou componente (delete-team-dialog.tsx)
     5-em src/modules/teams/components/update-team-form.tsx, adicionamos o botao de deletar time com a tag <DeleteTeamDialog/> ao lado do botao "salvar alteracoes"
         1- criamos tambem a funcao (handleDeleteTeam()) dentro do (update-team-form.tsx) que vai usar o hook (use-delete-team.ts) para deletar o time.
+20 - Corrigindo Atualização de Times
+    1- vamos em src/modules/teams/components/update-team-form.tsx e mudamos os valores padrao de nome e imagem para:
+    "
+    defaultValues: {
+      name: initialData?.name ?? '',
+      image: initialData?.image ?? ''
+    },
+
+    "
+

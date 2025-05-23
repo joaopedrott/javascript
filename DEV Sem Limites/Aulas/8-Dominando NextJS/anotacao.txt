@@ -722,4 +722,18 @@ mesmo ja tendo uma conta mesmo ja tendo um time ou varios.
     },
 
     "
-
+21 - Página de Membros
+    1-vamos em src/app/(sidebar)/time/[teamId] e criamos uma pasta (membros) e criamos o arquivo (page.tsx)
+    2-dentro de src/modules/ criamos a pasta (members) e dentro dela a criamos a pasta (components) e dentro dela, criamos o arquivo (members-list.tsx)
+        2.1-sem desenvolver este componente
+    3-Dentro do src/modules/members criamos o arquivo route.ts.
+    4-Dentro de src/api/[[...route]] modificamos o arquivo route.ts adicionando:
+        "
+        import members from '@/modules/members/route'
+        .route('/members', members)
+        "
+    5-Dentro de src/modules/members criamos uma pasta (schemas) e dentro dela criamos o arquivo (get-members.ts)
+    6-Dentro de src/modules/members criamos uma pasta (hooks) e dentro dela criamos o arquivo (use-get-members.ts)
+    7-Voltamos em src/modules/members/components/members-list.tsx e vamos desenvolver ele usando o hook (use-get-members.ts)
+    8-Dentro da pasta src/modules/members/components criamos o arquivo member-avatar.tsx
+    

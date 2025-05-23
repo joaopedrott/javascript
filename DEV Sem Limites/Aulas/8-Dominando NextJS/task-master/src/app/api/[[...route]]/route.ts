@@ -3,12 +3,14 @@ import { handle } from 'hono/vercel'
 
 import teams from '@/modules/teams/route'
 import files from '@/modules/files/route'
+import members from '@/modules/members/route'
 
 const app = new Hono().basePath('/api')
 
 const routes = app
 .route('/teams', teams)
 .route('/files', files)
+.route('/members', members)
 
 export const GET = handle(app)
 export const POST = handle(app)

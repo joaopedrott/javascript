@@ -1,0 +1,25 @@
+import { auth } from "@/lib/auth";
+import { MembersList } from "@/modules/members/components/members-list";
+import { redirect } from "next/navigation";
+
+interface MembersPageProps {
+    params: {
+        teamId: string
+    }
+}
+
+export default async function MembersPage ({ params }: MembersPageProps) {
+    const { teamId } = params
+
+    const session= await auth()
+
+    if(!session || !session.user) {
+        redirect('/login')
+    }
+    
+    return (
+        <div className="w-full max-w-xl mx-auto flex flex-col gap-4">
+            <MembersList teamId={teamId} />
+        </div>
+    )
+}

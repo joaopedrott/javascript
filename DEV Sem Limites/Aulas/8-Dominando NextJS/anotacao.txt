@@ -736,4 +736,26 @@ mesmo ja tendo uma conta mesmo ja tendo um time ou varios.
     6-Dentro de src/modules/members criamos uma pasta (hooks) e dentro dela criamos o arquivo (use-get-members.ts)
     7-Voltamos em src/modules/members/components/members-list.tsx e vamos desenvolver ele usando o hook (use-get-members.ts)
     8-Dentro da pasta src/modules/members/components criamos o arquivo member-avatar.tsx
-    
+22 - Sistema de Convites pt. 1
+    1-Vamos em src/modules/members/components criamos o arquivo (invite-member.tsx)
+    2-Vamos em src/app/(sidebar)/time/[teamId]/membros/page.tsx e edicatmos este arquivo adicionando o componente que criamos:
+    "
+    <InviteMember teamId={teamId} inviteCode={'abc123'} />
+    "
+    3-Em src/modules/teams/queries.ts adicionamos a funcao assincrona (getTeam)
+    4-Voltamos em src/app/(sidebar)/time/[teamId]/membros/page.tsx e adicionamos:
+
+    "
+        const team = await getTeam(teamId)
+
+        if (!team) {
+        return <p>Time nao encontrado</p>
+        }
+    "
+    5-em src/lib/utils criamos a funcao (generateInviteCode())
+    6-em src/modules/teams/route.ts e importamos a funcao (generateInviteCode()) em (.POST)
+    7-Ainda em src/modules/teams/route.ts, criamos outro (.Post) a baixo do (.Post) e acima de (.Path)
+    8-vamos em src/modules/teams/hooks e criamos um novo arquivo ou hook (use-reset-invite-code.ts)
+      8.1 importamos esse hook no src/modules/members/components/invite-member.tsx
+    9-Vamos em src/modules/members/components e criamos um novo componente (reset-invite-code-dialog.tsx)
+     9.1 importamos esse componente (reset-invite-code-dialog.tsx) no (invite-member.tsx)

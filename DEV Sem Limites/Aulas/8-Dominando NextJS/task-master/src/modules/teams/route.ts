@@ -8,6 +8,7 @@ import { createTeamSchema } from './schemas/create-team'
 import { prisma } from '@/lib/prisma'
 import { MemberRole } from '@prisma/client'
 import { updateTeamSchema } from './schemas/update-team'
+import { generateInviteCode } from '@/lib/utils'
 
 const app = new Hono()
   .get('/', sessionMiddleware, async (c) => {
@@ -43,7 +44,7 @@ const app = new Hono()
         data: {
           name,
           userId: user.id as string,
-          inviteCode: 'abc123',
+          inviteCode: generateInviteCode(6),
           image: image as string
         }
       })
@@ -56,6 +57,41 @@ const app = new Hono()
         }
       })
 
+      return c.json({
+        data: team
+      })
+    }
+  )
+  .post(
+    '/:teamId/reset-invite-code',
+    sessionMiddleware,
+    async (c) => {
+      const user = c.get('user')
+
+      const { teamId } = c.req.param()
+
+      const member = await prisma.member.findFirst({
+        where: {
+          userId: user.id as string,
+          teamId
+        }
+      })
+
+      if(!member || member.role !== MemberRole.ADMIN) {
+        return c.json({
+            message: 'Voce nao tem permissao para atualizar o codigo de convite'
+        }, 403)
+
+      }
+
+      const team = await prisma.team.update({
+        where: {
+          id: teamId
+        },
+        data: {
+          inviteCode: generateInviteCode(6)
+        }
+      })
       return c.json({
         data: team
       })

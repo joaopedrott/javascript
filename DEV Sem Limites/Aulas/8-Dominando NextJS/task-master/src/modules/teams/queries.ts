@@ -21,3 +21,12 @@ export async function getTeams(userId: string) {
 
   return teams
 }
+
+export async function getTeam(teamId: string) {
+  const team = await prisma.team.findUnique({
+    where: {
+        id: teamId
+    }
+  })
+  return team
+}

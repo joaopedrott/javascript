@@ -30,7 +30,7 @@ export function UpdateTeamForm ({ initialData }: UpdateTeamFormProps) {
   const form = useForm<UpdateTeamForm>({
     defaultValues: {
       name: initialData?.name ?? '',
-      image: initialData?.image ?? ''
+      image: initialData?.image ?? undefined
     },
     resolver: zodResolver(updateTeamSchema)
   })
@@ -119,7 +119,7 @@ export function UpdateTeamForm ({ initialData }: UpdateTeamFormProps) {
                 control={form.control}
                 render={({ field }) => (
                   <div className='flex flex-col justify-center gap-y-2'>
-                    <div className='flex items-center gap-x-5'>
+                    <div className='flex items-center gap-x-5 cursor-pointer'>
                       {field.value ? (
                         <div className='size-20 relative rounded-none overflow-hidden'>
                           <Image 
@@ -127,6 +127,7 @@ export function UpdateTeamForm ({ initialData }: UpdateTeamFormProps) {
                             fill
                             className='object-cover'
                             src={field.value instanceof File ? URL.createObjectURL(field.value) : field.value}
+                            onClick={() => inputRef.current?.click()}
                           />
                         </div>
                       ) : (

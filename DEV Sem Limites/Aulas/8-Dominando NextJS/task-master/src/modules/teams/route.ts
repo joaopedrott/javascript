@@ -9,6 +9,9 @@ import { prisma } from '@/lib/prisma'
 import { MemberRole } from '@prisma/client'
 import { updateTeamSchema } from './schemas/update-team'
 import { generateInviteCode } from '@/lib/utils'
+import { joinTeamSchema } from './schemas/join-team'
+
+
 
 const app = new Hono()
   .get('/', sessionMiddleware, async (c) => {
@@ -92,6 +95,50 @@ const app = new Hono()
           inviteCode: generateInviteCode(6)
         }
       })
+      return c.json({
+        data: team
+      })
+    }
+  )
+    .post(
+    '/:teamId/join',
+    sessionMiddleware,
+    zValidator('json', joinTeamSchema),
+    async (c) => {
+      const user = c.get('user')
+
+      const { teamId } = c.req.param()
+      const { inviteCode } = c.req.valid('json')
+
+      const member = await prisma.member.findFirst({
+        where: {
+          userId: user.id,
+          teamId
+        }
+      })
+
+      if (member) {
+        return c.json({ error: 'Você já é membro deste time' }, 400)
+      }
+
+      const team = await prisma.team.findUnique({
+        where: {
+          id: teamId
+        }
+      })
+
+      if (!team || team.inviteCode !== inviteCode) {
+        return c.json({ error: 'Código de convite inválido' }, 400)
+      }
+
+      await prisma.member.create({
+        data: {
+          userId: user.id as string,
+          teamId,
+          role: MemberRole.MEMBER
+        }
+      })
+
       return c.json({
         data: team
       })

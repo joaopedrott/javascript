@@ -759,3 +759,13 @@ mesmo ja tendo uma conta mesmo ja tendo um time ou varios.
       8.1 importamos esse hook no src/modules/members/components/invite-member.tsx
     9-Vamos em src/modules/members/components e criamos um novo componente (reset-invite-code-dialog.tsx)
      9.1 importamos esse componente (reset-invite-code-dialog.tsx) no (invite-member.tsx)
+
+23 - Sistema de Convites pt. 2
+    1-Vamos em src/modules/teams/route.ts e criamos o terceiro (.Post)
+    2-em src/modules/teams/schemas criamos o arquivo (join-team.ts)
+    3-em src/modules/teams/hooks criamos o arquivo (use-join-team.ts)
+    4-em src/modules/teams/components criamos o arquivo (join-team-form.tsx)
+    5-em src/modules/teams/hooks criei o hook (use-invite-code.ts)
+    6-em src/app/(no-sidebar)/time e criamos as pastas e por fim o (page.tsx) [teamId]/entrar/[inviteCode]/page.tsx
+    7-correcao: sempre que usar params temos que colocar await antes, ex, em src/app/(sidebar)/time/[teamId]/membros/page.tsx:
+    "const { teamId } = await params"

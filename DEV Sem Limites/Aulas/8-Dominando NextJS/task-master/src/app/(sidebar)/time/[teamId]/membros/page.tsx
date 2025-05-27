@@ -12,7 +12,7 @@ interface MembersPageProps {
 
 
 export default async function MembersPage ({ params }: MembersPageProps) {
-  const { teamId } = params
+  const { teamId } = await params
 
   const session = await auth()
   

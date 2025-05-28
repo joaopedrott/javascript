@@ -1,0 +1,120 @@
+scrum basico
+
+eh composto por:
+3 papéis:
+scrum master (SM)
+product owner (PO)
+desenvolvedores (dev)
+
+
+3 artefatos:
+product backlog
+sprint backlog
+increment
+
+4 eventos:
+sprint planning
+daily scrum
+sprint review
+sprint retrospective
+-------------------------------------------------
+3 papéis:
+Scrum master (SM)
+é o responsavel por cuidar de pessoas, processo e ferramentas.
+Pessas: time, stakeholders e a relacao entre eles.
+Processo: todo o fluxo do scrum, tudo que eh do exterior que se conecta ao scrum(time do scrum)
+ferramentas: facilita para que o time tenha todas as ferramentas para que o time entregue oq eh esperado.
+
+Product owner: (PO)
+Pessoa que cuida produto.
+
+desenvolvedores: (dev)
+Quem traduz a necessidade de negocio para um produto final.
+
+3 artefatos:
+product backlog:
+Eh todo requerimento que existe. Eh uma lista ordenada de tudo que precisa ser feito no produto
+*Responsabilidade do Product Owner
+*Sempre evolutivo (pode mudar conforme surgem novas ideias ou necessidades)
+*Contém itens chamados de Product Backlog Items (PBIs), que podem ser funcionalidades, melhorias, bugs, etc.
+*Prioriza o que entrega mais valor primeiro
+
+sprint backlog:
+é o conjunto de itens do Product Backlog que o time escolhe para trabalhar durante a Sprint atual.
+Ele contém:
+O que será entregue na Sprint (objetivo da Sprint + PBIs selecionados)
+As tarefas técnicas para implementar esses itens (feitas pelo time de desenvolvimento)
+Pode ser ajustado durante a Sprint, mas só pelo time
+
+    obs: sprint
+    A Sprint é um período fixo de tempo (geralmente de 1 a 4 semanas) onde o time trabalha 
+    para entregar uma parte funcional do produto.
+
+    Durante a Sprint:
+    Nada novo entra (evita mudanças de escopo)
+    O objetivo é entregar algo pronto e utilizável
+    A Sprint começa com o Sprint Planning e termina com a Sprint Review e Retrospective
+
+
+
+increment:
+ é o resultado da Sprint: a soma de todos os itens do Product Backlog finalizados durante a Sprint, mais os incrementos anteriores.
+Regras:
+    Tem que estar "Done" (feito de verdade, pronto pra uso)
+    Deve estar em um estado utilizável, mesmo que o Product Owner não vá liberar ainda
+    Cada Sprint deve gerar pelo menos um Increment
+
+4 eventos:
+Nao existe eventos fora deste, nao existe reuniao a mais que essas pois existe caso de que exista disperdicio de tempo.
+
+1-sprint planning:
+    é o evento que inicia a Sprint
+    Nele, o time define:
+        1- O que será feito ou o que sera entrege na sprint (quais itens do Product Backlog serão puxados)
+        2-Como será feito (dividindo em tarefas e criando o Sprint Backlog)
+        3-O objetivo da Sprint (Sprint Goal)
+
+2-daily scrum:
+    é uma reunião diária de no máximo 15 minutos
+    Objetivo: o time de desenvolvimento se alinha e ajusta o plano da Sprint.
+    Cada membro responde basicamente:
+    1-O que fiz ontem?
+    2-O que vou fazer hoje?
+    3-Tem algum impedimento?
+
+3-sprint review:
+    A Sprint Review acontece no final da Sprint.
+    Objetivo: mostrar o que foi feito (o Increment) e coletar feedback dos stakeholders.
+    
+    Características:
+        Participam: Time Scrum + stakeholders
+        O Product Owner diz o que foi feito e o que não foi
+        O time demonstra o produto funcionando
+        Pode gerar novas ideias pro Product Backlog
+
+    Resumindo: é a apresentação da entrega e o momento de validar com o cliente.
+
+4-sprint retrospective:
+    A Sprint Retrospective é a última reunião da Sprint.
+    Objetivo: o time reflete sobre como foi o trabalho e busca formas de melhorar no próximo ciclo.
+    O time discute:
+    O que foi bem
+    O que pode melhorar
+    Ações para melhorar o processo
+-------------------------------------------------
+5 valores do scrum:
+5 valores do scrum do mindset scrum
+Coragem
+Coragem para fazer a coisa certa e trabalhar em problemas difíceis
+
+foco
+Todos focam no trabalho da sprint e nos objetivos do time scrum
+
+Comprometimento
+As pessoas se comprometem pessoalmente em alcançar os objetivos do time scrum
+
+Respeito
+Os membros do time scrum respeitam uns aos outros para serem pessoas capazes e independentes
+
+Abertura
+O time scrum e seus stakeholders concordam em estarem abertos a todo o trabalho e aos desafios com a execucao dos trabalhos

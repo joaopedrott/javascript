@@ -102,7 +102,7 @@ Nao existe eventos fora deste, nao existe reuniao a mais que essas pois existe c
     O que pode melhorar
     Ações para melhorar o processo
 -------------------------------------------------
-5 valores do scrum:
+Aula 2: 5 valores do scrum:
 5 valores do scrum do mindset scrum
 Coragem
 Coragem para fazer a coisa certa e trabalhar em problemas difíceis
@@ -118,3 +118,71 @@ Os membros do time scrum respeitam uns aos outros para serem pessoas capazes e i
 
 Abertura
 O time scrum e seus stakeholders concordam em estarem abertos a todo o trabalho e aos desafios com a execucao dos trabalhos
+-------------------------------------------------
+Aula 3: Quem mantem o scrum? scrum org
+scrum org foi fundada para manter o scrum framework.
+Quem mantem o scrum?
+scrum.org, scrum inc e scrum alliance.
+-------------------------------------------------
+secao 3: Eventos do scrum framework
+Aula 5:
+1-sprint planning
+O product:
+O product owner e o time scrum se reune para definir o objetivo da sprint, o que vai ser feito e como vai ser feito.
+Ele cuida como o produto, traz objetivos de negocios e decide a priorizacao das coisas.
+
+Scrum master:
+Eh a pessoa que cuida com o flumo, mantem o time focado no objetivo e facilita essa dinamica que tenha fluencia.
+A SprintPlannig tem duracao de ate 8horas para sprints de 1 semana ate 1 mes. E o scrum master que cuida desse evento.
+Todo mundo trabalhando para gerar o sprint backlog que seria o resultado final de um evento sprint.
+
+dev:
+os desenvolvedores trabalham na sprint backlog e fazem o trabalho. Desenvolvem tudo que estao no sprint backlog.
+O objetivo dessa print eh entregar um software funciondo.
+A equipe pode mudar algum objetivo, eh so alinhar com o product owner.Qual o objetivo mudar, pq querem mudar e se isso vai facilitar.
+
+Para que serve a sprint planning?
+Para que os desenvolvedores definam com ajuda do product owner a sprint backlog (o que será feito) e crie um plano de acao (como o trabalho será realizado) para atingir a sprint goal(objetivo da sprint).
+
+Aula 6:
+2-daily scrum
+Este eh o momento que o time de desenvolvimento se reune para sincronizar o trabalho. Onde eles estao e para onde esta indo.
+Essa daily dura 15 minutos no maximo, deve acontecer todos os dias. 
+E durante a daily scrum:
+-provavelmente falam sobre bloqueios e riscos, bloqueio que impede da gente seguir ou temos rico de acontecer isso.
+-scrum master eh opcional na daily scrum.
+-transparencia, o backlog deve estar visivel e acessivel para todos. O time deve ser transparente sobre o que esta acontecendo.
+-o time faz a inspecao e ajustam se for precisso para adaptar o plano.
+
+
+Aula 7:
+3-sprint review
+Os desenvolvedores apresentam o que eles fizeram, como foi essa dinamica de desenvolver e atingir esse objetivo.
+O scrum master eh o cara que vai  garantir que o evento aconteca. Se a sprint durar 1 mes entao este evento dura ate 4 horas. Esse evento, precisa ser proporcional ao tamanho da sprint.
+Ele garante que seja atingido que eh apresentar o que foi feito ou seja a apresentacao para entao colher o feedback.
+
+O product owner eh a pessoa que colhe o feedback, ele vai pegar oq foi passado na apresentacao e vai ver se esta de acordo com o que o cliente quer ou o product backlog.
+para entao que na proxima sprint o time de desenvolvimento possa fazer melhorias ou correcoes.
+
+Nesta sprint review o time de desenvolvimento deve compartilhar os seus desafios com os stakeholders e usuarios, para ajudar a tomar decisoes durante a sprint junto ao product owner, oq pode ate ajudar ao scrum master a diminuir os impedimentos de forma ate mais rapida.
+
+Aula 8:
+4-sprint retrospective
+O desenvolvedor, o product owner e ate o scrum master pode trazer pontos para melhorarias e sugestoes para o time refletir.
+O dev e product owner devem trazer as melhorias.
+O scrum master ele vai trazer para o time discutir sobre pessoas e suas relacoes, processos que a gente usa e ferramentas. Para entao buscar melhorias e trazer ao menos 1 item para que o time trablhe na proxima sprint.
+Essa reuniao vai durar no maximo 3 horas para sprint de no maximo 1 mes.
+
+-------------------------------------------------
+secao 4: Alem dos eventos do scrum. framework
+Aula 9:
+Refinement
+Refinamento nao eh um evento, ele eh uma pratica.
+O refinamento pode ser feito constantemente.
+Por exemplo, o time tem duvida ai o product owner entra e responde a duvida.
+
+O refinamento acontece durante uma sprint mirando na proxima, para que quando chege na proxima planning, o meterial ja esteja pronto e os impedimento ja sejam conhecidos e eliminados, e os riscos sejam conhecidos e minimizados no maximo a 0, para que a proxima sprint seja mais fluida possivel.
+
+Aula 10:
+Visao geral do scrum
+

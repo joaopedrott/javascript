@@ -185,4 +185,26 @@ O refinamento acontece durante uma sprint mirando na proxima, para que quando ch
 
 Aula 10:
 Visao geral do scrum
+---------------------------------------------------------------------------------------------
+Gestão Ágil de Projetos com Scrum e Kanban do zero
+secao 1
+aula 1:
+Conheça a Ana G. Soares
 
+secao 2
+aula 2:
+A história do manifesto Ágil
+
+aula 3: O profissional Coach e o Agile Coach
+Agile Coach
+Eh a pessoa que ajuda desenvolver pessoas e equipes de alta performance (ageis), ele ajuda a equipe a se desenvolver como uma equipe.
+
+secao 3
+aula 4: Scrum do Jeff Sutherland
+obs: A mesma definicao como eu vi no curso passado.
+
+aula 5: Método Kanban do David J. Anderson
+Kanban
+Metodo foi baseado no metodo toyota de producao. Mas foi evoluido. 
+Ele serve para a gestao visual do trabalho do conhecimento.
+Trello eh um exemplo de ferramenta kanban para gestao visual.

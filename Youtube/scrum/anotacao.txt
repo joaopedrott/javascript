@@ -208,3 +208,15 @@ Kanban
 Metodo foi baseado no metodo toyota de producao. Mas foi evoluido. 
 Ele serve para a gestao visual do trabalho do conhecimento.
 Trello eh um exemplo de ferramenta kanban para gestao visual.
+
+O método Kanban é uma técnica de gerenciamento de tarefas e projetos que ajuda a visualizar o fluxo de trabalho e melhorar a produtividade. 
+Ele é baseado em um quadro visual dividido em colunas que representam os estágios do processo (ex: "A Fazer", "Em Andamento", "Concluído")
+
+Princípios básicos:
+    *Visualizar o trabalho: usar cartões para representar tarefas
+    *Limitar o trabalho em progresso (WIP): evitar sobrecarga e manter foco.
+    *Gerenciar o fluxo: acompanhar o avanço das tarefas e identificar gargalos.
+    *Melhoria contínua: ajustar o processo conforme necessário.
+É muito usado em times ágeis, principalmente em desenvolvimento de software, mas serve para qualquer tipo de projeto.
+aula 6:
+Management 3.0 do Jurgen Appelo

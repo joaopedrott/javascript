@@ -1,6 +1,7 @@
 /*
 Filter()
 o filter retorna todos os elementos que atender a condicao que ele estipular
+Cria uma nova array
 */
 
 
@@ -21,3 +22,32 @@ const pessoasMaioresDeIdade = pessoas.filter(pessoa => {
 */
 
 console.log(pessoasMaioresDeIdade)
+
+
+/*
+
+Aqui vai o resumo rápido:
+
+**Modificam a array original:**
+
+* `push()` (adiciona no final)
+* `pop()` (remove do final)
+* `shift()` (remove do começo)
+* `unshift()` (adiciona no começo)
+* `splice()` (remove/adiciona em qualquer posição)
+* `sort()` (ordena no lugar)
+* `reverse()` (inverte no lugar)
+
+**Criam uma nova array (não mexem na original):**
+
+* `map()`
+* `filter()`
+* `slice()`
+* `concat()`
+* `flat()`
+* `flatMap()`
+
+Quer que eu explique algum método específico?
+
+
+*/

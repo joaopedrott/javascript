@@ -19,6 +19,8 @@ var createCounter = function(n) {
  * counter() // 12
  */
 
+
+
  const counter = createCounter(10)
  console.log(counter())
 console.log(counter())

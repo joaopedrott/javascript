@@ -41,3 +41,18 @@ var map = function(arr, fn) {
 };
 
 */
+
+/*
+ou assim
+
+var map = function(arr, fn) {
+    let lista=[]
+    for(i=0; i< arr.length; i++){
+        
+        lista.push(fn(arr[i],i))
+    }
+    return lista
+};
+
+
+*/

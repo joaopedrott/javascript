@@ -20,6 +20,6 @@ const fn = function sum(accum, curr) {
     return accum + curr; 
 }
 
-let init= 0
+let init=0
 
 console.log(reduce(nums,fn,init))

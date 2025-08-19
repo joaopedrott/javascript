@@ -30,3 +30,33 @@ var compose = function(functions) {
  * const fn = compose([x => x + 1, x => 2 * x])
  * fn(4) // 9
  */
+
+
+
+
+//usando for
+/*
+
+
+var compose = function(functions) {
+    let array = functions
+    
+    return function(x) {
+        let res = x
+        if(array.length===0){
+        return x
+        } else {
+            for(i=array.length-1;i>=0;i--){
+               res=array[i](res)
+            }
+            return res
+        }
+    }
+};
+
+
+  const fn = compose([x => x + 1, x => 2 * x])
+  fn(4) // 9
+ 
+
+*/

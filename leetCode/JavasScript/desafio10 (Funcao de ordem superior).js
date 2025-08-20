@@ -94,6 +94,7 @@ console.log("Resultado da função externa: " + outerResult);
 
 //exemplo 3 funcao de ordem superior usando args
 
+// (...args) aceita qualquer número de parâmetros
 function outerFunction(callback) {
     console.log("Esta é a função externa.");
     return function(...args) {

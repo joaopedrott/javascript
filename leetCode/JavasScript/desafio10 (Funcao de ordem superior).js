@@ -1,57 +1,44 @@
 //adicionando mais um tipo de funcao. Funcao de ordem superior
 
-//funcoes interna e externa -------------------------------------------------------------------------------
-
-
-/* function outerFunction(innerFunction) {//funcao externa
-    //innerFunction ou callback
+// 1. Função chamando outra (sem parâmetros)
+/*
+function outerFunction(innerFunction) {
     console.log("Esta é a função externa.");
-
-    const result = innerFunction(); // Chamando a função passada como parâmetro e capturando o retorno
-
+    const result = innerFunction(); // chama a função interna
     console.log("Resultado da função interna: " + result);
     return "Retorno da função externa";
 }
 
-
-function innerFunction() {//funcao interna
+function innerFunction() {
     console.log("Esta é a função interna.");
     return "Retorno da função interna";
 }
 
+const resultado1 = outerFunction(innerFunction);
+console.log("Resultado da função externa: " + resultado1);
 
 
 
-const resultado = outerFunction(innerFunction); // Passando innerFunction como argumento para outerFunction
-
-
-console.log("Resultado da função externa: " + resultado); */
-//-----------------------------------------------------------------------------------------------------
-//funcao dentro de funcao. Sem funcao de ordem superior
-
-/* function outerFunction(callback) {
+// 2. Função chamando outra com parâmetros fixos
+function outerFunction2(callback) {
     console.log("Esta é a função externa.");
-    const result = callback(1, 2, 3); // Passando argumentos para a função interna
+    const result = callback(1, 2, 3); // passa valores para a interna
     console.log("Resultado da função interna: " + result);
     return "Retorno da função externa";
 }
 
-function innerFunction(a, b, c) {
+function innerFunction2(a, b, c) {
     console.log("Esta é a função interna.");
     return `Soma dos argumentos: ${a + b + c}`;
 }
 
-const outerResult = outerFunction(innerFunction); // Passando innerFunction como argumento para outerFunction
-console.log("Resultado da função externa: " + outerResult);
- */
+const resultado2 = outerFunction2(innerFunction2);
+console.log("Resultado da função externa: " + resultado2);
 
 
 
-//-----------------------------------------------------------------------------------------------------
-
-//Agora a funcao passando parametros ou funcao de ordem superior
-//exemplo 1 funcao de ordem superior
-/* function soma(a, b) {
+// 3. Funções de operação matemática (bem comum)
+function soma(a, b) {
     return a + b;
 }
 function subtracao(a, b) {
@@ -63,56 +50,58 @@ function multiplicacao(a, b) {
 function divisao(a, b) {
     return a / b;
 }
-function operacao(a, b, funcao) {
+
+function operacao(a, b, funcao) { // recebe a função como parâmetro
     return funcao(a, b);
 }
+
 console.log(operacao(10, 5, soma));
 console.log(operacao(10, 5, subtracao));
 console.log(operacao(10, 5, multiplicacao));
-console.log(operacao(10, 5, divisao)); */
+console.log(operacao(10, 5, divisao));
 
-//exemplo 2 funcao de ordem superior
-/* function outerFunction(callback) {//funcao externa
+
+
+// 4. Função retornando outra função
+function outerFunction3(callback) {
     console.log("Esta é a função externa.");
-    return function(a, b, c) {
-        const result = callback(a, b, c); // Passando argumentos para a função interna
+    return function(a, b, c) { // retorna uma nova função
+        const result = callback(a, b, c);
         console.log("Resultado da função interna: " + result);
         return "Retorno da função externa";
     };
 }
 
-function innerFunction(a, b, c) {//funcao interna
+function innerFunction3(a, b, c) {
     console.log("Esta é a função interna.");
-    return `Soma dos argumentos: ${a + b + c}`;
+    return `Soma: ${a + b + c}`;
 }
 
-const outerWithArgs = outerFunction(innerFunction); // Obtendo a função retornada
-const outerResult = outerWithArgs(1, 2, 3); // Passando argumentos para a função retornada
-console.log("Resultado da função externa: " + outerResult);
-//explicacao
-//Neste exemplo, outerFunction chama innerFunction e passa os argumentos 1, 2, 3. A innerFunction recebe esses valores como parâmetros a, b, c e retorna a soma deles. O resultado é então capturado e exibido pela outerFunction. */
+const outerWithArgs = outerFunction3(innerFunction3);
+const resultado3 = outerWithArgs(1, 2, 3);
+console.log("Resultado da função externa: " + resultado3);
 
-//exemplo 3 funcao de ordem superior usando args
 
-// (...args) aceita qualquer número de parâmetros
-function outerFunction(callback) {
+
+// 5. Versão genérica com ...args
+function outerFunction4(callback) {
     console.log("Esta é a função externa.");
-    return function(...args) {
-        const result = callback(...args); // Passando todos os argumentos para a função interna
+    return function(...args) { // aceita qualquer número de parâmetros
+        const result = callback(...args);
         console.log("Resultado da função interna: " + result);
         return "Retorno da função externa";
     };
 }
 
-function innerFunction(...args) {
+function innerFunction4(...args) {
     console.log("Esta é a função interna.");
-    return `Soma dos argumentos: ${args.reduce((acc, valorAtual) => acc + valorAtual, 0)}`;
+    return `Soma dos argumentos: ${args.reduce((acc, val) => acc + val, 0)}`;
 }
 
-const outerWithArgs = outerFunction(innerFunction); // Obtendo a função retornada
-const outerResult = outerWithArgs(1, 2, 3); // Passando argumentos para a função retornada
-console.log("Resultado da função externa: " + outerResult);
-
+const outerWithArgs2 = outerFunction4(innerFunction4);
+const resultado4 = outerWithArgs2(1, 2, 3, 4, 5);
+console.log("Resultado da função externa: " + resultado4);
+*/
 
 /*
 //2666. Allow One Function Call

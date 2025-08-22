@@ -6,7 +6,7 @@
  */
 function memoize(fn) {
     const cache = {}; // Objeto para armazenar os resultados em cache
-
+    
     return function(...args) {
         const key = JSON.stringify(args); // Converte os argumentos em uma string JSON para criar uma chave única
 
@@ -19,6 +19,7 @@ function memoize(fn) {
         cache[key] = result; // Armazena o resultado no cache usando a chave única.
 
         return result; // Retorna o resultado calculado
+        
     }
 }
 

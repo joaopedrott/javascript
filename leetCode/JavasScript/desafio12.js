@@ -13,7 +13,10 @@ var addTwoPromises = async function(promise1, promise2) {
 /*
 Explicação do codigo--> const [value1, value2] = await Promise.all([promise1, promise2]);
 
-Neste ponto, usamos Promise.all para aguardar a resolução de ambas as promessas. Promise.all retorna uma nova promessa que se resolve quando todas as promessas fornecidas são resolvidas. O await faz com que a função pause até que Promise.all resolva e retorne um array com os valores resolvidos das promessas, que são então atribuídos a value1 e value2
+Neste ponto, usamos Promise.all para aguardar a resolução de ambas as promessas. 
+Promise.all retorna uma nova promessa que se resolve quando todas as promessas fornecidas são resolvidas. 
+O await faz com que a função pause até que Promise.all resolva e retorne um array com os valores resolvidos das promessas, 
+que são então atribuídos a value1 e value2
 
 */
 

@@ -9,6 +9,7 @@ async function sleep(millis) {// recebe milisegundos
         }, millis);
     });
     let response = await promise;//serve para pausar a execução da função assíncrona sleep até que a Promise seja resolvida.
+    
 }
 
 

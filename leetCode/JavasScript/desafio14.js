@@ -1,4 +1,12 @@
 //2715. Timeout Cancellation
+
+   const result = [];
+   const fn = (x) => x * 5; //funcao multiplica numero por 5
+   const args = [2]; //array com numero 2
+   const t = 20 ; // tempo em milisegundos para a funcao ser chamada
+   const cancelTimeMs = 40; //tempo limite
+   const start = performance.now();//tempo inicial em milissegundos //parecido com o Date.now()
+ 
 var cancellable = function(fn, args, t) {
 
     const cancelFn = () => {
@@ -16,13 +24,7 @@ var cancellable = function(fn, args, t) {
 };
 
 
-   const result = [];
-   const fn = (x) => x * 5; //funcao multiplica numero por 5
-   const args = [2]; //array com numero 2
-   const t = 20 ; // tempo em milisegundos para a funcao ser chamada
-   const cancelTimeMs = 40; //tempo limite
-   const start = performance.now();//tempo inicial em milissegundos //parecido com o Date.now()
- 
+
 
    //funcao que sera chamada
    const log = (...argsArr) => {

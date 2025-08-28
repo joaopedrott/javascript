@@ -13,7 +13,7 @@ var cancellable = function(fn, args, t) {
     }, t);
 
      const cancelFn=()=> {
-        clearInterval(timer);
+        clearInterval(timer);// como timer executa para sempre a cada 35 milissegundos, ele precisa ser cancelado(parado)
     }   
 
     return cancelFn;

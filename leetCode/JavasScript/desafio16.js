@@ -8,25 +8,22 @@
 var timeLimit = function (fn, t) {//funcao que recebe uma funcao e 100 milissegundos
   return async function (...args) {//recebe 150 ou 90 milissegundos
 
-    return new Promise((resolve, reject) => {//precisa ser promessa por conta do async
+    const timeoutPromise =  new Promise((resolve, reject) => {//precisa ser promessa por conta do async
 
       //Primeiro, crio um temporizador que rejeita a promessa após 't' milissegundos
-      const timer = setTimeout(() => {
+      setTimeout(() => {
         reject("Time Limit Exceeded");
       }, t);
 
-      // Executa a função original 'fn'
-      fn(...args) //recebe 150 ou 90
-        .then((result) => {
-          clearTimeout(timer); // Limpa o temporizador se 'fn' resolver a tempo
-          resolve(result);//resolve a promessa
-          
-        })
-        .catch((error) => {
-          clearTimeout(timer); // Limpa o temporizador se 'fn' rejeitar
-          reject(error);//rejeita a promessa em caso de erro
-        });
     });
+        try {
+            const result = await Promise.race([fn(...args), timeoutPromise]);
+            return result;
+
+        } catch(error) {
+            throw error;
+        }
+
 
   };
 };

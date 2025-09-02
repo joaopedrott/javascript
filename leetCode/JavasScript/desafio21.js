@@ -1,29 +1,19 @@
-//2677. Chunk Array
+//2619. Array Prototype Last
 
-var chunk = function(arr, size) {
-
-    let result = []
-    if(size==0) {
-        return result
-    } else{
-        for(let i=0; i<arr.length; i+=size) {
-            result.push(arr.slice(i, i+size))
+/**
+ * @return {null|boolean|number|string|Array|Object}
+ */
+Array.prototype.last = function() {
+        if(this.length ===0 ){
+            return -1
+        } else {
+            return this[this.length-1]
         }
-        return result
-    }
+    };
     
-};
+    /**
+     * const arr = [1, 2, 3];
+     * arr.last(); // 3
+     */
 
-//esse algoritmo pega uma array e divide ela em pedaços de acordo com o tamanho que o usuário definir com Size e coloca cada pedaço em um array dentro de outro array
-
-/*
-arr =
-[1,2,3,4,5]
-
-size =
-1
-
-Output
-[[1],[2],[3],[4],[5]]
-
-*/
+    //Este codigo retorna o ultimo elemento da array se caso nao existir ele retorna -1

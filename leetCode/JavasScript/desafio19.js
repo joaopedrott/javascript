@@ -1,132 +1,69 @@
-//2622. Cache With Time Limit
-var TimeLimitedCache = function() {
-  this.cache = {};
+//2637. Promise Time Limit
+/**
+ * @param {Function} fn
+ * @param {number} t
+ * @return {Function}
+ */
+//funcao de ordem superior que recebe uma funcao e um tempo que por sua vez retorna uma promessa
+var timeLimit = function (fn, t) {//funcao que recebe uma funcao e 100 milissegundos
+  return async function (...args) {//recebe 150 ou 90 milissegundos
+
+    const timeoutPromise =  new Promise((resolve, reject) => {//precisa ser promessa por conta do async
+
+      //Primeiro, crio um temporizador que rejeita a promessa após 't' milissegundos
+      setTimeout(() => {
+        reject("Time Limit Exceeded");
+      }, t);
+
+    });
+        try {
+            const result = await Promise.race([fn(...args), timeoutPromise]);
+            return result;
+
+        } catch(error) {
+            throw error;
+        }
+
+
+  };
 };
 
-/** 
-* @param {number} key
-* @param {number} value
-* @param {number} duration time until expiration in ms
-* @return {boolean} if un-expired key already existed
-*/
-TimeLimitedCache.prototype.set = function(key, value, duration) {
-  //duration eh o tempo maximo de duracao em milisegundos
-  const now = Date.now();//pega o tempo atual
-  const expiryTime = now + duration;//somando o tempo atual com o tempo de duracao temos o tempo de expiracao maximo
+ //passa a funcao e o tempo limite de 100 milisegundos para funcao timeLimit
+const limited = timeLimit((t) => new Promise((res) => setTimeout(res, t)), 100);
 
-  const existingEntry = this.cache[key];// pega o valor e duracao pela chave passada e guarda em existingEntry
-  
-  // se o valor existir e o tempo de expiracao for maior que o tempo atual(inicial)
-  if (existingEntry && existingEntry.expiryTime > now) {
-      // Substituir valor e tempo de expiração
-      this.cache[key] = { value: value, expiryTime: expiryTime };
-      return true;
-  } else {// primeiro vai entrar no else
-      // Adicionar novo par de chave-valor com tempo de expiração em cache
-      this.cache[key] = { value: value, expiryTime: expiryTime };
-      return false;
-  }
-};
-
-/** 
-* @param {number} key
-* @return {number} value associated with key
-*/
-TimeLimitedCache.prototype.get = function(key) {
-  const now = Date.now();
-  const entry = this.cache[key];
-
-  if (entry && entry.expiryTime > now) {
-      return entry.value;
-  } else {
-      return -1;
-  }
-};
-
-/** 
-* @return {number} count of non-expired keys
-*/
-TimeLimitedCache.prototype.count = function() {
-  const now = Date.now();
-  let count = 0;
-
-  for (const key in this.cache) {
-      if (this.cache[key].expiryTime > now) {
-          count++;
-      }
-  }
-
-  return count;
-};
-
-// Exemplo de uso
-const timeLimitedCache = new TimeLimitedCache();//cria o objeto
-console.log(timeLimitedCache.set(1, 42, 1000)); // false
-console.log(timeLimitedCache.get(1)); // 42
-setTimeout(() => console.log(timeLimitedCache.get(1)), 1500); // -1 (expirado)
-console.log(timeLimitedCache.count()); // Número de chaves não expiradas
+limited(150) 
+.then(() => console.log("Resolvida em 150")) 
+.catch(console.log); // "Time Limit Exceeded" at t=100ms // Para testar a resolução dentro do tempo limite 
 
 
+limited(90) 
+.then(() => console.log("Resolvida em 90")) 
+.catch(console.log); // "Resolvida" e "Sucesso"
 
 
+//teste diferente da resolucao
+/* const limited =  timeLimit(async (a, b) => { 
+    await new Promise(res => setTimeout(res, 120)); 
+    return a + b; 
+})
+
+limited(5,10)
+.then(() => console.log("Resolvida")) 
+.catch((error) => console.log(error.message)); // "Time Limit Exceeded" at t=100ms // Para testar a resolução dentro do tempo limite  */
 
 /*
-//versao com cache otimizado
 
 
-var TimeLimitedCache = function() {
-  this.cache = new Map();
-};
+anotacoes:
+Async e await são usados para trabalhar com código assíncrono em JavaScript. Async para funcoes e await para pausar a execucao ate que uma promessa seja resolvida para entao continuar a execucao do codigo.
+
+Promise é um objeto que representa o resultado de uma operacao assincrona. Com ele podemos simular uma chamada de uma API, por exemplo, usando o setTimeout para simular uma demora de 1 segundo.
 
 
-TimeLimitedCache.prototype.set = function(key, value, duration) {//id valor e duracao
-  const now = Date.now();
-  const expiryTime = now + duration;
+obs: fetch é uma funcao que retorna uma promessa. Tanto no fetch quanto na promise nos usamos o then e o catch para tratar o resultado da promessa.
 
-  const existingEntry = this.cache.get(key);
-  if (existingEntry && existingEntry.expiryTime > now) {
-      // Substituir valor e tempo de expiração
-      this.cache.set(key, { value: value, expiryTime: expiryTime });
-      return true;
-  } else {
-      // Adicionar novo par de chave-valor com tempo de expiração
-      this.cache.set(key, { value: value, expiryTime: expiryTime });
-      return false;
-  }
-};
+obs: a funcao eh funcao de ordem superior, pois ela recebe outra funcao como parametro e retorna uma funcao. Nao necessariamente precisa retornar e receber uma funcao ao mesmo tempo para ser considerada uma funcao de ordem superior.
 
-
-TimeLimitedCache.prototype.get = function(key) {
-  const now = Date.now();
-  const entry = this.cache.get(key);
-
-  if (entry && entry.expiryTime > now) {
-      return entry.value;
-  } else {
-      return -1;
-  }
-};
-
-
-TimeLimitedCache.prototype.count = function() {
-  const now = Date.now();
-  let count = 0;
-
-  this.cache.forEach((entry) => {
-      if (entry.expiryTime > now) {
-          count++;
-      }
-  });
-
-  return count;
-};
-
-// Exemplo de uso
-const timeLimitedCache = new TimeLimitedCache();
-console.log(timeLimitedCache.set(1, 42, 1000)); // false
-console.log(timeLimitedCache.get(1)); // 42
-setTimeout(() => console.log(timeLimitedCache.get(1)), 1500); // -1 (expirado)
-console.log(timeLimitedCache.count()); // Retorna o número de chaves não expiradas
-
-
+ex: https://www.youtube.com/watch?v=we5Ac8U21lI
 */
+

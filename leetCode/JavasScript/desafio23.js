@@ -1,19 +1,14 @@
-//2619. Array Prototype Last
+//2727. Is Object Empty
 
 /**
- * @return {null|boolean|number|string|Array|Object}
+ * @param {Object|Array} obj
+ * @return {boolean}
  */
-Array.prototype.last = function() {
-        if(this.length ===0 ){
-            return -1
-        } else {
-            return this[this.length-1]
-        }
-    };
-    
-    /**
-     * const arr = [1, 2, 3];
-     * arr.last(); // 3
-     */
-
-    //Este codigo retorna o ultimo elemento da array se caso nao existir ele retorna -1
+var isEmpty = function(obj) {
+    if(Object.keys(obj).length===0) {
+        return true
+    } else {
+        return false
+    }
+    //return Object.keys(obj).length === 0;
+};

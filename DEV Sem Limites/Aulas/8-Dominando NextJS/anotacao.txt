@@ -769,3 +769,11 @@ mesmo ja tendo uma conta mesmo ja tendo um time ou varios.
     6-em src/app/(no-sidebar)/time e criamos as pastas e por fim o (page.tsx) [teamId]/entrar/[inviteCode]/page.tsx
     7-correcao: sempre que usar params temos que colocar await antes, ex, em src/app/(sidebar)/time/[teamId]/membros/page.tsx:
     "const { teamId } = await params"
+24 - Removendo Membros do Time
+    1-em src/modules/components/members-list.tsx adicionamos a tag (DropdownMenuContent) e as que estao dentro dele neste arquivo
+    Este dropdownmenu seria o menu de 3 pontinhos que aparece no lado de cada membro do time, e quando clicamos,
+    abre a janela para escolhermos qual acao tomar para aquele membros
+    2-em src/hooks criamos o arquivo use-confirm.tsx
+    3-em src/modules/members no arquivo route.ts vamos criar um novo endpoint (.delete)
+    4-em src/modules/members/hooks criamos o arquivo/hook use-delete-member.ts
+    5-volto para o arquivo (members-list.tsx) e implemento 

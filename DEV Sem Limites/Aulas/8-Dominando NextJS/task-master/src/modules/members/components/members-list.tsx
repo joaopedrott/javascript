@@ -9,6 +9,8 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Button } from "@/components/ui/button"
 import { useConfirm } from "@/hooks/use-confirm"
 import { useDeleteMember } from "../hooks/use-delete-member"
+import { useUpdateMemberRole } from "../hooks/use-update-member-role"
+import { MemberRole } from "@prisma/client"
 
 
 interface MembersListProps {
@@ -17,11 +19,21 @@ interface MembersListProps {
 export function MembersList( { teamId }: MembersListProps) {
   const {data: members, isPending} = useGetMembers({teamId})
   const { mutate: deleteMember, isPending: isDeletingMember } = useDeleteMember()
+  const { mutate: updateMemberRole, isPending: isUpdatingMemberRole } = useUpdateMemberRole()
   const [RemoveMemberDialog, confirmRemove] = useConfirm(
     'Remover Membro',
     'Voce tem certeza que deseja remover este membro?',
   )
-
+  const handleUpdateMemberRole = async (memberId: string, role: MemberRole) => {
+    updateMemberRole({
+      param: {
+        memberId
+      },
+      json: {
+        role
+      }
+    })
+  }
   const handleRemoveMember = async (memberId: string) => {
     const ok = await confirmRemove()
 
@@ -81,10 +93,18 @@ export function MembersList( { teamId }: MembersListProps) {
                 </DropdownMenuTrigger>
 
                 <DropdownMenuContent className="rounded-none" side="bottom" align="end">
-                  <DropdownMenuItem className="font-medium hover:rounded-none">
+                  <DropdownMenuItem 
+                  onClick={() => handleUpdateMemberRole(member.id, MemberRole.ADMIN)} 
+                  className="font-medium hover:rounded-none"
+                  disabled={isUpdatingMemberRole}
+                  >
                     Tornar Administrador
                   </DropdownMenuItem>
-                  <DropdownMenuItem className="font-medium hover:rounded-none">
+                  <DropdownMenuItem 
+                  onClick={() => handleUpdateMemberRole(member.id, MemberRole.MEMBER)} 
+                  className="font-medium hover:rounded-none"
+                  disabled={isUpdatingMemberRole}
+                  >
                     Tornar Membro
                   </DropdownMenuItem>
                   <DropdownMenuItem 

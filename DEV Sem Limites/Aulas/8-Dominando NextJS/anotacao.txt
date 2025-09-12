@@ -774,6 +774,13 @@ mesmo ja tendo uma conta mesmo ja tendo um time ou varios.
     Este dropdownmenu seria o menu de 3 pontinhos que aparece no lado de cada membro do time, e quando clicamos,
     abre a janela para escolhermos qual acao tomar para aquele membros
     2-em src/hooks criamos o arquivo use-confirm.tsx
-    3-em src/modules/members no arquivo route.ts vamos criar um novo endpoint (.delete)
+    3-em src/modules/members no arquivo ja existente (route.ts) vamos criar um novo endpoint (.delete)
     4-em src/modules/members/hooks criamos o arquivo/hook use-delete-member.ts
     5-volto para o arquivo (members-list.tsx) e implemento 
+25 - Atualizando Role dos Membros
+    1- vamos em src/modules/members no arquivo ja existente (route.ts) e criamos o (.patch) para atualizar O
+    o membro, se ele vai sair de member para adm, ou adm para member
+    2-no caminho src/modules/members/schemas criamos o arquivo (update-member-role.ts) para usar no (.path) do arquivo (route.ts)
+    3-no caminho src/modules/members/hooks, criamos o arquivo/hook (user-update-member-role.ts)
+    4-e por ultimo vamos no caminho src/modules/members/components/members-list.tsx e atualizamos o arquivo adicionando a funcao (handleUpdateMemberRole)
+Agora eh possivel mudar se o membro do grupo eh membro comum ou adm

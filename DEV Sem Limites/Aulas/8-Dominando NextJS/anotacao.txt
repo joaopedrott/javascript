@@ -784,3 +784,11 @@ mesmo ja tendo uma conta mesmo ja tendo um time ou varios.
     3-no caminho src/modules/members/hooks, criamos o arquivo/hook (user-update-member-role.ts)
     4-e por ultimo vamos no caminho src/modules/members/components/members-list.tsx e atualizamos o arquivo adicionando a funcao (handleUpdateMemberRole)
 Agora eh possivel mudar se o membro do grupo eh membro comum ou adm
+26 - Adicionando User Button
+    1-no caminho src/components criamos o arquivo nav-user.tsx
+    2-e no caminho src/components no arquivo (app-sidebar.tsx), dentro da tag <SidebarFooter> adicionamos:
+                <SessionProvider>
+                    <NavUser />
+                </SessionProvider>
+pronto, botao de deslogar, adicionado.
+27- 

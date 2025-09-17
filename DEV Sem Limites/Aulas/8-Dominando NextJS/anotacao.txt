@@ -791,4 +791,35 @@ Agora eh possivel mudar se o membro do grupo eh membro comum ou adm
                     <NavUser />
                 </SessionProvider>
 pronto, botao de deslogar, adicionado.
-27- 
+27 - Criando Projetos
+    1- no caminho src/components criamos o arquivo (projects-navigation.tsx)
+    2- no arquivo src/components/app-sidebar.tsx, 
+    3- no caminho src/modules e criamos a pasta (projects)
+    4- dentro da pasta (projects), criamos a pasta (hooks) e dentro dessa pasta criamos o arquivo
+    (use-create-projects-modal.ts)
+    5- no caminho src/modules/projects criamos a pasta (components) e seu arquivo (create-project-form.tsx)
+    6- no caminho src/modules/projects e criamos a pasta (schema) e seu arquivo (create-project-schema.ts)
+    7- no caminho src/modules/projects, criamos o arquivo (route.ts)
+    8- no caminho src/api/[[...route]]/route.ts e atualizamos este arquivo com a rota/route que criamos
+    9- no caminho raiz, task-master/ prisma/migrations/schema.prisma, adicionamos uma nova migracao,
+    a criacao da tabela projetos no banco de dados e em seguida usamos os comandos:
+    yarn prisma migrate dev
+    e depois so colocamos o nome da migrate como "add projects" e damos Enter de novo e pronto!
+    10- no caminho, src/modules/projects/route.ts, voltamos a este arquivo para a segunda parte da implementacao, adicionando
+            const project = await prisma.project.create({
+                data: {
+                    name,
+                    teamId,
+                    image: image as string
+                }
+            })
+
+            return c.json({
+                data: project
+            })
+    
+    11- no caminho src/modules/projects/hooks, criamos um novo hook (use-create-project.ts)
+    12- no caminho src/modules/projects/components criamos um arquivo (create-project-dialog.tsx)
+    13- no caminho src/app/time/layout.tsx adicionamos a tag <CreateProjectDialog />
+    14- 
+

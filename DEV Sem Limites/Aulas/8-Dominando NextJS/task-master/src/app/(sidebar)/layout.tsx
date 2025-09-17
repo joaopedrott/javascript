@@ -2,6 +2,7 @@
 import { AppSidebar } from "@/components/app-sidebar";
 import { Separator } from "@/components/ui/separator";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { CreateProjectDialog } from "@/modules/projects/components/create-project-dialog";
 import { CreateTeamDialog } from "@/modules/teams/components/create-team-dialog";
 import { usePathname } from "next/navigation";
 
@@ -27,6 +28,8 @@ export default function SidebarLayout ({ children }: SidebarLayoutProps ) {
         <SidebarProvider>
             <AppSidebar />
             <CreateTeamDialog />
+            <CreateProjectDialog />
+
             <SidebarInset>
                 <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
                     <div className="flex items-center gap-2 px-4">

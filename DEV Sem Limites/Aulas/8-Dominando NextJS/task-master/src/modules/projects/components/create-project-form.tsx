@@ -14,7 +14,7 @@ import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
 import { usePresignedFile } from '@/modules/files/hooks/use-presigned-file'
 import { cn } from '@/lib/utils'
-import { createProjectSchema } from '../schemas/create-project-schema'
+import { createProjectSchema } from '../schemas/create-project'
 import { useCreateProject } from '../hooks/use-create-project'
 import { useTeamId } from '@/modules/teams/hooks/use-team-id'
 

@@ -798,7 +798,7 @@ pronto, botao de deslogar, adicionado.
     4- dentro da pasta (projects), criamos a pasta (hooks) e dentro dessa pasta criamos o arquivo
     (use-create-projects-modal.ts)
     5- no caminho src/modules/projects criamos a pasta (components) e seu arquivo (create-project-form.tsx)
-    6- no caminho src/modules/projects e criamos a pasta (schema) e seu arquivo (create-project-schema.ts)
+    6- no caminho src/modules/projects e criamos a pasta (schema) e seu arquivo (create-project.ts)
     7- no caminho src/modules/projects, criamos o arquivo (route.ts)
     8- no caminho src/api/[[...route]]/route.ts e atualizamos este arquivo com a rota/route que criamos
     9- no caminho raiz, task-master/ prisma/migrations/schema.prisma, adicionamos uma nova migracao,
@@ -821,5 +821,90 @@ pronto, botao de deslogar, adicionado.
     11- no caminho src/modules/projects/hooks, criamos um novo hook (use-create-project.ts)
     12- no caminho src/modules/projects/components criamos um arquivo (create-project-dialog.tsx)
     13- no caminho src/app/time/layout.tsx adicionamos a tag <CreateProjectDialog />
-    14- 
+ 28 - Listando Projetos
+    1- no caminho src/modules/projects/route.ts e adicionamos duas rotas (.GET)
+    2- no caminho src/modules/projects/schemas criamos o arquivo (get-project.ts)
+    3- no caminho src/modules/projects/hook criamos dois hooks, uma para buscar projeto e outro para buscar uma array de projetos (use-get-project.ts)(use-get-projects.ts)
+    4- no caminho src/components/projects-navigation.tsx fizemos aparecer todos os projeto criados na sidebar:
+            <SidebarMenu>
+                {projects?.data.map(project => {
+                    const href = `/time/${teamId}/projeto/${project.id}`
+                    return (
+                    <SidebarMenuItem key={project.id}>
+                        <SidebarMenuButton asChild tooltip={project.name}>
+                            <Link href={href}>
+                            <div className={cn("flex items-center gap-2.5 py-2 rounded-md font-medium transition truncate")}>
+                                {project.name}
+                            </div>
+                            </Link>
+                        </SidebarMenuButton>
+                    </SidebarMenuItem>
+                    )
+                })}
+            </SidebarMenu>
 
+
+    5- no caminho src/modules/projects/components criamos o arquivo (project-avatar.tsx)
+    6- voltamos ao src/components/projects-navigation.tsx e adicionamos o avatar dos projetos:
+            <SidebarMenu>
+                {projects?.data.map(project => {
+                    const href = `/time/${teamId}/projeto/${project.id}`
+                    return (
+                    <SidebarMenuItem key={project.id}>
+                        <SidebarMenuButton asChild tooltip={project.name}>
+                            <Link href={href}>
+                            <div className={cn("flex items-center gap-2.5 py-2 rounded-md font-medium transition truncate")}>
+                                <ProjectAvatar image={project.image ?? undefined} name={project.name}/>
+                                {project.name}
+                            </div>
+                            </Link>
+                        </SidebarMenuButton>
+                    </SidebarMenuItem>
+                    )
+                })}
+            </SidebarMenu>
+
+    7- Ainda no mesmo arquivo (projects-navigation.tsx) adicionei o skeleton:
+
+    <SidebarMenu>
+        {isPending && (
+          <>
+            <div className={cn(
+              'flex items-center gap-2.5 py-2 rounded-md font-medium  transition truncate',
+            )}>
+              <Skeleton className='w-2/3 h-6' />
+            </div>
+            <div className={cn(
+              'flex items-center gap-2.5 py-2 rounded-md font-medium  transition truncate',
+            )}>
+              <Skeleton className='w-full h-6' />
+            </div>
+          </>
+        )}
+                {projects?.data.map(project => {
+                    const href = `/time/${teamId}/projeto/${project.id}`
+                    return (
+                    <SidebarMenuItem key={project.id}>
+                        <SidebarMenuButton asChild tooltip={project.name}>
+                            <Link href={href}>
+                            <div className={cn("flex items-center gap-2.5 py-2 rounded-md font-medium transition truncate")}>
+                                <ProjectAvatar image={project.image ?? undefined} name={project.name}/>
+                                {project.name}
+                            </div>
+                            </Link>
+                        </SidebarMenuButton>
+                    </SidebarMenuItem>
+                    )
+                })}
+            </SidebarMenu>
+
+29 - Corrigindo Cache dos Projetos
+    1-
+    2-
+    3-
+    4-
+    5-
+    6-
+    7-
+    8-
+    9-

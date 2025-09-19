@@ -7,7 +7,7 @@ interface UseGetProjectsParams {
 
 export function useGetProjects({ teamId }: UseGetProjectsParams) {
   return useQuery({
-    queryKey: ["projects"],
+    queryKey: ["projects", teamId],
     queryFn: async () => {
       const response = await client.api.projects.$get({ query: { teamId }})
 

@@ -899,12 +899,6 @@ pronto, botao de deslogar, adicionado.
             </SidebarMenu>
 
 29 - Corrigindo Cache dos Projetos
-    1-
-    2-
-    3-
-    4-
-    5-
-    6-
-    7-
-    8-
-    9-
+    1- no caminho src/modules/projects/hooks/use-get-projects.ts vamos nesse arquivo e corrigimos, para que os projetos sejam atualizados,
+    assim que trocamos de time no menu sidebar, simplesmente adicionando "teamId" no (queryKey: ["projects", teamId],)
+

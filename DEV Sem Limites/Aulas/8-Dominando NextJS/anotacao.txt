@@ -902,3 +902,12 @@ pronto, botao de deslogar, adicionado.
     1- no caminho src/modules/projects/hooks/use-get-projects.ts vamos nesse arquivo e corrigimos, para que os projetos sejam atualizados,
     assim que trocamos de time no menu sidebar, simplesmente adicionando "teamId" no (queryKey: ["projects", teamId],)
 
+30 - Detalhes dos Projetos
+    1- no caminho src/app/(sidebar)/time/[teamId] criamos uma nova pasta a (projeto/[projectId]/page.tsx)
+    2- na pasta src/modules/projects/comopents criamos o arquivo (project-detail.tsx)
+    3- na pasta src/modules/projects/hooks criamos o arquivo (use-project-id.ts)
+Agora quando clicamos no projeto na sidebar, a pagina do projeto eh exibida
+
+
+
+

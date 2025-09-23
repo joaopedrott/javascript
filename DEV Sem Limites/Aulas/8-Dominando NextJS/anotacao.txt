@@ -908,6 +908,23 @@ pronto, botao de deslogar, adicionado.
     3- na pasta src/modules/projects/hooks criamos o arquivo (use-project-id.ts)
 Agora quando clicamos no projeto na sidebar, a pagina do projeto eh exibida
 
+31 - Configurações dos Projetos
+implementando a pagina de configuracoes do projeto, para alterar o nome do projeto, a imagem do projeto e ate deletar o projeto.
+Primeiro vamos construir todo o backend da pagina de configuracoes
+    1-no caminho src/modules/route.ts vamos criar novas rotas (.patch) e no caminho src/modules/schema criamos o arquivo (update-project.ts)
+    2-ainda no caminho src/modules/route.ts vamos criar a rota (.delete)
+    3- Agora vamos criar os hooks para executar os end points criados no route.ts.
+    no caminho src/modules/hooks criamos o hook (use-update-project.ts) que ira usar o endpoint (.path) para atualizar as informacoes do projeto
+    4-no caminho src/modules/hooks criamos o hook (use-delete-project.ts) que ira usar o endpoint (.delete) para deletar o projeto
+    5-Agora vamos fazer o front-end. Vamos no caminho src/modules/projects/components criamos o (update-project-form.tsx) que vai utilizar esses hooks criados
+    6- por ultimo vamos em src/app/(sidebar)/time/[teamId]/projeto/[projectId]/  criamos a pasta (configuracoes) e seu arquivo (page.tsx)
+    7-
+    8-
+    9-
+    10-
+    11-
+    12-
+    13-
 
 
 

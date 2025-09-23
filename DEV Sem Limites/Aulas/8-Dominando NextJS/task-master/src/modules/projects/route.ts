@@ -4,6 +4,7 @@ import { zValidator } from "@hono/zod-validator";
 import { createProjectSchema } from "./schemas/create-project";
 import { prisma } from "@/lib/prisma";
 import { getProjectsSchema } from "./schemas/get-project";
+import { updateProjectSchema } from "./schemas/update-project";
 
 
 const app = new Hono()
@@ -100,6 +101,90 @@ const app = new Hono()
             return c.json({
                 data: project
             })
+        }
+    )
+    .patch(
+        '/:projectId',
+        sessionMiddleware,
+        zValidator('json', updateProjectSchema),
+        async (c) => {
+            const user = c.get('user')
+
+            const { projectId } = c.req.param()
+            const { name, image } = c.req.valid('json')
+
+            const project = await prisma.project.findUnique({
+                where: {
+                    id: projectId
+                }
+            })
+
+            if (!project) {
+                return c.json({ error: 'Projeto nao encontrado' }, 404)
+            }
+
+            const member = await prisma.member.findFirst({
+                where: {
+                    userId: user.id,
+                    teamId: project.teamId
+                }
+            })
+
+            if (!member) {
+                return c.json({ error: 'Nao autorizado' }, 401)
+            }
+
+            const updatedProject = await prisma.project.update({
+                where: {
+                    id: projectId
+                },
+                data: {
+                    name,
+                    image: image as string
+                }
+            })
+
+            return c.json({
+                data: updatedProject
+            })
+        }
+    )
+    .delete(
+        '/:projectId',
+        sessionMiddleware,
+        async (c) => {
+            const user = c.get('user')
+
+            const { projectId } = c.req.param()
+
+            const project = await prisma.project.findUnique({
+                where: {
+                    id: projectId
+                }
+            })
+
+            if (!project) {
+                return c.json({ error: 'Projeto nao encontrado' }, 404)
+            }
+
+            const member = await prisma.member.findFirst({
+                where: {
+                    userId: user.id,
+                    teamId: project.teamId
+                }
+            })
+
+            if (!member) {
+                return c.json({ error: 'Nao autorizado' }, 401)
+            }
+
+            await prisma.project.delete({
+                where: {
+                    id: projectId
+                }
+            })
+
+            return c.json({data: {id: projectId}})
         }
     )
 

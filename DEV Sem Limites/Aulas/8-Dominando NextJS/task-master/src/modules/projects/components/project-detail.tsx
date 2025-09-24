@@ -6,6 +6,7 @@ import { useProjectId } from "../hooks/use-project-id";
 import { ProjectAvatar } from "./project-avatar";
 import Link from "next/link";
 import { Pencil } from "lucide-react";
+import { TaskViewSwitcher } from "@/modules/tasks/components/task-view-switcher";
 
 export function ProjectDetail() {
     const projectId = useProjectId();
@@ -38,6 +39,8 @@ export function ProjectDetail() {
                     </Link>
                 </Button>
             </div>
+
+            <TaskViewSwitcher />
         </div>
     )
 }

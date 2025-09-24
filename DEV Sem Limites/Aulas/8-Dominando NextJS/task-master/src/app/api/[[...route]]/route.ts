@@ -5,6 +5,7 @@ import teams from '@/modules/teams/route'
 import files from '@/modules/files/route'
 import members from '@/modules/members/route'
 import projects from '@/modules/projects/route'
+import tasks from '@/modules/tasks/route'
 
 const app = new Hono().basePath('/api')
 
@@ -13,6 +14,7 @@ const routes = app
 .route('/files', files)
 .route('/members', members)
 .route('/projects', projects)
+.route('/tasks', tasks)
 
 export const GET = handle(app)
 export const POST = handle(app)

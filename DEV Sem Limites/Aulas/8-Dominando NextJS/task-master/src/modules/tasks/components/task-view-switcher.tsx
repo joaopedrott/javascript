@@ -4,11 +4,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { Plus } from "lucide-react";
 import { useQueryState } from "nuqs";
+import { useCreateTaskDialog } from "../hooks/use-create-task-dialog";
 
 export function TaskViewSwitcher() {
     const [tab, setTab] = useQueryState('visualizacao', {
         defaultValue: 'table'
     });
+    const { open } = useCreateTaskDialog()
 
     return (
         <Tabs className="flex-1 w-full border bg-sidebar" defaultValue={tab} onValueChange={setTab}>
@@ -28,7 +30,7 @@ export function TaskViewSwitcher() {
                         </TabsTrigger>
                     </TabsList>
 
-                    <Button size='sm' className="w-full lg:w-auto">
+                    <Button size='sm' className="w-full lg:w-auto" onClick={open}>
                         <Plus className="size-4 mr-2" />
                         Nova Tarefa
                      </Button>

@@ -959,7 +959,21 @@ por fim executo o comando yarn prisma migrate dev colocando o nome de "add task 
     7- em src/modules/projects/components/project-detail.tsx vamos adicionar:
     <TaskViewSwitcher /> bem no final 
     8- em src/modules/tasks/ e criamos a pasta (components) e seu arquivo (task-view-switcher.tsx)
-
+33 - Criando Tarefas
+    1- vamos no caminho src/modules/tasks/hooks/ e criamos o arquivo (use-create-task-dialog.ts)
+    2- vamos em src/modules/task/components criamos o arquivo componente (crate-task-dialog.tsx)
+    3- em src/app/(sidebar)/layout.tsx e adiciono a tag <CreateTaskDialog />
+    4- em src/modules/task/components/task-view-switcher.tsx adicionamos:
+    const { open } = useCreateTaskDialog()
+    e depois, no botao escrito "nova tarfa", adicionamos nele:
+    onClick={open}
+    5- em src/modules/task/components criamos o componente de fato (create-task-form.tsx),
+    neste arquivo vai ter tudo que vai ter na pagina de criar tarefa
+    6- em src/components/ui criamos o arquivo (date-picker.tsx)
+    7- em src/modules/task/components criamos o arquivo (create-task-form-wrapper.tsx)
+    8- em src/components/ui/select.tsx, modificamos o componente instalado com base no codigo que foi compartilhado do curso
+Agora quando apertamos em criar tarefa, eh aberto um formulario para criar, 
+e de fato eh criado quando apertamos cirar tarefa
     
 
 

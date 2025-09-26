@@ -5,12 +5,31 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Plus } from "lucide-react";
 import { useQueryState } from "nuqs";
 import { useCreateTaskDialog } from "../hooks/use-create-task-dialog";
+import { DataFilters } from "./data-filters";
+import { DataTable } from "./data-table";
+import { columns } from "./columns";
+import { useGetTasks } from "../hooks/use-get-tasks";
+import { useTeamId } from "@/modules/teams/hooks/use-team-id";
+import { useProjectId } from "@/modules/projects/hooks/use-project-id";
+import { Task } from '../types';
 
 export function TaskViewSwitcher() {
+    const teamId = useTeamId()
+    const projectId = useProjectId()
+
     const [tab, setTab] = useQueryState('visualizacao', {
         defaultValue: 'table'
     });
     const { open } = useCreateTaskDialog()
+    const  { data: tasks } = useGetTasks({ 
+        teamId, 
+        projectId })
+
+    if (!tasks?.data) {
+        return null
+    }
+
+    const data = tasks.data as Task[]
 
     return (
         <Tabs className="flex-1 w-full border bg-sidebar" defaultValue={tab} onValueChange={setTab}>
@@ -38,9 +57,13 @@ export function TaskViewSwitcher() {
 
                 <Separator className="my-4" />
 
+                <DataFilters />
+
+                <Separator className="my-4" />
+
                 <>
                     <TabsContent value="table" className="mt-0">
-                        Tabela
+                        <DataTable columns={columns} data={data ??[]} />
                     </TabsContent>
                     <TabsContent value="columns" className="mt-0">
                         Coluna

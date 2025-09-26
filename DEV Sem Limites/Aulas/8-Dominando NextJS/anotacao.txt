@@ -974,7 +974,33 @@ por fim executo o comando yarn prisma migrate dev colocando o nome de "add task 
     8- em src/components/ui/select.tsx, modificamos o componente instalado com base no codigo que foi compartilhado do curso
 Agora quando apertamos em criar tarefa, eh aberto um formulario para criar, 
 e de fato eh criado quando apertamos cirar tarefa
+34 - Adicionando Table View
+    1- em src/modules/task/components/task-view-switcher.tsx e adicionamos a tag <DataFilters /> para posteriormente fazer o arquivo dessa tag
+    2- em src/modules/task/components/ vamos criar o arquivo (data-filters.tsx)
     
+    3- instalamos o o tanstack react table:
+    yarn add @tanstack/react-table
+    4- em src/modules/task/components/ criamos os arquivos (columns.tsx) e (data-table.tsx)
+    5- em src/modules/task/ criamos o arquivo (types.ts) para ser usado no arquivo (columns.tsx)
+    6- em src/modules/task/components/ tambem, criamos o arquivo (task-date.tsx) para o arquivo (columns.tsx)
+    e posteriormente sera usado em outros lugares da aplicacao
+    7-para que o (columns.tsx), bem no final quando usamos a tag <Badge>, precisaremos atualizar o componente, adicionando os estilos:
+        import { TaskStatus } from "@prisma/client"
+
+        [TaskStatus.TODO]: "border-transparent bg-red-400 text-primary hover:bg-red-400/80",
+        [TaskStatus.IN_PROGRESS]: "border-transparent bg-yellow-400 text-primary hover:bg-yellow-400/80",
+        [TaskStatus.IN_REVIEW]: "border-transparent bg-blue-400 text-primary hover:bg-blue-400/80",
+        [TaskStatus.DONE]: "border-transparent bg-emerald-400 text-primary hover:bg-emerald-400/80",
+        [TaskStatus.BACKLOG]: "border-transparent bg-black text-white hover:bg-black/80"
+    obs: Pronto, customizamos o cabecalho da tabela!
+
+    8-Agora vamos pegar os dados das tarefas no beckend, para por na tabela 
+    em src/modules/task/route.ts e vamos adicionar um novo endpoint (.GET)
+    9-em src/modules/task/schemas/ criamos um novo arquivo (get-tasks.ts)
+    10- em src/modules/task/hooks e criamos um novo hook (use-get-tasks.ts) para pegar os dados do backend 
+    11- volto para src/modules/task/task-view-switcher.tsx e uso o (useGetTasks)
+
+
 
 
 

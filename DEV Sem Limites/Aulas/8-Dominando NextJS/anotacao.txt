@@ -1015,11 +1015,6 @@ e de fato eh criado quando apertamos cirar tarefa
     4-Agora para implementar os filtros das tarefas
     vamos em src/modules/tasks/components/data-filters.tsx vamos modificar ele
     5- e em src/modules/tasks/components/task-view-switcher.tsx ajustamos para que o filtro
-    6-
-    7-
-    8-
-    9-
-    10-
 
 
 

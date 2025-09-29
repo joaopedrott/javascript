@@ -976,7 +976,13 @@ Agora quando apertamos em criar tarefa, eh aberto um formulario para criar,
 e de fato eh criado quando apertamos cirar tarefa
 34 - Adicionando Table View
     1- em src/modules/task/components/task-view-switcher.tsx e adicionamos a tag <DataFilters /> para posteriormente fazer o arquivo dessa tag
-    2- em src/modules/task/components/ vamos criar o arquivo (data-filters.tsx)
+    2- em src/modules/task/components/ vamos criar o arquivo (data-filters.tsx) com apenas esse codigo:
+    export function DataFilters (  ) {
+
+    return (
+        <span>Filtros das Tarefas</span>
+    )
+}
     
     3- instalamos o o tanstack react table:
     yarn add @tanstack/react-table
@@ -999,6 +1005,19 @@ e de fato eh criado quando apertamos cirar tarefa
     9-em src/modules/task/schemas/ criamos um novo arquivo (get-tasks.ts)
     10- em src/modules/task/hooks e criamos um novo hook (use-get-tasks.ts) para pegar os dados do backend 
     11- volto para src/modules/task/task-view-switcher.tsx e uso o (useGetTasks)
+35 - Adicionando Data Filters
+    1-Primeiros vamos personalizar as tabs
+    Vamos em src/modules/taks/components/tabs.tsx e alterados todo o codigo baseado no codigo compartilhado no link na descricao da aula
+    2-e tambem vamos em src/modules/tasks/components/data-table.tsx e retiramos (rounded-md) da classename da primeira tag <div>
+    
+    3-Agora para implementar os filtros das tarefas
+    vamos em src/modules/tasks/components/data-filters.tsx vamos modificar ele
+    4-
+    5-
+    6-
+    7-
+    8-
+    9-
 
 
 

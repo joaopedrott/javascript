@@ -3,7 +3,7 @@ import { differenceInDays, format } from "date-fns"
 import { ptBR } from "date-fns/locale"
 
 interface TaskDateProps {
-  value: string 
+  value: Date 
   className?: string
 }
 

@@ -1015,6 +1015,47 @@ e de fato eh criado quando apertamos cirar tarefa
     4-Agora para implementar os filtros das tarefas
     vamos em src/modules/tasks/components/data-filters.tsx vamos modificar ele
     5- e em src/modules/tasks/components/task-view-switcher.tsx ajustamos para que o filtro
+36 - Adicionando Ações das Tarefas
+criacao das actions das tarefas
+    1- em src/modules/tasks/components criamos o arquivo (task-actions.tsx)
+    2- em src/modules/tasks/components/columns.tsx modificamos este arquivo, no final em (cell: actions) para:
+            cell: ({ row }) => {
+      const id = row.original.id
+      const projectId = row.original.projectId
+      return (
+        <TaskActions id={id} projectId={projectId}>
+          <Button variant="ghost" className="size-8 p-0">
+            <MoreVertical className="size-4" />
+          </Button>
+        </TaskActions>
+      )
+
+    },
+
+
+    3-Agora vamos fazer o endpoint para modificacao da tarefa e exclusao da tarefa 
+    em src/modules/tasks/route.ts e adicionamos o end point (.patch) e (.delete)
+    4-Agora vamos fazero hook, que ira usar esses endpoints que por sua vez, o frontend ira usar esses hooks
+    vamos em src/modules/tasks/hooks/ e criamos os arquivos ou hooks (use-update-task.ts) e (use-delete-task.ts)
+    5- agora voltamos ao src/modules/tasks/components/task-actions.tsx e implementamos o hook que acabamos de criar (const { mutate, isPending } = useDeleteTask()):
+            "
+            const onDelete = async () => {
+            const ok = await confirm()
+            if (!ok) return
+
+                mutate({
+                    param: {
+                        taskId: id
+                    }
+                }, {
+                    onSuccess: () => {
+                        router.refresh()
+                    }
+                })
+            }
+            "
+obs: pronto, agora temos o componente que eh os ... (tres pontinhos) ou (configuracao) ou (opcoes) que abre um menu no estilo dropdown. 
+Logo apos de fazer este menu, implementamos neste menu, a funcao de "deletar tarefa", mas no proximo passo(37) sera implementado o "Editar tarefa"
 
 
 

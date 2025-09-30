@@ -1,11 +1,12 @@
 import { Select, SelectContent, SelectItem, SelectSeparator, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useTaskFilters } from "../hooks/use-task-filters"
 import { TaskStatus } from "@prisma/client"
-import { ListChecks } from "lucide-react"
+import { Folder, ListChecks, User } from "lucide-react"
 import { useGetProjects } from "@/modules/projects/hooks/use-get-projects"
 import { useGetMembers } from "@/modules/members/hooks/use-get-members"
 import { useTeamId } from "@/modules/teams/hooks/use-team-id"
 import { DatePicker } from "@/components/ui/date-picker"
+import { Fragment } from "react"
 
 
 interface DataFilterProps {
@@ -90,7 +91,7 @@ export function DataFilters ( { hideProjectFilter = false }: DataFilterProps ) {
             >
                 <SelectTrigger className="w-full lg:w-auto h-8">
                     <div className="flex items-center pr-2">
-                        <ListChecks className="size-4 mr-2" />
+                        <User className="size-4 mr-2" />
                         <SelectValue placeholder='Todos os atribuidos' />
                     </div>
                 </SelectTrigger>
@@ -98,10 +99,10 @@ export function DataFilters ( { hideProjectFilter = false }: DataFilterProps ) {
                     <SelectItem value='todos'>Todos os atribuidos</SelectItem>
                     <SelectSeparator />
                         {memberOptions?.map(member => (
-                            <>
+                            <Fragment key={member.value}>
                                 <SelectItem value={member.value}>{member.label}</SelectItem>
                                 <SelectSeparator />
-                            </>
+                            </Fragment>
                         ))}
                 </SelectContent>
             </Select>
@@ -113,7 +114,7 @@ export function DataFilters ( { hideProjectFilter = false }: DataFilterProps ) {
         >
           <SelectTrigger className="w-full lg:w-auto h-8">
             <div className="flex items-center pr-2">
-              <ListChecks className="size-4 mr-2" />
+              <Folder className="size-4 mr-2" />
               <SelectValue placeholder='Todos os projetos' />
             </div>
           </SelectTrigger>
@@ -121,10 +122,10 @@ export function DataFilters ( { hideProjectFilter = false }: DataFilterProps ) {
             <SelectItem value='todos'>Todos os projetos</SelectItem>
             <SelectSeparator />
             {projectOptions?.map(project => (
-              <>
+              <Fragment key={project.value}>
                 <SelectItem value={project.value}>{project.label}</SelectItem>
                 <SelectSeparator />
-              </>
+              </Fragment>
             ))}
           </SelectContent>
         </Select>

@@ -2,7 +2,7 @@
  
 import { Button } from "@/components/ui/button"
 import { ColumnDef } from "@tanstack/react-table"
-import { ArrowUpDown } from "lucide-react"
+import { ArrowUpDown, MoreVertical } from "lucide-react"
 
 import { Task } from "../types"
 import { ProjectAvatar } from "@/modules/projects/components/project-avatar"
@@ -10,6 +10,7 @@ import { MemberAvatar } from "@/modules/members/components/member-avatar"
 import { TaskDate } from "./task-date"
 import { Badge } from "@/components/ui/badge"
 import { TaskStatus } from "@prisma/client"
+import { TaskActions } from "./task-actions"
 
 
 const statusMap: Record<TaskStatus, string> = {
@@ -104,7 +105,7 @@ export const columns: ColumnDef<Task>[] = [
     },
     cell: ({ row }) => {
       const dueDate = row.original.dueDate
-      return <TaskDate value={dueDate} />
+      return <TaskDate value={new Date(dueDate)} />
     }
   },
   {
@@ -127,6 +128,17 @@ export const columns: ColumnDef<Task>[] = [
   },
   {
     id: "actions",
-    cell: "actions",
+    cell: ({ row }) => {
+      const id = row.original.id
+      const projectId = row.original.projectId
+      return (
+        <TaskActions id={id} projectId={projectId}>
+          <Button variant="ghost" className="size-8 p-0">
+            <MoreVertical className="size-4" />
+          </Button>
+        </TaskActions>
+      )
+
+    },
   },
 ]

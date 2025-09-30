@@ -125,5 +125,101 @@ const app = new Hono()
             })
     }
   )
+  .patch(
+    "/:taskId",
+    sessionMiddleware,
+    zValidator("json", createTaskSchema.partial()),
+    async (c) => {
+        const user = c.get('user')
 
+        const { 
+            name,
+            status,
+            projectId,
+            dueDate,
+            description,
+            assigneeId
+
+        } = c.req.valid('json')
+
+        const { taskId } = c.req.param()
+
+        const existingTask = await prisma.task.findUnique({
+            where: {
+                id: taskId
+            }
+        })
+
+        if (!existingTask) {
+            return c.json({ error: 'Tarefa nao encontrada' }, 404)
+        }
+
+        const member = await prisma.member.findFirst({
+            where: {
+                userId: user.id,
+                teamId: existingTask.teamId
+            }
+        })
+
+        if (!member) {
+            return c.json({ error: 'Nao autorizado' }, 403)
+        }
+
+        const task = await prisma.task.update({
+            where: {
+                id: taskId
+            },
+            data: {
+                name,
+                status,
+                projectId,
+                dueDate,
+                description,
+                assigneeId
+            }
+        })
+
+        return c.json({
+            data: task
+        })
+    }
+  )
+  .delete(
+    "/:taskId",
+    sessionMiddleware,
+    async (c) => {
+        const user = c.get('user')
+
+        const { taskId } = c.req.param()
+
+        const existingTask = await prisma.task.findUnique({
+            where: {
+                id: taskId
+            }
+        })
+
+        if (!existingTask) {
+            return c.json({ error: 'Tarefa nao encontrada' }, 404)
+        }
+
+        const member = await prisma.member.findFirst({
+            where: {
+                userId: user.id,
+                teamId: existingTask.teamId
+            }
+        })
+
+        if (!member) {
+            return c.json({ error: 'Nao autorizado' }, 403)
+        }
+
+        await prisma.task.delete({
+            where: {
+                id: taskId
+            }
+        })
+
+        return c.json({ data: { id: taskId } })
+    }
+  )
 export default app

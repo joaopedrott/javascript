@@ -1084,9 +1084,6 @@ Logo apos de fazer este menu, implementamos neste menu, a funcao de "deletar tar
         </DropdownMenuItem>
     "
     obs: adiciono o hook (useUpdateTaskDialog()) no comeco do arquivo e onclick na tag <DropdownMenuItem>
-    9-
-    10-
-    11-
 
 
 

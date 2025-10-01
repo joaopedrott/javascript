@@ -1069,7 +1069,21 @@ Logo apos de fazer este menu, implementamos neste menu, a funcao de "deletar tar
     5-em src/modules/tasks/hooks criamos o arquivo ou hook (use-update-task-dialog.ts)
     6-Vamos em src/modules/tasks/components e criamos o arquivo (update-task-dialog.tsx)
     7- em src/app/(sidebar)/layout.tsx vamos adicionar a tag (<UpdateTaskDialog />)
-    8-
+    8- vamos no arquivo src/modules/tasks/components/task-actions.tsx e modifico o botao "Editar Tarefa"
+    "
+    const { open } = useUpdateTaskDialog()
+    .
+    .
+    .
+        <DropdownMenuItem
+            onClick={() => open(id)} 
+            className="font-medium p-[10px]"
+        >
+        <Pencil className="size-4 mr-2 stroke-2" />
+        Editar Tarefa
+        </DropdownMenuItem>
+    "
+    obs: adiciono o hook (useUpdateTaskDialog()) no comeco do arquivo e onclick na tag <DropdownMenuItem>
     9-
     10-
     11-

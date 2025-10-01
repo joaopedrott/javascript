@@ -64,6 +64,43 @@ const app = new Hono()
         return c.json({data: tasks})
     }
     )
+.get(
+    "/:taskId", 
+    sessionMiddleware,
+    async (c) => {
+        const user = c.get('user')
+        const { taskId } = c.req.param()
+        
+        const tasks = await prisma.task.findUnique({
+            where: {
+                id: taskId
+            },
+            include: {
+                assignee: true,
+                project: true,
+            }
+        })
+
+        if (!tasks) {
+            return c.json({ error: 'Tarefa nao encontrada' }, 404)
+        }
+
+        const member= await prisma.member.findFirst({
+            where: {
+                userId: user.id,
+                teamId: tasks.teamId
+            }
+        })
+
+        if (!member) {
+            return c.json({ error: 'Nao autorizado' }, 403)
+        }
+
+
+
+        return c.json({data: tasks})
+    }
+    )
   .post(
     "/",
     sessionMiddleware,

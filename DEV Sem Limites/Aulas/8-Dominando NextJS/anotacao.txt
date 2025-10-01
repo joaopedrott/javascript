@@ -1057,6 +1057,22 @@ criacao das actions das tarefas
 obs: pronto, agora temos o componente que eh os ... (tres pontinhos) ou (configuracao) ou (opcoes) que abre um menu no estilo dropdown. 
 Logo apos de fazer este menu, implementamos neste menu, a funcao de "deletar tarefa", mas no proximo passo(37) sera implementado o "Editar tarefa"
 
+37 - Editando Tarefas
+    1-Vamos em src/modules/tasks/components e criamos os arquivos (update-task-form.tsx) e (update-task-form-wrepper.tsx)
+    2- em src/modules/tasks/route.ts adicionamos um segundo end point (.GET)
+    ".get(
+        "/:taskId", 
+        sessionMiddleware,
+        ..."
+    3-em src/modules/tasks/hooks e criamos o arquivo ou hook (use-get-task.ts)
+    4-em src/modules/tasks/schemas e criamos o arquivo (update-task.ts)
+    5-em src/modules/tasks/hooks criamos o arquivo ou hook (use-update-task-dialog.ts)
+    6-Vamos em src/modules/tasks/components e criamos o arquivo (update-task-dialog.tsx)
+    7- em src/app/(sidebar)/layout.tsx vamos adicionar a tag (<UpdateTaskDialog />)
+    8-
+    9-
+    10-
+    11-
 
 
 

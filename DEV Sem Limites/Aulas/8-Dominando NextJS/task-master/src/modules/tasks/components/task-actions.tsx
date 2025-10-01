@@ -4,6 +4,7 @@ import { ExternalLink, Pencil, Trash } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { useConfirm } from "@/hooks/use-confirm"
 import { useDeleteTask } from "../hooks/use-delete-task"
+import { useUpdateTaskDialog } from "../hooks/use-update-task-dialog"
 
 interface TaskActionsProps {
     id: string,
@@ -24,6 +25,7 @@ children
 
     )
     const { mutate, isPending } = useDeleteTask()
+    const { open } = useUpdateTaskDialog()
     
 
 
@@ -73,7 +75,8 @@ children
                         <ExternalLink className="size-4 mr-2 stroke-2" />
                         Abrir Projeto
                     </DropdownMenuItem>
-                    <DropdownMenuItem 
+                    <DropdownMenuItem
+                    onClick={() => open(id)} 
                     className="font-medium p-[10px]">
                         <Pencil className="size-4 mr-2 stroke-2" />
                         Editar Tarefa

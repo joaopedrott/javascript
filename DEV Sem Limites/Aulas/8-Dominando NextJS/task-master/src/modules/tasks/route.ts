@@ -4,6 +4,7 @@ import { zValidator } from "@hono/zod-validator";
 import { createTaskSchema } from "./schemas/create-task";
 import { prisma } from "@/lib/prisma";
 import { getTasksSchema } from "./schemas/get-tasks";
+import { moveTasksSchema } from "./schemas/move-tasks";
 
 const TASK_POSITION_UNIT = 1000
 
@@ -258,5 +259,62 @@ const app = new Hono()
 
         return c.json({ data: { id: taskId } })
     }
+  )
+  .post(
+      '/move',
+      sessionMiddleware,
+      zValidator('json', moveTasksSchema),
+      async (c) => {
+          const user = c.get('user')
+          const { tasks } = c.req.valid('json')
+        
+          const taskIds = tasks.map(task => task.id)
+
+          const tasksToUpdate = await prisma.task.findMany({
+              where: {
+                  id: {
+                      in: taskIds
+                  }
+              },
+              orderBy: {
+                  position: 'asc'
+              }
+          })
+
+          const teamIds = new Set(tasksToUpdate.map(task => task.teamId))
+
+          if(teamIds.size !== 1) {
+              return c.json({ error: 'Todas as tarefas devem pertencer ao mesmo time' }, 403)
+          }
+
+          const teamId = teamIds.values().next().value as string
+
+          const member = await prisma.member.findFirst({
+              where: {
+                  userId: user.id,
+                  teamId
+              }
+          })
+
+          if (!member) {
+              return c.json({ error: 'Nao autorizado' }, 403)
+          }
+
+          const updatedTasks = await Promise.all(
+            tasks.map(async ({ id, status, position}) => {
+                return await prisma.task.update({
+                    where: {
+                        id
+                    },
+                    data: {
+                        status,
+                        position
+                    }
+                })
+            })
+          )
+
+          return c.json({ data: updatedTasks })
+      }
   )
 export default app

@@ -13,6 +13,7 @@
     "@aws-sdk/client-s3": "^3.798.0",
     "@aws-sdk/s3-presigned-post": "^3.798.0",
     "@aws-sdk/signature-v4-crt": "^3.798.0",
+    "@hello-pangea/dnd": "^18.0.1",
     "@hono/zod-validator": "^0.5.0",
     "@hookform/resolvers": "^5.0.1",
     "@prisma/client": "^6.7.0",

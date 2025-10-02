@@ -1084,6 +1084,40 @@ Logo apos de fazer este menu, implementamos neste menu, a funcao de "deletar tar
         </DropdownMenuItem>
     "
     obs: adiciono o hook (useUpdateTaskDialog()) no comeco do arquivo e onclick na tag <DropdownMenuItem>
+38 - Adicionando Column View
+    1- vamos criar um componente para visualizar as tarefas em colunas
+    vamos em src/modules/tasks/components/ e criamos o componente (data-board.tsx)
+    neste componente vai ter toda a logica necessaria para visualizar as nossas colunas
+    2-para fazer o drag and drop, precisamos instalar uma biblioteca:
+    yarn add @hello-pangea/dnd
+    3- voltamos ao arquivo (data-board.tsx) e comecacos a implementacao
+    4-em src/modules/tasks/components/ criamos o arquivo (board-column-header.tsx)
+    5- em src/modules/tasks/components/ vamos criar o componente que vai exibir a tarefa (board-card.tsx)
+    6- agora so ir no src/modules/components/task-view-switcher.tsx e adicionar a tag:
+    <DataBoard data={data ?? []} onChange={() => {}} />
+    7-vamos em src/modules/tasks/route.ts e adicionamos o endpoin (.post)
+    8-vamos em src/modules/tasks/schemas/ e criamos o arquivo (move-tasks.ts) para ser usado no (.post)
+    9-vamos em src/modules/tasks/hooks/ e criamos o hook (use-move-task.ts)
+    10-agora vamos usar esse hook no arquivo src/modules/tasks/task-view-switcher.tsx:
+    criando neste arquivo:
+    const { mutate } = useMoveTask() 
+
+    const onBoardChange = (tasks: TaskUpdate[]) => {
+        mutate({
+            json: {
+                tasks
+            }
+        })
+    }
+
+    e modificando a tag:
+    <DataBoard data={data ?? []} onChange={onBoardChange} />
+    11-
+    12-
+    13-
+    14-
+    15-
+    16-
 
 
 

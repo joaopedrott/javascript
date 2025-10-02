@@ -13,6 +13,8 @@ import { useTeamId } from "@/modules/teams/hooks/use-team-id";
 import { useProjectId } from "@/modules/projects/hooks/use-project-id";
 import { Task } from '../types';
 import { useTaskFilters } from "../hooks/use-task-filters";
+import { DataBoard, TaskUpdate } from "./data-board";
+import { useMoveTask } from "../hooks/use-move-task";
 
 
 export function TaskViewSwitcher() {
@@ -39,6 +41,15 @@ export function TaskViewSwitcher() {
         dueDate: dueDate ?? undefined,
         search: search ?? undefined
     })
+    const { mutate } = useMoveTask() 
+
+    const onBoardChange = (tasks: TaskUpdate[]) => {
+        mutate({
+            json: {
+                tasks
+            }
+        })
+    }
 
     if (!tasks?.data) {
         return null
@@ -81,7 +92,7 @@ export function TaskViewSwitcher() {
                         <DataTable columns={columns} data={data ??[]} />
                     </TabsContent>
                     <TabsContent value="columns" className="mt-0">
-                        Coluna
+                        <DataBoard data={data ?? []} onChange={onBoardChange} />
                     </TabsContent>
                     <TabsContent value="calendar" className="mt-0">
                         Calendario

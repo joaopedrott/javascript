@@ -1112,13 +1112,28 @@ Logo apos de fazer este menu, implementamos neste menu, a funcao de "deletar tar
 
     e modificando a tag:
     <DataBoard data={data ?? []} onChange={onBoardChange} />
+
+
+39 - Adicionando Calendar View
+    1-primeiro vamos em src/modules/tasks/components e criamos o arquivo (data-calendar.tsx) sem implementar ele
+    2-para implementar a visualizacao do calendario, precisamos instalar a seguinte biblioteca:
+    yarn add react-big-calendar
+    e tambem precisamos instalar:
+    yarn add @types/react-big-calendar -D
+    3-voltamos ao (data-calendar.tsx) para implementacao...
+    4-em src/modules/tasks/components criamos o componente (event-card.tsx)
+    5- em src/modules/tasks/components vamos criar o componente (custom-toolbar.tsx)
+    6-vou em src/modules/tasks/components/task-view-switcher.tsx e vou adicionar a tag <DataCalendar/>
+                        <TabsContent value="calendar" className="mt-0">
+                        <DataCalendar data={data ?? []} />
+                    </TabsContent>
+    7-em src/modules/tasks/components/ criamos o arquivo (data-calendar.css)
+    8-
+    9-
+    10-
     11-
     12-
     13-
-    14-
-    15-
-    16-
-
 
 
 

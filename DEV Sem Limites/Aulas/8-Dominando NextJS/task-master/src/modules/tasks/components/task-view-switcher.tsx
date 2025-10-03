@@ -15,6 +15,7 @@ import { Task } from '../types';
 import { useTaskFilters } from "../hooks/use-task-filters";
 import { DataBoard, TaskUpdate } from "./data-board";
 import { useMoveTask } from "../hooks/use-move-task";
+import { DataCalendar } from "./data-calendar";
 
 
 export function TaskViewSwitcher() {
@@ -95,7 +96,7 @@ export function TaskViewSwitcher() {
                         <DataBoard data={data ?? []} onChange={onBoardChange} />
                     </TabsContent>
                     <TabsContent value="calendar" className="mt-0">
-                        Calendario
+                        <DataCalendar data={data ?? []} />
                     </TabsContent>
                 </>
             </div>

@@ -1,13 +1,13 @@
 import { TaskStatus } from '@prisma/client'
 
-interface Project {
+export interface Project {
   id: string
   name: string
   image?: string | null
   teamId: string
 }
 
-interface User {
+export interface User {
   id: string
   name: string
   email: string

@@ -1128,13 +1128,20 @@ Logo apos de fazer este menu, implementamos neste menu, a funcao de "deletar tar
                         <DataCalendar data={data ?? []} />
                     </TabsContent>
     7-em src/modules/tasks/components/ criamos o arquivo (data-calendar.css)
-    8-
+
+40 - Detalhes da Tarefa
+    1-vamos em src/app/(sidebar)/time/[teamId]/ vamos criar duas novas pastas e um page.tsx (tarefa/[taskId]/page.tsx)
+    2-vamos em src/app/(sidebar)/time/[teamId]/tarefa/taskId/page.tsx
+    3-src/modules/tasks/components/ vamos criar um arquivo (task-detail.tsx)
+    4-src/modules/tasks/components/ vamos criar um arquivo (tasks-breadcrumbs.tsx)
+    5-src/modules/tasks/hooks/ vamos criar um arquivo (use-project-id.ts)
+    6-em src/modules/tasks/components/ vamos criar um arquivo (task-overview.tsx)
+    7-em src/modules/tasks/components/ vamos criar um arquivo (overview-property.tsx)
+    8-em src/modules/tasks/components/ vamos criar o arquivo (task-description.tsx)
     9-
     10-
     11-
     12-
-    13-
-
 
 
 

@@ -40,7 +40,7 @@ export function ProjectDetail() {
                 </Button>
             </div>
 
-            <TaskViewSwitcher />
+            <TaskViewSwitcher hideProjectFilter />
         </div>
     )
 }

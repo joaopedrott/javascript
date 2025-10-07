@@ -1,7 +1,8 @@
+'use client'
+
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
 import { Plus } from "lucide-react";
 import { useQueryState } from "nuqs";
 import { useCreateTaskDialog } from "../hooks/use-create-task-dialog";
@@ -17,8 +18,11 @@ import { DataBoard, TaskUpdate } from "./data-board";
 import { useMoveTask } from "../hooks/use-move-task";
 import { DataCalendar } from "./data-calendar";
 
+interface TaskViewSwitcherProps {
+    hideProjectFilter?: boolean
+}
 
-export function TaskViewSwitcher() {
+export function TaskViewSwitcher({ hideProjectFilter }: TaskViewSwitcherProps) {
     const [{ 
         assigneeId,
         dueDate,
@@ -84,7 +88,7 @@ export function TaskViewSwitcher() {
 
                 <Separator className="my-4" />
 
-                <DataFilters />
+                <DataFilters hideProjectFilter={hideProjectFilter} />
 
                 <Separator className="my-4" />
 

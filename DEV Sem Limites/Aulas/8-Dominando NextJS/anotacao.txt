@@ -1138,10 +1138,27 @@ Logo apos de fazer este menu, implementamos neste menu, a funcao de "deletar tar
     6-em src/modules/tasks/components/ vamos criar um arquivo (task-overview.tsx)
     7-em src/modules/tasks/components/ vamos criar um arquivo (overview-property.tsx)
     8-em src/modules/tasks/components/ vamos criar o arquivo (task-description.tsx)
-    9-
-    10-
-    11-
-    12-
+41 - Minhas Tarefas
+Vamos implmemntar a pagina de "minhas tarefas"
+    1-primeiro, vamos em src/app/(sidebar)/time/[teamId]/ criamos a pasta e seu arquivo page (minhastarefas/page.tsx)
+    2-src/modules/tasks/components/task-view-switcher.tsx e adicionamos:
+    adicionamos no topo da arquivo:
+    'use client'
+
+    e adicionamos no arquivo:
+    interface TaskViewSwitcherProps {
+        hideProjectFilter?: boolean
+    }
+
+    e fazemos o (TaskViewSwitcher) receber 'hideProjectFilter'
+    export function TaskViewSwitcher({ hideProjectFilter }: TaskViewSwitcherProps)
+    3-em src/modules/projects/components/project-detail.tsx
+    no final do arquivo, vamos na tag <TaskViewSwitcher /> e adicionamos o hideProjectFilter
+    <TaskViewSwitcher hideProjectFilter /> para redenrizar o componente sem o filtro de projetos
+    4-em src/modules/teams/components/team-navigation.tsx retiramos as barras '/' do href
+
+
+
 
 
 

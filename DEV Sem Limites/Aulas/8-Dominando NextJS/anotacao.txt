@@ -1157,6 +1157,35 @@ Vamos implmemntar a pagina de "minhas tarefas"
     <TaskViewSwitcher hideProjectFilter /> para redenrizar o componente sem o filtro de projetos
     4-em src/modules/teams/components/team-navigation.tsx retiramos as barras '/' do href
 
+42 - Analytics dos Projetos
+    1-Primeiro fomos em src/modules/projects/route.ts e adicionamos um novo endpoint (.get)
+    2- em src/modules/projects/hooks vamos criar o hook para usar esse endpoint, criado.(use-get-project-analytics.ts)
+    
+    3-obs:Vamos criar o componente (analytics.tsx) e (analytics-card.tsx) fora de modules, dentro de src/components para deixar eles global,
+    pois eles serao usados tanto pelo "projects" quanto o "teams". Vamos chamar isso de componente compartilhado.
+        Agora vamos criar o componente que ira usar o hook. Dentro de src/components/ vamos criar o arquivo (analytics.tsx)
+    4- Dentro de src/components/ vamos criar o arquivo (analytics-card.tsx)
+    5- por ultimo, vamos em src/modules/projects/components/project-detail.tsx e vamos adicionar as linhas:
+        1.
+        const { data: analytics, isPending: isLoadingAnalytics } = useGetProjectAnalytics({ projectId });
+        const isLoading = isLoadingProject || isLoadingAnalytics;
+
+        2.
+        e la no final do arquivo, em return vamos adicionar:
+        {analytics && <Analytics data={analytics.data} />}
+    
+    
+    6-Para fazer atualizar o analytics na hora que criamos uma nova tarefa, vamos em src/modules/tasks/hooks/use-create-task.ts 
+    e dentro de onSuccess vamos adicionar a linha:
+        1.
+        queryClient.invalidateQueries({ queryKey: ["projects-analytics", data.projectId] })
+
+        2.
+        e vamos adicionar no onSuccess o { data }:
+        onSuccess: ({ data })
+
+
+
 
 
 

@@ -7,12 +7,17 @@ import { ProjectAvatar } from "./project-avatar";
 import Link from "next/link";
 import { Pencil } from "lucide-react";
 import { TaskViewSwitcher } from "@/modules/tasks/components/task-view-switcher";
+import { useGetProjectAnalytics } from "../hooks/use-get-project-analytics";
+import { Analytics } from "@/components/analytics";
 
 export function ProjectDetail() {
     const projectId = useProjectId();
     const { data: project, isPending: isLoadingProject } = useGetProject({ projectId });
+    const { data: analytics, isPending: isLoadingAnalytics } = useGetProjectAnalytics({ projectId });
 
-    if(isLoadingProject) {
+    const isLoading = isLoadingProject || isLoadingAnalytics;
+
+    if(isLoading) {
         return <span>Carregando...</span>
     }
 
@@ -40,6 +45,7 @@ export function ProjectDetail() {
                 </Button>
             </div>
 
+            {analytics && <Analytics data={analytics.data} />}
             <TaskViewSwitcher hideProjectFilter />
         </div>
     )

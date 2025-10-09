@@ -1193,11 +1193,7 @@ Vamos implmemntar a pagina de "minhas tarefas"
     6- em src/modules/projects/components vamos criar o componente (project-list.tsx)
     7- em src/modules/members/components vamos criar um componente (member-list.tsx)
     8- em src/modules/members criamos o arquivo de tipos (types.ts)
-    9-
-    10-
-    11-
-    12-
-    13-
+
 
 
 

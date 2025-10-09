@@ -1,8 +1,15 @@
-export default function TeamPage() {
+import { auth } from "@/lib/auth"
+import { TeamAnalytics } from "@/modules/teams/components/team-analytics"
+import { redirect } from "next/navigation"
+
+export default async function TeamPage() {
+    const session = await auth()
+
+    if(!session || !session.user) {
+        redirect("/login")
+    }
+
     return (
-        <div className="flex flex-1 flex-col gap-4 p-4 bg-muted">
-            <h1>Time</h1>
-            <p>Conteudo do time</p>
-        </div>
+        <TeamAnalytics />
     )
 }

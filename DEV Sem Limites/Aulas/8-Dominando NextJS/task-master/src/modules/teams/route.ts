@@ -6,10 +6,11 @@ import { sessionMiddleware } from '../auth/sessionMiddleware'
 import { createTeamSchema } from './schemas/create-team'
 
 import { prisma } from '@/lib/prisma'
-import { MemberRole } from '@prisma/client'
+import { MemberRole, TaskStatus } from '@prisma/client'
 import { updateTeamSchema } from './schemas/update-team'
 import { generateInviteCode } from '@/lib/utils'
 import { joinTeamSchema } from './schemas/join-team'
+import { endOfMonth, startOfMonth, subMonths } from 'date-fns'
 
 
 
@@ -223,6 +224,183 @@ const app = new Hono()
       })
     }
   )
+  .get(
+      '/:teamId/analytics',
+      sessionMiddleware,
+      async (c) => {
+        const user = c.get('user')
+        const { teamId } = c.req.param()
+  
+        const member = await prisma.member.findFirst({
+          where: {
+            userId: user.id,
+            teamId
+          }
+        })
+  
+        if (!member) {
+          return c.json({ error: 'Não autorizado' }, 403)
+        }
+  
+        const now = new Date()
+        const currentMonthStart = startOfMonth(now)
+        const currentMonthEnd = endOfMonth(now)
+        const lastMonthStart = startOfMonth(subMonths(now, 1))
+        const lastMonthEnd = endOfMonth(subMonths(now, 1))
+  
+        const currentMonthTasks = await prisma.task.findMany({
+          where: {
+            teamId,
+            createdAt: {
+              gte: currentMonthStart.toISOString(),
+              lt: currentMonthEnd.toISOString()
+            }
+          }
+        })
+  
+        const lastMonthTasks = await prisma.task.findMany({
+          where: {
+            teamId,
+            createdAt: {
+              gte: lastMonthStart.toISOString(),
+              lt: lastMonthEnd.toISOString()
+            }
+          }
+        })
+  
+        const taskCount = currentMonthTasks.length
+        const taskDifference = taskCount - lastMonthTasks.length
+  
+        const currentMonthAssignedTasks = await prisma.task.findMany({
+          where: {
+            teamId,
+            assigneeId: member.userId,
+            createdAt: {
+              gte: currentMonthStart.toISOString(),
+              lt: currentMonthEnd.toISOString()
+            }
+          }
+        })
+  
+        const lastMonthAssignedTasks = await prisma.task.findMany({
+          where: {
+            teamId,
+            assigneeId: member.userId,
+            createdAt: {
+              gte: lastMonthStart.toISOString(),
+              lt: lastMonthEnd.toISOString()
+            }
+          }
+        })
+  
+        const assignedTaskCount = currentMonthAssignedTasks.length
+        const assignedTaskDifference = assignedTaskCount - lastMonthAssignedTasks.length
+  
+        const currentMonthIncompleteTasks = await prisma.task.findMany({
+          where: {
+            teamId,
+            status: {
+              not: TaskStatus.DONE
+            },
+            createdAt: {
+              gte: currentMonthStart.toISOString(),
+              lt: currentMonthEnd.toISOString()
+            }
+          }
+        })
+  
+        const lastMonthIncompleteTasks = await prisma.task.findMany({
+          where: {
+            teamId,
+            status: {
+              not: TaskStatus.DONE
+            },
+            createdAt: {
+              gte: lastMonthStart.toISOString(),
+              lt: lastMonthEnd.toISOString()
+            }
+          }
+        })
+  
+        const incompleteTaskCount = currentMonthIncompleteTasks.length
+        const incompleteTaskDifference = incompleteTaskCount - lastMonthIncompleteTasks.length
+  
+        const currentMonthCompleteTasks = await prisma.task.findMany({
+          where: {
+            teamId,
+            status: TaskStatus.DONE,
+            createdAt: {
+              gte: currentMonthStart.toISOString(),
+              lt: currentMonthEnd.toISOString()
+            }
+          }
+        })
+  
+        const lastMonthCompleteTasks = await prisma.task.findMany({
+          where: {
+            teamId,
+            status: TaskStatus.DONE,
+            createdAt: {
+              gte: lastMonthStart.toISOString(),
+              lt: lastMonthEnd.toISOString()
+            }
+          }
+        })
+  
+        const completeTaskCount = currentMonthCompleteTasks.length
+        const completeTaskDifference = completeTaskCount - lastMonthCompleteTasks.length
+  
+        const currentMonthOverdueTasks = await prisma.task.findMany({
+          where: {
+            teamId,
+            status: {
+              not: TaskStatus.DONE
+            },
+            dueDate: {
+              lt: now.toISOString()
+            },
+            createdAt: {
+              gte: currentMonthStart.toISOString(),
+              lt: currentMonthEnd.toISOString()
+            }
+          }
+        })
+  
+        const lastMonthOverdueTasks = await prisma.task.findMany({
+          where: {
+            teamId,
+            status: {
+              not: TaskStatus.DONE
+            },
+            dueDate: {
+              lt: now.toISOString()
+            },
+            createdAt: {
+              gte: lastMonthStart.toISOString(),
+              lt: lastMonthEnd.toISOString()
+            }
+          }
+        })
+  
+        const overdueTaskCount = currentMonthOverdueTasks.length
+        const overdueTaskDifference = overdueTaskCount - lastMonthOverdueTasks.length
+  
+        return c.json({
+          data: {
+            taskCount,
+            taskDifference,
+            assignedTaskCount,
+            assignedTaskDifference,
+            incompleteTaskCount,
+            incompleteTaskDifference,
+            completeTaskCount,
+            completeTaskDifference,
+            overdueTaskCount,
+            overdueTaskDifference
+          }
+        })
+      }
+    )
 
 
 export default app

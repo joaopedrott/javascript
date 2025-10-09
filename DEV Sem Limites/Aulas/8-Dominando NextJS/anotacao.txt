@@ -1184,6 +1184,21 @@ Vamos implmemntar a pagina de "minhas tarefas"
         e vamos adicionar no onSuccess o { data }:
         onSuccess: ({ data })
 
+43 - Analytics dos Times
+    1-em src/modules/teams/route.ts vamos criar um novo endpoint
+    2- em src/modules/teams/hooks/ vamos criar um novo hook (use-get-team-analytics.ts)
+    3- em src/app/(sidebar)/time/[teamId]/page.tsx essa, pagina vai ser responsavel por trazer os dados de analytics do time
+    4- em src/modules/teams/components/ criamos o arquivo ou componente (team-analytics.tsx)
+    5- em src/modules/tasks/components vamos criar o componente (task-list.tsx)
+    6- em src/modules/projects/components vamos criar o componente (project-list.tsx)
+    7- em src/modules/members/components vamos criar um componente (member-list.tsx)
+    8- em src/modules/members criamos o arquivo de tipos (types.ts)
+    9-
+    10-
+    11-
+    12-
+    13-
+
 
 
 

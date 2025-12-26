@@ -1,0 +1,60 @@
+<!-- 
+Aula 10 - Controle do tamanho de itens flexíveis
+https://www.youtube.com/watch?v=Le_rq-Cz_mo&list=PLHz_AreHm4dn1bAtIJWFrugl5z2Ej_52d&index=13
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.container {
+            background-color: lightsalmon;
+
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        div.item {
+            background-color: lightskyblue;
+            border: 1px solid black;
+            text-align: center;
+            flex-basis: 250px;
+            
+
+        }
+        /* padrao 
+        flex-grow  (pode ou nao aumentar)
+        flex-shrink (pode ou nao diminuir)
+
+        flex-grow: 0 (nao pode aumentar)
+        flex-shrink: 1 (pode diminuir)*/
+
+
+        #a1 {
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+        #a2 {
+            flex-grow: 1;
+            flex-shrink: 1;
+        }   
+        #a3 {
+            flex-grow: 1;
+            flex-shrink: 8;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item" id="a1">A</div>
+        <div class="item" id="a2">B</div>
+        <div class="item" id="a3">C</div>
+
+    </div>
+
+</body>
+</html>

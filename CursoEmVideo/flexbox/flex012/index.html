@@ -1,0 +1,95 @@
+<!-- 
+Video 11 - A propriedade flex
+https://www.youtube.com/watch?v=JSf4HuF52g0&list=PLHz_AreHm4dn1bAtIJWFrugl5z2Ej_52d&index=14
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.container {
+            background-color: lightsalmon;
+
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        div.item {
+            background-color: lightskyblue;
+            border: 1px solid black;
+            text-align: center;
+            
+            
+
+        }
+        /* 
+        -padrao-
+        flex-grow: 0 (nao pode aumentar)
+        flex-shrink: 1 (pode diminuir)
+        flex-basis: auto
+        flex: 0 1 auto;
+
+        -legenda-
+        flex-grow  (pode ou nao aumentar)
+        flex-shrink (pode ou nao diminuir)
+        flex-basis (tamanho inicial)
+        
+
+        -shorthand e composicao-
+        short hand de flex-grow, flex-shrink e flex-basis
+
+        flex: flex-grow flex-shrink flex-basis
+        ou
+        flex: 0 1 150px
+
+        obs: flex: 0 1 auto; eh a mesma coisa de flex: initial
+        
+        obs: flex: 0 0 auto;  ou flex: none
+        deixa os objetos menos flexiveis
+
+        obs: flex 1 1 auto; ou flex: auto
+        deixa os objetos mais flexiveis
+
+        flex: 3; eh a mesma coisa de flex: 3 1 auto;
+
+
+        */
+
+
+        #a1 {
+            /* flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 250px; */
+
+            flex: 1 0 200px;
+        }
+        #a2 {
+            /* flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 250px; */
+
+            flex: 1 1 150px;
+        }   
+        #a3 {
+            /* flex-grow: 1;
+            flex-shrink: 8;
+            flex-basis: 250px; */
+
+            flex: 1 8 auto;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item" id="a1">A</div>
+        <div class="item" id="a2">B</div>
+        <div class="item" id="a3">C</div>
+
+    </div>
+
+</body>
+</html>

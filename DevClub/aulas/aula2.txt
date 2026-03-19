@@ -1,6 +1,12 @@
--aula de css e javascript
+-aula 2 de css 
 https://www.youtube.com/live/vbJ0R-LUUj0
 *seletores
 *propriedades
 *valores
 
+-aual 3 javascript
+conceitos
+*variaveis
+*funcoes
+
+palavra chave:redbull

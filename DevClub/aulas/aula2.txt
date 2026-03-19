@@ -1,0 +1,6 @@
+-aula de css e javascript
+https://www.youtube.com/live/vbJ0R-LUUj0
+*seletores
+*propriedades
+*valores
+

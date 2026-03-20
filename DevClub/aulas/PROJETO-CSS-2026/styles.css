@@ -52,3 +52,36 @@ button {
     cursor: pointer;
     margin: 10px;
 }
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.bloco-codigo {
+    background: #141419;
+    border: 1px solid #27272a;
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 14px;
+    color:#34d399;
+    line-height: 2;
+    overflow: auto;
+    width: 350px;
+    min-height: 350px;
+    
+}
+
+.resultado-codigo {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #27272a;
+    min-height: 350px;
+    border: 1px solid #27272a;
+    border-radius: 12px;
+
+    
+}

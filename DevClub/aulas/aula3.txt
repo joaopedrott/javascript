@@ -3,4 +3,8 @@ https://www.youtube.com/live/YnrA_bvvwkM
 *fazendo o codigo javascript
 *implementamos a IA
 *
-*
+*obs:
+https://groq.com/
+neste site faco o login clicando em start building
+depois clica em API KEYS e depois em Create API Key
+bota o nome do projeto e em seguida pega a chave para por no projeto
